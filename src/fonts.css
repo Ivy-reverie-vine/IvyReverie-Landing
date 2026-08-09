@@ -1,0 +1,12 @@
+/**
+ * ivy-move-font — 手写体 Logo 字体。
+ * 直接加载 .ttf，不依赖 ivy-move-font/bundle.ts（其引用了旧文件名 ./unknown.ttf）。
+ * 见 docs/issues/issue-02-hero-logo-subtitle.md。
+ */
+@font-face {
+  font-family: 'IvyMoveFont';
+  src: url('../ivy-move-font/ivy-move-font.ttf') format('truetype');
+  font-weight: 700 800;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,15 @@
+node_modules
+dist
+dist-ssr
+*.local
+.vite
+coverage
+.DS_Store
+package-lock_old.json
+
+# build artifacts
+*.tsbuildinfo
+vite.config.ts.timestamp-*.mjs
+
+# workbuddy internal state
+.workbuddy/

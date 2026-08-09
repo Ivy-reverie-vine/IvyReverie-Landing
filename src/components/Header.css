@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.sep {
+  color: rgba(255, 255, 255, 0.25);
+  user-select: none;
+}
+
+/* start dream 胶囊按钮 */
+.btn-start-dream {
+  display: inline-block;
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-start-dream:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 12px rgba(234, 139, 167, 0.2);
+}
+
+/* Bird 选中 pill（深紫），可点但暂无其他主题 */
+.bird-pill {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 14px;
+  background: #2a182c;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.bird-pill:hover,
+.bird-pill:focus-visible {
+  filter: brightness(1.25);
+}
+
+.bird-pill:active {
+  /* 极轻微亮度脉冲，提示可交互 */
+  filter: brightness(1.5);
+}
+
+/* 占位文本链接 */
+.nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(234, 139, 167, 0.35);
+}
+
+/* 平板：导航间距缩小 */
+@media (max-width: 1024px) {
+  .header {
+    gap: 6px;
+    font-size: 14px;
+    top: 20px;
+    right: 22px;
+  }
+  .btn-start-dream,
+  .bird-pill,
+  .nav-link {
+    font-size: 14px;
+  }
+}
+
+/* 移动：收起占位链接与分隔符，保留 start dream + Bird，允许换行 */
+@media (max-width: 768px) {
+  .header {
+    top: 16px;
+    right: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: calc(100vw - 32px);
+  }
+  .nav-link,
+  .sep {
+    display: none;
+  }
+}

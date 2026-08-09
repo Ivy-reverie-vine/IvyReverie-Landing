@@ -1,0 +1,62 @@
+.hero-logo {
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* SVG Logo 尺寸：桌面 90~110px 高 */
+.hero-logo svg {
+  height: clamp(90px, 8vw, 110px);
+  width: auto;
+}
+
+.hero-subtitle {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: rgba(255, 230, 245, 0.8);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 20px 0 0;
+  /* Logo 逐笔书写约 3s，副标题在 Logo 写完后淡入 */
+  animation: heroIn 1.2s ease-out 3s both;
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* reduced-motion：Logo 直显，副标题直显 */
+@media (prefers-reduced-motion: reduce) {
+  .hero-subtitle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 平板：Logo 70~85px */
+@media (max-width: 1024px) {
+  .hero-logo svg {
+    height: clamp(70px, 8vw, 85px);
+  }
+}
+
+/* 移动：Logo 55~70px，副标题 16px */
+@media (max-width: 768px) {
+  .hero-logo svg {
+    height: clamp(55px, 14vw, 70px);
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    margin-top: 14px;
+  }
+}

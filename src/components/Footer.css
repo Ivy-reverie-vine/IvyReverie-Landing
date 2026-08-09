@@ -1,0 +1,51 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.48);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(234, 139, 167, 0.3);
+}
+
+.footer-desc {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* 移动：底部链接允许换行，缩小间距 */
+@media (max-width: 768px) {
+  .footer {
+    bottom: 40px;
+    width: calc(100vw - 32px);
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 22px;
+  }
+  .footer-link {
+    font-size: 13px;
+  }
+  .footer-desc {
+    font-size: 12px;
+    text-align: center;
+  }
+}

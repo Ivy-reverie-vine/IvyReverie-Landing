@@ -1,0 +1,25 @@
+.handwritten-logo {
+  /* 柔和粉色 glow，与原 Logo 一致 */
+  filter:
+    drop-shadow(0 0 15px rgba(234, 139, 167, 0.25))
+    drop-shadow(0 0 35px rgba(234, 139, 167, 0.12));
+  display: block;
+}
+
+/* 逐笔书写：dashoffset 1→0 */
+@keyframes hwDraw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* reduced-motion：笔画直接全显 */
+@media (prefers-reduced-motion: reduce) {
+  .handwritten-logo path {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}

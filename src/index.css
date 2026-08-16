@@ -9,18 +9,22 @@ body,
 #root {
   width: 100%;
   height: 100%;
+  height: 100dvh;
   overflow: hidden;
-  background: #05070f;
+  background: #101014;
 }
 
 body {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* HarmonyOS / QQ 手机版字体栈 */
+  font-family:
+    'HarmonyOS Sans SC', 'HarmonyOS Sans', 'PingFang SC',
+    'Microsoft YaHei', 'Noto Sans SC', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
   color: #ffffff;
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(35, 18, 42, 0.35) 0%,
-      rgba(5, 7, 15, 0.95) 55%,
-      #05070f 100%
-    );
+  background: linear-gradient(160deg, #101014 0%, #141419 55%, #17171c 100%);
+}
+
+button,
+input {
+  font-family: inherit;
 }

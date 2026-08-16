@@ -1,0 +1,121 @@
+/* 右栏 NowPlaying（DM-06 + D4-Q7）—— 封面环境光 + 沉浸歌词 */
+.dm-nowplaying {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.dm-np-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+}
+
+.dm-np-cover-wrap {
+  flex-shrink: 0;
+}
+
+.dm-np-cover {
+  width: 180px;
+  height: 180px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  animation: dm-cover-in 0.35s ease;
+}
+
+@keyframes dm-cover-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dm-np-cover-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dm-np-lyrics {
+  flex: 1;
+  width: 100%;
+  max-width: 560px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dm-np-hint {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.dm-lyric-list {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+  overflow: auto;
+  height: 100%;
+  scrollbar-width: none;
+  overscroll-behavior: contain;
+}
+
+.dm-lyric-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* 非当前行：低透明度；当前行：近白 + 轻微主题色（无光晕，靠字重/字号/透明度分层） */
+.dm-lyric-line {
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 2.1;
+  color: rgba(255, 255, 255, 0.3);
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+  padding: 2px 0;
+}
+
+.dm-lyric-line.is-active {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+}
+
+.dm-lyric-char {
+  transition: color 0.15s ease, opacity 0.15s ease;
+  opacity: 0.55;
+}
+
+.dm-lyric-char.is-active {
+  color: rgb(var(--dm-theme-rgb));
+  opacity: 1;
+}
+
+/* 封面下方红心 */
+.dm-np-cover-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}

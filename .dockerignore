@@ -1,0 +1,12 @@
+.git
+.gitignore
+.workbuddy
+node_modules
+dist
+data
+coverage
+*.tsbuildinfo
+vite.config.ts.timestamp-*.mjs
+docs
+API文档.md
+img

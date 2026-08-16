@@ -9,16 +9,16 @@
 
 ## Acceptance criteria
 
-- [ ] `createParticleSystem(config)` 返回 `{ step, getState, resize }`，模块不 import canvas/DOM，可在 Node 下运行
-- [ ] 4 类粒子配比数量符合 config（普通星点数量最多）
-- [ ] 中心 N×N 区域粒子数显著高于边缘（密度偏置生效，可断言比例阈值）
-- [ ] Logo 安全区（约 180~220px 桌面半径）内无粒子生成
-- [ ] `step(dt)` 后中心粒子距中心距离单调递增（向外扩散，慢速）
-- [ ] 粒子超出 viewport 后 respawn 到中心附近
-- [ ] desktop config 总数 ≤2000、mobile ≤600
-- [ ] 大碎片角速度换算周期落在 20~60s/圈
-- [ ] `prefers-reduced-motion` 模式下 `step` 返回静止（位置不变）
-- [ ] 全部 Seam B 测试在 Vitest（Node 环境）下通过
+- [x] `createParticleSystem(config)` 返回 `{ step, getState, resize }`，模块不 import canvas/DOM，可在 Node 下运行
+- [x] 4 类粒子配比数量符合 config（普通星点数量最多）
+- [x] 中心 N×N 区域粒子数显著高于边缘（密度偏置生效，可断言比例阈值）
+- [x] Logo 安全区（约 180~220px 桌面半径）内无粒子生成
+- [x] `step(dt)` 后中心粒子距中心距离单调递增（向外扩散，慢速）
+- [x] 粒子超出 viewport 后 respawn 到中心附近
+- [x] desktop config 总数 ≤2000、mobile ≤600
+- [x] 大碎片角速度换算周期落在 20~60s/圈
+- [x] `prefers-reduced-motion` 模式下 `step` 返回静止（位置不变）
+- [x] 全部 Seam B 测试在 Vitest（Node 环境）下通过
 
 ## Blocked by
 

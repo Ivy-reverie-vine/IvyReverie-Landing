@@ -1,0 +1,286 @@
+/* 用户信息面板（D5）：左侧覆盖队列 */
+.dm-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  overflow: auto;
+  padding: 18px 16px;
+  box-sizing: border-box;
+}
+
+.dm-profile-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dm-profile-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dm-profile-back:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dm-profile-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dm-profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+}
+
+.dm-profile-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.dm-profile-avatar-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #16161b;
+  background: linear-gradient(
+    135deg,
+    rgb(var(--dm-theme-rgb)),
+    rgba(var(--dm-theme-rgb), 0.45)
+  );
+}
+
+.dm-profile-id {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dm-profile-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.dm-profile-role {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 2px 8px;
+}
+
+.dm-profile-role.is-admin {
+  color: rgb(var(--dm-theme-rgb));
+  background: rgba(var(--dm-theme-rgb), 0.12);
+}
+
+.dm-profile-sig {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+  padding: 2px 8px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dm-profile-sig:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dm-profile-sig-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.dm-profile-sig-save {
+  padding: 8px 12px;
+}
+
+.dm-profile-stats {
+  display: flex;
+  gap: 8px;
+}
+
+.dm-profile-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 12px 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+}
+
+.dm-profile-stat-num {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dm-profile-stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dm-profile-checkin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dm-profile-checkin:disabled {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dm-profile-error {
+  font-size: 12px;
+  color: #f28b82;
+  margin: 0;
+}
+
+.dm-profile-hint {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 24px 0;
+  text-align: center;
+}
+
+/* admin 用户管理 */
+.dm-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-profile-admin-toggle {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dm-profile-admin-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dm-admin-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dm-admin-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.dm-admin-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dm-admin-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dm-admin-banned {
+  font-size: 10px;
+  color: #f28b82;
+  background: rgba(242, 139, 130, 0.12);
+  border-radius: 6px;
+  padding: 1px 6px;
+}
+
+.dm-admin-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.dm-admin-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.dm-admin-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.dm-admin-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dm-admin-btn.is-ban:hover:not(:disabled) {
+  background: rgba(242, 139, 130, 0.14);
+  color: #f28b82;
+}
+
+.dm-admin-btn.is-unban:hover:not(:disabled) {
+  background: rgba(123, 216, 143, 0.14);
+  color: #7bd88f;
+}
+
+.dm-admin-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,99 @@
+/* 通用歌曲列表（每日推荐/私人FM/我喜欢） */
+.dm-tracklist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-tracklist-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.dm-tracklist-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dm-tracklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 0;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.dm-tracklist-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dm-tracklist-no {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  width: 20px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.dm-tracklist-thumb {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dm-tracklist-thumb-ph {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  flex-shrink: 0;
+}
+
+.dm-tracklist-main {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 8px 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dm-tracklist-name {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dm-tracklist-artist {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dm-tracklist-empty {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+  text-align: center;
+  padding: 36px 12px;
+  line-height: 1.8;
+}

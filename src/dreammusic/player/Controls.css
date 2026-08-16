@@ -1,0 +1,220 @@
+/* 播放控制条（DM-04 + D4）—— HarmonyOS 浮动卡片 */
+.dm-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 18px;
+  background: rgba(30, 30, 36, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  backdrop-filter: blur(30px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  width: min(760px, 100%);
+}
+
+.dm-now-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-height: 22px;
+}
+
+.dm-now-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.dm-now-artist {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dm-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dm-time {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  min-width: 34px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.dm-seek {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    rgb(var(--dm-theme-rgb)) var(--fill, 0%),
+    rgba(255, 255, 255, 0.12) var(--fill, 0%)
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+.dm-seek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease;
+}
+
+.dm-seek::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.dm-seek::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dm-seek:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.dm-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.dm-ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.12s ease;
+}
+
+.dm-ctrl-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dm-ctrl-btn:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.dm-ctrl-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* 三段式控制栏：左侧模式 / 中间播放 / 右侧音质+下载 */
+.dm-buttons {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dm-buttons-side,
+.dm-buttons-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.dm-buttons-side:first-child {
+  justify-content: flex-start;
+}
+
+.dm-buttons-center {
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.dm-buttons-right {
+  justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+  .dm-buttons {
+    flex-wrap: wrap;
+  }
+  .dm-buttons-side,
+  .dm-buttons-center {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+  .dm-buttons-right {
+    justify-content: center;
+  }
+}
+
+/* 播放按钮：主题色填充、圆角、更大（视觉中心） */
+.dm-ctrl-btn.dm-play {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgb(var(--dm-theme-rgb));
+  color: #16161b;
+  font-size: 18px;
+  box-shadow: 0 8px 24px rgba(var(--dm-theme-rgb), 0.28);
+}
+
+.dm-ctrl-btn.dm-play:hover:not(:disabled) {
+  background: rgb(var(--dm-theme-rgb));
+  filter: brightness(1.08);
+}
+
+/* 音质下拉选择（一次选择只触发一次换链，避免循环切换卡顿） */
+.dm-level-select {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  padding: 6px 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.dm-level-select option {
+  background: #1c1c22;
+  color: #ffffff;
+}
+
+.dm-level-select:focus {
+  border-color: rgba(var(--dm-theme-rgb), 0.5);
+}
+
+.dm-download-msg {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dm-download-link {
+  display: inline-block;
+  margin-left: 8px;
+  color: rgb(var(--dm-theme-rgb));
+  text-decoration: underline;
+}

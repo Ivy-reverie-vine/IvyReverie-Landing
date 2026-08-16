@@ -1,0 +1,135 @@
+/* 左栏歌单 / 歌单详情（DM-06 + D4） */
+.dm-pl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.dm-pl-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.dm-pl-card:hover {
+  transform: translateY(-2px);
+}
+
+.dm-pl-cover {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.dm-pl-name {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dm-pl-hint {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 20px 0;
+}
+
+.dm-pl-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-pl-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.dm-pl-back {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.dm-pl-back:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.dm-pl-songs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dm-pl-song {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 0;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.dm-pl-song:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dm-pl-song-no {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  width: 24px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.dm-pl-song-main {
+  flex: 1;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 8px 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dm-pl-song-name {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dm-pl-song-artist {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

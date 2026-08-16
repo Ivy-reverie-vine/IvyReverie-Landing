@@ -1,0 +1,3 @@
+[dreammusic] middleware listening on http://localhost:3001
+[dreammusic] upstream: http://localhost:3000
+[dreammusic] allowed: search, song/detail, song/url/v1, song/url/match, lyric/new, personalized, playlist/track/all, personal_fm, fm_trash, recommend/songs, recommend/resource, like, likelist, login/status, login/qr/key, login/qr/create, login/qr/check

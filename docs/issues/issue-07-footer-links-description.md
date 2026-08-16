@@ -9,13 +9,13 @@
 
 ## Acceptance criteria
 
-- [ ] 底部中央（`bottom:65~75px` 居中）渲染第一行 `ST   Ivy2API   Guide   GitHub   Status` 五个链接
-- [ ] 五个链接全部 `href="#"` 占位，链接间留较大间距
-- [ ] 第一行文字 `rgba(255,255,255,.48)`、14~16px，hover 变亮带轻微粉色
-- [ ] 第二行渲染 `I can see u and I can't see u`（撇号为 `'`，非反引号）
-- [ ] 第二行文字 `rgba(255,255,255,.3)`、12~14px
-- [ ] Footer z-index 高于背景 canvas
-- [ ] Seam A 测试通过：`render(<App/>)` 断言 `ST` / `Ivy2API` / `Guide` / `GitHub` / `Status` 与描述句文案存在、链接 `href` 为 `#`
+- [x] 底部中央（`bottom:65~75px` 居中）渲染第一行 `ST   Ivy2API   Guide   GitHub   Status` 五个链接
+- [x] 五个链接全部 `href="#"` 占位，链接间留较大间距
+- [x] 第一行文字 `rgba(255,255,255,.48)`、14~16px，hover 变亮带轻微粉色
+- [x] 第二行渲染 `I can see u and I can't see u`（撇号为 `'`，非反引号）
+- [x] 第二行文字 `rgba(255,255,255,.3)`、12~14px
+- [x] Footer z-index 高于背景 canvas
+- [x] Seam A 测试通过：`render(<App/>)` 断言 `ST` / `Ivy2API` / `Guide` / `GitHub` / `Status` 与描述句文案存在、链接 `href` 为 `#`
 
 ## Blocked by
 

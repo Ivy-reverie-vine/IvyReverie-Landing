@@ -1,0 +1,57 @@
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m812[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://26.179.8.59:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://169.254.83.107:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.190.1:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.136.1:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.43.5:[1m5173[22m/[39m
+[2m15:41:30[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m15:41:51[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m15:50:43[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/dreammusic/AnnouncementModal.tsx[22m
+[2m15:50:43[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/dreammusic/AnnouncementAdmin.tsx[22m
+[2m15:50:43[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/dreammusic/AnnouncementModal.css[22m
+[2m15:50:44[22m [36m[1m[vite][22m[39m [32m✨ new dependencies optimized: [33mmarked, dompurify[32m[39m
+[2m15:50:44[22m [36m[1m[vite][22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[2m15:51:16[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Icon.tsx[22m
+[2m15:51:29[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx[22m
+[2m15:51:45[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx[22m
+[2m15:52:00[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx[22m
+[2m15:52:15[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx[22m
+[2m15:52:37[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.css[22m
+[2m15:53:17[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx, /src/dreammusic/RegisterView.tsx, /src/dreammusic/LoginView.tsx, /src/dreammusic/BindView.tsx, /src/dreammusic/LikedSongsView.tsx, /src/dreammusic/PlaylistDetail.tsx, /src/dreammusic/FmView.tsx, /src/dreammusic/AnnouncementModal.tsx, /src/dreammusic/DailyRecommendView.tsx, /src/dreammusic/PlaylistGrid.tsx, /src/dreammusic/NowPlaying.tsx, /src/dreammusic/player/PlayerContext.tsx, /src/dreammusic/ApiKeyPanel.tsx, /src/dreammusic/SearchOverlay.tsx, /src/dreammusic/UserProfilePanel.tsx, /src/dreammusic/InviteCodeEditor.tsx, /src/dreammusic/Cover.tsx, /src/dreammusic/HeartButton.tsx, /src/dreammusic/player/Controls.tsx, /src/dreammusic/AccountSettings.tsx, /src/dreammusic/AnnouncementAdmin.tsx[22m
+[2m15:53:17[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/dreammusic/player/PlayerContext.tsx[22m Could not Fast Refresh ("usePlayer" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m15:53:17[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx, /src/dreammusic/PlaylistDetail.tsx, /src/dreammusic/MiniBar.tsx, /src/dreammusic/NowPlaying.tsx, /src/dreammusic/QueueView.tsx, /src/dreammusic/SearchOverlay.tsx, /src/dreammusic/TrackList.tsx, /src/dreammusic/player/Controls.tsx[22m
+[2m15:53:54[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx[22m
+[2m15:54:05[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/dreammusic/UserProfilePanel.tsx[22m
+[2m15:54:06[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/dreammusic/AccountSettings.tsx[22m
+[2m15:54:16[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/dreammusic/AccountSettings.tsx[22m
+[2m15:54:16[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx[22m
+[2m15:56:55[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx[22m
+[2m16:01:11[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:01:32[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:02:46[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.css[22m
+[2m16:03:12[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:03:36[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:19:02[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.css[22m
+[2m16:19:11[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx[22m
+[2m16:20:16[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:20:36[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:26:02[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx, /src/dreammusic/RegisterView.tsx, /src/dreammusic/LoginView.tsx, /src/dreammusic/BindView.tsx, /src/dreammusic/LikedSongsView.tsx, /src/dreammusic/PlaylistDetail.tsx, /src/dreammusic/FmView.tsx, /src/dreammusic/AnnouncementModal.tsx, /src/dreammusic/DailyRecommendView.tsx, /src/dreammusic/PlaylistGrid.tsx, /src/dreammusic/NowPlaying.tsx, /src/dreammusic/player/PlayerContext.tsx, /src/dreammusic/ApiKeyPanel.tsx, /src/dreammusic/SearchOverlay.tsx, /src/dreammusic/UserProfilePanel.tsx, /src/dreammusic/InviteCodeEditor.tsx, /src/dreammusic/Cover.tsx, /src/dreammusic/HeartButton.tsx, /src/dreammusic/player/Controls.tsx, /src/dreammusic/AccountSettings.tsx, /src/dreammusic/AnnouncementAdmin.tsx, /src/dreammusic/RedeemModal.tsx[22m
+[2m16:26:03[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/dreammusic/player/PlayerContext.tsx[22m Could not Fast Refresh ("usePlayer" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m16:26:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx, /src/dreammusic/PlaylistDetail.tsx, /src/dreammusic/MiniBar.tsx, /src/dreammusic/NowPlaying.tsx, /src/dreammusic/QueueView.tsx, /src/dreammusic/SearchOverlay.tsx, /src/dreammusic/TrackList.tsx, /src/dreammusic/player/Controls.tsx[22m
+[2m16:27:22[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:29:23[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:29:46[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:37:22[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/dreammusic/player/Controls.tsx[22m
+[2m16:37:22[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/dreammusic/player/Controls.css[22m
+[2m16:38:44[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:39:07[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m16:52:55[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx, /src/dreammusic/RegisterView.tsx, /src/dreammusic/LoginView.tsx, /src/dreammusic/BindView.tsx, /src/dreammusic/LikedSongsView.tsx, /src/dreammusic/PlaylistDetail.tsx, /src/dreammusic/FmView.tsx, /src/dreammusic/AnnouncementModal.tsx, /src/dreammusic/DailyRecommendView.tsx, /src/dreammusic/PlaylistGrid.tsx, /src/dreammusic/NowPlaying.tsx, /src/dreammusic/player/PlayerContext.tsx, /src/dreammusic/ApiKeyPanel.tsx, /src/dreammusic/SearchOverlay.tsx, /src/dreammusic/UserProfilePanel.tsx, /src/dreammusic/InviteCodeEditor.tsx, /src/dreammusic/Cover.tsx, /src/dreammusic/HeartButton.tsx, /src/dreammusic/player/Controls.tsx, /src/dreammusic/AccountSettings.tsx, /src/dreammusic/AnnouncementAdmin.tsx, /src/dreammusic/RedeemModal.tsx[22m
+[2m16:52:56[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/dreammusic/player/PlayerContext.tsx[22m Could not Fast Refresh ("usePlayer" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m16:52:56[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx, /src/dreammusic/PlaylistDetail.tsx, /src/dreammusic/MiniBar.tsx, /src/dreammusic/NowPlaying.tsx, /src/dreammusic/QueueView.tsx, /src/dreammusic/SearchOverlay.tsx, /src/dreammusic/TrackList.tsx, /src/dreammusic/player/Controls.tsx[22m
+[2m16:53:10[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/dreammusic/player/Controls.tsx[22m
+[2m16:53:47[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/DreamMusic.tsx[22m
+[2m17:01:46[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m
+[2m17:02:08[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mdist/index.html[22m

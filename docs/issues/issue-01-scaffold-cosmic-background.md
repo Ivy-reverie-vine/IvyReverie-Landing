@@ -9,13 +9,13 @@
 
 ## Acceptance criteria
 
-- [ ] Vite + React 18 + TypeScript 脚手架可运行：`npm run dev` 起本地服务、`npm run build` 产出 `dist/`
-- [ ] Vitest + React Testing Library 已配置，`npm run test` 通过至少一条 RTL 测试
-- [ ] 页面 `100vw×100vh`、`overflow:hidden`，桌面与移动均无滚动条（无横向溢出）
-- [ ] 背景为 `#05070f` + 极轻微 radial-gradient，目视接近纯黑、无明显渐变带
-- [ ] App 内存在五个空区域占位容器，z-index 层级正确（背景层 < UI 层）
-- [ ] `config/theme.ts` 导出五色色板常量
-- [ ] Seam A 基础测试通过：`render(<App/>)` 后背景区域存在、无横向滚动
+- [x] Vite + React 18 + TypeScript 脚手架可运行：`npm run dev` 起本地服务、`npm run build` 产出 `dist/`
+- [x] Vitest + React Testing Library 已配置，`npm run test` 通过至少一条 RTL 测试
+- [x] 页面 `100vw×100vh`、`overflow:hidden`，桌面与移动均无滚动条（无横向溢出）
+- [x] 背景为 `#05070f` + 极轻微 radial-gradient，目视接近纯黑、无明显渐变带
+- [x] App 内存在五个空区域占位容器，z-index 层级正确（背景层 < UI 层）
+- [x] `config/theme.ts` 导出五色色板常量
+- [x] Seam A 基础测试通过：`render(<App/>)` 后背景区域存在、无横向滚动
 
 ## Blocked by
 

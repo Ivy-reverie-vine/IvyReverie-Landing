@@ -9,13 +9,13 @@
 
 ## Acceptance criteria
 
-- [ ] 中央渲染 `IvyReverie`，使用 `ivy-move-font.ttf` 手写体（粗手写笔刷感）
-- [ ] Logo 颜色 `#EA8BA7`、700/800 字重、桌面 90~110px、柔和 glow（两层 text-shadow），无更强阴影
-- [ ] Logo 位置 `left:50%; top:48%; translate(-50%,-50%)`
-- [ ] Logo 正下方 `night dream` 副标题，Sans-serif、`rgba(255,230,245,.8)`、20~24px、字间距略增、间距 15~25px
-- [ ] 入场动画：Logo 1~1.5s 淡入上移，副标题 delay 300ms 后淡入
-- [ ] Hero z-index 高于背景 canvas，不被粒子遮挡（粒子后续 issue 处理留空安全区）
-- [ ] Seam A 测试通过：`render(<App/>)` 断言 `IvyReverie` 与 `night dream` 文案存在
+- [x] 中央渲染 `IvyReverie`，使用 `ivy-move-font.ttf` 手写体（粗手写笔刷感）
+- [x] Logo 颜色 `#EA8BA7`、700/800 字重、桌面 90~110px、柔和 glow（两层 text-shadow），无更强阴影
+- [x] Logo 位置 `left:50%; top:48%; translate(-50%,-50%)`
+- [x] Logo 正下方 `night dream` 副标题，Sans-serif、`rgba(255,230,245,.8)`、20~24px、字间距略增、间距 15~25px
+- [x] 入场动画：Logo 1~1.5s 淡入上移，副标题 delay 300ms 后淡入
+- [x] Hero z-index 高于背景 canvas，不被粒子遮挡（粒子后续 issue 处理留空安全区）
+- [x] Seam A 测试通过：`render(<App/>)` 断言 `IvyReverie` 与 `night dream` 文案存在
 
 ## Blocked by
 

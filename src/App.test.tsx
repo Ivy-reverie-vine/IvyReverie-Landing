@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
-import { render } from '@testing-library/react'
+import { render, within } from '@testing-library/react'
 import App from './App'
 
-describe('App — Issue 01 tracer bullet', () => {
+describe('App — Landing at /', () => {
   it('renders the five region placeholders', () => {
     const { getByTestId } = render(<App />)
     expect(getByTestId('particle-background')).toBeInTheDocument()
@@ -32,26 +32,30 @@ describe('App — Issue 01 tracer bullet', () => {
     expect(
       getByRole('heading', { name: /IvyReverie/i }),
     ).toBeInTheDocument()
-    expect(getByText('night dream')).toBeInTheDocument()
+    expect(getByText(/night dream/i)).toBeInTheDocument()
   })
 
-  it('renders the header chrome: start dream, Bird, placeholders', () => {
+  it('renders the header chrome: Start Dream, Home, placeholders', () => {
     const { getByText, getByRole } = render(<App />)
-    expect(getByText('start dream')).toBeInTheDocument()
-    expect(getByRole('button', { name: 'Bird' })).toBeInTheDocument()
+    expect(getByText('Start Dream')).toBeInTheDocument()
+    expect(getByRole('button', { name: 'Home' })).toBeInTheDocument()
     expect(getByText('占位1')).toBeInTheDocument()
     expect(getByText('占位2')).toBeInTheDocument()
-    expect(getByText('占位3')).toBeInTheDocument()
+  })
+
+  it('links Start Dream to /dreammusic (DM-01)', () => {
+    const { getByRole } = render(<App />)
+    const link = getByRole('link', { name: /Start Dream/i })
+    expect(link).toHaveAttribute('href', '/dreammusic')
   })
 
   it('renders the footer links and description line', () => {
-    const { getByText } = render(<App />)
+    const { getByTestId } = render(<App />)
+    const footer = getByTestId('footer')
     for (const label of ['ST', 'Ivy2API', 'Guide', 'GitHub', 'Status']) {
-      expect(getByText(label)).toBeInTheDocument()
+      expect(within(footer).getByText(label)).toBeInTheDocument()
     }
-    expect(
-      getByText("I can see u and I can't see u"),
-    ).toBeInTheDocument()
+    expect(within(footer).getByText('NightDream.append(you)')).toBeInTheDocument()
   })
 
   it('renders the language floating button', () => {

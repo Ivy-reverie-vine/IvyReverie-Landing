@@ -1,0 +1,172 @@
+/* 搜索浮层（DM-05 + D4）—— 圆润玻璃面板 + 列表缩略图 */
+.dm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px 20px;
+}
+
+.dm-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 16, 20, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.dm-search-panel {
+  position: relative;
+  z-index: 1;
+  width: min(560px, 100%);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(28, 28, 34, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 22px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(24px);
+  overflow: hidden;
+}
+
+.dm-search-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dm-search-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  color: #ffffff;
+  padding: 10px 16px;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.dm-search-input:focus {
+  border-color: rgba(var(--dm-theme-rgb), 0.45);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.dm-search-hint {
+  padding: 14px 18px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.dm-search-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  overflow: auto;
+  flex: 1;
+}
+
+.dm-search-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s ease;
+}
+
+.dm-search-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dm-search-thumb {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dm-search-thumb-ph {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  flex-shrink: 0;
+}
+
+.dm-search-main {
+  flex: 1;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 9px 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dm-search-main:disabled {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+.dm-search-name {
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dm-search-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dm-search-add {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.dm-search-add:hover:not(:disabled) {
+  background: rgba(var(--dm-theme-rgb), 0.12);
+  border-color: rgba(var(--dm-theme-rgb), 0.4);
+  color: rgb(var(--dm-theme-rgb));
+}
+
+.dm-search-add:disabled {
+  opacity: 0.4;
+  cursor: progress;
+}

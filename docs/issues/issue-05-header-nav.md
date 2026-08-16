@@ -9,14 +9,14 @@
 
 ## Acceptance criteria
 
-- [ ] 右上角渲染 `start dream` 胶囊按钮（深色透明、白边、圆角 15px、padding 8px 13px、白字）
-- [ ] `start dream` hover：边框变亮、背景微亮、轻微 glow；`href="#"`
-- [ ] `start dream` 右侧 `Bird` 在深紫 `#2A182C` pill 里（选中态）
-- [ ] `Bird` 可点击但点击无可见主题切换（可给极轻微亮度脉冲）
-- [ ] `Bird` 右侧 `占位1 / 占位2 / 占位3` 三个文本链接，字面显示，`href="#"`
-- [ ] 所有导航项默认 `rgba(255,255,255,.75)`、15~17px、hover 变 100% 带轻微粉色 text-shadow
-- [ ] Header z-index 高于背景 canvas
-- [ ] Seam A 测试通过：`render(<App/>)` 断言 `start dream` / `Bird` / `占位1` / `占位2` / `占位3` 文案存在、链接 `href` 为 `#`
+- [x] 右上角渲染 `start dream` 胶囊按钮（深色透明、白边、圆角 15px、padding 8px 13px、白字）
+- [x] `start dream` hover：边框变亮、背景微亮、轻微 glow；`href="#"`
+- [x] `start dream` 右侧 `Bird` 在深紫 `#2A182C` pill 里（选中态）
+- [x] `Bird` 可点击但点击无可见主题切换（可给极轻微亮度脉冲）
+- [x] `Bird` 右侧 `占位1 / 占位2 / 占位3` 三个文本链接，字面显示，`href="#"`
+- [x] 所有导航项默认 `rgba(255,255,255,.75)`、15~17px、hover 变 100% 带轻微粉色 text-shadow
+- [x] Header z-index 高于背景 canvas
+- [x] Seam A 测试通过：`render(<App/>)` 断言 `start dream` / `Bird` / `占位1` / `占位2` / `占位3` 文案存在、链接 `href` 为 `#`
 
 ## Blocked by
 

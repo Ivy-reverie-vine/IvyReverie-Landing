@@ -1,0 +1,40 @@
+name: dreammusic
+
+services:
+  # 上游网易云 API：只在内部网络可达，不暴露公网
+  api-enhanced:
+    image: moefurina/ncm-api:latest
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      ENABLE_GENERAL_UNBLOCK: "true"
+    networks:
+      - dreammusic
+
+  # 本仓库：静态托管 SPA + 鉴权转发中间层
+  dreammusic:
+    build: .
+    restart: unless-stopped
+    init: true
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: "3001"
+      UPSTREAM: "http://api-enhanced:3000"
+      REGISTER_CODE: "${REGISTER_CODE:-dreammusic}"
+      COOKIE_SECURE: "${COOKIE_SECURE:-false}"
+      ADMIN_USERNAMES: "${ADMIN_USERNAMES:-}"
+      DATA_DIR: "/data"
+    volumes:
+      - dreammusic-data:/data
+    depends_on:
+      - api-enhanced
+    networks:
+      - dreammusic
+
+volumes:
+  dreammusic-data:
+
+networks:
+  dreammusic:

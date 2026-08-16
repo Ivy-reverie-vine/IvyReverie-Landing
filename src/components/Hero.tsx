@@ -11,7 +11,7 @@ export default function Hero({ onLogoDone }: { onLogoDone?: () => void }) {
       <h1 className="hero-logo" aria-label="IvyReverie">
         <HandwrittenLogo onDone={onLogoDone} />
       </h1>
-      <p className="hero-subtitle">night dream</p>
+      <p className="hero-subtitle">Night Dream</p>
     </section>
   )
 }

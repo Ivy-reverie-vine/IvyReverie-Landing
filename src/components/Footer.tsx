@@ -13,7 +13,7 @@ export default function Footer() {
           </a>
         ))}
       </nav>
-      <p className="footer-desc">I can see u and I can&apos;t see u</p>
+      <p className="footer-desc">NightDream.append(you)</p>
     </footer>
   )
 }

@@ -6,6 +6,21 @@
 
 ---
 
+## 0. 用户手工调整（2026-08-15 起，以代码为准）
+
+用户直接修改过 Landing 的可见文案与视觉，以下内容**与 §2 术语表历史决议不同，但属于最终意图**：
+
+| 位置 | 当前代码 | 历史决议 |
+|---|---|---|
+| 顶部主按钮 | `Start Dream`（链接到 `/dreammusic`） | `start dream` + `#` |
+| 主题 pill | `Home` | `Bird` |
+| 顶部链接 | `Ivy2API`（api.ivyreverie.dpdns.org）/ `占位1` / `占位2` | `占位1/2/3` |
+| 副标题 | `Night Dream` | `night dream` |
+| Footer 描述 | `NightDream.append(you)` | `I can see u and I can't see u` |
+| 全局背景/字体 | `#101014` 深灰渐变 + HarmonyOS/QQ 字体栈 | `#05070F` radial + Inter |
+
+实现与测试均已按当前代码适配；下文历史决议仅作为来源记录。
+
 ## 1. 产品定位
 
 **IvyReverie** 是一个漂浮在深空中的 AI 故事生成产品首页（Landing Page）。

@@ -1,0 +1,613 @@
+/* DreamMusic（D4）—— HarmonyOS / QQ 手机版视觉语言；页面布局保持不变 */
+.dm-app {
+  --dm-theme-rgb: 232, 139, 167;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #101014;
+  color: #ffffff;
+}
+
+/* 背景氛围层（D5 第二轮）：隐约可感、不可辨细节 */
+.dm-bg {
+  position: fixed;
+  inset: -60px;
+  z-index: 0;
+  background: url('/img/backend.jpg') center / cover no-repeat;
+  filter: blur(50px) brightness(0.45) saturate(0.65);
+  transform: scale(1.15);
+  pointer-events: none;
+}
+
+.dm-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(var(--dm-theme-rgb), 0.13), transparent 55%),
+    rgba(10, 10, 16, 0.55);
+}
+
+/* 登录/注册/绑定页：蒙层更重，聚焦表单 */
+.dm-app-login {
+  background: #101014;
+}
+
+.dm-app-login .dm-bg::after {
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(var(--dm-theme-rgb), 0.1), transparent 55%),
+    rgba(10, 10, 16, 0.68);
+}
+
+.dm-boot {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 42vh;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.dm-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 28px;
+  /* 手机端任何滚动都保证顶栏留在可视区（不收起） */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(13, 13, 17, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.dm-title {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.dm-title-a {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.dm-title-b {
+  color: rgb(var(--dm-theme-rgb));
+  opacity: 0.85;
+}
+
+.dm-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dm-icon-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  color: rgba(255, 255, 255, 0.82);
+  padding: 7px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.12s ease;
+}
+
+.dm-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.dm-icon-btn:active {
+  transform: scale(0.96);
+}
+
+/* 搜索 pill（移动端 App 搜索框气质） */
+.dm-search-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 7px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dm-search-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* 用户名 chip：点击弹左侧用户面板 */
+.dm-user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(var(--dm-theme-rgb), 0.1);
+  border: none;
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dm-user-chip:hover {
+  background: rgba(var(--dm-theme-rgb), 0.16);
+}
+
+/* ⋯ 更多菜单 */
+.dm-more-wrap {
+  position: relative;
+}
+
+.dm-more-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}
+
+.dm-more-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 21;
+  min-width: 150px;
+  background: rgba(28, 28, 34, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-more-menu button {
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  padding: 9px 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.dm-more-menu button:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.dm-main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.dm-left {
+  width: 420px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: contain;
+}
+
+.dm-left-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  padding: 18px 16px;
+  box-sizing: border-box;
+  background: rgba(21, 21, 27, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* 柔和分段 Tab（QQ/HarmonyOS） */
+.dm-left-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px 30px 4px 4px;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+}
+
+.dm-tab {
+  flex: 1 0 auto;
+  background: transparent;
+  border: none;
+  border-radius: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 9px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.dm-tab:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dm-tab.is-active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.dm-left-body {
+  flex: 1;
+  overflow: auto;
+  min-height: 0;
+  min-width: 0;
+  overscroll-behavior: contain;
+}
+
+.dm-right {
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+/* 汉堡菜单：桌面隐藏，窄屏显示 */
+.dm-hamburger {
+  display: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  width: 38px;
+  height: 34px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 左栏抽屉遮罩：桌面隐藏 */
+.dm-left-backdrop {
+  display: none;
+}
+
+/* 响应式：窄屏（≤768px）两栏折叠，左栏变抽屉 */
+@media (max-width: 768px) {
+  .dm-topbar {
+    padding: 14px 16px;
+    gap: 8px;
+  }
+
+  .dm-title {
+    font-size: 17px;
+  }
+
+  .dm-topbar-actions {
+    gap: 6px;
+  }
+
+  .dm-search-pill,
+  .dm-user-chip {
+    max-width: 96px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .dm-hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dm-main {
+    position: relative;
+  }
+
+  .dm-left {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    bottom: 0;
+    width: 88vw;
+    max-width: 360px;
+    background: rgba(19, 19, 25, 0.97);
+    backdrop-filter: blur(24px);
+    z-index: 45;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .dm-left.is-open {
+    transform: translateX(0);
+  }
+
+  .dm-left-backdrop {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 44;
+  }
+
+  .dm-right {
+    padding: 16px;
+  }
+
+  /* NowPlaying 封面缩小 */
+  .dm-np-cover,
+  .dm-np-cover-ph {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* 公告铃铛 + 未读红点 */
+.dm-announce-btn {
+  position: relative;
+}
+
+.dm-announce-dot {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f28b82;
+  box-shadow: 0 0 8px rgba(242, 139, 130, 0.8);
+}
+
+
+/* ===== 顶部排版优化 ===== */
+.dm-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.dm-topbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 12px;
+}
+
+.dm-search-pill-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dm-user-chip {
+  gap: 8px;
+  padding: 4px 12px 4px 5px;
+}
+
+.dm-user-chip-name {
+  max-width: 96px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dm-user-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.dm-user-avatar.is-ph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #16161b;
+  background: linear-gradient(135deg, rgb(var(--dm-theme-rgb)), rgba(var(--dm-theme-rgb), 0.45));
+}
+
+/* ===== 左侧列表折叠 ===== */
+.dm-left-inner {
+  position: relative;
+}
+
+.dm-left-collapse {
+  position: absolute;
+  top: 14px;
+  right: 8px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dm-left-collapse:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.dm-left.is-collapsed {
+  width: 44px;
+  overflow: hidden;
+  background: rgba(21, 21, 27, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.dm-left-expand {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dm-left-expand:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+/* 移动端抽屉不采用桌面折叠态 */
+@media (max-width: 768px) {
+  .dm-left-collapse {
+    display: none;
+  }
+
+  .dm-left.is-collapsed {
+    width: 82vw;
+    max-width: 320px;
+  }
+
+  .dm-topbar-center {
+    padding: 0 8px;
+  }
+
+  .dm-search-pill {
+    max-width: 110px;
+  }
+
+  .dm-user-chip-name {
+    display: none;
+  }
+}
+
+/* ===== 用户中心右侧抽屉 ===== */
+.dm-user-drawer {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  width: 380px;
+  max-width: 38vw;
+  height: auto;
+  z-index: 43;
+  flex: 0 0 380px;
+  background: rgba(19, 19, 25, 0.98);
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  animation: dm-user-drawer-in 0.25s ease;
+}
+
+.dm-user-backdrop {
+  position: fixed;
+  inset: 68px 0 0;
+  z-index: 42;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 768px) {
+  .dm-user-drawer {
+    position: fixed;
+    top: 68px;
+    right: 0;
+    bottom: 0;
+    width: min(430px, 92vw);
+    max-width: none;
+    flex: none;
+    height: auto;
+  }
+}
+
+@keyframes dm-user-drawer-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ===== 滚动条统一风格 ===== */
+.dm-left,
+.dm-left-body,
+.dm-right,
+.dm-profile,
+.dm-search-list,
+.dm-announce-list,
+.dm-tracklist-list,
+.dm-lyric-list {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+}
+
+.dm-left::-webkit-scrollbar,
+.dm-left-body::-webkit-scrollbar,
+.dm-right::-webkit-scrollbar,
+.dm-profile::-webkit-scrollbar,
+.dm-search-list::-webkit-scrollbar,
+.dm-announce-list::-webkit-scrollbar,
+.dm-tracklist-list::-webkit-scrollbar,
+.dm-lyric-list::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.dm-left::-webkit-scrollbar-thumb,
+.dm-left-body::-webkit-scrollbar-thumb,
+.dm-right::-webkit-scrollbar-thumb,
+.dm-profile::-webkit-scrollbar-thumb,
+.dm-search-list::-webkit-scrollbar-thumb,
+.dm-announce-list::-webkit-scrollbar-thumb,
+.dm-tracklist-list::-webkit-scrollbar-thumb,
+.dm-lyric-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+.dm-left::-webkit-scrollbar-thumb:hover,
+.dm-left-body::-webkit-scrollbar-thumb:hover,
+.dm-right::-webkit-scrollbar-thumb:hover,
+.dm-profile::-webkit-scrollbar-thumb:hover,
+.dm-search-list::-webkit-scrollbar-thumb:hover,
+.dm-announce-list::-webkit-scrollbar-thumb:hover,
+.dm-tracklist-list::-webkit-scrollbar-thumb:hover,
+.dm-lyric-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}

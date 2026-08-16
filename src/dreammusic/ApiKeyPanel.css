@@ -1,0 +1,96 @@
+/* API Key 面板（D4） */
+.dm-apikey-panel {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 92vw);
+  background: rgba(28, 28, 34, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 22px;
+  padding: 28px 28px 22px;
+  backdrop-filter: blur(24px);
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dm-apikey-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dm-apikey-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.dm-apikey-desc code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.dm-apikey-value {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: 'Cascadia Mono', Consolas, 'Courier New', monospace;
+  outline: none;
+}
+
+.dm-apikey-error {
+  color: #f28b82;
+  font-size: 13px;
+  margin: 0;
+}
+
+.dm-apikey-ok {
+  color: #7bd88f;
+  font-size: 13px;
+  margin: 0;
+}
+
+.dm-apikey-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dm-apikey-actions .dm-btn-primary,
+.dm-apikey-actions .dm-btn-danger {
+  width: auto;
+}
+
+.dm-btn-danger {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  padding: 11px 16px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.12s ease;
+}
+
+.dm-btn-danger:hover:not(:disabled) {
+  background: rgba(242, 139, 130, 0.12);
+}
+
+.dm-btn-danger:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.dm-btn-danger:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

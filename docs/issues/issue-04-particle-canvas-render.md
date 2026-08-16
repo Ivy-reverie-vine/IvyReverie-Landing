@@ -9,18 +9,18 @@
 
 ## Acceptance criteria
 
-- [ ] 全屏 `<canvas>` 渲染 4 类粒子，目视可辨普通星点 / 小三角碎片 / 大型碎片
-- [ ] 中央 Logo 周围粒子密度明显高于四周（中心高密度云可见）
-- [ ] Logo 安全区内无粒子遮挡 `IvyReverie`
-- [ ] 粒子缓慢向外漂浮、边缘 respawn、大碎片超慢旋转（20~60s/圈）
-- [ ] 鼠标移动产生轻微 parallax（粒子向鼠标反方向偏移），Logo 不明显移动，无强吸附
-- [ ] 不移动鼠标时动画持续
-- [ ] 粒子加载时 0~2s 随机 delay 渐入，非同时闪现
-- [ ] Canvas 按 `devicePixelRatio` 缩放，HiDPI 下不模糊，`resize` 时重算
-- [ ] `prefers-reduced-motion: reduce` 时动画关闭或显著降低
-- [ ] canvas `position:fixed; z-index:0; aria-hidden="true"`，UI 层在其上
-- [ ] Seam A 测试通过：canvas 存在、带 `aria-hidden`、reduced-motion 降级标记生效
-- [ ] 桌面/移动粒子数量自适应（≤2000 / ≤600），页面保持流畅
+- [x] 全屏 `<canvas>` 渲染 4 类粒子，目视可辨普通星点 / 小三角碎片 / 大型碎片
+- [x] 中央 Logo 周围粒子密度明显高于四周（中心高密度云可见）
+- [x] Logo 安全区内无粒子遮挡 `IvyReverie`
+- [x] 粒子缓慢向外漂浮、边缘 respawn、大碎片超慢旋转（20~60s/圈）
+- [x] 鼠标移动产生轻微 parallax（粒子向鼠标反方向偏移），Logo 不明显移动，无强吸附
+- [x] 不移动鼠标时动画持续
+- [x] 粒子加载时 0~2s 随机 delay 渐入，非同时闪现
+- [x] Canvas 按 `devicePixelRatio` 缩放，HiDPI 下不模糊，`resize` 时重算
+- [x] `prefers-reduced-motion: reduce` 时动画关闭或显著降低
+- [x] canvas `position:fixed; z-index:0; aria-hidden="true"`，UI 层在其上
+- [x] Seam A 测试通过：canvas 存在、带 `aria-hidden`、reduced-motion 降级标记生效
+- [x] 桌面/移动粒子数量自适应（≤2000 / ≤600），页面保持流畅
 
 ## Blocked by
 

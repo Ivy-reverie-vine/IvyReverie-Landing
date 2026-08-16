@@ -1,0 +1,161 @@
+.dm-account-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.dm-account-section {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.dm-account-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 10px;
+}
+
+.dm-account-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dm-account-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dm-account-avatar-ph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #16161b;
+  background: linear-gradient(135deg, rgb(var(--dm-theme-rgb)), rgba(var(--dm-theme-rgb), 0.45));
+}
+
+.dm-account-file {
+  display: none;
+}
+
+.dm-account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-account-msg {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #7bd88f;
+}
+
+.dm-account-err {
+  font-size: 12px;
+  color: #f28b82;
+  margin: 0;
+}
+
+.dm-account-hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+.dm-session-list,
+.dm-pointlog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dm-session-item,
+.dm-pointlog-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.dm-session-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.dm-session-time,
+.dm-pointlog-time {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.dm-session-expire {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.dm-pointlog-delta {
+  width: 42px;
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.dm-pointlog-delta.is-plus {
+  color: #7bd88f;
+}
+
+.dm-pointlog-delta.is-minus {
+  color: #f28b82;
+}
+
+.dm-pointlog-note {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dm-pointlog-item .dm-pointlog-time {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* 修改密码默认收起，点击展开 */
+.dm-account-details > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dm-account-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.dm-account-details > summary::after {
+  content: '展开';
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dm-account-details[open] > summary::after {
+  content: '收起';
+}
+
+.dm-account-details .dm-account-form {
+  margin-top: 10px;
+}

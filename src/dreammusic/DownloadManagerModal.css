@@ -1,0 +1,154 @@
+.dm-download-panel {
+  position: relative;
+  z-index: 1;
+  width: min(560px, 100%);
+  max-height: 74vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(28, 28, 34, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 22px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(24px);
+  overflow: hidden;
+  padding: 16px 18px;
+  gap: 12px;
+}
+
+.dm-download-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dm-download-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dm-download-hint {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  padding: 12px 0;
+}
+
+.dm-download-error {
+  margin: 0;
+  font-size: 13px;
+  color: #f28b82;
+}
+
+.dm-download-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-download-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.dm-download-item.status-ready {
+  border-left: 3px solid #7bd88f;
+}
+
+.dm-download-item.status-failed {
+  border-left: 3px solid #f28b82;
+  opacity: 0.75;
+}
+
+.dm-download-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dm-download-name {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.dm-download-name em {
+  font-style: normal;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.dm-download-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dm-download-progress {
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.dm-download-progress span {
+  display: block;
+  height: 100%;
+  background: rgb(var(--dm-theme-rgb));
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.dm-download-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dm-download-get {
+  font-size: 12px;
+  color: #7bd88f;
+  background: rgba(123, 216, 143, 0.1);
+  border: 1px solid rgba(123, 216, 143, 0.3);
+  border-radius: 10px;
+  padding: 6px 10px;
+  text-decoration: none;
+}
+
+.dm-download-get:hover {
+  background: rgba(123, 216, 143, 0.16);
+}
+
+.dm-download-del {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.35);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dm-download-del:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f28b82;
+}

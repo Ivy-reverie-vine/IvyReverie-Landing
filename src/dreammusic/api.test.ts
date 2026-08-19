@@ -7,6 +7,9 @@ import {
   login,
   me,
   getProfile,
+  sendMessage,
+  userPlaylist,
+  playlistDetail,
   likedList,
   __resetCache,
   __invalidateCache,
@@ -204,6 +207,45 @@ describe('api — 账户接口（auth/*）', () => {
       password: 'secret123',
       inviteCode: 'abc',
     })
+  })
+
+  it('sendMessage 走 /auth/message 并传标题和内容', async () => {
+    const fn = mockFetch({
+      code: 200,
+      data: { points: 8, used: 1, remaining: 2, dailyLimit: 3, result: 'sent', detail: '' },
+    })
+    await sendMessage('提醒', '晚点见')
+    const [, init] = fn.mock.calls[0] as unknown as [string, RequestInit]
+    expect(fn).toHaveBeenCalledWith(
+      '/dreammusic/api/v1/auth/message',
+      expect.objectContaining({ method: 'POST', credentials: 'include' }),
+    )
+    expect(JSON.parse(String(init.body))).toEqual({ title: '提醒', content: '晚点见' })
+  })
+
+  it('userPlaylist 传 uid 和分页参数', async () => {
+    const fn = mockFetch({ code: 200, playlist: [{ id: 1, name: '我的歌单' }] })
+    const result = await userPlaylist(99, 20, 10)
+    expect(result.playlist?.[0].name).toBe('我的歌单')
+    expect(fn).toHaveBeenCalledWith(
+      expect.stringContaining('/dreammusic/api/v1/user/playlist?'),
+      expect.objectContaining({ credentials: 'include' }),
+    )
+    const [url] = fn.mock.calls[0] as unknown as [string, RequestInit]
+    expect(url).toContain('uid=99')
+    expect(url).toContain('limit=20')
+    expect(url).toContain('offset=10')
+  })
+
+  it('playlistDetail 请求歌单元数据', async () => {
+    const fn = mockFetch({
+      code: 200,
+      playlist: { id: 1, name: '我的歌单', coverImgUrl: 'https://img/1.jpg' },
+    })
+    const result = await playlistDetail(1)
+    expect(result.playlist?.name).toBe('我的歌单')
+    const [url] = fn.mock.calls[0] as unknown as [string, RequestInit]
+    expect(url).toContain('/dreammusic/api/v1/playlist/detail')
   })
 
   it('profile 401 → 触发 dm-unauthorized（非登录/注册/me 路径）', async () => {

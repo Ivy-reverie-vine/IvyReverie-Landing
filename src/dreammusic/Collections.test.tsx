@@ -30,7 +30,7 @@ vi.mock('./api', () => ({
   },
 }))
 
-import { personalFm } from './api'
+import { likedList, personalFm, songDetail } from './api'
 
 beforeEach(() => {
   localStorage.clear()
@@ -73,5 +73,37 @@ describe('collections — T-01/T-02/T-03', () => {
       </PlayerProvider>,
     )
     expect(await findByText('我喜欢的歌')).toBeInTheDocument()
+  })
+
+  it('LikedSongsView loads all liked ids in 500-song batches', async () => {
+    const ids = Array.from({ length: 1001 }, (_, index) => index + 1)
+    vi.mocked(likedList).mockResolvedValueOnce({ ids })
+    vi.mocked(songDetail).mockImplementation(async (value) => ({
+      songs: String(value)
+        .split(',')
+        .map((id) => ({
+          id: Number(id),
+          name: `喜欢${id}`,
+          ar: [{ name: '歌手' }],
+          al: { picUrl: 'https://img/song.jpg' },
+        })),
+    }))
+    const { findByText } = render(
+      <PlayerProvider>
+        <CurrentUserProvider
+          user={{
+            id: 1,
+            username: 'tester',
+            bound: true,
+            bindInvalid: false,
+            neteaseUid: '42',
+          }}
+        >
+          <LikedSongsView />
+        </CurrentUserProvider>
+      </PlayerProvider>,
+    )
+    expect(await findByText('喜欢1001')).toBeInTheDocument()
+    expect(songDetail).toHaveBeenCalledTimes(3)
   })
 })

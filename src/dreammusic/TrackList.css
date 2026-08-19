@@ -5,6 +5,17 @@
   gap: 8px;
 }
 
+.dm-tracklist-sync-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dm-tracklist-sync-error .dm-tracklist-empty {
+  margin: 0;
+}
+
 .dm-tracklist-actions {
   display: flex;
   align-items: center;

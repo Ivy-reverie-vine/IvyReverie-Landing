@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { mkdirSync, writeFileSync, unlinkSync } from 'node:fs'
-import { join, extname, basename } from 'node:path'
+import { join, extname, basename, resolve } from 'node:path'
 import { verifyPassword, toPublicUser } from './db.js'
 import { resolveDownloadUrl } from './downloadSource.js'
 import { parseCookies } from './session.js'
@@ -14,6 +14,10 @@ const AVATAR_TYPES = {
 }
 const LOGIN_MAX_ATTEMPTS = 5
 const LOGIN_LOCK_MS = 15 * 60 * 1000
+const MESSAGE_DAILY_LIMIT = 3
+const MESSAGE_COST = 1
+const MESSAGE_TITLE_MAX = 40
+const MESSAGE_CONTENT_MAX = 200
 
 /**
  * /dreammusic/api/v1/auth/* —— 中间层自有账户体系（不转发给 api-enhanced）。
@@ -77,6 +81,11 @@ export function createAuthRouter({ users, sessions, config }) {
     }
   }
 
+  /** 公开用户对象 + 今日发消息次数 */
+  function publicUser(user) {
+    return { ...toPublicUser(user), messageToday: users.countMessagesByDate(user.id, shanghaiDate()) }
+  }
+
   /**
    * 当前用户解析：会话 Cookie 优先，其次 X-API-Key。
    * 这样外部 agent 拿到 API Key 后也能调用 /auth/me、/auth/profile 等自有接口。
@@ -134,7 +143,7 @@ export function createAuthRouter({ users, sessions, config }) {
   /* ---------- 头像文件（本地上传） ---------- */
 
   function avatarDir() {
-    const dir = join(config.dataDir, 'avatars')
+    const dir = resolve(config.dataDir, 'avatars')
     mkdirSync(dir, { recursive: true })
     return dir
   }
@@ -216,7 +225,7 @@ export function createAuthRouter({ users, sessions, config }) {
     const token = sessions.create(user.id, user.username)
     setSessionCookie(res, token)
     audit({ user, ip }, 'login')
-    json(res, toPublicUser(user))
+    json(res, publicUser(user))
   })
 
   // 登出
@@ -229,7 +238,7 @@ export function createAuthRouter({ users, sessions, config }) {
 
   // 当前用户（含绑定状态）
   router.get('/me', requireUser, (req, res) => {
-    json(res, toPublicUser(users.findById(req.user.id)))
+    json(res, publicUser(users.findById(req.user.id)))
   })
 
   // 查看 / 重置自己的 API key
@@ -261,7 +270,7 @@ export function createAuthRouter({ users, sessions, config }) {
 
   // 用户资料（含统计/梦点/头像/签名）
   router.get('/profile', requireUser, (req, res) => {
-    json(res, toPublicUser(users.findById(req.user.id)))
+    json(res, publicUser(users.findById(req.user.id)))
   })
 
   // 修改签名（≤60 字）
@@ -269,7 +278,7 @@ export function createAuthRouter({ users, sessions, config }) {
     const signature = String((req.body || {}).signature || '').trim()
     if (signature.length > 60) return fail(res, 400, '签名最多 60 字')
     users.setSignature(req.user.id, signature)
-    json(res, toPublicUser(users.findById(req.user.id)))
+    json(res, publicUser(users.findById(req.user.id)))
   })
 
   // 修改密码：校验旧密码，改后销毁该用户所有会话
@@ -316,7 +325,7 @@ export function createAuthRouter({ users, sessions, config }) {
     removeLocalAvatar(req.user.avatar_url)
     users.setAvatarUrl(req.user.id, localAvatarPath(req.user, filename))
     audit(req, 'change_avatar')
-    json(res, toPublicUser(users.findById(req.user.id)))
+    json(res, publicUser(users.findById(req.user.id)))
   })
 
   // 本地头像文件（仅登录用户可读，避免匿名枚举）
@@ -519,6 +528,40 @@ export function createAuthRouter({ users, sessions, config }) {
   // admin：兑换码列表
   router.get('/redeem-codes', requireUser, requireAdmin, (req, res) => {
     json(res, users.listRedeemCodes(100).map(publicRedeemCode))
+  })
+
+  /* ---------- 发消息（Bark 式 webhook,扣 1 梦点,每日 3 次,失败也扣） ---------- */
+
+  router.post('/message', requireUser, async (req, res) => {
+    const title = String((req.body || {}).title || '').trim()
+    const content = String((req.body || {}).content || '').trim()
+    if (!title) return fail(res, 400, '标题不能为空')
+    if (title.length > MESSAGE_TITLE_MAX) return fail(res, 400, `标题最多 ${MESSAGE_TITLE_MAX} 字`)
+    if (content.length > MESSAGE_CONTENT_MAX) return fail(res, 400, `内容最多 ${MESSAGE_CONTENT_MAX} 字`)
+    const user = users.findById(req.user.id)
+    if ((user.dream_points || 0) < MESSAGE_COST) return fail(res, 402, '梦点不足,发送需要 1 梦点')
+    const today = shanghaiDate()
+    const used = users.countMessagesByDate(req.user.id, today)
+    if (used >= MESSAGE_DAILY_LIMIT) return fail(res, 429, `今日已发送 ${MESSAGE_DAILY_LIMIT} 次,明天再来`)
+    // 先扣点并记账: 失败也扣(中间服务可能拦截脏话等)
+    const points = users.addDreamPoints(req.user.id, -MESSAGE_COST, 'message_send', `发送消息 ${title}`, null)
+    let result = 'sent'
+    let detail = ''
+    try {
+      const webhookUrl = `${config.messageWebhook}/${encodeURIComponent(title)}/${encodeURIComponent(content)}`
+      const upstreamRes = await fetch(webhookUrl, { method: 'GET', signal: AbortSignal.timeout(10000) })
+      if (!upstreamRes.ok) {
+        result = `http_${upstreamRes.status}`
+        detail = `HTTP ${upstreamRes.status}`
+      }
+    } catch (e) {
+      result = 'error'
+      detail = String(e?.message || '网络错误')
+    }
+    users.addMessageLog(req.user.id, title, content, result)
+    audit(req, 'send_message', null, `title=${title} result=${result}`)
+    const remaining = Math.max(0, MESSAGE_DAILY_LIMIT - (used + 1))
+    json(res, { points, used: used + 1, remaining, dailyLimit: MESSAGE_DAILY_LIMIT, result, detail })
   })
 
   /* ---------- admin 用户管理 ---------- */

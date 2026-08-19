@@ -3,6 +3,9 @@
 > 适用对象：其它项目的 Agent、脚本、服务端程序。
 > 本文描述的是 **本项目自己暴露的中间层 API**（`/dreammusic/api/v1/*`）。
 > 被转发的网易云上游接口字段说明见仓库根目录 `API文档.md`。
+>
+> 鸿蒙 DreamMusic App 的标准接入顺序、API Key 使用、绑定流程和错误处理请优先阅读：
+> [`docs/API-DreamMusic-HarmonyOS.md`](./API-DreamMusic-HarmonyOS.md)。
 
 ---
 
@@ -207,10 +210,10 @@ curl -sS -H "X-API-Key: $KEY" "$BASE/login/qr/check?key=<unikey>&timestamp=$(dat
 | POST | `/register` | 无 | `{username,password,inviteCode}` | `{username}` | 用户名 3-32 位字母/数字/下划线/短横线；密码 ≥6 位；邀请码见站长 |
 | POST | `/login` | 无 | `{username,password}` | 用户对象 | 成功时 `Set-Cookie` |
 | POST | `/logout` | 无 | 无 | `{ok:true}` | 销毁当前会话 |
-| GET | `/me` | Cookie | 无 | 用户对象 | 当前用户与绑定状态 |
-| GET | `/api-key` | Cookie | 无 | `{apiKey}` | 查看自己的 API Key |
-| POST | `/api-key/rotate` | Cookie | 无 | `{apiKey}` | 重置 key，旧 key 立即失效 |
-| GET | `/profile` | Cookie | 无 | 用户对象 | 用户资料/统计 |
+| GET | `/me` | 会话/Key | 无 | 用户对象 | 当前用户与绑定状态 |
+| GET | `/api-key` | 会话/Key | 无 | `{apiKey}` | 查看自己的 API Key |
+| POST | `/api-key/rotate` | 会话/Key | 无 | `{apiKey}` | 重置 key，旧 key 立即失效 |
+| GET | `/profile` | 会话/Key | 无 | 用户对象 | 用户资料/统计 |
 | POST | `/profile` | 会话/Key | `{signature}` | 用户对象 | 改签名，≤60 字 |
 | POST | `/password` | 会话/Key | `{oldPassword,newPassword}` | `{ok:true}` | 修改密码，成功后所有会话失效 |
 | POST | `/avatar` | 会话/Key | `{avatarBase64}` | 用户对象 | 上传头像（jpg/png/webp ≤2MB） |
@@ -235,6 +238,7 @@ curl -sS -H "X-API-Key: $KEY" "$BASE/login/qr/check?key=<unikey>&timestamp=$(dat
 | DELETE | `/announcements/:id` | 会话/Key + admin | 无 | `{ok:true}` | 归档删除公告 |
 | POST | `/stats` | 会话/Key | `{seconds, songId?}` | `{ok:true}` | 播放时长上报，服务端单次封顶 120s |
 | POST | `/checkin` | 会话/Key | 无 | `{points,alreadyChecked}` | 每日签到 +10 梦点，幂等 |
+| POST | `/message` | 会话/Key | `{title,content}` | `{points,used,remaining,dailyLimit,result,detail}` | 发送消息，每日最多 3 次，每次扣 1 梦点 |
 | GET | `/users` | 会话/Key + admin | 无 | 用户对象数组 | 管理员用户列表 |
 | POST | `/users/:id` | 会话/Key + admin | `{action,reason?}` | `{ok:true}` | 管理操作，见下 |
 | POST | `/users/:id/points` | 会话/Key + admin | `{delta,note}` | `{points}` | 增减梦点（记账 + 审计，管理员也可给自己调整） |
@@ -279,6 +283,8 @@ POST /dreammusic/api/v1/<upstream_path>?<query>   + JSON body
 | `song/url/match` | 无版权解灰换源 |
 | `lyric/new` | 歌词（yrc/lrc） |
 | `personalized` | 推荐歌单 |
+| `user/playlist` | 当前用户创建和收藏的歌单 |
+| `playlist/detail` | 歌单元数据 |
 | `playlist/track/all` | 歌单全部歌曲 |
 | `personal_fm` | 私人 FM |
 | `fm_trash` | 私人 FM 垃圾桶 |

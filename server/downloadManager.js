@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { mkdirSync, createWriteStream, unlinkSync } from 'node:fs'
-import { join, extname } from 'node:path'
+import { join, extname, resolve } from 'node:path'
 import { Readable, Transform } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
 import { resolveDownloadUrl } from './downloadSource.js'
@@ -71,7 +71,7 @@ function publicTask(row) {
  */
 export function createDownloadManager({ users, config, requireUser, audit }) {
   const router = Router()
-  const downloadsDir = join(config.dataDir, 'downloads')
+  const downloadsDir = resolve(config.dataDir, 'downloads')
   mkdirSync(downloadsDir, { recursive: true })
 
   async function runTask(id) {

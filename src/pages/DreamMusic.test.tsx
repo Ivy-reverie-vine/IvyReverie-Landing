@@ -16,6 +16,18 @@ vi.mock('../dreammusic/api', () => ({
   me: vi.fn(),
   logout: vi.fn(async () => ({ ok: true })),
   getAnnouncements: vi.fn(async () => []),
+  loginStatus: vi.fn(async () => ({ data: { profile: { userId: 99 } } })),
+  personalized: vi.fn(async () => ({ result: [] })),
+  userPlaylist: vi.fn(async () => ({ playlist: [] })),
+  playlistDetail: vi.fn(async () => ({ playlist: undefined })),
+  sendMessage: vi.fn(async () => ({
+    points: 9,
+    used: 1,
+    remaining: 2,
+    dailyLimit: 3,
+    result: 'sent',
+    detail: '',
+  })),
   songUrlV1: vi.fn(),
   songUrlMatch: vi.fn(),
   songDetail: vi.fn(async () => ({ songs: [] })),
@@ -82,6 +94,24 @@ describe('Routing — DM-01 + D4 auth gate', () => {
     expect(await findByTestId('dm-topbar')).toBeInTheDocument()
     expect(queryByTestId('dm-login')).not.toBeInTheDocument()
     expect(queryByTestId('dm-bind')).not.toBeInTheDocument()
+  })
+
+  it('opens the send message modal from the top actions', async () => {
+    vi.mocked(me).mockResolvedValue({
+      id: 1,
+      username: 'tester',
+      bound: true,
+      bindInvalid: false,
+      dreamPoints: 10,
+    })
+    const { findByTestId, getByRole } = render(
+      <MemoryRouter initialEntries={['/dreammusic']}>
+        <AppRoutes />
+      </MemoryRouter>,
+    )
+    await findByTestId('dm-topbar')
+    fireEvent.click(getByRole('button', { name: '发送消息' }))
+    expect(getByRole('dialog', { name: '发送消息' })).toBeInTheDocument()
   })
 
   it('returns to LoginView when dm-unauthorized fires (session expired)', async () => {

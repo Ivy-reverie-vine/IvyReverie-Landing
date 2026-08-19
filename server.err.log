@@ -53,3 +53,223 @@ TypeError: path must be absolute or specify root to res.sendFile
     at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
     at handle (D:\Blog\node_modules\router\index.js:435:11)
     at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: path must be absolute or specify root to res.sendFile
+    at ServerResponse.sendFile (D:\Blog\node_modules\express\lib\response.js:400:11)
+    at file:///D:/Blog/server/auth.js:328:9
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+TypeError: users.setLastCheckin is not a function
+    at file:///D:/Blog/server/auth.js:370:11
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at D:\Blog\node_modules\router\index.js:295:15
+TypeError: users.setLastCheckin is not a function
+    at file:///D:/Blog/server/auth.js:370:11
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at D:\Blog\node_modules\router\index.js:295:15
+TypeError: users.setLastCheckin is not a function
+    at file:///D:/Blog/server/auth.js:370:11
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at D:\Blog\node_modules\router\index.js:295:15
+TypeError: users.setLastCheckin is not a function
+    at file:///D:/Blog/server/auth.js:370:11
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at D:\Blog\node_modules\router\index.js:295:15
+TypeError: users.setLastCheckin is not a function
+    at file:///D:/Blog/server/auth.js:370:11
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at D:\Blog\node_modules\router\index.js:295:15
+TypeError: users.setLastCheckin is not a function
+    at file:///D:/Blog/server/auth.js:370:11
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at requireUser (file:///D:/Blog/server/auth.js:111:5)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Blog\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Blog\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Blog\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Blog\node_modules\router\lib\layer.js:152:17)
+    at D:\Blog\node_modules\router\index.js:295:15

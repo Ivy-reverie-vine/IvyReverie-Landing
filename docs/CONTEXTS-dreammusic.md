@@ -26,7 +26,7 @@
 | **NeteaseCloudMusicApiEnhanced** | 自建网易云 API 服务，默认 `localhost:3000`，无 CORS。 | `API文档.md` |
 | **Vite proxy** | dev 下 `/api` → `http://localhost:3000`（rewrite 去前缀），绕过 CORS。生产需同源部署或反向代理。 | 决策 D1-Q1 + 代码核验 |
 | **QR 登录** | `/login/qr/key` → `/login/qr/create?qrimg=true` → 轮询 `/login/qr/check`（1.5s/次），`code=803` 拿 cookie。 | `API文档.md` §4 + D2-Q4 |
-| **cookie** | 登录凭证，存 `localStorage`（key `dreammusic_cookie`），所有需登录接口自动携带。 | D2-Q4 |
+| **cookie** | 网易云 Cookie 只存 NightDream 服务端 SQLite；浏览器/鸿蒙 App 只保存 DreamMusic `dm_session`（登录引导）或 `X-API-Key`，不接触网易云 Cookie。 | D4-Q2 + D10-Q1 |
 | **强制先登录** | 进 `/dreammusic` 未登录 → 先 QR 登录页，登录后才能用。 | D2-Q4 |
 | **level / 音质** | `standard`(128k) / `exhigh`(320k) / `lossless` / `hires`... 默认 `exhigh`，全屏页可切。 | D2-Q3 |
 | **yrc** | 逐字歌词（卡拉OK式），来自 `/lyric/new`。优先 yrc，拿不到退 `lrc` 逐行。 | D2-Q2 |
@@ -63,7 +63,7 @@
 - **路由**：`react-router-dom` v6（Landing `/` + `/dreammusic`）。
 - **音频**：单一 `<audio>` 元素挂在播放器根，`ref` 控制；`timeupdate` 通过订阅模式更新歌词/进度，避免 Context 高频 re-render。
 - **状态**：React Context + `useReducer` 管理播放器状态（当前曲/队列/播放模式/音质/登录态）；音频时间用 ref + 订阅，不入 Context。
-- **API 客户端**：`src/dreammusic/api.ts`，统一 `fetch` 封装，自动拼 cookie、`/api` 前缀、2 分钟内存缓存、错误码处理（301/460/503）。
+- **API 客户端**：`src/dreammusic/api.ts`，统一 `fetch` 封装，走 `/dreammusic/api/v1` 前缀和会话凭证，使用 2 分钟内存缓存、错误码处理（301/460/503）。
 - **QR 登录**：`src/dreammusic/auth.ts`，key→create→poll，cookie 存 `localStorage`。
 
 ---
@@ -79,7 +79,7 @@ DreamMusic（路由 /dreammusic）
     ├── 两栏 Main
     │   ├── LeftPane
     │   │   ├── 队列视图（当前队列，当前曲高亮，可删/切）
-    │   │   └── 歌单视图（/personalized 推荐歌单卡片 → 点进歌单详情）
+    │   │   └── 歌单视图（我的/收藏歌单 + /personalized 推荐歌单 → 点进歌单详情）
     │   └── RightPane（NowPlaying）
     │       ├── 大封面（+ 模糊背景）
     │       ├── 逐字歌词 yrc（卡拉OK滚动）
@@ -107,7 +107,10 @@ DreamMusic（路由 /dreammusic）
 | 解灰换源 | `GET /song/url/match?id=&source=qq` | 无版权时自动 fallback |
 | 歌词 | `GET /lyric/new?id=` | 优先 `yrc`，退 `lrc` |
 | 推荐歌单 | `GET /personalized?limit=30` | 歌单视图列表 |
+| 用户歌单 | `GET /user/playlist?uid=&limit=&offset=` | 当前用户创建和收藏歌单 |
+| 歌单详情 | `GET /playlist/detail?id=` | 歌单名称、封面和 ID |
 | 歌单全部歌曲 | `GET /playlist/track/all?id=&limit=1000` | 歌单详情 |
+| 我喜欢 | `GET /likelist?uid=` + 批量 `/song/detail` | 当前用户喜欢歌曲 |
 | 每日推荐 | `GET /recommend/songs?cookie=` | 备用（初始队列选空，不用） |
 
 **通用**：所有请求走 `/api` 前缀（Vite proxy）；需登录接口自动带 `?cookie=`；`460` 加 `randomCNIP=true`。
@@ -180,6 +183,7 @@ DreamMusic（路由 /dreammusic）
 ### 对外文档
 
 - 平台对外 API 文档：`docs/API-DreamMusic.md`
+- 鸿蒙下游接入规范：`docs/API-DreamMusic-HarmonyOS.md`
 - 待办清单：`docs/TODO.md`
 
 ### 新增术语
@@ -191,6 +195,10 @@ DreamMusic（路由 /dreammusic）
 | **/dreammusic/api/v1** | DreamMusic 对外 API 前缀；中间层在此路径上做鉴权、转发、限流。 |
 | **DreamMusic 账户** | 多用户登录账户（用户名+bcrypt 密码），存 SQLite；每个账户绑定一个网易云账号。 |
 | **绑定** | 账户首次使用时 QR 扫码网易云，cookie 存服务端库；失效（301）时标记"绑定失效"，提示重新扫码。 |
+| **个人音乐库只读闭环** | 从网易云读取用户歌单和喜欢歌曲，补齐歌曲/歌单元数据后用于播放或加入队列；不向网易云写入任何数据。 |
+| **同步歌曲数据** | 以网易云歌单、喜欢列表及其歌曲详情为数据源，更新播放器可用的歌曲集合；不等同于修改网易云歌单。 |
+| **下游客户端** | 使用 DreamMusic 中间层 API 的鸿蒙 DreamMusic App 或其它受控调用方。 |
+| **转发中间层** | NightDream 的 Express 服务：验证 DreamMusic 身份和网易云绑定状态、执行白名单和限流、注入服务端网易云 Cookie，再转发到 api-enhanced。 |
 
 ### 本地调试
 
@@ -270,6 +278,28 @@ npm run dev
 - `POST /auth/users/:id/points`、`POST /auth/users/:id/reset-password`
 - `GET /auth/audit-logs`
 - 白名单新增 FM / 推荐 / 红心 / `login/status` 路径
+
+## 16. 第七轮调整：个人音乐库只读边界（2026-08-18）
+
+> 用户目标：方便同步网易云歌曲数据，不建设网易云管理后台或社交功能。
+
+| 决议 ID | 问题 | 结论 |
+|---|---|---|
+| D9-Q1 | 网易云能力边界 | 只实现个人音乐库只读闭环：用户歌单 / 我喜欢 → 歌单或歌曲详情 → 播放 / 加入队列；不做创建、编辑、收藏、删除、评论、动态、关注等写操作或社交能力。 |
+| D9-Q2 | 既有红心能力 | 保留播放器已有的红心按钮和 `/like` 写接口，避免回退现有功能；本轮不新增其它网易云写操作。用户喜欢歌曲的同步读取使用 `/likelist` + `/song/detail`。 |
+| D9-Q3 | 用户歌单范围 | 同步 `/user/playlist` 返回的全部歌单，包含用户创建歌单和收藏歌单；未来做统一歌曲汇总时按歌曲 ID 去重。 |
+| D9-Q4 | 同步方式 | 采用按需读取 + 2 分钟内存缓存，不把网易云歌曲数据永久复制到 DreamMusic SQLite。 |
+| D9-Q5 | 大数据量处理 | 用户歌单、歌单歌曲和喜欢歌曲均采用分页/分批加载；达到单页上限时继续请求下一页，不静默截断结果。 |
+| D9-Q6 | 部分失败处理 | “我的歌单”和“我喜欢”独立加载；已成功数据继续显示，失败区域提供重试；上游 301 沿用现有绑定失效流程。 |
+| D9-Q7 | API 清单边界 | 当前必需：`user/playlist`、`likelist`、`playlist/detail`、`playlist/track/all`、`song/detail`、`login/status`；既有 `/like` 保留。后续可选只读接口暂缓：`user/detail`、`user/record`、`user/subcount`、`user/level`、`user/cloud`、专辑/歌手收藏。其它写操作和社交接口不纳入本阶段。 |
+
+## 17. 第八轮调整：下游鸿蒙客户端 API 契约（2026-08-18）
+
+| 决议 ID | 问题 | 结论 |
+|---|---|---|
+| D10-Q1 | 下游客户端认证 | 鸿蒙 App 通过登录后的 `X-API-Key` 调用长期 API；`dm_session` 只用于登录引导和换取/轮换 API Key；客户端永不接触网易云 Cookie。 |
+| D10-Q2 | 响应格式 | 保留双层契约：NightDream 自有 `/auth/*` 使用 `{code,data}`；网易云转发接口透传 api-enhanced 原始 JSON，不额外包裹 `data`。 |
+| D10-Q3 | 下游文档目标 | API 文档只解决下游客户端正确接入、标准调用顺序、鉴权、绑定、错误处理、限频和推荐实践；不扩展产品功能范围。 |
 
 ## 14. 第四轮调整（2026-08-16 下午，已实现）
 

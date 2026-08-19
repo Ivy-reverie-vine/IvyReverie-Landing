@@ -3,6 +3,15 @@ import { randomBytes, randomUUID, scryptSync, timingSafeEqual } from 'node:crypt
 import { mkdirSync } from 'node:fs'
 import { join } from 'node:path'
 
+function shanghaiDate(d = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Shanghai',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(d)
+}
+
 /**
  * SQLite 存储（Node 内置 node:sqlite，免原生编译）。
  * users: 账户 + 绑定信息 + API key + 用户中心统计。
@@ -12,6 +21,7 @@ import { join } from 'node:path'
 export function openDb(dataDir) {
   mkdirSync(dataDir, { recursive: true })
   const db = new DatabaseSync(join(dataDir, 'dreammusic.db'))
+
   db.exec(`
     CREATE TABLE IF NOT EXISTS users (
       id              INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -122,6 +132,17 @@ export function openDb(dataDir) {
       used_at    INTEGER
     );
     CREATE INDEX IF NOT EXISTS idx_redeem_codes_code ON redeem_codes(code);
+
+    CREATE TABLE IF NOT EXISTS message_logs (
+      id         INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id    INTEGER NOT NULL,
+      title      TEXT NOT NULL,
+      content    TEXT NOT NULL DEFAULT '',
+      result     TEXT NOT NULL DEFAULT 'sent',
+      day        TEXT NOT NULL,
+      created_at INTEGER NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_message_logs_user_day ON message_logs(user_id, day);
   `)
 
   // 兼容老库：没有任何管理员时，把最早注册的用户提升为管理员
@@ -240,6 +261,10 @@ export function createUserStore(db) {
 
     setSignature(id, signature) {
       db.prepare('UPDATE users SET signature = ? WHERE id = ?').run(signature, id)
+    },
+
+    setLastCheckin(id, date) {
+      db.prepare('UPDATE users SET last_checkin_date = ? WHERE id = ?').run(date, id)
     },
 
     addPlayStats(id, seconds, songId) {
@@ -522,6 +547,14 @@ export function createUserStore(db) {
       return db
         .prepare('SELECT * FROM audit_logs ORDER BY id DESC LIMIT ?')
         .all(Math.max(1, Math.min(limit, 500)))
+    },
+    addMessageLog(userId, title, content, result) {
+      db.prepare(
+        'INSERT INTO message_logs (user_id, title, content, result, day, created_at) VALUES (?,?,?,?,?,?)',
+      ).run(userId, title, content, result, shanghaiDate(), Date.now())
+    },
+    countMessagesByDate(userId, day) {
+      return db.prepare('SELECT COUNT(*) c FROM message_logs WHERE user_id = ? AND day = ?').get(userId, day).c
     },
   }
 }

@@ -138,6 +138,7 @@ export interface UserInfo {
   playSeconds?: number
   playedSongCount?: number
   dreamPoints?: number
+  messageToday?: number
   lastCheckinDate?: string | null
   neteaseUid?: string | null
   apiKey?: string
@@ -235,6 +236,20 @@ export function reportStats(seconds: number, songId?: number): Promise<{ ok: boo
 /** 每日签到：+10 梦点，幂等 */
 export function checkin(): Promise<{ points: number; alreadyChecked: boolean }> {
   return authRequest('checkin', { method: 'POST' })
+}
+
+/** 发消息：扣 1 梦点，每日最多 3 次。 */
+export interface SendMessageResult {
+  points: number
+  used: number
+  remaining: number
+  dailyLimit: number
+  result: string
+  detail: string
+}
+
+export function sendMessage(title: string, content: string): Promise<SendMessageResult> {
+  return authRequest('message', { method: 'POST', body: { title, content } })
 }
 
 /** 修改密码（成功后服务端会销毁全部会话） */
@@ -505,7 +520,20 @@ export interface SongDetailResult { songs?: Song[] }
 export interface SongUrlResult { data?: Array<{ url: string | null; [k: string]: unknown }> }
 export interface LyricResult { lrc?: { lyric?: string }; yrc?: { lyric?: string }; [k: string]: unknown }
 export interface PersonalizedResult { result?: Array<{ id: number; name: string; picUrl: string }> }
-export interface PlaylistTracksResult { songs?: Song[] }
+export interface PlaylistSummary {
+  id: number
+  name: string
+  coverImgUrl?: string
+  picUrl?: string
+  trackCount?: number
+  description?: string
+  creator?: { nickname?: string; userId?: number }
+}
+export interface UserPlaylistResult { playlist?: PlaylistSummary[]; more?: boolean }
+export interface PlaylistDetailResult {
+  playlist?: PlaylistSummary & { tracks?: Song[]; trackIds?: { id: number }[] }
+}
+export interface PlaylistTracksResult { songs?: Song[]; more?: boolean }
 export interface QrKeyResult { data?: { unikey: string }; code: number }
 export interface QrCreateResult { data?: { qrurl: string; qrimg: string }; code: number }
 export interface QrCheckResult { code: number; bound?: boolean; message?: string }
@@ -532,6 +560,18 @@ export function lyricNew(id: number | string): Promise<LyricResult> {
 
 export function personalized(limit = 30): Promise<PersonalizedResult> {
   return ncmRequest<PersonalizedResult>('/personalized', { limit })
+}
+
+export function userPlaylist(
+  uid: number | string,
+  limit = 30,
+  offset = 0,
+): Promise<UserPlaylistResult> {
+  return ncmRequest<UserPlaylistResult>('/user/playlist', { uid, limit, offset })
+}
+
+export function playlistDetail(id: number | string): Promise<PlaylistDetailResult> {
+  return ncmRequest<PlaylistDetailResult>('/playlist/detail', { id })
 }
 
 export function playlistTrackAll(

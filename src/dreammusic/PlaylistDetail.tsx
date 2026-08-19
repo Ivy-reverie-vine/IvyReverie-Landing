@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
-import { playlistTrackAll, NcmError, type Song } from './api'
+import { playlistDetail, playlistTrackAll, NcmError, type Song } from './api'
 import { usePlayer } from './player/PlayerContext'
 import type { Track } from './player/reducer'
 import Icon from '../components/Icon'
 import './PlaylistView.css'
+
+const PLAYLIST_PAGE_SIZE = 1000
 
 function toTrack(s: Song): Track {
   const ar = (s as unknown as { ar?: { name: string }[]; artists?: { name: string }[] })
@@ -29,26 +31,62 @@ export default function PlaylistDetail({
 }) {
   const { dispatch } = usePlayer()
   const [songs, setSongs] = useState<Song[]>([])
+  const [playlistName, setPlaylistName] = useState('')
+  const [playlistCover, setPlaylistCover] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [loadingMore, setLoadingMore] = useState(false)
+  const [loadMoreError, setLoadMoreError] = useState('')
+  const [offset, setOffset] = useState(0)
+  const [hasMore, setHasMore] = useState(false)
 
   useEffect(() => {
     let cancelled = false
     setLoading(true)
-    playlistTrackAll(id)
-      .then((r) => {
-        if (cancelled) return
-        setSongs(r.songs || [])
-      })
-      .catch((e) => {
-        if (cancelled) return
-        setError(e instanceof NcmError ? e.message : '加载歌单失败')
-      })
-      .finally(() => !cancelled && setLoading(false))
+    setError('')
+    setSongs([])
+    setOffset(0)
+    setHasMore(false)
+    setLoadMoreError('')
+    Promise.allSettled([playlistDetail(id), playlistTrackAll(id, PLAYLIST_PAGE_SIZE, 0)]).then(([detail, tracks]) => {
+      if (cancelled) return
+      if (detail.status === 'fulfilled') {
+        const playlist = detail.value.playlist
+        setPlaylistName(playlist?.name || '')
+        setPlaylistCover(playlist?.coverImgUrl || playlist?.picUrl || '')
+      }
+      if (tracks.status === 'fulfilled') {
+        const page = tracks.value.songs || []
+        setSongs(page)
+        setOffset(page.length || PLAYLIST_PAGE_SIZE)
+        setHasMore(tracks.value.more ?? page.length >= PLAYLIST_PAGE_SIZE)
+      } else {
+        const reason = tracks.reason
+        setError(reason instanceof NcmError ? reason.message : '加载歌单失败')
+      }
+      setLoading(false)
+    })
     return () => {
       cancelled = true
     }
   }, [id])
+
+  const loadMore = async () => {
+    if (loadingMore || !hasMore) return
+    setLoadingMore(true)
+    setLoadMoreError('')
+    try {
+      const result = await playlistTrackAll(id, PLAYLIST_PAGE_SIZE, offset)
+      const page = result.songs || []
+      setSongs((previous) => [...previous, ...page])
+      setOffset((previous) => previous + (page.length || PLAYLIST_PAGE_SIZE))
+      setHasMore(result.more ?? page.length >= PLAYLIST_PAGE_SIZE)
+    } catch (e) {
+      setLoadMoreError(e instanceof NcmError ? e.message : '加载更多歌曲失败')
+    } finally {
+      setLoadingMore(false)
+    }
+  }
 
   const playAll = () => {
     if (!songs.length) return
@@ -83,6 +121,14 @@ export default function PlaylistDetail({
           加入队列
         </button>
       </div>
+      {(playlistName || playlistCover) && (
+        <div className="dm-pl-detail-info">
+          {playlistCover && (
+            <img className="dm-pl-detail-cover" src={playlistCover} alt="" aria-hidden="true" />
+          )}
+          <h2>{playlistName || '歌单'}</h2>
+        </div>
+      )}
       {loading && <p className="dm-pl-hint">加载中…</p>}
       {error && <p className="dm-pl-hint" role="alert">{error}</p>}
       <ul className="dm-pl-songs">
@@ -104,6 +150,21 @@ export default function PlaylistDetail({
           </li>
         ))}
       </ul>
+      {loadMoreError && (
+        <p className="dm-pl-hint" role="alert">
+          {loadMoreError}
+        </p>
+      )}
+      {hasMore && (
+        <button
+          type="button"
+          className="dm-pl-load-more"
+          onClick={loadMore}
+          disabled={loadingMore}
+        >
+          {loadingMore ? '加载中…' : loadMoreError ? '重试加载' : '加载更多歌曲'}
+        </button>
+      )}
     </div>
   )
 }

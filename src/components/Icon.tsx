@@ -21,6 +21,7 @@ export type IconName =
   | 'key'
   | 'download'
   | 'gift'
+  | 'send'
 
 const PATHS: Record<IconName, ReactNode> = {
   search: (
@@ -134,6 +135,12 @@ const PATHS: Record<IconName, ReactNode> = {
       <path d="M12 8v12" />
       <path d="M12 8s-4.5.2-4.5-2.5A2.5 2.5 0 0 1 12 8Z" />
       <path d="M12 8s4.5.2 4.5-2.5A2.5 2.5 0 0 0 12 8Z" />
+    </>
+  ),
+  send: (
+    <>
+      <path d="m4 4 16 8-16 8 3.5-8L4 4Z" />
+      <path d="M7.5 12H20" />
     </>
   ),
 }

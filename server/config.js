@@ -9,6 +9,8 @@ const DEFAULT_ALLOWED = [
   'song/url/match',
   'lyric/new',
   'personalized',
+  'user/playlist',
+  'playlist/detail',
   'playlist/track/all',
   // 私人FM / 每日推荐 / 红心
   'personal_fm',
@@ -51,5 +53,7 @@ export function loadConfig(env = process.env) {
     dataDir: env.DATA_DIR || 'data',
     /** 每个 IP 每分钟 API 请求上限（内存滑动窗口） */
     rateLimitPerMin: Number(env.RATE_LIMIT_PER_MIN || 300),
+    /** 发消息 webhook 根地址（Bark 式 GET /title/content） */
+    messageWebhook: env.MESSAGE_WEBHOOK || 'https://api.chuckfang.com/ivyreverie',
   }
 }

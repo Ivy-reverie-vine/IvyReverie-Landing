@@ -316,6 +316,11 @@
     gap: 6px;
   }
 
+  .dm-topbar-actions .dm-icon-btn {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
   .dm-search-pill,
   .dm-user-chip {
     max-width: 96px;

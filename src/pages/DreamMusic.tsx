@@ -7,6 +7,7 @@ import BindView from '../dreammusic/BindView'
 import ApiKeyPanel from '../dreammusic/ApiKeyPanel'
 import UserProfilePanel from '../dreammusic/UserProfilePanel'
 import AnnouncementModal from '../dreammusic/AnnouncementModal'
+import MessageModal from '../dreammusic/MessageModal'
 import RedeemModal from '../dreammusic/RedeemModal'
 import DownloadManagerModal from '../dreammusic/DownloadManagerModal'
 import UserAvatar from '../dreammusic/UserAvatar'
@@ -40,6 +41,7 @@ function TopActions({
   onUser,
   onApiKey,
   onAnnounce,
+  onMessage,
   onRedeem,
   onDownloads,
   announceUnread,
@@ -49,6 +51,7 @@ function TopActions({
   onUser: () => void
   onApiKey: () => void
   onAnnounce: () => void
+  onMessage: () => void
   onRedeem: () => void
   onDownloads: () => void
   announceUnread: boolean
@@ -65,6 +68,15 @@ function TopActions({
       >
         <Icon name="bell" size={16} />
         {announceUnread && <span className="dm-announce-dot" aria-hidden="true" />}
+      </button>
+      <button
+        type="button"
+        className="dm-icon-btn"
+        onClick={onMessage}
+        aria-label="发送消息"
+        title="发送消息"
+      >
+        <Icon name="send" size={16} />
       </button>
       <button
         type="button"
@@ -238,6 +250,7 @@ export default function DreamMusic() {
   const [playlistId, setPlaylistId] = useState<number | null>(null)
   const [announceOpen, setAnnounceOpen] = useState(false)
   const [announceUnread, setAnnounceUnread] = useState(false)
+  const [messageOpen, setMessageOpen] = useState(false)
   const [redeemOpen, setRedeemOpen] = useState(false)
   const [downloadsOpen, setDownloadsOpen] = useState(false)
   const [leftCollapsed, setLeftCollapsed] = useState(false)
@@ -298,6 +311,7 @@ export default function DreamMusic() {
       setLeftOpen(false)
       setPlaylistId(null)
       setAnnounceOpen(false)
+      setMessageOpen(false)
       setRedeemOpen(false)
       setDownloadsOpen(false)
       setLeftCollapsed(false)
@@ -315,6 +329,7 @@ export default function DreamMusic() {
     setLeftOpen(false)
     setPlaylistId(null)
     setAnnounceOpen(false)
+    setMessageOpen(false)
     setRedeemOpen(false)
     setDownloadsOpen(false)
   }
@@ -412,6 +427,7 @@ export default function DreamMusic() {
               }}
               onApiKey={() => setApiKeyOpen(true)}
               onAnnounce={() => setAnnounceOpen(true)}
+              onMessage={() => setMessageOpen(true)}
               onRedeem={() => setRedeemOpen(true)}
               onDownloads={() => setDownloadsOpen(true)}
               announceUnread={announceUnread}
@@ -479,12 +495,18 @@ export default function DreamMusic() {
             }}
           />
         )}
+        {messageOpen && (
+          <MessageModal
+            onClose={() => setMessageOpen(false)}
+            onSent={refresh}
+          />
+        )}
         {redeemOpen && <RedeemModal onClose={() => setRedeemOpen(false)} />}
         {downloadsOpen && (
           <DownloadManagerModal onClose={() => setDownloadsOpen(false)} />
         )}
         {/* 焦点不在主播放视图时显示 mini 条（搜索/API Key/用户中心/歌单详情/公告） */}
-        {(searchOpen || apiKeyOpen || userPane || playlistId !== null || announceOpen || redeemOpen || downloadsOpen) && (
+        {(searchOpen || apiKeyOpen || userPane || playlistId !== null || announceOpen || messageOpen || redeemOpen || downloadsOpen) && (
           <MiniBar onClick={returnToPlayer} />
         )}
       </PlayerProvider>

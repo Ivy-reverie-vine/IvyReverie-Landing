@@ -1,5 +1,5 @@
 import express from 'express'
-import { join, dirname } from 'node:path'
+import { join, dirname, isAbsolute } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { existsSync } from 'node:fs'
 import { loadConfig } from './config.js'
@@ -12,6 +12,7 @@ import { createRateLimiter } from './rateLimit.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const config = loadConfig()
+if (!isAbsolute(config.dataDir)) config.dataDir = join(__dirname, '..', config.dataDir)
 const db = openDb(config.dataDir)
 const users = createUserStore(db)
 // 环境变量指定的管理员（启动时同步角色）

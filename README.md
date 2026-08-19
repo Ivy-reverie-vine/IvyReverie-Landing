@@ -24,6 +24,7 @@ npm run dev      # 前端 @ http://localhost:5173
 ## 文档
 
 - `docs/API-DreamMusic.md` — 本平台对外 API 文档（登录、API Key、白名单转发、错误码、curl/Node 示例）
+- `docs/API-DreamMusic-HarmonyOS.md` — 鸿蒙 DreamMusic App 标准接入顺序、鉴权、绑定、错误处理与调用建议
 - `docs/TODO.md` — 待办清单（私人FM/每日推荐/红心/队列拖拽/梦点规则/用户操作/公告等）
 - `docs/music-download-proxy-notes.md` — 音乐获取与下游返回注意事项（下载管理/代理/安全/版权）
 - `API文档.md` — 上游 NeteaseCloudMusicApiEnhanced 接口参考

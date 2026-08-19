@@ -87,6 +87,63 @@ describe('auth router integration', () => {
     expect(r.data.data).toMatchObject({ username: 'admin1', role: 'admin', bound: false })
   })
 
+  it('check-in awards points and is idempotent for the same day', async () => {
+    const r = await request('/login', {
+      method: 'POST',
+      body: { username: 'admin1', password: 'secret123' },
+    })
+    const cookie = sessionCookie(r.res)
+
+    const first = await request('/checkin', { method: 'POST', cookie })
+    expect(first.res.status).toBe(200)
+    expect(first.data.data).toMatchObject({ points: 10, alreadyChecked: false })
+
+    const second = await request('/checkin', { method: 'POST', cookie })
+    expect(second.res.status).toBe(200)
+    expect(second.data.data).toMatchObject({ points: 10, alreadyChecked: true })
+
+    // Keep later tests independent from this test's point balance.
+    users.addDreamPoints(users.findByUsername('admin1').id, -10, 'test_cleanup', '签到测试清理')
+  })
+
+  it('sends a message and records the daily usage without returning 500', async () => {
+    const registered = await request('/register', {
+      method: 'POST',
+      body: { username: 'admin1', password: 'secret123', inviteCode: 'testcode' },
+    })
+    expect([200, 400, 409]).toContain(registered.res.status)
+
+    const r = await request('/login', {
+      method: 'POST',
+      body: { username: 'admin1', password: 'secret123' },
+    })
+    const cookie = sessionCookie(r.res)
+    const userId = users.findByUsername('admin1').id
+    users.addDreamPoints(userId, 1, 'test_setup', '消息测试')
+
+    const realFetch = globalThis.fetch
+    vi.stubGlobal('fetch', async (url, init) => {
+      if (String(url).startsWith(config.messageWebhook)) {
+        return new Response('', { status: 200 })
+      }
+      return realFetch(url, init)
+    })
+
+    const sent = await request('/message', {
+      method: 'POST',
+      cookie,
+      body: { title: '测试提醒', content: '消息正文' },
+    })
+    expect(sent.res.status).toBe(200)
+    expect(sent.data.data).toMatchObject({ result: 'sent', used: 1, remaining: 2 })
+    expect(users.countMessagesByDate(userId, new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Asia/Shanghai',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).format(new Date()))).toBeGreaterThan(0)
+  })
+
   it('X-API-Key can also call auth endpoints', async () => {
     let r = await request('/login', {
       method: 'POST',

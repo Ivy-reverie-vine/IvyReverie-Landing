@@ -8,6 +8,7 @@ import {
   DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
   DIAGNOSTIC_STAGE_URL_RESPONSE,
 } from './playbackDiagnostics.js'
+import { createMusicOrchestrator } from './music/musicOrchestrator.js'
 
 /**
  * /dreammusic/api/v1/* —— 鉴权 + 白名单 + 转发 api-enhanced。
@@ -17,7 +18,13 @@ import {
  *  - 外部：X-API-Key 请求头
  * 转发时自动注入该用户的网易 cookie；qr/check 803 时把 cookie 落库并剥离。
  */
-export function createProxyRouter({ users, auth, config, diagnostics = createPlaybackDiagnostics() }) {
+export function createProxyRouter({
+  users,
+  auth,
+  config,
+  diagnostics = createPlaybackDiagnostics(),
+  musicOrchestrator = null,
+}) {
   const router = Router()
 
   // QR 绑定返回的 cookie 带 Max-Age/Expires/Path 等属性，直接传给上游会造出
@@ -74,9 +81,9 @@ export function createProxyRouter({ users, auth, config, diagnostics = createPla
     return Math.max(0, Date.now() - startedAt)
   }
 
-  async function fetchUpstream(url, init) {
+  async function fetchUpstream(url, init, requestedTimeoutMs = config.upstreamTimeoutMs) {
     const controller = new AbortController()
-    const timeoutMs = Math.max(1, Number(config.upstreamTimeoutMs || 15000))
+    const timeoutMs = Math.max(1, Number(requestedTimeoutMs || 15000))
     const timer = setTimeout(() => controller.abort(), timeoutMs)
     try {
       const fetchImpl = config.fetch || globalThis.fetch
@@ -92,6 +99,12 @@ export function createProxyRouter({ users, auth, config, diagnostics = createPla
       clearTimeout(timer)
     }
   }
+
+  const orchestrator = musicOrchestrator || createMusicOrchestrator({
+    config,
+    diagnostics,
+    fetchUpstream,
+  })
 
   router.use(async (req, res) => {
     const relPath = String(req.path)
@@ -117,6 +130,26 @@ export function createProxyRouter({ users, auth, config, diagnostics = createPla
     }
     if (!isQr && user.netease_invalid === 1) {
       return res.json({ code: 301, message: '网易云绑定已失效，请重新扫码' })
+    }
+
+    if (orchestrator.supportsPath(relPath)) {
+      try {
+        const result = await orchestrator.dispatch({
+          path: relPath,
+          query: req.query,
+          method: req.method,
+          body: req.body,
+          user,
+        })
+        // 上游 301 → 标记绑定失效（不全局登出，UI 提示重新扫码）
+        if (result.body && result.body.code === 301) {
+          users.markNeteaseInvalid(user.id)
+          return res.json({ code: 301, message: '网易云绑定已失效，请重新扫码' })
+        }
+        return res.status(result.status).json(result.body)
+      } catch {
+        return fail(res, 502, '上游 API 不可达，请检查 api-enhanced 是否在运行')
+      }
     }
 
     // 构造上游 URL：上游去前缀，注入 cookie + POST 时间戳

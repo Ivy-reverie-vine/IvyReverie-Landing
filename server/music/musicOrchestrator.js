@@ -1,0 +1,155 @@
+import {
+  DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL,
+  DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
+  DIAGNOSTIC_CATEGORY_SOURCE_TIMEOUT,
+  DIAGNOSTIC_CATEGORY_URL_EXPIRED_OR_UNREACHABLE,
+  DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
+  DIAGNOSTIC_STAGE_URL_RESPONSE,
+} from '../playbackDiagnostics.js'
+import { ApiEnhancedAdapter } from './sources/apiEnhancedAdapter.js'
+import { MusicSourceRegistry } from './sourceRegistry.js'
+
+export const MUSIC_ROUTE_CAPABILITIES = Object.freeze({
+  search: 'search',
+  'song/detail': 'detail',
+  'song/url/v1': 'playback',
+  'lyric/new': 'lyrics',
+})
+
+function playbackUrl(body) {
+  const first = Array.isArray(body?.data) ? body.data[0] : null
+  return typeof first?.url === 'string' ? first.url : ''
+}
+
+function sourceResponseOk(result) {
+  return result.status >= 200 && result.status < 300 &&
+    (result.body?.code === undefined || result.body.code === 200)
+}
+
+function errorCategory(error) {
+  if (error?.code === 'UPSTREAM_TIMEOUT' || error?.name === 'AbortError') {
+    return DIAGNOSTIC_CATEGORY_SOURCE_TIMEOUT
+  }
+  return DIAGNOSTIC_CATEGORY_SOURCE_FAILURE
+}
+
+export class MusicSourceError extends Error {
+  constructor(code, message) {
+    super(message)
+    this.name = 'MusicSourceError'
+    this.code = code
+  }
+}
+
+export class MusicOrchestrator {
+  constructor({ registry, diagnostics }) {
+    this.registry = registry
+    this.diagnostics = diagnostics
+  }
+
+  supportsPath(path) {
+    return Object.prototype.hasOwnProperty.call(MUSIC_ROUTE_CAPABILITIES, path)
+  }
+
+  async dispatch({ path, query, method, body, user }) {
+    const capability = MUSIC_ROUTE_CAPABILITIES[path]
+    const sources = this.registry.list({ capability })
+    if (sources.length === 0) {
+      throw new MusicSourceError('NO_SOURCE', `no enabled music source supports ${capability}`)
+    }
+
+    let lastEmptyPlayback = null
+    for (const source of sources) {
+      const startedAt = Date.now()
+      try {
+        const result = await source.adapter.request({
+          path,
+          query,
+          method,
+          body,
+          user,
+          timeoutMs: source.timeoutMs,
+        })
+        const ok = sourceResponseOk(result)
+        this.diagnostics.record({
+          source: source.id,
+          capability,
+          stage: DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
+          durationMs: Math.max(0, Date.now() - startedAt),
+          ok,
+          ...(ok ? {} : { errorCategory: DIAGNOSTIC_CATEGORY_SOURCE_FAILURE }),
+        })
+
+        if (capability === 'playback') {
+          const url = playbackUrl(result.body)
+          const mediaOk = ok && url !== ''
+          this.diagnostics.record({
+            source: source.id,
+            capability,
+            stage: DIAGNOSTIC_STAGE_URL_RESPONSE,
+            durationMs: Math.max(0, Date.now() - startedAt),
+            ok: mediaOk,
+            ...(mediaOk
+              ? {}
+              : {
+                  errorCategory: ok
+                    ? DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL
+                    : result.status >= 400
+                      ? DIAGNOSTIC_CATEGORY_URL_EXPIRED_OR_UNREACHABLE
+                      : DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
+                }),
+          })
+          if (mediaOk) return result
+          if (ok && url === '') {
+            lastEmptyPlayback = result
+            continue
+          }
+        }
+
+        // 保持 api-enhanced 的既有业务错误和 HTTP 状态，不把绑定失效等错误静默换源。
+        return result
+      } catch (error) {
+        this.diagnostics.record({
+          source: source.id,
+          capability,
+          stage: DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
+          durationMs: Math.max(0, Date.now() - startedAt),
+          ok: false,
+          errorCategory: errorCategory(error),
+        })
+        if (capability === 'playback') {
+          this.diagnostics.record({
+            source: source.id,
+            capability,
+            stage: DIAGNOSTIC_STAGE_URL_RESPONSE,
+            durationMs: Math.max(0, Date.now() - startedAt),
+            ok: false,
+            errorCategory: errorCategory(error),
+          })
+        }
+        // 网络/超时错误才允许继续尝试低优先级来源。
+        continue
+      }
+    }
+
+    if (lastEmptyPlayback) return lastEmptyPlayback
+    throw new MusicSourceError('SOURCE_UNAVAILABLE', 'all enabled music sources are unavailable')
+  }
+}
+
+export function createMusicOrchestrator({ config, diagnostics, fetchUpstream }) {
+  const registry = new MusicSourceRegistry()
+  const sourceConfig = config.musicSources?.apiEnhanced || {
+    enabled: true,
+    priority: 100,
+    timeoutMs: config.upstreamTimeoutMs,
+    capabilities: ['search', 'detail', 'lyrics', 'playback'],
+  }
+  if (sourceConfig.enabled !== false) {
+    registry.register(new ApiEnhancedAdapter({
+      upstream: config.upstream,
+      fetchUpstream,
+    }), sourceConfig)
+  }
+  return new MusicOrchestrator({ registry, diagnostics })
+}

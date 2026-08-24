@@ -55,6 +55,15 @@ export function loadConfig(env = process.env) {
     rateLimitPerMin: Number(env.RATE_LIMIT_PER_MIN || 300),
     /** 上游来源请求超时，避免来源解灰/解析无限期阻塞播放器 */
     upstreamTimeoutMs: Number(env.UPSTREAM_TIMEOUT_MS || 15000),
+    /** 音乐来源注册配置；除 api-enhanced 外的来源必须单独 POC 后再启用 */
+    musicSources: {
+      apiEnhanced: {
+        enabled: env.API_ENHANCED_SOURCE_ENABLED !== 'false',
+        priority: 100,
+        timeoutMs: Number(env.API_ENHANCED_SOURCE_TIMEOUT_MS || env.UPSTREAM_TIMEOUT_MS || 15000),
+        capabilities: ['search', 'detail', 'lyrics', 'playback'],
+      },
+    },
     /** 发消息 webhook 根地址（Bark 式 GET /title/content） */
     messageWebhook: env.MESSAGE_WEBHOOK || 'https://api.chuckfang.com/ivyreverie',
   }

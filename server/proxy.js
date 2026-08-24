@@ -1,4 +1,13 @@
 import { Router } from 'express'
+import {
+  createPlaybackDiagnostics,
+  DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL,
+  DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
+  DIAGNOSTIC_CATEGORY_SOURCE_TIMEOUT,
+  DIAGNOSTIC_CATEGORY_URL_EXPIRED_OR_UNREACHABLE,
+  DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
+  DIAGNOSTIC_STAGE_URL_RESPONSE,
+} from './playbackDiagnostics.js'
 
 /**
  * /dreammusic/api/v1/* —— 鉴权 + 白名单 + 转发 api-enhanced。
@@ -8,7 +17,7 @@ import { Router } from 'express'
  *  - 外部：X-API-Key 请求头
  * 转发时自动注入该用户的网易 cookie；qr/check 803 时把 cookie 落库并剥离。
  */
-export function createProxyRouter({ users, auth, config }) {
+export function createProxyRouter({ users, auth, config, diagnostics = createPlaybackDiagnostics() }) {
   const router = Router()
 
   // QR 绑定返回的 cookie 带 Max-Age/Expires/Path 等属性，直接传给上游会造出
@@ -42,6 +51,46 @@ export function createProxyRouter({ users, auth, config }) {
     const key = req.get('x-api-key')
     if (key) return users.findByApiKey(key)
     return null
+  }
+
+  function capabilityFor(relPath) {
+    if (relPath === 'search') return 'search'
+    if (relPath === 'song/url/v1') return 'media-resolution'
+    if (relPath === 'song/url/match') return 'download-resolution'
+    if (relPath === 'lyric/new') return 'lyrics'
+    return 'metadata'
+  }
+
+  function isMediaResolution(relPath) {
+    return relPath === 'song/url/v1' || relPath === 'song/url/match'
+  }
+
+  function mediaUrlFrom(body) {
+    const first = Array.isArray(body?.data) ? body.data[0] : null
+    return typeof first?.url === 'string' ? first.url : ''
+  }
+
+  function elapsed(startedAt) {
+    return Math.max(0, Date.now() - startedAt)
+  }
+
+  async function fetchUpstream(url, init) {
+    const controller = new AbortController()
+    const timeoutMs = Math.max(1, Number(config.upstreamTimeoutMs || 15000))
+    const timer = setTimeout(() => controller.abort(), timeoutMs)
+    try {
+      const fetchImpl = config.fetch || globalThis.fetch
+      return await fetchImpl(url, { ...init, signal: controller.signal })
+    } catch (error) {
+      if (controller.signal.aborted) {
+        const timeout = new Error('upstream request timed out')
+        timeout.code = 'UPSTREAM_TIMEOUT'
+        throw timeout
+      }
+      throw error
+    } finally {
+      clearTimeout(timer)
+    }
   }
 
   router.use(async (req, res) => {
@@ -86,19 +135,54 @@ export function createProxyRouter({ users, auth, config }) {
       upstream.searchParams.set('timestamp', String(Date.now()))
     }
 
+    const diagnosticStartedAt = Date.now()
+    const diagnostic = {
+      source: 'api-enhanced',
+      capability: capabilityFor(relPath),
+    }
+
     try {
       const init = { method: req.method, headers: {} }
       if (req.method === 'POST' || req.method === 'PUT') {
         init.headers['Content-Type'] = req.get('content-type') || 'application/json'
         init.body = JSON.stringify(req.body ?? {})
       }
-      const upstreamRes = await fetch(upstream, init)
+      const upstreamRes = await fetchUpstream(upstream, init)
       const text = await upstreamRes.text()
       let body
       try {
         body = JSON.parse(text)
       } catch {
         body = { code: upstreamRes.status, raw: text }
+      }
+
+      const bodyOk = body?.code === undefined || body?.code === 200
+      const sourceOk = upstreamRes.status >= 200 && upstreamRes.status < 300 && bodyOk
+      diagnostics.record({
+        ...diagnostic,
+        stage: DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
+        durationMs: elapsed(diagnosticStartedAt),
+        ok: sourceOk,
+        ...(sourceOk ? {} : { errorCategory: DIAGNOSTIC_CATEGORY_SOURCE_FAILURE }),
+      })
+      if (isMediaResolution(relPath)) {
+        const mediaUrl = mediaUrlFrom(body)
+        const mediaOk = sourceOk && mediaUrl !== ''
+        diagnostics.record({
+          ...diagnostic,
+          stage: DIAGNOSTIC_STAGE_URL_RESPONSE,
+          durationMs: elapsed(diagnosticStartedAt),
+          ok: mediaOk,
+          ...(mediaOk
+            ? {}
+            : {
+                errorCategory: sourceOk
+                  ? DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL
+                  : upstreamRes.status >= 400
+                    ? DIAGNOSTIC_CATEGORY_URL_EXPIRED_OR_UNREACHABLE
+                    : DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
+              }),
+        })
       }
 
       // 上游 301 → 标记绑定失效（不全局登出，UI 提示重新扫码）
@@ -131,7 +215,15 @@ export function createProxyRouter({ users, auth, config }) {
       }
 
       res.status(upstreamRes.status).json(body)
-    } catch {
+    } catch (error) {
+      const timedOut = error?.code === 'UPSTREAM_TIMEOUT' || error?.name === 'AbortError'
+      diagnostics.record({
+        ...diagnostic,
+        stage: DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
+        durationMs: elapsed(diagnosticStartedAt),
+        ok: false,
+        errorCategory: timedOut ? DIAGNOSTIC_CATEGORY_SOURCE_TIMEOUT : DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
+      })
       fail(res, 502, '上游 API 不可达，请检查 api-enhanced 是否在运行')
     }
   })

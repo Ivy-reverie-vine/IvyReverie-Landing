@@ -53,6 +53,8 @@ export function loadConfig(env = process.env) {
     dataDir: env.DATA_DIR || 'data',
     /** 每个 IP 每分钟 API 请求上限（内存滑动窗口） */
     rateLimitPerMin: Number(env.RATE_LIMIT_PER_MIN || 300),
+    /** 上游来源请求超时，避免来源解灰/解析无限期阻塞播放器 */
+    upstreamTimeoutMs: Number(env.UPSTREAM_TIMEOUT_MS || 15000),
     /** 发消息 webhook 根地址（Bark 式 GET /title/content） */
     messageWebhook: env.MESSAGE_WEBHOOK || 'https://api.chuckfang.com/ivyreverie',
   }

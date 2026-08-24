@@ -7,6 +7,7 @@ import { openDb, createUserStore } from './db.js'
 import { createSessionStore } from './session.js'
 import { createAuthRouter } from './auth.js'
 import { createProxyRouter, syncBoundUserProfiles } from './proxy.js'
+import { createPlaybackDiagnostics } from './playbackDiagnostics.js'
 import { createDownloadManager } from './downloadManager.js'
 import { createRateLimiter } from './rateLimit.js'
 
@@ -25,6 +26,7 @@ for (const name of String(process.env.ADMIN_USERNAMES || '')
 }
 const sessions = createSessionStore(config.sessionTtlMs)
 const auth = createAuthRouter({ users, sessions, config })
+const playbackDiagnostics = createPlaybackDiagnostics()
 const downloads = createDownloadManager({
   users,
   config,
@@ -44,7 +46,7 @@ const downloads = createDownloadManager({
     }
   },
 })
-const proxy = createProxyRouter({ users, auth, config })
+const proxy = createProxyRouter({ users, auth, config, diagnostics: playbackDiagnostics })
 
 const app = express()
 app.use(express.json({ limit: '1mb' }))

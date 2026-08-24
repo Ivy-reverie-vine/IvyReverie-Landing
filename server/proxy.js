@@ -11,6 +11,27 @@ import {
 import { createMusicOrchestrator } from './music/musicOrchestrator.js'
 import { toMediaV2Body } from './mediaContract.js'
 
+export function createConfiguredUpstreamFetcher(config) {
+  return async function fetchUpstream(url, init, requestedTimeoutMs = config.upstreamTimeoutMs) {
+    const controller = new AbortController()
+    const timeoutMs = Math.max(1, Number(requestedTimeoutMs || 15000))
+    const timer = setTimeout(() => controller.abort(), timeoutMs)
+    try {
+      const fetchImpl = config.fetch || globalThis.fetch
+      return await fetchImpl(url, { ...init, signal: controller.signal })
+    } catch (error) {
+      if (controller.signal.aborted) {
+        const timeout = new Error('upstream request timed out')
+        timeout.code = 'UPSTREAM_TIMEOUT'
+        throw timeout
+      }
+      throw error
+    } finally {
+      clearTimeout(timer)
+    }
+  }
+}
+
 /**
  * /dreammusic/api/v1/* —— 鉴权 + 白名单 + 转发 api-enhanced。
  *
@@ -27,6 +48,7 @@ export function createProxyRouter({
   musicOrchestrator = null,
   mediaReferences = null,
   apiVersion = 'v1',
+  fetchUpstream: providedFetchUpstream = null,
 }) {
   const router = Router()
 
@@ -97,24 +119,7 @@ export function createProxyRouter({
     return { ...result, body: { ...result.body, data } }
   }
 
-  async function fetchUpstream(url, init, requestedTimeoutMs = config.upstreamTimeoutMs) {
-    const controller = new AbortController()
-    const timeoutMs = Math.max(1, Number(requestedTimeoutMs || 15000))
-    const timer = setTimeout(() => controller.abort(), timeoutMs)
-    try {
-      const fetchImpl = config.fetch || globalThis.fetch
-      return await fetchImpl(url, { ...init, signal: controller.signal })
-    } catch (error) {
-      if (controller.signal.aborted) {
-        const timeout = new Error('upstream request timed out')
-        timeout.code = 'UPSTREAM_TIMEOUT'
-        throw timeout
-      }
-      throw error
-    } finally {
-      clearTimeout(timer)
-    }
-  }
+  const fetchUpstream = providedFetchUpstream || createConfiguredUpstreamFetcher(config)
 
   const orchestrator = musicOrchestrator || createMusicOrchestrator({
     config,

@@ -54,6 +54,22 @@ export class MusicOrchestrator {
     return Object.prototype.hasOwnProperty.call(MUSIC_ROUTE_CAPABILITIES, path)
   }
 
+  sourceStatuses() {
+    return this.registry.statuses()
+  }
+
+  setSourceEnabled(id, enabled) {
+    return this.registry.setEnabled(id, enabled)
+  }
+
+  setSourcePriority(id, priority) {
+    return this.registry.setPriority(id, priority)
+  }
+
+  resetSourceCircuit(id) {
+    return this.registry.resetCircuit(id)
+  }
+
   async dispatch({ path, query, method, body, user }) {
     const capability = MUSIC_ROUTE_CAPABILITIES[path]
     return this.dispatchFromSources(this.registry.list({ capability }), {
@@ -81,7 +97,9 @@ export class MusicOrchestrator {
     }
 
     let lastEmptyPlayback = null
+    let lastFailedResponse = null
     for (const source of sources) {
+      if (!this.registry.beginRequest(source)) continue
       const startedAt = Date.now()
       try {
         const result = await source.adapter.request({
@@ -93,11 +111,12 @@ export class MusicOrchestrator {
           timeoutMs: source.timeoutMs,
         })
         const ok = sourceResponseOk(result)
+        const durationMs = Math.max(0, Date.now() - startedAt)
         this.diagnostics.record({
           source: source.id,
           capability,
           stage: DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
-          durationMs: Math.max(0, Date.now() - startedAt),
+          durationMs,
           ok,
           ...(ok ? {} : { errorCategory: DIAGNOSTIC_CATEGORY_SOURCE_FAILURE }),
         })
@@ -109,7 +128,7 @@ export class MusicOrchestrator {
             source: source.id,
             capability,
             stage: DIAGNOSTIC_STAGE_URL_RESPONSE,
-            durationMs: Math.max(0, Date.now() - startedAt),
+            durationMs,
             ok: mediaOk,
             ...(mediaOk
               ? {}
@@ -120,41 +139,76 @@ export class MusicOrchestrator {
                       ? DIAGNOSTIC_CATEGORY_URL_EXPIRED_OR_UNREACHABLE
                       : DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
                 }),
+            })
+          this.registry.recordResult(source, {
+            capability,
+            durationMs,
+            ok,
+            playbackOk: mediaOk,
+            errorCategory: mediaOk
+              ? ''
+              : ok
+                ? DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL
+                : DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
           })
           if (mediaOk) return result
           if (ok && url === '') {
             lastEmptyPlayback = result
             continue
           }
+        } else {
+          this.registry.recordResult(source, {
+            capability,
+            durationMs,
+            ok,
+            errorCategory: ok ? '' : DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
+          })
         }
 
-        // 保持 api-enhanced 的既有业务错误和 HTTP 状态，不把绑定失效等错误静默换源。
+        if (!ok && (result.status >= 500 || result.status === 429)) {
+          lastFailedResponse = result
+          continue
+        }
+
+        // 保持客户端可识别的业务错误和 HTTP 状态；仅 5xx/429 继续尝试低优先级来源。
         return result
       } catch (error) {
+        const durationMs = Math.max(0, Date.now() - startedAt)
+        const category = errorCategory(error)
+        this.registry.recordResult(source, {
+          capability,
+          durationMs,
+          ok: false,
+          playbackOk: false,
+          errorCategory: category,
+        })
         this.diagnostics.record({
           source: source.id,
           capability,
           stage: DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
-          durationMs: Math.max(0, Date.now() - startedAt),
+          durationMs,
           ok: false,
-          errorCategory: errorCategory(error),
+          errorCategory: category,
         })
         if (capability === 'playback') {
           this.diagnostics.record({
             source: source.id,
             capability,
             stage: DIAGNOSTIC_STAGE_URL_RESPONSE,
-            durationMs: Math.max(0, Date.now() - startedAt),
+            durationMs,
             ok: false,
-            errorCategory: errorCategory(error),
+            errorCategory: category,
           })
         }
         // 网络/超时错误才允许继续尝试低优先级来源。
         continue
+      } finally {
+        this.registry.endRequest(source)
       }
     }
 
     if (lastEmptyPlayback) return lastEmptyPlayback
+    if (lastFailedResponse) return lastFailedResponse
     throw new MusicSourceError('SOURCE_UNAVAILABLE', 'all enabled music sources are unavailable')
   }
 }
@@ -180,6 +234,9 @@ export function createMusicOrchestrator({ config, diagnostics, fetchUpstream }) 
         enabled: true,
         priority: metingConfig.priority,
         timeoutMs: metingConfig.timeoutMs,
+        maxConcurrent: metingConfig.maxConcurrent,
+        circuitFailureThreshold: metingConfig.circuitFailureThreshold,
+        circuitOpenMs: metingConfig.circuitOpenMs,
         capabilities: adapter.capabilities(),
       })
     }
@@ -190,6 +247,9 @@ export function createMusicOrchestrator({ config, diagnostics, fetchUpstream }) 
       enabled: true,
       priority: audiusConfig.priority,
       timeoutMs: audiusConfig.timeoutMs,
+      maxConcurrent: audiusConfig.maxConcurrent,
+      circuitFailureThreshold: audiusConfig.circuitFailureThreshold,
+      circuitOpenMs: audiusConfig.circuitOpenMs,
       capabilities: ['search', 'detail', 'playback'],
     })
   }

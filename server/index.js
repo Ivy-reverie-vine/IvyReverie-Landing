@@ -6,12 +6,14 @@ import { loadConfig } from './config.js'
 import { openDb, createUserStore } from './db.js'
 import { createSessionStore } from './session.js'
 import { createAuthRouter } from './auth.js'
-import { createProxyRouter, syncBoundUserProfiles } from './proxy.js'
+import { createConfiguredUpstreamFetcher, createProxyRouter, syncBoundUserProfiles } from './proxy.js'
 import { createPlaybackDiagnostics } from './playbackDiagnostics.js'
 import { createDownloadManager } from './downloadManager.js'
 import { createRateLimiter } from './rateLimit.js'
 import { MediaReferenceStore } from './mediaReference.js'
 import { createMediaProxyRouter } from './mediaProxy.js'
+import { createMusicOrchestrator } from './music/musicOrchestrator.js'
+import { createMusicSourceControlRouter } from './music/sourceControl.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const config = loadConfig()
@@ -32,6 +34,11 @@ const playbackDiagnostics = createPlaybackDiagnostics()
 const mediaReferences = new MediaReferenceStore({
   secret: config.mediaProxy.secret || undefined,
   ttlMs: config.mediaProxy.ttlMs,
+})
+const musicOrchestrator = createMusicOrchestrator({
+  config,
+  diagnostics: playbackDiagnostics,
+  fetchUpstream: createConfiguredUpstreamFetcher(config),
 })
 const downloads = createDownloadManager({
   users,
@@ -57,6 +64,7 @@ const proxy = createProxyRouter({
   auth,
   config,
   diagnostics: playbackDiagnostics,
+  musicOrchestrator,
   mediaReferences: config.mediaProxy.enabled ? mediaReferences : null,
 })
 const proxyV2 = createProxyRouter({
@@ -64,6 +72,7 @@ const proxyV2 = createProxyRouter({
   auth,
   config,
   diagnostics: playbackDiagnostics,
+  musicOrchestrator,
   mediaReferences: config.mediaProxy.enabled ? mediaReferences : null,
   apiVersion: 'v2',
 })
@@ -88,6 +97,10 @@ app.use(
 )
 
 // 中间层自有账户接口
+app.use('/dreammusic/api/v1/auth/music-sources', createMusicSourceControlRouter({
+  orchestrator: musicOrchestrator,
+  auth,
+}))
 app.use('/dreammusic/api/v1/auth', auth.router)
 // 下载管理（任务/进度/文件获取）
 app.use('/dreammusic/api/v1/auth/downloads', downloads.router)

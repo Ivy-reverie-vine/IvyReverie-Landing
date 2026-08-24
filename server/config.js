@@ -86,6 +86,14 @@ export function loadConfig(env = process.env) {
         minRequestIntervalMs: Number(env.AUDIUS_MIN_REQUEST_INTERVAL_MS || 100),
       },
     },
+    /** 第三方直链兼容层默认关闭；启用前必须有 AVPlayer 失败诊断样本 */
+    mediaProxy: {
+      enabled: env.MEDIA_PROXY_ENABLED === 'true',
+      secret: env.MEDIA_PROXY_SECRET || '',
+      ttlMs: Number(env.MEDIA_PROXY_TTL_MS || 30000),
+      timeoutMs: Number(env.MEDIA_PROXY_TIMEOUT_MS || 15000),
+      publicBaseUrl: env.PUBLIC_BASE_URL || '',
+    },
     /** 发消息 webhook 根地址（Bark 式 GET /title/content） */
     messageWebhook: env.MESSAGE_WEBHOOK || 'https://api.chuckfang.com/ivyreverie',
   }

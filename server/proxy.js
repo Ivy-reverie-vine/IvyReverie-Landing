@@ -24,6 +24,7 @@ export function createProxyRouter({
   config,
   diagnostics = createPlaybackDiagnostics(),
   musicOrchestrator = null,
+  mediaReferences = null,
 }) {
   const router = Router()
 
@@ -79,6 +80,19 @@ export function createProxyRouter({
 
   function elapsed(startedAt) {
     return Math.max(0, Date.now() - startedAt)
+  }
+
+  function withMediaProxyUrl(result, req, user) {
+    if (mediaReferences === null || config.mediaProxy?.enabled !== true) return result
+    const first = Array.isArray(result.body?.data) ? result.body.data[0] : null
+    if (typeof first?.url !== 'string' || first.url === '') return result
+    const token = mediaReferences.issue({ userId: user.id, upstreamUrl: first.url })
+    const configuredOrigin = String(config.mediaProxy.publicBaseUrl || '').replace(/\/$/, '')
+    const origin = configuredOrigin || `${req.protocol}://${req.get('host')}`
+    const data = result.body.data.map((item, index) => index === 0
+      ? { ...item, url: `${origin}/dreammusic/media/stream/${token}` }
+      : item)
+    return { ...result, body: { ...result.body, data } }
   }
 
   async function fetchUpstream(url, init, requestedTimeoutMs = config.upstreamTimeoutMs) {
@@ -146,7 +160,10 @@ export function createProxyRouter({
           users.markNeteaseInvalid(user.id)
           return res.json({ code: 301, message: '网易云绑定已失效，请重新扫码' })
         }
-        return res.status(result.status).json(result.body)
+        const response = relPath === 'song/url/v1'
+          ? withMediaProxyUrl(result, req, user)
+          : result
+        return res.status(response.status).json(response.body)
       } catch {
         return fail(res, 502, '上游 API 不可达，请检查 api-enhanced 是否在运行')
       }

@@ -10,6 +10,8 @@ import { createProxyRouter, syncBoundUserProfiles } from './proxy.js'
 import { createPlaybackDiagnostics } from './playbackDiagnostics.js'
 import { createDownloadManager } from './downloadManager.js'
 import { createRateLimiter } from './rateLimit.js'
+import { MediaReferenceStore } from './mediaReference.js'
+import { createMediaProxyRouter } from './mediaProxy.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const config = loadConfig()
@@ -27,6 +29,10 @@ for (const name of String(process.env.ADMIN_USERNAMES || '')
 const sessions = createSessionStore(config.sessionTtlMs)
 const auth = createAuthRouter({ users, sessions, config })
 const playbackDiagnostics = createPlaybackDiagnostics()
+const mediaReferences = new MediaReferenceStore({
+  secret: config.mediaProxy.secret || undefined,
+  ttlMs: config.mediaProxy.ttlMs,
+})
 const downloads = createDownloadManager({
   users,
   config,
@@ -46,7 +52,13 @@ const downloads = createDownloadManager({
     }
   },
 })
-const proxy = createProxyRouter({ users, auth, config, diagnostics: playbackDiagnostics })
+const proxy = createProxyRouter({
+  users,
+  auth,
+  config,
+  diagnostics: playbackDiagnostics,
+  mediaReferences: config.mediaProxy.enabled ? mediaReferences : null,
+})
 
 const app = express()
 app.use(express.json({ limit: '1mb' }))
@@ -66,6 +78,13 @@ app.use('/dreammusic/api/v1/auth', auth.router)
 app.use('/dreammusic/api/v1/auth/downloads', downloads.router)
 // 鉴权 + 白名单 + 转发
 app.use('/dreammusic/api/v1', proxy)
+if (config.mediaProxy.enabled) {
+  app.use('/dreammusic/media', createMediaProxyRouter({
+    store: mediaReferences,
+    config: config.mediaProxy,
+    diagnostics: playbackDiagnostics,
+  }))
+}
 
 // 生产：静态托管 dist（SPA fallback）
 const distDir = join(__dirname, '..', 'dist')

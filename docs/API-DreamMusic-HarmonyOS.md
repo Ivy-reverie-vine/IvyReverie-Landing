@@ -52,6 +52,8 @@ http://localhost:3001/dreammusic/api/v1
 
 鸿蒙 App 应将服务器根地址作为可配置项，代码中再拼接 `/dreammusic/api/v1`。不要把 `/auth` 或上游接口路径写死在服务器配置中。
 
+来源中立音乐能力使用独立的 v2 前缀：`/dreammusic/api/v2`。v2 的 `search` 返回版本化 `mediaRef`；`song/detail`、`song/url/v1` 和 `lyric/new` 必须回传同一 `mediaRef`。v1 保留给现有网易云兼容接口和账户能力；客户端不得自行拼接来源 ID 或上游 URL。
+
 ## 3. 推荐认证流程
 
 ### 3.1 注册
@@ -281,6 +283,17 @@ NightDream 会根据 API Key 找到当前 DreamMusic 用户，并自动注入该
 | `song/url/match` | 无版权时的换源 |
 | `lyric/new` | 获取歌词，优先 yrc、退化 lrc |
 
+### v2 来源中立播放
+
+| 路径 | 用途 |
+|---|---|
+| `v2/search` | 搜索并返回 `mediaRef`、标题、艺人、专辑和时长 |
+| `v2/song/detail?mediaRef=...` | 按单一来源引用获取详情/封面 |
+| `v2/song/url/v1?mediaRef=...` | 按单一来源引用获取短时播放链接 |
+| `v2/lyric/new?mediaRef=...` | 按单一来源引用获取歌词 |
+
+除搜索外，v2 请求缺少 `mediaRef` 返回 400；来源未启用或不具备能力时返回 502。非网易来源当前只用于瞬态在线播放，不进入现有网易云数字 ID 下载链路。
+
 ### 个人音乐库
 
 | 路径 | 用途 |
@@ -314,6 +327,17 @@ search
   → song/url/v1
   → lyric/new
   → url 为空时 song/url/match
+  → 播放
+```
+
+多来源 v2 数据流：
+
+```text
+v2/search
+  → 保存 mediaRef
+  → v2/song/url/v1?mediaRef=...
+  → v2/song/detail?mediaRef=...（封面兜底）
+  → v2/lyric/new?mediaRef=...
   → 播放
 ```
 

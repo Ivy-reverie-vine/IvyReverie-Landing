@@ -297,6 +297,19 @@ POST /dreammusic/api/v1/<upstream_path>?<query>   + JSON body
 | `login/qr/create` | QR 绑定：生成二维码 |
 | `login/qr/check` | QR 绑定：轮询结果 |
 
+### 7.2 来源中立 v2 音乐接口
+
+v2 不改变 v1 的网易云兼容响应。它只对登录账户开放来源中立的音乐能力：
+
+| 接口路径 | 说明 |
+|---|---|
+| `/dreammusic/api/v2/search` | 搜索，返回标准化 `data[]` 和版本化 `mediaRef` |
+| `/dreammusic/api/v2/song/detail?mediaRef=...` | 按 `mediaRef` 获取单一来源详情/封面 |
+| `/dreammusic/api/v2/song/url/v1?mediaRef=...` | 按 `mediaRef` 获取短时播放链接 |
+| `/dreammusic/api/v2/lyric/new?mediaRef=...` | 按 `mediaRef` 获取歌词 |
+
+除搜索外，v2 请求必须携带 `mediaRef`；v2 音乐搜索/播放不要求网易云绑定，但仍要求 DreamMusic 登录。非网易来源保持瞬态在线播放，不自动进入 `/auth/downloads` 或本地入库。
+
 - 白名单是**精确路径**，不是前缀。`search/hot` 默认不放行。
 - 私人FM 的 `timestamp` 参数可穿透上游 2 分钟缓存；红心列表需要用户对象里的 `neteaseUid`。
 - 扩展方式：启动中间层时设置环境变量
@@ -304,7 +317,7 @@ POST /dreammusic/api/v1/<upstream_path>?<query>   + JSON body
   API_ALLOWED_PATHS="search/hot,recommend/songs,like,likelist,personal_fm"
   ```
 
-### 7.2 常用请求示例
+### 7.3 常用请求示例
 
 ```bash
 BASE="http://localhost:3001/dreammusic/api/v1"
@@ -327,7 +340,7 @@ curl -sS "$BASE/personalized?limit=30&randomCNIP=true" -H "X-API-Key: $KEY"
 curl -sS "$BASE/playlist/track/all?id=3778678&limit=1000&offset=0&randomCNIP=true" -H "X-API-Key: $KEY"
 ```
 
-### 7.3 上游返回字段
+### 7.4 上游返回字段
 
 以 `/search` 为例：
 ```json

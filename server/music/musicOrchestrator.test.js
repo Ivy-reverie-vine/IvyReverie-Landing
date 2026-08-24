@@ -3,6 +3,7 @@ import {
   DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL,
   DIAGNOSTIC_CATEGORY_SOURCE_TIMEOUT,
 } from '../playbackDiagnostics.js'
+import { createMediaRef } from '../mediaContract.js'
 import { MusicOrchestrator } from './musicOrchestrator.js'
 import { MusicSourceRegistry } from './sourceRegistry.js'
 
@@ -165,5 +166,33 @@ describe('MusicOrchestrator', () => {
     const result = await orchestrator.dispatch({ path: 'search', query: { keywords: 'test' } })
 
     expect(result).toEqual({ status: 429, body: { code: 429, message: 'rate limited' } })
+  })
+
+  it('routes a versioned mediaRef to exactly its declared source', async () => {
+    const calls = []
+    const orchestrator = new MusicOrchestrator({
+      registry: createRegistry([{
+        adapter: {
+          id: 'audius',
+          capabilities: () => ['playback'],
+          request: async ({ query }) => {
+            calls.push(query)
+            return { status: 200, body: { code: 200, data: [{ url: 'https://cdn.test/track.mp3' }] } }
+          },
+        },
+        config: { priority: 10 },
+      }]),
+      diagnostics: diagnostics(),
+    })
+    const mediaRef = createMediaRef({ source: 'audius', sourceId: 'track-1' })
+
+    const result = await orchestrator.dispatchMediaRef({
+      path: 'song/url/v1',
+      mediaRef,
+      query: { mediaRef, level: 'exhigh' },
+    })
+
+    expect(result.body.data[0].url).toContain('track.mp3')
+    expect(calls).toEqual([{ level: 'exhigh', id: 'track-1' }])
   })
 })

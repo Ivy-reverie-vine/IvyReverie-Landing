@@ -15,6 +15,10 @@ export class ApiEnhancedAdapter {
   }
 
   async request({ path, query = {}, method = 'GET', body, user, timeoutMs }) {
+    if (path === 'song/detail' && query.id !== undefined && query.ids === undefined) {
+      query = { ...query, ids: query.id }
+      delete query.id
+    }
     const upstream = new URL(`${this.upstream}/${path}`)
     for (const [key, value] of Object.entries(query)) {
       if (value !== undefined) upstream.searchParams.set(key, String(value))

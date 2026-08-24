@@ -59,6 +59,14 @@ const proxy = createProxyRouter({
   diagnostics: playbackDiagnostics,
   mediaReferences: config.mediaProxy.enabled ? mediaReferences : null,
 })
+const proxyV2 = createProxyRouter({
+  users,
+  auth,
+  config,
+  diagnostics: playbackDiagnostics,
+  mediaReferences: config.mediaProxy.enabled ? mediaReferences : null,
+  apiVersion: 'v2',
+})
 
 const app = express()
 app.use(express.json({ limit: '1mb' }))
@@ -71,6 +79,13 @@ app.use(
     keyFn: (req) => `${req.ip || req.socket?.remoteAddress || 'unknown'}`,
   }),
 )
+app.use(
+  '/dreammusic/api/v2',
+  createRateLimiter({
+    max: config.rateLimitPerMin,
+    keyFn: (req) => `${req.ip || req.socket?.remoteAddress || 'unknown'}`,
+  }),
+)
 
 // 中间层自有账户接口
 app.use('/dreammusic/api/v1/auth', auth.router)
@@ -78,6 +93,7 @@ app.use('/dreammusic/api/v1/auth', auth.router)
 app.use('/dreammusic/api/v1/auth/downloads', downloads.router)
 // 鉴权 + 白名单 + 转发
 app.use('/dreammusic/api/v1', proxy)
+app.use('/dreammusic/api/v2', proxyV2)
 if (config.mediaProxy.enabled) {
   app.use('/dreammusic/media', createMediaProxyRouter({
     store: mediaReferences,

@@ -9,6 +9,7 @@ import {
 import { ApiEnhancedAdapter } from './sources/apiEnhancedAdapter.js'
 import { AudiusAdapter } from './sources/audiusAdapter.js'
 import { createMetingAdapters } from './sources/metingAdapter.js'
+import { parseMediaRef } from '../mediaContract.js'
 import { MusicSourceRegistry } from './sourceRegistry.js'
 
 export const MUSIC_ROUTE_CAPABILITIES = Object.freeze({
@@ -55,7 +56,26 @@ export class MusicOrchestrator {
 
   async dispatch({ path, query, method, body, user }) {
     const capability = MUSIC_ROUTE_CAPABILITIES[path]
-    const sources = this.registry.list({ capability })
+    return this.dispatchFromSources(this.registry.list({ capability }), {
+      path, query, method, body, user,
+    })
+  }
+
+  async dispatchMediaRef({ path, mediaRef, query = {}, method, body, user }) {
+    const parsed = parseMediaRef(mediaRef)
+    if (!parsed) throw new MusicSourceError('INVALID_MEDIA_REF', 'invalid media reference')
+    const source = this.registry.get(parsed.source)
+    const capability = MUSIC_ROUTE_CAPABILITIES[path]
+    if (!source || !source.enabled || !source.capabilities.has(capability)) {
+      throw new MusicSourceError('SOURCE_UNAVAILABLE', 'media source is unavailable')
+    }
+    const sourceQuery = { ...query, id: parsed.sourceId }
+    delete sourceQuery.mediaRef
+    return this.dispatchFromSources([source], { path, query: sourceQuery, method, body, user })
+  }
+
+  async dispatchFromSources(sources, { path, query, method, body, user }) {
+    const capability = MUSIC_ROUTE_CAPABILITIES[path]
     if (sources.length === 0) {
       throw new MusicSourceError('NO_SOURCE', `no enabled music source supports ${capability}`)
     }

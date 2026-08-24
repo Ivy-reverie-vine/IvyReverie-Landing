@@ -9,6 +9,7 @@ import {
   DIAGNOSTIC_STAGE_URL_RESPONSE,
 } from './playbackDiagnostics.js'
 import { createMusicOrchestrator } from './music/musicOrchestrator.js'
+import { toMediaV2Body } from './mediaContract.js'
 
 /**
  * /dreammusic/api/v1/* —— 鉴权 + 白名单 + 转发 api-enhanced。
@@ -25,6 +26,7 @@ export function createProxyRouter({
   diagnostics = createPlaybackDiagnostics(),
   musicOrchestrator = null,
   mediaReferences = null,
+  apiVersion = 'v1',
 }) {
   const router = Router()
 
@@ -139,32 +141,61 @@ export function createProxyRouter({
 
     // QR 绑定接口不需要网易 cookie；其余必须已绑定
     const isQr = relPath.startsWith('login/qr/')
-    if (!isQr && !user.netease_cookie) {
+    const isVersionedMusicRoute = apiVersion === 'v2' && [
+      'search', 'song/detail', 'song/url/v1', 'lyric/new',
+    ].includes(relPath)
+    if (!isQr && !isVersionedMusicRoute && !user.netease_cookie) {
       return fail(res, 403, '请先绑定网易云账号')
     }
-    if (!isQr && user.netease_invalid === 1) {
+    if (!isQr && !isVersionedMusicRoute && user.netease_invalid === 1) {
       return res.json({ code: 301, message: '网易云绑定已失效，请重新扫码' })
     }
 
     if (orchestrator.supportsPath(relPath)) {
       try {
-        const result = await orchestrator.dispatch({
-          path: relPath,
-          query: req.query,
-          method: req.method,
-          body: req.body,
-          user,
-        })
+        const mediaRef = typeof req.query.mediaRef === 'string' ? req.query.mediaRef : ''
+        const result = apiVersion === 'v2' && isVersionedMusicRoute
+          ? mediaRef
+            ? await orchestrator.dispatchMediaRef({
+                path: relPath,
+                mediaRef,
+                query: req.query,
+                method: req.method,
+                body: req.body,
+                user,
+              })
+            : relPath === 'search'
+              ? await orchestrator.dispatch({
+                  path: relPath,
+                  query: req.query,
+                  method: req.method,
+                  body: req.body,
+                  user,
+                })
+              : (() => { throw new Error('mediaRef is required') })()
+          : await orchestrator.dispatch({
+              path: relPath,
+              query: req.query,
+              method: req.method,
+              body: req.body,
+              user,
+            })
         // 上游 301 → 标记绑定失效（不全局登出，UI 提示重新扫码）
         if (result.body && result.body.code === 301) {
           users.markNeteaseInvalid(user.id)
           return res.json({ code: 301, message: '网易云绑定已失效，请重新扫码' })
         }
-        const response = relPath === 'song/url/v1'
-          ? withMediaProxyUrl(result, req, user)
+        const normalized = apiVersion === 'v2' && isVersionedMusicRoute
+          ? { ...result, body: toMediaV2Body(relPath, result.body, mediaRef) }
           : result
+        const response = relPath === 'song/url/v1'
+          ? withMediaProxyUrl(normalized, req, user)
+          : normalized
         return res.status(response.status).json(response.body)
-      } catch {
+      } catch (error) {
+        if (error?.message === 'mediaRef is required' || error?.code === 'INVALID_MEDIA_REF') {
+          return fail(res, 400, error?.code === 'INVALID_MEDIA_REF' ? 'mediaRef 无效' : '缺少 mediaRef')
+        }
         return fail(res, 502, '上游 API 不可达，请检查 api-enhanced 是否在运行')
       }
     }

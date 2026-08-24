@@ -63,6 +63,17 @@ export function loadConfig(env = process.env) {
         timeoutMs: Number(env.API_ENHANCED_SOURCE_TIMEOUT_MS || env.UPSTREAM_TIMEOUT_MS || 15000),
         capabilities: ['search', 'detail', 'lyrics', 'playback'],
       },
+      /** Meting POC 默认关闭；只接受服务端 sidecar 地址和服务端 token */
+      meting: {
+        enabled: env.METING_SOURCE_ENABLED === 'true',
+        baseUrl: env.METING_API_URL || '',
+        token: env.METING_TOKEN || '',
+        platforms: envList(env.METING_PLATFORMS || 'tencent,kugou'),
+        priority: Number(env.METING_SOURCE_PRIORITY || 40),
+        timeoutMs: Number(env.METING_SOURCE_TIMEOUT_MS || 8000),
+        cacheTtlMs: Number(env.METING_CACHE_TTL_MS || 30000),
+        minRequestIntervalMs: Number(env.METING_MIN_REQUEST_INTERVAL_MS || 200),
+      },
     },
     /** 发消息 webhook 根地址（Bark 式 GET /title/content） */
     messageWebhook: env.MESSAGE_WEBHOOK || 'https://api.chuckfang.com/ivyreverie',

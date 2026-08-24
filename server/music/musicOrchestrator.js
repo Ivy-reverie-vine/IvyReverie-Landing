@@ -7,6 +7,7 @@ import {
   DIAGNOSTIC_STAGE_URL_RESPONSE,
 } from '../playbackDiagnostics.js'
 import { ApiEnhancedAdapter } from './sources/apiEnhancedAdapter.js'
+import { createMetingAdapters } from './sources/metingAdapter.js'
 import { MusicSourceRegistry } from './sourceRegistry.js'
 
 export const MUSIC_ROUTE_CAPABILITIES = Object.freeze({
@@ -27,7 +28,7 @@ function sourceResponseOk(result) {
 }
 
 function errorCategory(error) {
-  if (error?.code === 'UPSTREAM_TIMEOUT' || error?.name === 'AbortError') {
+  if (error?.code === 'UPSTREAM_TIMEOUT' || error?.code === 'SOURCE_TIMEOUT' || error?.name === 'AbortError') {
     return DIAGNOSTIC_CATEGORY_SOURCE_TIMEOUT
   }
   return DIAGNOSTIC_CATEGORY_SOURCE_FAILURE
@@ -150,6 +151,17 @@ export function createMusicOrchestrator({ config, diagnostics, fetchUpstream }) 
       upstream: config.upstream,
       fetchUpstream,
     }), sourceConfig)
+  }
+  const metingConfig = config.musicSources?.meting
+  if (metingConfig?.enabled === true && metingConfig.baseUrl) {
+    for (const adapter of createMetingAdapters({ config: metingConfig })) {
+      registry.register(adapter, {
+        enabled: true,
+        priority: metingConfig.priority,
+        timeoutMs: metingConfig.timeoutMs,
+        capabilities: adapter.capabilities(),
+      })
+    }
   }
   return new MusicOrchestrator({ registry, diagnostics })
 }

@@ -107,4 +107,63 @@ describe('MusicOrchestrator', () => {
       expect.objectContaining({ errorCategory: DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL }),
     ]))
   })
+
+  it('falls back after a rate-limit error', async () => {
+    const primary = {
+      id: 'api-enhanced',
+      capabilities: () => ['search'],
+      request: async () => {
+        const error = new Error('rate limited')
+        error.code = 'SOURCE_RATE_LIMIT'
+        throw error
+      },
+    }
+    const fallback = {
+      id: 'fallback',
+      capabilities: () => ['search'],
+      request: async () => ({ status: 200, body: { code: 200, data: [{ sourceId: 'fallback-1' }] } }),
+    }
+    const orchestrator = new MusicOrchestrator({
+      registry: createRegistry([
+        { adapter: primary, config: { priority: 100 } },
+        { adapter: fallback, config: { priority: 10 } },
+      ]),
+      diagnostics: diagnostics(),
+    })
+
+    const result = await orchestrator.dispatch({ path: 'search', query: { keywords: 'test' } })
+
+    expect(result.body.data[0].sourceId).toBe('fallback-1')
+  })
+
+  it('returns a unified error when no source declares the requested capability', async () => {
+    const orchestrator = new MusicOrchestrator({
+      registry: createRegistry([{
+        adapter: { id: 'metadata-only', capabilities: () => ['detail'], request: async () => ({}) },
+        config: { priority: 100 },
+      }]),
+      diagnostics: diagnostics(),
+    })
+
+    await expect(orchestrator.dispatch({ path: 'lyric/new', query: { id: '1' } }))
+      .rejects.toMatchObject({ code: 'NO_SOURCE' })
+  })
+
+  it('preserves an upstream error response body for compatibility', async () => {
+    const orchestrator = new MusicOrchestrator({
+      registry: createRegistry([{
+        adapter: {
+          id: 'api-enhanced',
+          capabilities: () => ['search'],
+          request: async () => ({ status: 429, body: { code: 429, message: 'rate limited' } }),
+        },
+        config: { priority: 100 },
+      }]),
+      diagnostics: diagnostics(),
+    })
+
+    const result = await orchestrator.dispatch({ path: 'search', query: { keywords: 'test' } })
+
+    expect(result).toEqual({ status: 429, body: { code: 429, message: 'rate limited' } })
+  })
 })

@@ -7,6 +7,7 @@ import {
   DIAGNOSTIC_STAGE_URL_RESPONSE,
 } from '../playbackDiagnostics.js'
 import { ApiEnhancedAdapter } from './sources/apiEnhancedAdapter.js'
+import { AudiusAdapter } from './sources/audiusAdapter.js'
 import { createMetingAdapters } from './sources/metingAdapter.js'
 import { MusicSourceRegistry } from './sourceRegistry.js'
 
@@ -162,6 +163,15 @@ export function createMusicOrchestrator({ config, diagnostics, fetchUpstream }) 
         capabilities: adapter.capabilities(),
       })
     }
+  }
+  const audiusConfig = config.musicSources?.audius
+  if (audiusConfig?.enabled === true && audiusConfig.baseUrl) {
+    registry.register(new AudiusAdapter(audiusConfig), {
+      enabled: true,
+      priority: audiusConfig.priority,
+      timeoutMs: audiusConfig.timeoutMs,
+      capabilities: ['search', 'detail', 'playback'],
+    })
   }
   return new MusicOrchestrator({ registry, diagnostics })
 }

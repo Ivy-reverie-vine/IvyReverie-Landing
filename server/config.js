@@ -74,6 +74,17 @@ export function loadConfig(env = process.env) {
         cacheTtlMs: Number(env.METING_CACHE_TTL_MS || 30000),
         minRequestIntervalMs: Number(env.METING_MIN_REQUEST_INTERVAL_MS || 200),
       },
+      /** Audius POC 默认关闭；Bearer Token 仅留在 NightDream 服务端 */
+      audius: {
+        enabled: env.AUDIUS_SOURCE_ENABLED === 'true',
+        baseUrl: env.AUDIUS_API_URL || 'https://api.audius.co/v1',
+        apiKey: env.AUDIUS_API_KEY || '',
+        bearerToken: env.AUDIUS_BEARER_TOKEN || '',
+        priority: Number(env.AUDIUS_SOURCE_PRIORITY || 30),
+        timeoutMs: Number(env.AUDIUS_SOURCE_TIMEOUT_MS || 8000),
+        cacheTtlMs: Number(env.AUDIUS_CACHE_TTL_MS || 30000),
+        minRequestIntervalMs: Number(env.AUDIUS_MIN_REQUEST_INTERVAL_MS || 100),
+      },
     },
     /** 发消息 webhook 根地址（Bark 式 GET /title/content） */
     messageWebhook: env.MESSAGE_WEBHOOK || 'https://api.chuckfang.com/ivyreverie',

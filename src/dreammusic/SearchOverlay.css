@@ -40,6 +40,7 @@
 }
 
 .dm-search-input {
+  min-width: 0;
   flex: 1;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -63,6 +64,29 @@
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
   margin: 0;
+}
+
+.dm-search-source {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+.dm-search-source select {
+  font: inherit;
+  color: inherit;
+  color-scheme: dark;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  min-height: 36px;
+  padding: 4px 10px;
+}
+.dm-search-source select:focus-visible {
+  outline: 2px solid rgb(var(--dm-theme-rgb));
+  outline-offset: 2px;
 }
 
 .dm-search-list {

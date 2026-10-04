@@ -9,6 +9,28 @@ function response(body, status = 200) {
 }
 
 describe('MetingAdapter', () => {
+  it('resolves cover and lyrics from the selected platform without leaking signed sidecar URLs', async () => {
+    const calls = []
+    const adapter = new MetingAdapter({ platform: 'tencent', baseUrl: 'http://localhost/api', token: 'private-token', minRequestIntervalMs: 0,
+      fetchImpl: async (url) => {
+        calls.push(new URL(url))
+        const type = url.searchParams.get('type')
+        if (type === 'song') return response([{ id: 'song-1', name: 'Song', pic_id: 'album-1' }])
+        if (type === 'pic') return response({ url: 'https://images.test/album.jpg' })
+        if (type === 'lrc') return response({ lyric: '[00:01.00]line', tlyric: '' })
+        throw new Error('Unexpected operation')
+      },
+    })
+    const detail = await adapter.request({ path: 'song/detail', query: { id: 'song-1' } })
+    expect(detail.body.data[0].album.pictureUrl).toBe('https://images.test/album.jpg')
+    const lyrics = await adapter.request({ path: 'lyric/new', query: { id: 'song-1' } })
+    expect(lyrics.body.lrc.lyric).toBe('[00:01.00]line')
+    expect(adapter.capabilities()).toContain('lyrics')
+    expect(calls.find(url => url.searchParams.get('type') === 'pic').searchParams.get('id')).toBe('album-1')
+    expect(calls.filter(url => ['pic', 'lrc'].includes(url.searchParams.get('type'))).every(url => url.searchParams.has('auth'))).toBe(true)
+    expect(JSON.stringify(detail)).not.toContain('auth=')
+  })
+
   it('normalizes Tencent and KuGou results without exposing raw platform fields', async () => {
     const requests = []
     const fetchImpl = async (url) => {

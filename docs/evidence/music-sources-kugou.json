@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-04T02:42:51.291Z",
+  "mode": "real providers / disposable unbound account",
+  "sources": [
+    {
+      "source": "meting-kugou",
+      "samples": [
+        {
+          "sourceId": "90a7ad0f993f07648560f81b162d144f",
+          "title": "Ode An Die Freude",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/jpeg",
+            "bytes": 30271,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 635,
+            "timed": true
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "audio/mpeg",
+            "bytes": 65536,
+            "signature": true
+          }
+        },
+        {
+          "sourceId": "f33cc396ddd4d0788997aae93c391984",
+          "title": "欢乐颂",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/png",
+            "bytes": 65536,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 398,
+            "timed": true
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "audio/mpeg",
+            "bytes": 65536,
+            "signature": true
+          }
+        }
+      ],
+      "keyword": "欢乐颂",
+      "search": {
+        "count": 2,
+        "status": "passed"
+      }
+    }
+  ],
+  "passed": true
+}

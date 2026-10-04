@@ -95,6 +95,12 @@ describe('Routing — DM-01 + D4 auth gate', () => {
     expect(queryByTestId('dm-login')).not.toBeInTheDocument()
     expect(queryByTestId('dm-bind')).not.toBeInTheDocument()
   })
+  it('allows an unbound NightDream user to enter for other music sources', async () => {
+    vi.mocked(me).mockResolvedValue({ id: 1, username: 'tester', bound: false, bindInvalid: false })
+    const { findByRole, findByTestId } = render(<MemoryRouter initialEntries={['/dreammusic']}><AppRoutes /></MemoryRouter>)
+    fireEvent.click(await findByRole('button', { name: '先使用其他音源' }))
+    expect(await findByTestId('dm-topbar')).toBeInTheDocument()
+  })
 
   it('opens the send message modal from the top actions', async () => {
     vi.mocked(me).mockResolvedValue({

@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-04T02:36:10.232Z",
+  "mode": "real providers / disposable unbound account",
+  "sources": [
+    {
+      "source": "api-enhanced",
+      "samples": [
+        {
+          "sourceId": "109530",
+          "title": "童年",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/jpg",
+            "bytes": 65536,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 1426,
+            "timed": true
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "audio/mpeg",
+            "bytes": 65536,
+            "signature": true
+          }
+        },
+        {
+          "sourceId": "2080574142",
+          "title": "童年 (童声版)",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/jpg",
+            "bytes": 36063,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 814,
+            "timed": true
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "audio/mpeg",
+            "bytes": 65536,
+            "signature": true
+          }
+        }
+      ],
+      "search": {
+        "count": 2,
+        "status": "passed"
+      }
+    },
+    {
+      "source": "audius",
+      "samples": [
+        {
+          "sourceId": "QJpGKw",
+          "title": "🖤YAN MI - HELLO",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 200,
+            "mime": "image/jpeg",
+            "bytes": 7284,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "unsupported",
+            "error": "HTTP 501: 当前音源未提供歌词"
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "audio/mpeg",
+            "bytes": 65536,
+            "signature": true
+          }
+        },
+        {
+          "sourceId": "0X2o9",
+          "title": "Hello McFlyy - Episode 007",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "failed",
+            "error": "TypeError"
+          },
+          "lyrics": {
+            "status": "unsupported",
+            "error": "HTTP 501: 当前音源未提供歌词"
+          },
+          "audio": {
+            "status": "failed",
+            "error": "TypeError"
+          }
+        }
+      ],
+      "search": {
+        "count": 2,
+        "status": "passed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NightDream 音乐获取测试</title>
+<style>
+  body{font:16px/1.6 system-ui,sans-serif;max-width:960px;margin:32px auto;padding:0 20px;color:#172b45;background:#f4f8fc}
+  section{background:white;border:1px solid #d9e3ef;border-radius:12px;padding:20px;margin:16px 0}
+  h1{font-size:26px}h2{font-size:20px;margin:0 0 12px}label{display:inline-block;margin:6px 12px 6px 0}
+  input,button{font:inherit;padding:8px;border:1px solid #a4b6ca;border-radius:6px}button{cursor:pointer;background:#edf5ff}
+  button:disabled{cursor:wait;opacity:.6}input{max-width:100%;box-sizing:border-box}li{margin:12px 0;padding:10px;border-bottom:1px solid #d9e3ef}
+  audio{width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto}#status{min-height:26px}
+</style>
+<h1>NightDream 音乐获取测试</h1>
+<p>本次音源：<strong id="source"></strong>。测试搜索 → mediaRef → 播放链接 → 浏览器试听。</p>
+<p><a href="/dreammusic" target="_blank" rel="noopener">打开原播放器／网易云扫码绑定</a> · 更换音源：Ctrl+C 停止脚本后重新启动。</p>
+<section>
+  <h2>1. 登录 NightDream</h2>
+  <form id="login">
+    <label>用户名 <input id="username" autocomplete="username" required></label>
+    <label>密码 <input id="password" type="password" autocomplete="current-password" required></label>
+    <button>登录</button>
+  </form>
+  <details><summary>没有账户？注册</summary>
+    <form id="register">
+      <p>使用上方用户名和密码。邀请码默认 dreammusic，以服务端实际配置为准。</p>
+      <label>邀请码 <input id="invite" value="dreammusic" required></label><button>注册并登录</button>
+    </form>
+  </details>
+  <p id="account">正在检查会话…</p>
+</section>
+<section>
+  <h2>2. 搜索音乐</h2>
+  <form id="search"><label>关键词 <input id="keyword" placeholder="歌曲或歌手" required></label><button>搜索</button></form>
+  <p id="status" role="status" aria-live="polite"></p><ul id="results"></ul>
+</section>
+<section>
+  <h2>3. 播放结果</h2>
+  <p id="playing">选择一首歌，获取播放链接并试听。</p>
+  <p id="identity"></p>
+  <img id="cover" alt="所选目录封面" width="120" hidden>
+  <pre id="lyrics"></pre>
+  <audio id="audio" controls preload="none"></audio>
+  <p id="playback" role="status">尚未开始播放。浏览器试听结果不能替代鸿蒙真机验收。</p>
+  <details><summary>最近一次音乐接口响应</summary><pre id="response"></pre></details>
+</section>
+<script type="module">
+  const $ = (id) => document.getElementById(id)
+  const source = new URLSearchParams(location.search).get('source') || '未指定'
+  $('source').textContent = source
+  let playbackVersion = 0
+  async function request(path, body, show = false) {
+    const response = await fetch(path, {
+      credentials: 'same-origin',
+      ...(body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : {}),
+    })
+    const data = await response.json()
+    if (show) $('response').textContent = JSON.stringify({ httpStatus: response.status, ...data }, null, 2)
+    if (!response.ok || (data.code !== undefined && data.code !== 200)) throw new Error(data.message || `请求失败：${data.code || response.status}`)
+    return data
+  }
+  async function account() {
+    try {
+      const data = await request('/dreammusic/api/v1/auth/me')
+      $('account').textContent = `已登录：${data.data?.username || data.username || 'NightDream 用户'}`
+    } catch { $('account').textContent = '请先登录；网易云会员／个人歌曲可能需要扫码绑定。' }
+  }
+  async function login() {
+    await request('/dreammusic/api/v1/auth/login', { username: $('username').value, password: $('password').value })
+    $('password').value = ''
+    await account()
+  }
+  function onForm(id, action) {
+    $(id).addEventListener('submit', async (event) => {
+      event.preventDefault()
+      const button = event.currentTarget.querySelector('button')
+      button.disabled = true
+      try { await action() } catch (error) { $('status').textContent = error.message } finally { button.disabled = false }
+    })
+  }
+  onForm('login', login)
+  onForm('register', async () => {
+    await request('/dreammusic/api/v1/auth/register', { username: $('username').value, password: $('password').value, inviteCode: $('invite').value })
+    await login()
+  })
+  onForm('search', async () => {
+    $('status').textContent = '正在请求真实音源…'
+    $('results').replaceChildren()
+    const query = new URLSearchParams({ keywords: $('keyword').value.trim(), type: '1', limit: '20', offset: '0' })
+    const data = await request('/dreammusic/api/v2/search?' + query, null, true)
+    const songs = Array.isArray(data.data) ? data.data : []
+    $('status').textContent = songs.length ? `获取 ${songs.length} 首。每首均显示实际来源。` : '没有结果；请更换关键词。'
+    for (const song of songs) {
+      const li = document.createElement('li')
+      const text = document.createElement('span')
+      text.textContent = `${song.title} · ${(song.artists || []).join(' / ')} [${song.source} / ${song.sourceId}] `
+      const button = document.createElement('button')
+      button.textContent = '获取链接并试听'
+      button.disabled = !song.mediaRef
+      button.addEventListener('click', async () => {
+        const version = ++playbackVersion
+        button.disabled = true
+        $('audio').pause()
+        $('audio').removeAttribute('src')
+        $('audio').load()
+        $('playing').textContent = `正在解析：${song.title}`
+        $('playback').textContent = '等待播放链接…'
+        try {
+          const query = new URLSearchParams({ mediaRef: song.playbackRef || song.mediaRef, level: 'exhigh' })
+          const data = await request('/dreammusic/api/v2/song/url/v1?' + query, null, true)
+          if (version !== playbackVersion) return
+          const url = data.data?.[0]?.url
+          if (!url) throw new Error('返回空播放链接，歌曲不可播放或需要会员／授权。')
+          const parsed = new URL(url, location.origin)
+          if (!['http:', 'https:'].includes(parsed.protocol)) throw new Error('音源返回了不支持的播放链接协议。')
+          if (data.catalogRef && data.catalogRef !== (song.catalogRef || song.mediaRef)) throw new Error('播放响应与所选目录不一致。')
+          $('playing').textContent = `${song.title} · ${(song.artists || []).join(' / ')}；音频来源 ${data.playbackSource || song.source}。`
+          $('identity').textContent = `目录：${song.catalogRef || song.mediaRef}\n音频：${data.playbackRef || song.mediaRef}\n歌词：${data.lyricsRef || song.lyricsRef || song.mediaRef}`
+          $('cover').hidden = !song.album?.pictureUrl
+          if (song.album?.pictureUrl) $('cover').src = song.album.pictureUrl
+          $('lyrics').textContent = '正在加载歌词…'
+          const catalogQuery = new URLSearchParams({ mediaRef: song.catalogRef || song.mediaRef })
+          request('/dreammusic/api/v2/song/detail?' + catalogQuery).then(detail => {
+            if (version !== playbackVersion || song.album?.pictureUrl) return
+            const cover = detail.data?.[0]?.album?.pictureUrl
+            if (cover) { $('cover').src = cover; $('cover').hidden = false }
+          }).catch(() => {})
+          const lyricsQuery = new URLSearchParams({ mediaRef: data.lyricsRef || song.lyricsRef || song.mediaRef })
+          request('/dreammusic/api/v2/lyric/new?' + lyricsQuery).then(lyrics => {
+            if (version === playbackVersion) $('lyrics').textContent = `歌词来源：${lyrics.lyricsSource || song.source}\n${lyrics.lrc?.lyric || lyrics.yrc?.lyric || '暂无歌词'}`
+          }).catch(error => { if (version === playbackVersion) $('lyrics').textContent = `歌词未加载：${error.message}` })
+          $('audio').src = parsed.href
+          await $('audio').play()
+        } catch (error) {
+          if (version === playbackVersion) $('playback').textContent = `未能播放：${error.message}；可尝试点击音频控件的播放按钮。`
+        } finally { button.disabled = false }
+      })
+      li.append(text, button)
+      $('results').append(li)
+    }
+  })
+  $('audio').addEventListener('playing', () => { $('playback').textContent = '浏览器已进入 playing 状态，正在试听。' })
+  $('audio').addEventListener('error', () => {
+    if ($('audio').hasAttribute('src')) $('playback').textContent = `链接已获取，但音频加载失败（错误码 ${$('audio').error?.code || '未知'}）。`
+  })
+  await account()
+</script>
+</html>

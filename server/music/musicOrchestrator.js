@@ -70,10 +70,15 @@ export class MusicOrchestrator {
     return this.registry.resetCircuit(id)
   }
 
-  async dispatch({ path, query, method, body, user }) {
+  async dispatch({ path, query, method, body, user, sourceId = '' }) {
     const capability = MUSIC_ROUTE_CAPABILITIES[path]
-    return this.dispatchFromSources(this.registry.list({ capability }), {
-      path, query, method, body, user,
+    const candidates = this.registry.list({ capability })
+    const sources = sourceId ? candidates.filter(source => source.id === sourceId) : candidates
+    if (sourceId && sources.length === 0) throw new MusicSourceError('SOURCE_UNAVAILABLE', 'selected source is unavailable')
+    const sourceQuery = { ...query }
+    if (sourceId) delete sourceQuery.source
+    return this.dispatchFromSources(sources, {
+      path, query: sourceQuery, method, body, user,
     })
   }
 
@@ -82,12 +87,32 @@ export class MusicOrchestrator {
     if (!parsed) throw new MusicSourceError('INVALID_MEDIA_REF', 'invalid media reference')
     const source = this.registry.get(parsed.source)
     const capability = MUSIC_ROUTE_CAPABILITIES[path]
-    if (!source || !source.enabled || !source.capabilities.has(capability)) {
+    if (!source || !source.enabled) {
       throw new MusicSourceError('SOURCE_UNAVAILABLE', 'media source is unavailable')
     }
+    if (!source.capabilities.has(capability)) {
+      throw new MusicSourceError('CAPABILITY_UNSUPPORTED', 'media source does not support this capability')
+    }
+    // A concrete resource cannot be overridden by legacy ids or source hints.
     const sourceQuery = { ...query, id: parsed.sourceId }
     delete sourceQuery.mediaRef
-    return this.dispatchFromSources([source], { path, query: sourceQuery, method, body, user })
+    delete sourceQuery.ids
+    delete sourceQuery.source
+    for (const role of ['catalogRef', 'playbackRef', 'lyricsRef']) {
+      if (query[role] !== undefined) {
+        const identity = parseMediaRef(query[role])
+        if (!identity) throw new MusicSourceError('INVALID_MEDIA_REF', `invalid ${role}`)
+        if (identity.source !== parsed.source || identity.sourceId !== parsed.sourceId) {
+          throw new MusicSourceError('IDENTITY_UNSUPPORTED', 'cross-source identity is not supported by this slice')
+        }
+      }
+      delete sourceQuery[role]
+    }
+    const sourceBody = body && typeof body === 'object' ? { ...body } : body
+    if (sourceBody) {
+      for (const key of ['id', 'ids', 'mediaRef', 'source', 'catalogRef', 'playbackRef', 'lyricsRef']) delete sourceBody[key]
+    }
+    return this.dispatchFromSources([source], { path, query: sourceQuery, method, body: sourceBody, user })
   }
 
   async dispatchFromSources(sources, { path, query, method, body, user }) {

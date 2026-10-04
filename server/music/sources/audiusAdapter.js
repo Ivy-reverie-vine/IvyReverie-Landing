@@ -70,6 +70,7 @@ export class AudiusAdapter {
     const track = await this.getTrack(trackId, timeoutMs)
     if (capability === 'detail') {
       const normalized = this.normalizeTrack(track)
+      if (normalized) normalized.album.pictureUrl = await this.resolveArtwork(track, normalized.album.pictureUrl, timeoutMs)
       return { status: 200, body: { code: 200, data: normalized ? [normalized] : [] } }
     }
 
@@ -102,7 +103,7 @@ export class AudiusAdapter {
       artists: artist ? [String(artist)] : [],
       album: {
         name: '',
-        pictureUrl: String(artwork._480x480 || artwork._1000x1000 || artwork._150x150 || ''),
+        pictureUrl: String(artwork['480x480'] || artwork._480x480 || artwork['1000x1000'] || artwork._1000x1000 || artwork['150x150'] || artwork._150x150 || ''),
       },
       durationMs: Number.isFinite(Number(track.duration)) ? Math.round(Number(track.duration) * 1000) : 0,
       capabilities: {
@@ -112,16 +113,47 @@ export class AudiusAdapter {
       },
       rights: {
         license: track.license ? String(track.license) : null,
-        downloadable: track.downloadable === true,
+        downloadable: (track.is_downloadable ?? track.isDownloadable ?? track.downloadable) === true,
         streamable: this.isStreamable(track),
-        streamGated: track.isStreamGated === true,
-        downloadGated: track.isDownloadGated === true,
+        streamGated: (track.is_stream_gated ?? track.isStreamGated) === true,
+        downloadGated: (track.is_download_gated ?? track.isDownloadGated) === true,
       },
     }
   }
 
   isStreamable(track) {
-    return track?.isStreamable === true || track?.isStreamable === 'true'
+    const streamable = track?.is_streamable ?? track?.isStreamable
+    return streamable === true || streamable === 'true'
+  }
+
+  async resolveArtwork(track, original, timeoutMs) {
+    const mirrors = track.artwork?.mirrors
+    if (!original || !Array.isArray(mirrors) || !mirrors.length) return original
+    const key = `artwork|${track.id}`
+    const cached = this.getCache(key)
+    if (cached) return cached
+    const candidates = [original]
+    try {
+      const path = new URL(original).pathname
+      for (const mirror of mirrors.slice(0, 3)) {
+        const url = new URL(path, mirror)
+        if (url.protocol === 'https:' && !candidates.includes(url.href)) candidates.push(url.href)
+      }
+    } catch { return original }
+    const deadline = this.now() + Math.min(timeoutMs, 6000)
+    for (const url of candidates) {
+      const remaining = deadline - this.now()
+      if (remaining <= 0) break
+      try {
+        // Only provider-declared mirrors; never forward API credentials or disable TLS checks.
+        const response = await this.fetchImpl(url, { method: 'HEAD', signal: AbortSignal.timeout(Math.min(2000, remaining)) })
+        if (response.ok && response.headers.get('content-type')?.startsWith('image/')) {
+          this.cache.set(key, { value: url, expiresAt: this.now() + this.cacheTtlMs })
+          return url
+        }
+      } catch { /* Try the next provider-declared replica. */ }
+    }
+    return original
   }
 
   async getTrack(trackId, timeoutMs) {
@@ -137,6 +169,7 @@ export class AudiusAdapter {
   async fetchStream(trackId, timeoutMs) {
     const response = await this.fetchRaw(`/tracks/${encodeURIComponent(trackId)}/stream`, { timeoutMs })
     const streamUrl = response.url || response.headers?.get?.('location') || ''
+    await response.body?.cancel()
     if (!streamUrl || streamUrl.endsWith(`/tracks/${encodeURIComponent(trackId)}/stream`)) {
       throw new AudiusSourceError('NO_PLAYBACK', 'Audius stream URL was not returned')
     }

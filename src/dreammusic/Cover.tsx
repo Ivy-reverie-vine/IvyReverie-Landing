@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { songDetail } from './api'
+import { songDetail, mediaDetail } from './api'
 import Icon from '../components/Icon'
 
 /**
@@ -9,39 +9,44 @@ import Icon from '../components/Icon'
 export default function Cover({
   picUrl,
   songId,
+  mediaRef,
   alt = '',
   className,
   phClassName,
 }: {
   picUrl?: string
-  songId: number
+  songId: number | string
+  mediaRef?: string
   alt?: string
   className: string
   phClassName: string
 }) {
   const [pic, setPic] = useState<string | undefined>(picUrl)
+  const [failedPic, setFailedPic] = useState<string | undefined>()
 
   useEffect(() => {
     let cancelled = false
-    if (picUrl) {
+    if (picUrl && picUrl !== failedPic) {
       setPic(picUrl)
       return
     }
     setPic(undefined)
-    songDetail(songId)
-      .then((r) => {
+    const detail = mediaRef
+      ? mediaDetail(mediaRef).then(r => r.data?.[0]?.album?.pictureUrl)
+      : songDetail(songId).then(r => {
+          const s = r.songs?.[0] as { al?: { picUrl?: string }; album?: { picUrl?: string } } | undefined
+          return s?.al?.picUrl || s?.album?.picUrl
+        })
+    detail
+      .then((p) => {
         if (cancelled) return
-        const s = r.songs?.[0] as
-          | { al?: { picUrl?: string }; album?: { picUrl?: string } }
-          | undefined
-        const p = s?.al?.picUrl || s?.album?.picUrl
         if (p) setPic(p)
       })
       .catch(() => {})
     return () => {
       cancelled = true
     }
-  }, [picUrl, songId])
+  }, [picUrl, songId, mediaRef, failedPic])
 
   if (!pic) {
     return (
@@ -53,9 +58,13 @@ export default function Cover({
   return (
     <img
       className={className}
-      src={`${pic}?param=100y100`}
+      src={mediaRef ? pic : `${pic}?param=100y100`}
       alt={alt}
       loading="lazy"
+      onError={() => {
+        if (mediaRef && pic === picUrl && picUrl !== failedPic) setFailedPic(picUrl)
+        else setPic(undefined)
+      }}
     />
   )
 }

@@ -5,6 +5,7 @@ import {
   useMemo,
   useReducer,
   useRef,
+  useState,
   type ReactNode,
 } from 'react'
 import {
@@ -14,7 +15,7 @@ import {
   type PlayerState,
   type PlayerAction,
 } from './reducer'
-import { songUrlV1, songUrlMatch, reportStats } from '../api'
+import { songUrlV1, songUrlMatch, mediaUrl, reportStats } from '../api'
 
 const STORAGE_PREFIX = 'dreammusic_player'
 
@@ -22,6 +23,7 @@ interface PlayerContextValue {
   state: PlayerState
   dispatch: React.Dispatch<PlayerAction>
   audioRef: React.RefObject<HTMLAudioElement>
+  playbackError: string
 }
 
 const PlayerContext = createContext<PlayerContextValue | null>(null)
@@ -46,13 +48,20 @@ function loadPersisted(storageKey?: string): PlayerState {
     if (!Array.isArray(p.queue)) return initialPlayerState
     const queue = (p.queue as PlayerState['queue'])
       .map((t) => ({
-        id: Number(t.id),
+        id: typeof t.id === 'string' && t.mediaRef ? t.id : Number(t.id),
+        mediaRef: typeof t.mediaRef === 'string' ? t.mediaRef : undefined,
+        source: typeof t.source === 'string' ? t.source : undefined,
+        catalogRef: typeof t.catalogRef === 'string' ? t.catalogRef : undefined,
+        playbackRef: typeof t.playbackRef === 'string' ? t.playbackRef : undefined,
+        lyricsRef: typeof t.lyricsRef === 'string' ? t.lyricsRef : undefined,
+        playbackSource: typeof t.playbackSource === 'string' ? t.playbackSource : undefined,
+        lyricsSource: typeof t.lyricsSource === 'string' ? t.lyricsSource : undefined,
         name: String(t.name || ''),
         artist: String(t.artist || ''),
         album: t.album ? String(t.album) : undefined,
         picUrl: t.picUrl ? String(t.picUrl) : undefined,
       }))
-      .filter((t) => Number.isFinite(t.id) && t.name)
+      .filter((t) => (typeof t.id === 'string' ? Boolean(t.mediaRef) : Number.isFinite(t.id)) && t.name)
     const currentIndex =
       Number.isInteger(p.currentIndex) &&
       (p.currentIndex as number) >= -1 &&
@@ -96,6 +105,7 @@ export function PlayerProvider({
     loadPersisted,
   )
   const audioRef = useRef<HTMLAudioElement>(null)
+  const [playbackError, setPlaybackError] = useState('')
   // 切音质后续播位置（DM-07）
   const pendingSeekRef = useRef<number | null>(null)
   const prevLevelRef = useRef(state.level)
@@ -107,7 +117,7 @@ export function PlayerProvider({
       localStorage.setItem(
         key,
         JSON.stringify({
-          queue: state.queue,
+          queue: state.queue.map(({ url: _url, ...metadata }) => metadata),
           currentIndex: state.currentIndex,
           mode: state.mode,
           level: state.level,
@@ -126,14 +136,12 @@ export function PlayerProvider({
   useEffect(() => {
     const track = currentTrack(state)
     if (!state.isPlaying || !track) return undefined
-    const songId = track.id
-    if (reportRef.current.songId !== songId) {
-      reportRef.current = { songId, startedAt: Date.now() }
-    }
+    const songId = typeof track.id === 'number' ? track.id : 0
+    reportRef.current = { songId, startedAt: Date.now() }
     const timer = setInterval(() => {
       const elapsed = Math.floor((Date.now() - reportRef.current.startedAt) / 1000)
       if (elapsed >= 30) {
-        reportStats(elapsed, reportRef.current.songId).catch(() => {})
+        reportStats(elapsed, reportRef.current.songId || undefined).catch(() => {})
         reportRef.current.startedAt = Date.now()
       }
     }, 10000)
@@ -141,12 +149,16 @@ export function PlayerProvider({
       clearInterval(timer)
       const elapsed = Math.floor((Date.now() - reportRef.current.startedAt) / 1000)
       if (elapsed >= 10) {
-        reportStats(elapsed, reportRef.current.songId).catch(() => {})
+        reportStats(elapsed, reportRef.current.songId || undefined).catch(() => {})
       }
     }
   }, [state.isPlaying, currentTrack(state)?.id])
 
   const track = currentTrack(state)
+  const liveTrack = useRef(track)
+  liveTrack.current = track
+  const retriedTrack = useRef<number | string | null>(null)
+  useEffect(() => { retriedTrack.current = null; setPlaybackError('') }, [track?.id])
   const trackUrl = track?.url
 
   // 切曲 / url 更新 → 设 src；若有待续播位置，canplay 后 seek
@@ -181,8 +193,9 @@ export function PlayerProvider({
     const audio = audioRef.current
     if (!audio) return
     if (state.isPlaying && trackUrl) {
-      audio.play().catch(() => {
-        /* 自动播放被拦截或 url 无效，忽略 */
+      Promise.resolve(audio.play()).catch(() => {
+        setPlaybackError('音频未能播放，请点击播放按钮重试或换一首歌')
+        dispatch({ type: 'PAUSE' })
       })
     } else if (!state.isPlaying) {
       audio.pause()
@@ -195,17 +208,29 @@ export function PlayerProvider({
     let cancelled = false
     ;(async () => {
       try {
-        const r = await songUrlV1(track.id, state.level)
+        const r = track.mediaRef ? await mediaUrl(track.playbackRef || track.mediaRef, state.level) : await songUrlV1(track.id, state.level)
         let url = r.data?.[0]?.url || ''
-        if (!url) {
+        if (!url && !track.mediaRef) {
           const m = await songUrlMatch(track.id, 'qq')
           url = m.data?.[0]?.url || ''
         }
         if (!cancelled && url) {
-          dispatch({ type: 'SET_TRACK_URL', id: track.id, url })
+          dispatch({ type: 'SET_TRACK_URL', id: track.id, url, identity: track.mediaRef ? {
+            catalogRef: r.catalogRef || track.catalogRef || track.mediaRef,
+            playbackRef: r.playbackRef || track.playbackRef || track.mediaRef,
+            lyricsRef: r.lyricsRef || track.lyricsRef || track.mediaRef,
+            playbackSource: r.playbackSource || track.source,
+            lyricsSource: r.lyricsSource || track.source,
+          } : undefined })
+        } else if (!cancelled) {
+          setPlaybackError('当前音源没有可用播放链接，请换一首歌或切换音源')
+          dispatch({ type: 'PAUSE' })
         }
-      } catch {
-        /* 取链接失败，静默（控制条仍显示曲名，无音频） */
+      } catch (error) {
+        if (!cancelled) {
+          setPlaybackError(error instanceof Error ? error.message : '获取播放链接失败')
+          dispatch({ type: 'PAUSE' })
+        }
       }
     })()
     return () => {
@@ -223,15 +248,21 @@ export function PlayerProvider({
     let cancelled = false
     ;(async () => {
       try {
-        const r = await songUrlV1(t.id, state.level)
+        const r = t.mediaRef ? await mediaUrl(t.playbackRef || t.mediaRef, state.level) : await songUrlV1(t.id, state.level)
         let url = r.data?.[0]?.url || ''
-        if (!url) {
+        if (!url && !t.mediaRef) {
           const m = await songUrlMatch(t.id, 'qq')
           url = m.data?.[0]?.url || ''
         }
         if (!cancelled && url && url !== t.url) {
           pendingSeekRef.current = pos
-          dispatch({ type: 'SET_TRACK_URL', id: t.id, url })
+          dispatch({ type: 'SET_TRACK_URL', id: t.id, url, identity: t.mediaRef ? {
+            catalogRef: r.catalogRef || t.catalogRef || t.mediaRef,
+            playbackRef: r.playbackRef || t.playbackRef || t.mediaRef,
+            lyricsRef: r.lyricsRef || t.lyricsRef || t.mediaRef,
+            playbackSource: r.playbackSource || t.source,
+            lyricsSource: r.lyricsSource || t.source,
+          } : undefined })
         }
       } catch {
         /* 重取失败，保持原 url */
@@ -245,8 +276,8 @@ export function PlayerProvider({
   }, [state.level])
 
   const value = useMemo<PlayerContextValue>(
-    () => ({ state, dispatch, audioRef }),
-    [state],
+    () => ({ state, dispatch, audioRef, playbackError }),
+    [state, playbackError],
   )
 
   return (
@@ -254,6 +285,32 @@ export function PlayerProvider({
       {children}
       <audio
         ref={audioRef}
+        onPlaying={() => setPlaybackError('')}
+        onError={async () => {
+          const failed = liveTrack.current
+          if (!failed?.url) return
+          if (failed.mediaRef && retriedTrack.current !== failed.id) {
+            retriedTrack.current = failed.id
+            try {
+              const result = await mediaUrl(failed.playbackRef || failed.mediaRef, state.level)
+              if (liveTrack.current?.id !== failed.id) return
+              const refreshed = result.data?.[0]?.url
+              if (refreshed && refreshed !== failed.url) {
+                dispatch({ type: 'SET_TRACK_URL', id: failed.id, url: refreshed, identity: {
+                  catalogRef: result.catalogRef || failed.catalogRef || failed.mediaRef,
+                  playbackRef: result.playbackRef || failed.playbackRef || failed.mediaRef,
+                  lyricsRef: result.lyricsRef || failed.lyricsRef || failed.mediaRef,
+                  playbackSource: result.playbackSource || failed.source,
+                  lyricsSource: result.lyricsSource || failed.source,
+                } })
+                return
+              }
+            } catch { /* Report a bounded failure after one same-source retry. */ }
+          }
+          if (liveTrack.current?.id !== failed.id) return
+          setPlaybackError('播放链接无法加载，请换一首歌或切换音源')
+          dispatch({ type: 'PAUSE' })
+        }}
         onTimeUpdate={(e) =>
           dispatch({ type: 'SET_TIME', time: e.currentTarget.currentTime })
         }

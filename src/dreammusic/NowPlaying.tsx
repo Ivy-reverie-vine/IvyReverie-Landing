@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { songDetail, lyricNew } from './api'
+import { songDetail, lyricNew, mediaDetail, mediaLyrics, type LyricResult } from './api'
 import { usePlayer } from './player/PlayerContext'
+import { musicSourceLabel } from './player/reducer'
 import Controls from './player/Controls'
 import { parseLyric, findActiveIndex, findActiveChar, EMPTY_LYRICS, type Lyrics } from './lyric'
 import { applyThemeColor } from './theme'
@@ -18,6 +19,7 @@ export default function NowPlaying() {
 
   const [picUrl, setPicUrl] = useState<string | undefined>(undefined)
   const [lyrics, setLyrics] = useState<Lyrics>(EMPTY_LYRICS)
+  const [lyricHint, setLyricHint] = useState('正在加载歌词…')
 
   // 切曲 → 拉封面（专辑小图用）+ 歌词
   useEffect(() => {
@@ -28,17 +30,19 @@ export default function NowPlaying() {
     }
     let cancelled = false
     // 封面：已有就用，否则拉 songDetail
-    if (track.picUrl) {
+    if (track.picUrl && (!track.mediaRef || track.catalogRef)) {
       setPicUrl(track.picUrl)
     } else {
-      setPicUrl(undefined)
-      songDetail(track.id)
-        .then((r) => {
+      setPicUrl(track.picUrl)
+      const detail = track.mediaRef
+        ? mediaDetail(track.catalogRef || track.mediaRef).then(r => r.data?.[0]?.album?.pictureUrl)
+        : songDetail(track.id).then(r => {
+            const s = r.songs?.[0] as { al?: { picUrl?: string }; album?: { picUrl?: string } } | undefined
+            return s?.al?.picUrl || s?.album?.picUrl
+          })
+      detail
+        .then((pic) => {
           if (cancelled) return
-          const s = r.songs?.[0] as
-            | { al?: { picUrl?: string }; album?: { picUrl?: string } }
-            | undefined
-          const pic = s?.al?.picUrl || s?.album?.picUrl
           if (pic) {
             setPicUrl(pic)
           }
@@ -46,18 +50,27 @@ export default function NowPlaying() {
         .catch(() => {})
     }
     // 歌词
-    lyricNew(track.id)
+    setLyrics(EMPTY_LYRICS)
+    setLyricHint('正在加载歌词…')
+    const lyric: Promise<LyricResult> = track.mediaRef
+      ? mediaLyrics(track.lyricsRef || track.mediaRef)
+      : lyricNew(track.id)
+    lyric
       .then((r) => {
         if (cancelled) return
         setLyrics(parseLyric(r.lrc?.lyric, r.yrc?.lyric))
+        setLyricHint('纯音乐，无歌词')
       })
-      .catch(() => {
-        if (!cancelled) setLyrics(EMPTY_LYRICS)
+      .catch((error: unknown) => {
+        if (!cancelled) {
+          setLyrics(EMPTY_LYRICS)
+          setLyricHint(error instanceof Error && error.message === '当前音源未提供歌词' ? error.message : '歌词加载失败')
+        }
       })
     return () => {
       cancelled = true
     }
-  }, [track?.id])
+  }, [track?.id, track?.mediaRef, track?.catalogRef, track?.lyricsRef])
 
   const timeMs = state.currentTime * 1000
   const activeIdx = findActiveIndex(lyrics.lines, timeMs)
@@ -78,11 +91,12 @@ export default function NowPlaying() {
   return (
     <div className="dm-nowplaying" data-testid="dm-nowplaying">
       <div className="dm-np-content">
+        {track?.playbackSource && <p className="dm-np-hint">音频来源：{musicSourceLabel(track.playbackSource)}</p>}
         <div className="dm-np-cover-wrap">
           {displayPic ? (
             <img
               className="dm-np-cover"
-              src={`${displayPic}?param=600y600`}
+              src={track?.mediaRef ? displayPic : `${displayPic}?param=600y600`}
               alt={track?.name || ''}
             />
           ) : (
@@ -95,7 +109,7 @@ export default function NowPlaying() {
         <div className="dm-np-lyrics" role="region" aria-label="歌词">
           {!track && <p className="dm-np-hint">未播放</p>}
           {track && lyrics.lines.length === 0 && (
-            <p className="dm-np-hint">纯音乐，无歌词</p>
+            <p className="dm-np-hint">{lyricHint}</p>
           )}
           <ul className="dm-lyric-list">
             {lyrics.lines.map((line, i) => {

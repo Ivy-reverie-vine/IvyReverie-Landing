@@ -24,6 +24,35 @@ function jsonResponse(payload) {
 }
 
 describe('AudiusAdapter', () => {
+  it('uses a provider-declared artwork mirror when the primary image host fails TLS', async () => {
+    const calls = []
+    const adapter = new AudiusAdapter({ baseUrl: 'https://api.audius.co/v1', minRequestIntervalMs: 0,
+      fetchImpl: async (url, init) => {
+        if (init.method === 'HEAD') {
+          calls.push(String(url))
+          if (new URL(url).hostname === 'broken.test') throw new TypeError('TLS error')
+          return new Response(null, { headers: { 'content-type': 'image/jpeg' } })
+        }
+        return jsonResponse({ data: { ...track, artwork: { '480x480': 'https://broken.test/content/cid/480x480.jpg', mirrors: ['https://mirror.test'] } } })
+      },
+    })
+    const result = await adapter.request({ path: 'song/detail', query: { id: track.id } })
+    expect(result.body.data[0].album.pictureUrl).toBe('https://mirror.test/content/cid/480x480.jpg')
+    expect(calls).toHaveLength(2)
+  })
+
+  it('accepts real REST snake_case fields for playable tracks and artwork', async () => {
+    const adapter = new AudiusAdapter({ baseUrl: 'https://api.audius.co/v1', minRequestIntervalMs: 0,
+      fetchImpl: async (url) => new URL(url).pathname.endsWith('/stream')
+        ? { ok: true, url: 'https://cdn.test/song.mp3', body: { cancel: async () => {} } }
+        : jsonResponse({ data: { id: 'live-1', title: 'Live', is_streamable: true, is_stream_gated: false, is_downloadable: true, artwork: { '480x480': 'https://images.test/cover.jpg' } } }),
+    })
+    const detail = await adapter.request({ path: 'song/detail', query: { id: 'live-1' } })
+    expect(detail.body.data[0]).toMatchObject({ album: { pictureUrl: 'https://images.test/cover.jpg' }, rights: { streamable: true, downloadable: true } })
+    const stream = await adapter.request({ path: 'song/url/v1', query: { id: 'live-1' } })
+    expect(stream.body.data[0].url).toBe('https://cdn.test/song.mp3')
+  })
+
   it('normalizes search metadata and preserves rights information', async () => {
     const requests = []
     const adapter = new AudiusAdapter({

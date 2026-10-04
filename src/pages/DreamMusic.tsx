@@ -29,7 +29,7 @@ import './DreamMusic.css'
 type AuthState =
   | { status: 'loading' }
   | { status: 'guest' }
-  | { status: 'unbound'; username: string }
+  | { status: 'unbound'; username: string; user: UserInfo }
   | { status: 'bound'; username: string; user: UserInfo }
 
 /**
@@ -60,6 +60,7 @@ function TopActions({
   const [moreOpen, setMoreOpen] = useState(false)
   return (
     <div className="dm-topbar-actions">
+      {!user.bound && <button type="button" className="dm-user-chip" onClick={() => window.dispatchEvent(new Event('dm-rebind'))}>绑定网易云</button>}
       <button
         type="button"
         className="dm-icon-btn dm-announce-btn"
@@ -261,7 +262,7 @@ export default function DreamMusic() {
       setAuth(
         u.bound
           ? { status: 'bound', username: u.username, user: u }
-          : { status: 'unbound', username: u.username },
+          : { status: 'unbound', username: u.username, user: u },
       )
     } catch {
       setAuth({ status: 'guest' })
@@ -380,7 +381,8 @@ export default function DreamMusic() {
       <div className="dm-app dm-app-login" data-testid="dreammusic">
         <div className="dm-bg" aria-hidden="true" />
         <ParticleBackground active />
-        <BindView onBound={refresh} onLogout={handleLogout} />
+        <BindView onBound={refresh} onLogout={handleLogout}
+          onSkip={() => setAuth({ status: 'bound', username: auth.username, user: auth.user })} />
       </div>
     )
   }

@@ -5,14 +5,28 @@
  * 模式：order 顺序（末首停）/ single 单曲循环 / shuffle 随机
  */
 
-export interface Track {
-  id: number
+import type { MediaIdentity } from '../api'
+
+export interface Track extends MediaIdentity {
+  id: number | string
+  mediaRef?: string
+  source?: string
   name: string
   artist: string
   album?: string
   picUrl?: string
   url?: string
   duration?: number
+}
+
+export function musicSourceLabel(source: string): string {
+  switch (source) {
+    case 'api-enhanced': return '网易云'
+    case 'meting-tencent': return '腾讯 / QQ'
+    case 'meting-kugou': return '酷狗'
+    case 'meting-kuwo': return '酷我'
+    default: return source
+  }
 }
 
 export type Mode = 'order' | 'single' | 'shuffle'
@@ -48,13 +62,13 @@ export type PlayerAction =
   | { type: 'SEEK'; time: number }
   | { type: 'ADD_TO_QUEUE'; track: Track }
   | { type: 'PLAY_TRACK'; track: Track }
-  | { type: 'REMOVE_FROM_QUEUE'; id: number }
+  | { type: 'REMOVE_FROM_QUEUE'; id: number | string }
   | { type: 'CLEAR_QUEUE' }
   | { type: 'SET_MODE'; mode: Mode }
   | { type: 'SET_LEVEL'; level: Level }
   | { type: 'SET_TIME'; time: number }
   | { type: 'SET_DURATION'; duration: number }
-  | { type: 'SET_TRACK_URL'; id: number; url: string }
+  | { type: 'SET_TRACK_URL'; id: number | string; url: string; identity?: MediaIdentity }
   | { type: 'REORDER_QUEUE'; from: number; to: number }
 
 export function playerReducer(
@@ -117,7 +131,7 @@ export function playerReducer(
     case 'PLAY_TRACK': {
       const idx = queue.findIndex((t) => t.id === action.track.id)
       if (idx >= 0) {
-        return { ...state, currentIndex: idx, isPlaying: true, currentTime: 0 }
+        return { ...state, queue: queue.map((track, i) => i === idx ? { ...track, ...action.track } : track), currentIndex: idx, isPlaying: true, currentTime: 0 }
       }
       const newQueue = [...queue, action.track]
       return {
@@ -163,7 +177,11 @@ export function playerReducer(
     case 'SET_TRACK_URL':
       return {
         ...state,
-        queue: queue.map((t) => (t.id === action.id ? { ...t, url: action.url } : t)),
+        queue: queue.map((t) => {
+          if (t.id !== action.id || (t.catalogRef && action.identity?.catalogRef &&
+            t.catalogRef !== action.identity.catalogRef)) return t
+          return { ...t, ...action.identity, url: action.url }
+        }),
       }
 
     case 'REORDER_QUEUE': {

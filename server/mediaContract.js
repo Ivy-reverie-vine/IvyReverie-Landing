@@ -6,9 +6,11 @@ function encode(value) {
 
 function decode(value) {
   try {
+    if (typeof value !== 'string' || !/^[A-Za-z0-9_-]+$/.test(value)) return null
     const parsed = JSON.parse(Buffer.from(String(value), 'base64url').toString('utf8'))
     if (parsed?.version !== MEDIA_REF_VERSION || typeof parsed.source !== 'string' ||
-      typeof parsed.sourceId !== 'string' || parsed.kind !== 'song') return null
+      typeof parsed.sourceId !== 'string' || !parsed.source.trim() || !parsed.sourceId.trim() ||
+      parsed.kind !== 'song') return null
     return parsed
   } catch {
     return null
@@ -23,6 +25,16 @@ export function parseMediaRef(value) {
   return decode(value)
 }
 
+// T01: all three roles refer to the selected resource. mediaRef retains its old meaning.
+export function singleSourceIdentity(mediaRef) {
+  const parsed = parseMediaRef(mediaRef)
+  if (!parsed) return {}
+  return {
+    catalogRef: mediaRef, playbackRef: mediaRef, lyricsRef: mediaRef,
+    playbackSource: parsed.source, lyricsSource: parsed.source,
+  }
+}
+
 function normalizeApiSong(raw) {
   const id = raw?.id
   if (id === undefined || raw?.name === undefined) return null
@@ -31,6 +43,7 @@ function normalizeApiSong(raw) {
   const sourceId = String(id)
   return {
     mediaRef: createMediaRef({ source: 'api-enhanced', sourceId }),
+    ...singleSourceIdentity(createMediaRef({ source: 'api-enhanced', sourceId })),
     source: 'api-enhanced',
     sourceId,
     legacyId: Number(id),
@@ -50,9 +63,11 @@ function normalizeInternalSong(raw) {
   const sourceId = String(raw.sourceId)
   const artists = Array.isArray(raw.artists) ? raw.artists : raw.artist ? [raw.artist] : []
   const album = raw.album || {}
+  const mediaRef = createMediaRef({ source, sourceId })
   return {
     ...raw,
-    mediaRef: raw.mediaRef || createMediaRef({ source, sourceId }),
+    mediaRef,
+    ...singleSourceIdentity(mediaRef),
     source,
     sourceId,
     title: String(raw.title || raw.name || ''),
@@ -90,12 +105,13 @@ export function toMediaV2Body(path, body, mediaRef = '') {
     const data = Array.isArray(body?.data) ? body.data : []
     return {
       code: body?.code === undefined ? 200 : body.code,
-      data: data.length > 0 ? [{ ...data[0], mediaRef }] : [],
+      data: data.length > 0 ? [{ ...data[0], mediaRef, ...singleSourceIdentity(mediaRef) }] : [],
       mediaRef,
+      ...singleSourceIdentity(mediaRef),
     }
   }
   if (path === 'lyric/new') {
-    return { ...body, mediaRef }
+    return { ...body, mediaRef, ...singleSourceIdentity(mediaRef) }
   }
   return body
 }

@@ -29,9 +29,10 @@ function fmt(t: number): string {
 
 /** 播放控制条（DM-04）：上一首/播放/下一首 + 进度 + 模式 + 音质 */
 export default function Controls() {
-  const { state, dispatch, audioRef } = usePlayer()
+  const { state, dispatch, audioRef, playbackError } = usePlayer()
   const track = state.queue[state.currentIndex]
   const hasTrack = !!track
+  const canDownload = !!track && typeof track.id === 'number' && (!track.source || track.source === 'api-enhanced')
   const [downloadBusy, setDownloadBusy] = useState(false)
   const [downloadMsg, setDownloadMsg] = useState('')
   const pct = state.duration
@@ -43,7 +44,7 @@ export default function Controls() {
     dispatch({ type: 'SET_MODE', mode: MODE_CYCLE[(i + 1) % MODE_CYCLE.length] })
   }
   async function handleDownload() {
-    if (!track || downloadBusy) return
+    if (!track || typeof track.id !== 'number' || !canDownload || downloadBusy) return
     setDownloadBusy(true)
     setDownloadMsg('')
     try {
@@ -149,9 +150,9 @@ export default function Controls() {
             type="button"
             className="dm-ctrl-btn"
             onClick={handleDownload}
-            disabled={!hasTrack || downloadBusy}
+            disabled={!canDownload || downloadBusy}
             aria-label="下载歌曲"
-            title="下载歌曲（扣 1 梦点）"
+            title={canDownload ? '下载歌曲（扣 1 梦点）' : '当前音源暂不支持下载'}
           >
             <Icon name="download" size={16} />
           </button>
@@ -162,6 +163,7 @@ export default function Controls() {
           {downloadMsg}
         </p>
       )}
+      {playbackError && <p className="dm-download-msg" role="alert">{playbackError}</p>}
     </div>
   )
 }

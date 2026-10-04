@@ -42,6 +42,11 @@ describe('versioned mediaRef contract', () => {
       hasMore: true,
       data: [{
         mediaRef: expect.any(String),
+        catalogRef: expect.any(String),
+        playbackRef: expect.any(String),
+        lyricsRef: expect.any(String),
+        playbackSource: 'api-enhanced',
+        lyricsSource: 'api-enhanced',
         source: 'api-enhanced',
         sourceId: '123',
         legacyId: 123,

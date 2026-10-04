@@ -16,6 +16,8 @@ vi.mock('./api', () => ({
   songUrlV1: vi.fn(),
   songUrlMatch: vi.fn(),
   reportStats: vi.fn(),
+  mediaLyrics: vi.fn(async () => ({ lrc: { lyric: '[00:01.00]来源歌词' } })),
+  mediaDetail: vi.fn(async () => ({ data: [{ album: { pictureUrl: 'https://img/cover.jpg?signature=preserved' } }] })),
 }))
 
 import { lyricNew } from './api'
@@ -36,6 +38,17 @@ function Harness() {
 }
 
 describe('NowPlaying — DM-06', () => {
+  it('loads non-NetEase lyrics by mediaRef and preserves the cover URL', async () => {
+    function SourceHarness() {
+      const { dispatch } = usePlayer()
+      useEffect(() => { dispatch({ type: 'PLAY_TRACK', track: { id: -1, name: '来源歌曲', artist: 'Artist', source: 'meting-tencent', mediaRef: 'source-reference', url: 'https://x/1.mp3' } }) }, [dispatch])
+      return <NowPlaying />
+    }
+    const { findByText, findByAltText } = render(<PlayerProvider><SourceHarness /></PlayerProvider>)
+    expect(await findByText('来源歌词')).toBeInTheDocument()
+    expect(await findByAltText('来源歌曲')).toHaveAttribute('src', 'https://img/cover.jpg?signature=preserved')
+  })
+
   it('renders cover + lyrics (lrc lines)', async () => {
     const { findByAltText, findByText } = render(
       <PlayerProvider>

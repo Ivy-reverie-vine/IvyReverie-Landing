@@ -23,6 +23,21 @@ function createRegistry(sources) {
 }
 
 describe('MusicOrchestrator', () => {
+  it('keeps a selected search on its source and never silently falls back', async () => {
+    const calls = []
+    const orchestrator = new MusicOrchestrator({
+      registry: createRegistry(['api-enhanced', 'meting-kugou'].map(id => ({
+        adapter: { id, capabilities: () => ['search'], request: async ({ query }) => {
+          calls.push({ id, query })
+          return { status: 200, body: { code: 200, data: [] } }
+        } }, config: { priority: id === 'api-enhanced' ? 100 : 10 },
+      }))), diagnostics: diagnostics(),
+    })
+    await orchestrator.dispatch({ path: 'search', sourceId: 'meting-kugou', query: { keywords: 'test', source: 'meting-kugou' } })
+    expect(calls).toEqual([{ id: 'meting-kugou', query: { keywords: 'test' } }])
+    await expect(orchestrator.dispatch({ path: 'search', sourceId: 'disabled', query: {} })).rejects.toMatchObject({ code: 'SOURCE_UNAVAILABLE' })
+    expect(calls).toHaveLength(1)
+  })
   it('keeps the highest-priority source as the default', async () => {
     const calls = []
     const first = {

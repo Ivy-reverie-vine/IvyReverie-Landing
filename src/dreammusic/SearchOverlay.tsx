@@ -1,199 +1,114 @@
 import { useEffect, useRef, useState } from 'react'
-import { search, songUrlV1, songUrlMatch, NcmError } from './api'
+import { mediaSearch, mediaUrl, NcmError, type MediaSong } from './api'
 import { usePlayer } from './player/PlayerContext'
 import type { Track } from './player/reducer'
 import Icon from '../components/Icon'
 import './SearchOverlay.css'
 
-/** 搜索结果 song（兼容 artists/ar、album/al 两种字段） */
-interface SearchSong {
-  id: number
-  name: string
-  artists?: { name: string }[]
-  ar?: { name: string }[]
-  album?: { name: string; picUrl?: string }
-  al?: { name: string; picUrl?: string }
-}
-
-function toTrack(s: SearchSong): Track {
-  const artists = s.artists || s.ar || []
-  const album = s.album || s.al
+const SOURCES = [
+  ['', '自动选择'], ['api-enhanced', '网易云'], ['meting-tencent', '腾讯 / QQ'],
+  ['meting-kugou', '酷狗'], ['meting-kuwo', '酷我'], ['audius', 'Audius'],
+]
+function toTrack(song: MediaSong): Track {
+  const legacyId = song.source === 'api-enhanced' ? Number(song.legacyId || song.sourceId) : 0
   return {
-    id: s.id,
-    name: s.name,
-    artist: artists.map((a) => a.name).join(' / ') || '未知',
-    album: album?.name,
-    picUrl: album?.picUrl,
+    id: legacyId > 0 ? legacyId : song.mediaRef,
+    mediaRef: song.mediaRef, source: song.source,
+    catalogRef: song.catalogRef || song.mediaRef,
+    playbackRef: song.playbackRef || song.mediaRef,
+    lyricsRef: song.lyricsRef || song.mediaRef,
+    name: song.title, artist: song.artists.join(' / ') || '未知',
+    album: song.album?.name, picUrl: song.album?.pictureUrl,
+    duration: (song.durationMs || 0) / 1000,
   }
 }
 
-/**
- * 搜索浮层（DM-05）：输入防抖 400ms → search → 结果列表。
- * 点歌：取 songUrlV1，空则解灰 songUrlMatch(qq)，拿到 url 后 PLAY_TRACK。
- */
 export default function SearchOverlay({ onClose }: { onClose: () => void }) {
   const { state, dispatch } = usePlayer()
   const [query, setQuery] = useState('')
-  const [results, setResults] = useState<SearchSong[]>([])
+  const [source, setSource] = useState('')
+  const [results, setResults] = useState<MediaSong[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [pendingId, setPendingId] = useState<number | null>(null)
+  const [pendingId, setPendingId] = useState<string | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
-
-  // 自动聚焦
+  const mounted = useRef(true)
   useEffect(() => {
+    mounted.current = true
     inputRef.current?.focus()
+    return () => { mounted.current = false }
   }, [])
-
-  // 防抖搜索 400ms
   useEffect(() => {
-    const kw = query.trim()
-    if (!kw) {
-      setResults([])
-      setError('')
-      return
-    }
-    setLoading(true)
+    let cancelled = false
+    const keyword = query.trim()
+    setResults([])
     setError('')
-    const t = setTimeout(async () => {
+    setLoading(Boolean(keyword))
+    if (!keyword) return
+    const timer = setTimeout(async () => {
       try {
-        const r = await search(kw)
-        setResults((r.result?.songs as SearchSong[]) || [])
-      } catch (e) {
-        setError(e instanceof NcmError ? e.message : '搜索失败')
-        setResults([])
-      } finally {
-        setLoading(false)
-      }
+        const response = await mediaSearch(keyword, source)
+        if (!cancelled) setResults(response.data || [])
+      } catch (error) {
+        if (!cancelled) setError(error instanceof NcmError ? error.message : '搜索失败，请稍后重试')
+      } finally { if (!cancelled) setLoading(false) }
     }, 400)
-    return () => clearTimeout(t)
-  }, [query])
-
-  // 取播放链接（含解灰兜底）
-  async function resolveUrl(id: number): Promise<string> {
-    const r = await songUrlV1(id, state.level)
-    let url = r.data?.[0]?.url || ''
-    if (!url) {
-      const m = await songUrlMatch(id, 'qq')
-      url = m.data?.[0]?.url || ''
-    }
-    return url
-  }
-
-  async function playSong(s: SearchSong) {
-    setPendingId(s.id)
+    return () => { cancelled = true; clearTimeout(timer) }
+  }, [query, source])
+  async function selectSong(song: MediaSong, enqueue: boolean) {
+    setPendingId(song.mediaRef)
     setError('')
     try {
-      const url = await resolveUrl(s.id)
+      const response = await mediaUrl(song.playbackRef || song.mediaRef, state.level)
+      if (!mounted.current) return
+      const url = response.data?.[0]?.url
       if (!url) {
-        setError('无版权，已跳过')
-        // 若有在播曲目，跳下一首，不卡住
-        if (state.currentIndex >= 0) dispatch({ type: 'NEXT' })
+        setError('当前音源没有可用播放链接，可能需要会员或内容授权；请换一首歌或切换音源')
         return
       }
-      dispatch({ type: 'PLAY_TRACK', track: { ...toTrack(s), url } })
-      onClose()
-    } catch (e) {
-      setError(e instanceof NcmError ? e.message : '获取播放链接失败')
-    } finally {
-      setPendingId(null)
-    }
-  }
-
-  async function enqueue(s: SearchSong) {
-    setPendingId(s.id)
-    setError('')
-    try {
-      const url = await resolveUrl(s.id)
-      if (!url) {
-        setError('无版权，无法加入')
+      if (response.catalogRef && response.catalogRef !== (song.catalogRef || song.mediaRef)) {
+        setError('播放响应与所选歌曲不一致，请重新选择')
         return
       }
-      dispatch({ type: 'ADD_TO_QUEUE', track: { ...toTrack(s), url } })
-    } catch (e) {
-      setError(e instanceof NcmError ? e.message : '获取播放链接失败')
-    } finally {
-      setPendingId(null)
-    }
+      dispatch({ type: enqueue ? 'ADD_TO_QUEUE' : 'PLAY_TRACK', track: {
+        ...toTrack(song), url,
+        playbackRef: response.playbackRef || song.playbackRef || song.mediaRef,
+        lyricsRef: response.lyricsRef || song.lyricsRef || song.mediaRef,
+        playbackSource: response.playbackSource || song.source,
+        lyricsSource: response.lyricsSource || song.source,
+      } })
+      if (!enqueue) onClose()
+    } catch (error) {
+      if (mounted.current) setError(error instanceof NcmError ? error.message : '获取播放链接失败')
+    } finally { if (mounted.current) setPendingId(null) }
   }
-
   return (
-    <div
-      className="dm-overlay"
-      data-testid="dm-search-overlay"
-      role="dialog"
-      aria-label="搜索"
-    >
+    <div className="dm-overlay" data-testid="dm-search-overlay" role="dialog" aria-label="搜索" aria-modal="true">
       <div className="dm-overlay-backdrop" onClick={onClose} />
-      <div className="dm-search-panel">
+      <div className="dm-search-panel" onKeyDown={event => { if (event.key === 'Escape') onClose() }}>
         <div className="dm-search-head">
-          <input
-            ref={inputRef}
-            className="dm-search-input"
-            placeholder="搜索歌曲 / 歌手"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            aria-label="搜索关键词"
-          />
-          <button
-            type="button"
-            className="dm-icon-btn"
-            onClick={onClose}
-            aria-label="关闭搜索"
-          >
-            <Icon name="close" size={16} />
-          </button>
+          <input ref={inputRef} className="dm-search-input" placeholder="搜索歌曲 / 歌手" value={query}
+            onChange={event => setQuery(event.target.value)} aria-label="搜索关键词" />
+          <button type="button" className="dm-icon-btn" onClick={onClose} aria-label="关闭搜索"><Icon name="close" size={16} /></button>
         </div>
-
-        {loading && <p className="dm-search-hint">搜索中…</p>}
-        {error && (
-          <p className="dm-search-hint" role="alert">
-            {error}
-          </p>
-        )}
-        {!loading && !error && results.length === 0 && query.trim() && (
-          <p className="dm-search-hint">无结果</p>
-        )}
-
+        <label className="dm-search-source">音源
+          <select value={source} onChange={event => setSource(event.target.value)} disabled={pendingId !== null}>
+            {SOURCES.map(([id, label]) => <option key={id} value={id}>{label}</option>)}
+          </select>
+        </label>
+        {loading && <p className="dm-search-hint" role="status">搜索中…</p>}
+        {error && <p className="dm-search-hint" role="alert">{error}</p>}
+        {!loading && !error && results.length === 0 && query.trim() && <p className="dm-search-hint">无结果</p>}
         <ul className="dm-search-list">
-          {results.map((s) => (
-            <li key={s.id} className="dm-search-item">
-              {(s.album || s.al)?.picUrl ? (
-                <img
-                  className="dm-search-thumb"
-                  src={`${(s.album || s.al)?.picUrl}?param=100y100`}
-                  alt=""
-                />
-              ) : (
-                <span className="dm-search-thumb-ph">
-                  <Icon name="music" size={16} />
-                </span>
-              )}
-              <button
-                type="button"
-                className="dm-search-main"
-                onClick={() => playSong(s)}
-                disabled={pendingId === s.id}
-              >
-                <span className="dm-search-name">{s.name}</span>
-                <span className="dm-search-sub">
-                  {(s.artists || s.ar || [])
-                    .map((a) => a.name)
-                    .join(' / ')}
-                </span>
-              </button>
-              <button
-                type="button"
-                className="dm-search-add"
-                onClick={() => enqueue(s)}
-                disabled={pendingId === s.id}
-                aria-label="加入队列"
-                title="加入队列"
-              >
-                <Icon name="plus" size={15} />
-              </button>
-            </li>
-          ))}
+          {results.map(song => <li key={song.mediaRef} className="dm-search-item">
+            {song.album?.pictureUrl ? <img className="dm-search-thumb" src={song.album.pictureUrl} alt="" />
+              : <span className="dm-search-thumb-ph"><Icon name="music" size={16} /></span>}
+            <button type="button" className="dm-search-main" onClick={() => selectSong(song, false)} disabled={pendingId !== null}>
+              <span className="dm-search-name">{song.title}</span>
+              <span className="dm-search-sub">{song.artists.join(' / ')} · {SOURCES.find(([id]) => id === song.source)?.[1] || song.source}</span>
+            </button>
+            <button type="button" className="dm-search-add" onClick={() => selectSong(song, true)} disabled={pendingId !== null} aria-label="加入队列" title="加入队列"><Icon name="plus" size={15} /></button>
+          </li>)}
         </ul>
       </div>
     </div>

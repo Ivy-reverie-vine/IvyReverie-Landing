@@ -1,0 +1,8 @@
+{
+  "name": "nightdream-local-meting-runtime",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@meting/core": "1.6.1"
+  }
+}

@@ -76,13 +76,13 @@ export function __invalidateCache(pathPrefix = ''): void {
  * 构建代理 URL：拼 /dreammusic/api/v1 前缀 + randomCNIP + 业务参数。
  * cookie 由中间层注入，前端不再拼。
  */
-export function buildUrl(path: string, params: Record<string, unknown> = {}): string {
+export function buildUrl(path: string, params: Record<string, unknown> = {}, version: 'v1' | 'v2' = 'v1'): string {
   const q = new URLSearchParams()
   q.set('randomCNIP', 'true')
   for (const [k, v] of Object.entries(params)) {
     if (v !== undefined && v !== null) q.set(k, String(v))
   }
-  return `${API_BASE}${path}?${q.toString()}`
+  return `/dreammusic/api/${version}${path}?${q.toString()}`
 }
 
 /** 缓存 key（当前即 URL，单独导出便于未来调整策略） */
@@ -457,11 +457,12 @@ export function getAuditLogs(): Promise<AuditLog[]> {
 async function ncmRequest<T>(
   path: string,
   params: Record<string, unknown> = {},
+  version: 'v1' | 'v2' = 'v1',
 ): Promise<T> {
-  const url = buildUrl(path, params)
+  const url = buildUrl(path, params, version)
   const now = Date.now()
   // 登录/轮询接口不缓存（qrCheck 需每次重新请求看扫码状态变化）
-  const cacheable = !path.startsWith('/login/')
+  const cacheable = !path.startsWith('/login/') && !(version === 'v2' && path === '/song/url/v1')
   const hit = cacheable ? cache.get(url) : undefined
   if (hit && now - hit.t < CACHE_TTL) {
     return hit.data as T
@@ -477,6 +478,10 @@ async function ncmRequest<T>(
   if (res.status === 401) {
     dispatchUnauthorized()
     throw new NcmError('未登录或会话已失效', 'AUTH')
+  }
+  if (version === 'v2' && !res.ok) {
+    const failure = await res.json().catch(() => ({})) as { message?: string }
+    throw new NcmError(failure.message || `音源请求失败（HTTP ${res.status}）`, 'HTTP')
   }
   if (res.status === 502) {
     throw new NcmError('上游 API 不可达，请稍后再试', 'NETWORK')
@@ -508,7 +513,7 @@ async function ncmRequest<T>(
     }
   }
 
-  cache.set(url, { t: now, data })
+  if (cacheable) cache.set(url, { t: now, data })
   return data as T
 }
 
@@ -517,8 +522,15 @@ async function ncmRequest<T>(
 export interface Song { id: number; name: string; [k: string]: unknown }
 export interface SearchResult { result?: { songs?: Song[] } }
 export interface SongDetailResult { songs?: Song[] }
-export interface SongUrlResult { data?: Array<{ url: string | null; [k: string]: unknown }> }
-export interface LyricResult { lrc?: { lyric?: string }; yrc?: { lyric?: string }; [k: string]: unknown }
+export interface MediaIdentity {
+  catalogRef?: string
+  playbackRef?: string
+  lyricsRef?: string
+  playbackSource?: string
+  lyricsSource?: string
+}
+export interface SongUrlResult extends MediaIdentity { data?: Array<{ url: string | null; [k: string]: unknown }> }
+export interface LyricResult extends MediaIdentity { lrc?: { lyric?: string }; yrc?: { lyric?: string }; [k: string]: unknown }
 export interface PersonalizedResult { result?: Array<{ id: number; name: string; picUrl: string }> }
 export interface PlaylistSummary {
   id: number
@@ -537,6 +549,29 @@ export interface PlaylistTracksResult { songs?: Song[]; more?: boolean }
 export interface QrKeyResult { data?: { unikey: string }; code: number }
 export interface QrCreateResult { data?: { qrurl: string; qrimg: string }; code: number }
 export interface QrCheckResult { code: number; bound?: boolean; message?: string }
+
+export interface MediaSong extends MediaIdentity {
+  mediaRef: string
+  source: string
+  sourceId: string
+  legacyId?: number
+  title: string
+  artists: string[]
+  album?: { name?: string; pictureUrl?: string }
+  durationMs?: number
+}
+export function mediaSearch(keywords: string, source = ''): Promise<{ data: MediaSong[] }> {
+  return ncmRequest('/search', { keywords, source: source || undefined, type: 1, limit: 30 }, 'v2')
+}
+export function mediaUrl(mediaRef: string, level = 'exhigh'): Promise<SongUrlResult> {
+  return ncmRequest('/song/url/v1', { mediaRef, level }, 'v2')
+}
+export function mediaDetail(mediaRef: string): Promise<{ data: MediaSong[] }> {
+  return ncmRequest('/song/detail', { mediaRef }, 'v2')
+}
+export function mediaLyrics(mediaRef: string): Promise<LyricResult> {
+  return ncmRequest('/lyric/new', { mediaRef }, 'v2')
+}
 
 export function search(keywords: string, type = 1, limit = 30): Promise<SearchResult> {
   return ncmRequest<SearchResult>('/search', { keywords, type, limit })

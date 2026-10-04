@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-04T02:47:34.329Z",
+  "mode": "real providers / disposable unbound account",
+  "sources": [
+    {
+      "source": "meting-kuwo",
+      "samples": [],
+      "keyword": "童年",
+      "error": "HTTP 503: 当前音源未启用、暂不可用或正在熔断；请切换音源或稍后重试"
+    }
+  ],
+  "passed": false
+}

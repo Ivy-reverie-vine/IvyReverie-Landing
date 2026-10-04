@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-04T02:48:48.823Z",
+  "mode": "real providers / disposable unbound account",
+  "sources": [
+    {
+      "source": "api-enhanced",
+      "samples": [
+        {
+          "sourceId": "109530",
+          "title": "童年",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/jpg",
+            "bytes": 65536,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 1426,
+            "timed": true
+          },
+          "playback": {
+            "trial": true,
+            "durationMs": 46811,
+            "level": "standard"
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "application/octet-stream;charset=UTF-8",
+            "bytes": 65536,
+            "signature": true
+          }
+        },
+        {
+          "sourceId": "2080574142",
+          "title": "童年 (童声版)",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/jpg",
+            "bytes": 36063,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 814,
+            "timed": true
+          },
+          "playback": {
+            "trial": false,
+            "durationMs": 189831,
+            "level": "standard"
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "audio/mpeg",
+            "bytes": 65536,
+            "signature": true
+          }
+        }
+      ],
+      "keyword": "童年",
+      "search": {
+        "count": 2,
+        "status": "passed"
+      }
+    }
+  ],
+  "passed": true
+}

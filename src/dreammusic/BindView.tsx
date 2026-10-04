@@ -10,9 +10,11 @@ import './LoginView.css'
 export default function BindView({
   onBound,
   onLogout,
+  onSkip,
 }: {
   onBound: () => void
   onLogout: () => void
+  onSkip?: () => void
 }) {
   const { state, qrimg, message } = useQrLogin(onBound)
   const [checking, setChecking] = useState(false)
@@ -76,6 +78,7 @@ export default function BindView({
             {manualMsg}
           </p>
         )}
+        {onSkip && <button type="button" className="dm-btn-ghost" onClick={onSkip}>先使用其他音源</button>}
         <button type="button" className="dm-btn-ghost" onClick={onLogout}>
           退出登录
         </button>

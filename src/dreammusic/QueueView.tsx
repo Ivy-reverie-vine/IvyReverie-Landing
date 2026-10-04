@@ -60,6 +60,7 @@ export default function QueueView() {
             <Cover
               picUrl={t.picUrl}
               songId={t.id}
+              mediaRef={t.mediaRef}
               alt={t.name}
               className="dm-queue-thumb"
               phClassName="dm-queue-thumb-ph"
@@ -72,7 +73,7 @@ export default function QueueView() {
               <span className="dm-queue-name">{t.name}</span>
               <span className="dm-queue-artist">{t.artist}</span>
             </button>
-            <HeartButton songId={t.id} />
+            {typeof t.id === 'number' && (!t.source || t.source === 'api-enhanced') && <HeartButton songId={t.id} />}
             <div className="dm-queue-move">
               <button
                 type="button"

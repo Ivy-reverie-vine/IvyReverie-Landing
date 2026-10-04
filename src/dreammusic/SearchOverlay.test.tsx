@@ -5,18 +5,16 @@ import SearchOverlay from './SearchOverlay'
 
 // mock api
 vi.mock('./api', () => ({
-  search: vi.fn(async () => ({
-    result: {
-      songs: [
+  mediaSearch: vi.fn(async () => ({
+      data: [
         {
-          id: 1,
-          name: '晴天',
-          artists: [{ name: '周杰伦' }],
-          album: { name: 'The Day', picUrl: 'https://img/1.jpg' },
+          mediaRef: 'tencent-ref', source: 'meting-tencent', sourceId: 'qq-001',
+          title: '晴天', artists: ['周杰伦'],
+          album: { name: 'The Day', pictureUrl: 'https://img/1.jpg' },
         },
       ],
-    },
   })),
+  mediaUrl: vi.fn(async () => ({ data: [{ url: 'https://x/1.mp3' as string | null }] })),
   songUrlV1: vi.fn(async () => ({ data: [{ url: 'https://x/1.mp3' }] })),
   songUrlMatch: vi.fn(async () => ({ data: [{ url: 'https://qq/1.mp3' }] })),
   reportStats: vi.fn(),
@@ -29,7 +27,7 @@ vi.mock('./api', () => ({
   },
 }))
 
-import { search, songUrlV1, songUrlMatch } from './api'
+import { mediaSearch, mediaUrl, songUrlMatch } from './api'
 
 /** 壳：暴露当前曲名 + 渲染 SearchOverlay */
 function Harness({ onClose }: { onClose: () => void }) {
@@ -63,7 +61,7 @@ describe('SearchOverlay — DM-05', () => {
       target: { value: '晴天' },
     })
     expect(await findByText('晴天')).toBeInTheDocument()
-    expect(search).toHaveBeenCalledWith('晴天')
+    expect(mediaSearch).toHaveBeenCalledWith('晴天', '')
   })
 
   it('clicking a result fetches url and plays it', async () => {
@@ -75,15 +73,15 @@ describe('SearchOverlay — DM-05', () => {
     act(() => {
       fireEvent.click(item)
     })
-    expect(songUrlV1).toHaveBeenCalledWith(1, 'exhigh')
+    expect(mediaUrl).toHaveBeenCalledWith('tencent-ref', 'exhigh')
     // 拿到 url → PLAY_TRACK → 当前曲变成「晴天」
     expect(await findByText('晴天')).toBeInTheDocument()
     expect(getByTestId('current').textContent).toBe('晴天')
   })
 
-  it('falls back to unblock (songUrlMatch) when url is empty', async () => {
+  it('keeps an unavailable source result from falling into the download resolver', async () => {
     // 让 songUrlV1 返回空 url
-    vi.mocked(songUrlV1).mockResolvedValueOnce({ data: [{ url: null }] })
+    vi.mocked(mediaUrl).mockResolvedValueOnce({ data: [{ url: null }] })
     const { getByLabelText, findByText, getByTestId } = renderHarness()
     fireEvent.change(getByLabelText('搜索关键词'), {
       target: { value: '周杰伦' },
@@ -93,8 +91,16 @@ describe('SearchOverlay — DM-05', () => {
       fireEvent.click(item)
     })
     // 解灰路径有两次 await，等 PLAY_TRACK 落地（当前曲变「晴天」）再断言
-    await waitFor(() => expect(getByTestId('current').textContent).toBe('晴天'))
-    expect(songUrlV1).toHaveBeenCalledWith(1, 'exhigh')
-    expect(songUrlMatch).toHaveBeenCalledWith(1, 'qq')
+    await waitFor(() => expect(getByTestId('current').textContent).toBe('none'))
+    expect(await findByText(/当前音源没有可用播放链接/)).toBeInTheDocument()
+    expect(mediaUrl).toHaveBeenCalledWith('tencent-ref', 'exhigh')
+    expect(songUrlMatch).not.toHaveBeenCalled()
+  })
+  it('sends the selected source and replaces previous source results', async () => {
+    const { getByLabelText, findByText } = renderHarness()
+    fireEvent.change(getByLabelText('搜索关键词'), { target: { value: '晴天' } })
+    await findByText('晴天')
+    fireEvent.change(getByLabelText('音源'), { target: { value: 'meting-kugou' } })
+    await waitFor(() => expect(mediaSearch).toHaveBeenLastCalledWith('晴天', 'meting-kugou'))
   })
 })

@@ -32,6 +32,7 @@ export default function MiniBar({ onClick }: { onClick: () => void }) {
       <Cover
         picUrl={track.picUrl}
         songId={track.id}
+        mediaRef={track.mediaRef}
         alt=""
         className="dm-minibar-cover"
         phClassName="dm-minibar-cover-ph"

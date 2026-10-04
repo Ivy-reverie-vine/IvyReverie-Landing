@@ -71,8 +71,8 @@ export function createProxyRouter({
       .join('; ')
   }
 
-  function fail(res, httpStatus, message) {
-    res.status(httpStatus).json({ code: httpStatus, message })
+  function fail(res, httpStatus, message, errorCode = '') {
+    res.status(httpStatus).json({ code: httpStatus, message, ...(errorCode ? { errorCode } : {}) })
   }
 
   function resolveUser(req) {
@@ -172,6 +172,7 @@ export function createProxyRouter({
             : relPath === 'search'
               ? await orchestrator.dispatch({
                   path: relPath,
+                  sourceId: typeof req.query.source === 'string' ? req.query.source : '',
                   query: req.query,
                   method: req.method,
                   body: req.body,
@@ -198,10 +199,20 @@ export function createProxyRouter({
           : normalized
         return res.status(response.status).json(response.body)
       } catch (error) {
-        if (error?.message === 'mediaRef is required' || error?.code === 'INVALID_MEDIA_REF') {
-          return fail(res, 400, error?.code === 'INVALID_MEDIA_REF' ? 'mediaRef 无效' : '缺少 mediaRef')
+        if (apiVersion === 'v2' && error?.code === 'CAPABILITY_UNSUPPORTED') {
+          return fail(res, 501, relPath === 'lyric/new' ? '当前音源未提供歌词' : '当前音源不支持此功能', error.code)
         }
-        return fail(res, 502, '上游 API 不可达，请检查 api-enhanced 是否在运行')
+        if (apiVersion === 'v2' && error?.code === 'SOURCE_UNAVAILABLE') {
+          return fail(res, 503, '当前音源未启用、暂不可用或正在熔断；请切换音源或稍后重试', error.code)
+        }
+        if (apiVersion === 'v2' && error?.code === 'IDENTITY_UNSUPPORTED') {
+          return fail(res, 400, '当前接口尚不支持跨来源身份组合', error.code)
+        }
+        if (error?.message === 'mediaRef is required' || error?.code === 'INVALID_MEDIA_REF') {
+          return fail(res, 400, error?.code === 'INVALID_MEDIA_REF' ? 'mediaRef 无效' : '缺少 mediaRef',
+            apiVersion === 'v2' ? error.code || 'MEDIA_REF_REQUIRED' : '')
+        }
+        return fail(res, 502, apiVersion === 'v2' ? '当前音源请求失败，请稍后重试或切换音源' : '上游 API 不可达，请检查 api-enhanced 是否在运行')
       }
     }
 

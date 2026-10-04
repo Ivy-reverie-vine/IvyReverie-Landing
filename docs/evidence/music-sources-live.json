@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-04T02:30:50.080Z",
+  "mode": "real providers / disposable unbound account",
+  "sources": [
+    {
+      "source": "api-enhanced",
+      "samples": [],
+      "error": "HTTP 503: 当前音源未启用、暂不可用或正在熔断；请切换音源或稍后重试"
+    },
+    {
+      "source": "meting-tencent",
+      "samples": [
+        {
+          "sourceId": "004YZMGx1EXDgl",
+          "title": "童年",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/jpeg",
+            "bytes": 21747,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 1171,
+            "timed": true
+          },
+          "audio": {
+            "status": "unavailable"
+          }
+        },
+        {
+          "sourceId": "004dkIbu1JPcuJ",
+          "title": "童年",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/jpeg",
+            "bytes": 21297,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 790,
+            "timed": true
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "audio/mpeg",
+            "bytes": 65536,
+            "signature": true
+          }
+        }
+      ],
+      "search": {
+        "count": 2,
+        "status": "passed"
+      }
+    },
+    {
+      "source": "meting-kugou",
+      "samples": [
+        {
+          "sourceId": "2f50c5d01d69579893bf8af005a14c9e",
+          "title": "童年",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/jpeg",
+            "bytes": 59142,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 1080,
+            "timed": true
+          },
+          "audio": {
+            "status": "unavailable"
+          }
+        },
+        {
+          "sourceId": "26d305ef1ddd0a652fd03fa6ef9e7c52",
+          "title": "童年",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "passed",
+            "http": 206,
+            "mime": "image/png",
+            "bytes": 65536,
+            "signature": true
+          },
+          "lyrics": {
+            "status": "passed",
+            "characters": 156,
+            "timed": true
+          },
+          "audio": {
+            "status": "unavailable"
+          }
+        }
+      ],
+      "search": {
+        "count": 2,
+        "status": "passed"
+      }
+    },
+    {
+      "source": "meting-kuwo",
+      "samples": [],
+      "error": "HTTP 503: 当前音源未启用、暂不可用或正在熔断；请切换音源或稍后重试"
+    },
+    {
+      "source": "audius",
+      "samples": [
+        {
+          "sourceId": "QJpGKw",
+          "title": "🖤YAN MI - HELLO",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "failed",
+            "error": "TypeError"
+          },
+          "lyrics": {
+            "status": "unsupported",
+            "error": "HTTP 501: 当前音源未提供歌词"
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "audio/mpeg",
+            "bytes": 65536,
+            "signature": true
+          }
+        },
+        {
+          "sourceId": "0X2o9",
+          "title": "Hello McFlyy - Episode 007",
+          "identity": "passed",
+          "detail": {
+            "status": "passed"
+          },
+          "cover": {
+            "status": "failed",
+            "error": "TypeError"
+          },
+          "lyrics": {
+            "status": "unsupported",
+            "error": "HTTP 501: 当前音源未提供歌词"
+          },
+          "audio": {
+            "status": "passed",
+            "http": 206,
+            "mime": "audio/mpeg",
+            "bytes": 65536,
+            "signature": true
+          }
+        }
+      ],
+      "search": {
+        "count": 2,
+        "status": "passed"
+      }
+    }
+  ]
+}

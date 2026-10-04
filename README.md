@@ -6,6 +6,25 @@ NeteaseCloudMusicApiEnhanced（api-enhanced），对外提供 `/dreammusic/api/v
 
 ## 本地运行
 
+Windows 音乐获取测试：双击上一级目录的 `Start-NightDream.cmd`，默认“全部音源”，打开正式播放器 `http://127.0.0.1:5173/dreammusic`。登录后在搜索面板的“音源”选择网易云、腾讯、酷狗、酷我或 Audius；每个结果标明实际来源，搜索与播放使用同一 `mediaRef`。未绑定网易云可以点击“先使用其他音源”；网易云歌单、红心和下载仍需要网易云绑定。
+
+停止服务：启动窗口按 Ctrl+C、输入 `q` 回车，或双击上一级 `Stop-NightDream.cmd`。后者只停止启动记录中、进程命令与本次随机标识都匹配的测试子进程。服务通过 IPC 监视启动器，启动器被强制结束时子进程也退出。端口已占用时不会复用未知配置的服务。
+
+默认复用 `NightDream/data` 账户数据库。“全部音源”启动本地 `api-enhanced`、Meting、NightDream 和 Vite，并启用 Audius 适配器；也可单独启动一个来源。显式选择来源时不会回退至其他来源；“自动选择”按服务端优先级与可用状态调度，不是跨来源合并搜索。Meting 首次自动安装锁定版本的 `@meting/core`，然后启动本地 JSON sidecar（默认 `127.0.0.1:8000`）并自动连接 NightDream，无需 PHP、Docker 或手填接口地址。
+
+如需使用已有的外部 sidecar、指定本地端口或填写平台凭据，复制 `music-test.env.example` 为 `music-test.env.local`，再填写相应变量。显式设置 `METING_API_URL` 时使用该外部服务，不启动本地 sidecar。Audius 凭据如需要也填入该本地文件，不在网页填写；本地配置不会被 Git 跟踪。脚本只开启本次测试进程的来源，不修改生产默认开关。
+
+```powershell
+# 项目总目录 D:\DreamMusic 下执行；也可直接双击，不需要参数
+.\Start-NightDream.cmd
+.\Start-NightDream.cmd --source all                 # 从正式前端切换音源
+.\Start-NightDream.cmd --source audius
+.\Start-NightDream.cmd --source tencent             # 自动启动本地 Meting + NightDream + 网页
+.\Start-NightDream.cmd --source api-enhanced --check   # 只检查环境，不启动
+```
+
+需要 Node.js 22.13+ 和已安装的项目依赖。首次缺少依赖时按脚本提示安装。`/dreammusic` 搜索现在使用 v2；非网易曲目以来源引用进入播放队列，不调用网易数字 ID 的红心／下载接口。重新加载队列、切音质和播放链接失败重解析都保持原引用；播放链接不会写入持久化队列。`/music-test.html` 保留为接口诊断页。Meting 失败日志包含错误类别和上游 HTTP 状态，不包含凭据或完整上游 URL；真实浏览器通过不等于 HarmonyOS AVPlayer 真机通过。
+
 ```bash
 npm install
 npm run dev:all   # 中间层(3001) + 前端(5173) 一条命令同时启动
@@ -48,6 +67,10 @@ npm run dev      # 前端 @ http://localhost:5173
 | `MEDIA_PROXY_*` | 默认关闭 | AVPlayer 直链兼容代理参数 |
 
 ## 测试与构建
+
+真实多源验收（需要网络，网易云需先启动本地 `api-enhanced`）：`node scripts/verify-music-sources.mjs`。脚本使用独立临时数据库、真实鉴权和 v2 路由，逐源检查搜索、详情、歌词、封面图片字节及音频前 64 KiB；默认监听 18000/18001，不接触现有账户数据库。报告写入 `docs/evidence/music-sources-live.json`，失败退出码为 1。`--serve` 保留隔离播放器供浏览器试听，输入 `q` 或 Ctrl+C 清理；可用 `VERIFY_SOURCES`、`VERIFY_PORT`、`VERIFY_METING_PORT`、`VERIFY_REPORT` 限定复测。浏览器实际播放和真机验证需另外记录，不能由字节检查替代。
+
+2026-10-04 验收及剩余上游问题见 [真实多源验收记录](docs/music-source-validation-2026-10-04.md)。
 
 ```bash
 npm test          # vitest（当前 180 个用例）

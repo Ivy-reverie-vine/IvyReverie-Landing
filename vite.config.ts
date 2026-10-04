@@ -58,7 +58,11 @@ export default defineConfig({
     proxy: {
       // DreamMusic 中间层（账户/会话/白名单转发）@ localhost:3001
       // /dreammusic/api/v1/search → middleware → api-enhanced(3000)/search
-      '/dreammusic/api/v1': {
+      '/dreammusic/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
+      '/dreammusic/media': {
         target: 'http://localhost:3001',
         changeOrigin: true,
       },

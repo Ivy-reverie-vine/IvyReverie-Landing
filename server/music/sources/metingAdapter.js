@@ -4,6 +4,7 @@ const ROUTE_TYPES = Object.freeze({
   search: 'search',
   'song/detail': 'song',
   'song/url/v1': 'url',
+  'lyric/new': 'lrc',
 })
 
 function asArray(value) {
@@ -68,7 +69,7 @@ export class MetingAdapter {
   }
 
   capabilities() {
-    return ['search', 'detail', 'playback']
+    return ['search', 'detail', 'lyrics', 'playback']
   }
 
   async request({ path, query = {}, timeoutMs = 8000 }) {
@@ -84,10 +85,23 @@ export class MetingAdapter {
     }
 
     const payload = await this.fetchResource(type, resourceId, query, timeoutMs)
+    if (path === 'lyric/new') {
+      return { status: 200, body: { code: 200, lrc: { lyric: String(payload?.lyric || '') }, tlyric: { lyric: String(payload?.tlyric || '') } } }
+    }
     if (path === 'search' || path === 'song/detail') {
       const data = asArray(payload)
         .map((item) => this.normalizeSong(item))
         .filter(Boolean)
+      // Resolve artwork on demand; searching must not fan out into one request per result.
+      if (path === 'song/detail') {
+        for (const song of data) {
+          if (song.album.pictureUrl || !song.album.pictureId) continue
+          try {
+            const picture = await this.fetchResource('pic', song.album.pictureId, {}, timeoutMs)
+            song.album.pictureUrl = String(picture?.url || '')
+          } catch { /* Artwork can be unavailable independently of the song. */ }
+        }
+      }
       return { status: 200, body: { code: 200, data } }
     }
 
@@ -121,11 +135,13 @@ export class MetingAdapter {
       album: {
         name: String(raw.album?.name ?? raw.album ?? raw.albumName ?? '').trim(),
         pictureId: raw.pic_id === undefined ? '' : String(raw.pic_id),
+        pictureUrl: String(raw.album?.pictureUrl || raw.pic || raw.picUrl || ''),
       },
       durationMs: durationMs(raw),
       capabilities: {
         search: true,
         detail: true,
+        lyrics: true,
         playback: true,
       },
     }

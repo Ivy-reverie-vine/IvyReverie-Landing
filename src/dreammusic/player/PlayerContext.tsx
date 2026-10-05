@@ -15,7 +15,9 @@ import {
   type PlayerState,
   type PlayerAction,
 } from './reducer'
-import { songUrlV1, songUrlMatch, mediaUrl, reportStats } from '../api'
+import { songUrlV1, mediaUrl, reportStats } from '../api'
+
+import { fullAudioUrl } from '../audioIntegrity'
 
 const STORAGE_PREFIX = 'dreammusic_player'
 
@@ -202,18 +204,14 @@ export function PlayerProvider({
     }
   }, [state.isPlaying, state.currentIndex, trackUrl])
 
-  // 当前曲缺 url 时（来自歌单/队列，非搜索路径）自动取链接 + 解灰兜底
+  // 当前曲缺 URL 时只解析选定资源，并要求可靠完整版。
   useEffect(() => {
     if (!track || track.url) return
     let cancelled = false
     ;(async () => {
       try {
         const r = track.mediaRef ? await mediaUrl(track.playbackRef || track.mediaRef, state.level) : await songUrlV1(track.id, state.level)
-        let url = r.data?.[0]?.url || ''
-        if (!url && !track.mediaRef) {
-          const m = await songUrlMatch(track.id, 'qq')
-          url = m.data?.[0]?.url || ''
-        }
+        const url = fullAudioUrl(r)
         if (!cancelled && url) {
           dispatch({ type: 'SET_TRACK_URL', id: track.id, url, identity: track.mediaRef ? {
             catalogRef: r.catalogRef || track.catalogRef || track.mediaRef,
@@ -249,11 +247,7 @@ export function PlayerProvider({
     ;(async () => {
       try {
         const r = t.mediaRef ? await mediaUrl(t.playbackRef || t.mediaRef, state.level) : await songUrlV1(t.id, state.level)
-        let url = r.data?.[0]?.url || ''
-        if (!url && !t.mediaRef) {
-          const m = await songUrlMatch(t.id, 'qq')
-          url = m.data?.[0]?.url || ''
-        }
+        const url = fullAudioUrl(r)
         if (!cancelled && url && url !== t.url) {
           pendingSeekRef.current = pos
           dispatch({ type: 'SET_TRACK_URL', id: t.id, url, identity: t.mediaRef ? {
@@ -294,7 +288,7 @@ export function PlayerProvider({
             try {
               const result = await mediaUrl(failed.playbackRef || failed.mediaRef, state.level)
               if (liveTrack.current?.id !== failed.id) return
-              const refreshed = result.data?.[0]?.url
+              const refreshed = fullAudioUrl(result)
               if (refreshed && refreshed !== failed.url) {
                 dispatch({ type: 'SET_TRACK_URL', id: failed.id, url: refreshed, identity: {
                   catalogRef: result.catalogRef || failed.catalogRef || failed.mediaRef,

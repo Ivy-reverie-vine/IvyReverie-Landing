@@ -12,7 +12,7 @@ vi.mock('./api', () => ({
     source: 'api-enhanced', sourceId: '123', legacyId: 123, title: '目录歌曲', artists: ['原歌手'],
     album: { pictureUrl: 'https://cover.test/catalog.jpg' },
   }] })),
-  mediaUrl: vi.fn(async (ref: string) => ({ data: [{ url: 'https://audio.test/123.mp3' }],
+  mediaUrl: vi.fn(async (ref: string) => ({ audioIntegrity: { status: 'full' as const, reason: 'controlled_full', catalogDurationMs: 90000, resourceDurationMs: 90000, evidence: ['controlled'] }, data: [{ url: 'https://audio.test/123.mp3' }],
     catalogRef: ref, playbackRef: ref, lyricsRef: ref, playbackSource: 'api-enhanced', lyricsSource: 'api-enhanced' })),
   mediaLyrics: vi.fn(async () => ({ lrc: { lyric: '[00:01]目录歌词' }, lyricsRef: 'catalog-123', lyricsSource: 'api-enhanced' })),
   mediaDetail: vi.fn(async () => ({ data: [{ album: { pictureUrl: 'https://cover.test/late.jpg' } }] })),

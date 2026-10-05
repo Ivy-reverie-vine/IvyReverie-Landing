@@ -1,3 +1,5 @@
+import { assessAudio } from '../audioIntegrity.js'
+
 const ROUTES = Object.freeze({
   search: 'search',
   'song/detail': 'detail',
@@ -79,7 +81,8 @@ export class AudiusAdapter {
     }
     const cacheKey = `playback|${trackId}`
     const cached = this.getCache(cacheKey)
-    if (cached) return { status: 200, body: { code: 200, data: [cached] } }
+    if (cached) return { status: 200, body: { code: 200, data: [cached],
+      audioIntegrity: assessAudio({ url: cached.url, catalogDurationMs: Number(track.duration) * 1000 }) } }
     const stream = await this.fetchStream(trackId, timeoutMs)
     const playback = {
       url: stream,
@@ -88,7 +91,8 @@ export class AudiusAdapter {
       expiresAt: this.now() + this.cacheTtlMs,
     }
     this.cache.set(cacheKey, { value: playback, expiresAt: this.now() + this.cacheTtlMs })
-    return { status: 200, body: { code: 200, data: [playback] } }
+    return { status: 200, body: { code: 200, data: [playback],
+      audioIntegrity: assessAudio({ url: stream, catalogDurationMs: Number(track.duration) * 1000 }) } }
   }
 
   normalizeTrack(track) {

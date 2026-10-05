@@ -32,9 +32,9 @@ export async function startIdentityGateway() {
     if (controlled) return controlled
     const path = url.pathname
     if (path === '/search') return json({ code: 200, result: { songs: [song], more: false } })
-    if (path === '/song/detail') return json({ code: 200, songs: [song] })
+    if (path === '/song/detail') return json({ code: 200, songs: [{ ...song, id: Number(url.searchParams.get('ids') || song.id) }] })
     if (path === '/song/url/v1') return controls.failure ? json({ code: 503 }, 503)
-      : json({ code: 200, data: [{ id: 123, url: controls.emptyUrl ? '' : 'https://audio.test/123.mp3' }] })
+      : json({ code: 200, data: [{ id: Number(url.searchParams.get('id') || 123), url: controls.emptyUrl ? '' : 'https://audio.test/123.mp3', time: 90000, freeTrialInfo: null }] })
     if (path === '/lyric/new') return controls.lyricsFailure ? json({ code: 502 }, 502)
       : json({ code: 200, lrc: { lyric: '[00:01]目录歌词' } })
     if (path === '/login/qr/check') return json({ code: 803, cookie: 'MUSIC_U=controlled; Path=/; HttpOnly' })
@@ -52,8 +52,9 @@ export async function startIdentityGateway() {
         const controlled = await controls.thirdPartyResponse(url)
         if (controlled) return controlled
         const type = url.searchParams.get('type')
-        if (type === 'url') return json({ url: 'https://audio.test/qq-001.mp3' })
+        if (type === 'url') return json({ url: 'https://audio.test/qq-001.mp3', durationMs: 90000, isPreview: false })
         if (type === 'lrc') return json({ lyric: '[00:01]QQ歌词' })
+        if (type === 'song') return json([{ id: url.searchParams.get('id'), name: 'QQ目录', artist: ['QQ歌手'], duration: 90 }])
         return json([{ id: 'qq-001', name: 'QQ目录', artist: ['QQ歌手'], pic: 'https://cover.test/qq.jpg', duration: 90 }])
       } })
     orchestrator.registry.register(adapter, { priority: 10, capabilities: platform === 'kugou'

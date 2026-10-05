@@ -54,7 +54,8 @@ describe('T01 identity through the real HTTP gateway and orchestration', () => {
     const search = await request('/dreammusic/api/v1/search?keywords=a')
     expect(search.body).toEqual({ code: 200, result: { songs: [gateway.song], more: false } })
     const audio = await request('/dreammusic/api/v1/song/url/v1?id=123', { Cookie: gateway.cookie })
-    expect(audio.body).toEqual({ code: 200, data: [{ id: 123, url: 'https://audio.test/123.mp3' }] })
+    expect(audio.body).toMatchObject({ code: 200, data: [{ id: 123, url: 'https://audio.test/123.mp3' }],
+      audioIntegrity: { status: 'full' } })
     expect(gateway.controls.calls.findLast(call => call.pathname === '/song/url/v1').searchParams.get('cookie'))
       .toBe('MUSIC_U=controlled')
     gateway.users.markNeteaseInvalid(gateway.userId)

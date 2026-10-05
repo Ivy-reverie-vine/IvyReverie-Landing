@@ -109,6 +109,7 @@ export function toMediaV2Body(path, body, mediaRef = '') {
       code: body?.code === undefined ? 200 : body.code,
       data: data.length > 0 ? [{ ...data[0], mediaRef, ...singleSourceIdentity(mediaRef) }] : [],
       mediaRef,
+      audioIntegrity: body?.audioIntegrity,
       ...singleSourceIdentity(mediaRef),
     }
   }

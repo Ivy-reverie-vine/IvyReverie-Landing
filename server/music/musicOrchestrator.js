@@ -13,6 +13,7 @@ import { parseMediaRef, toMediaV2Body } from '../mediaContract.js'
 import { MusicSourceRegistry } from './sourceRegistry.js'
 import { randomUUID } from 'node:crypto'
 import { RecordingSearchGroups } from './recordingMatcher.js'
+import { assessAudio } from './audioIntegrity.js'
 
 export const MUSIC_ROUTE_CAPABILITIES = Object.freeze({
   search: 'search',
@@ -169,7 +170,9 @@ export class MusicOrchestrator {
   async dispatch({ path, query, method, body, user, sourceId = '' }) {
     const capability = MUSIC_ROUTE_CAPABILITIES[path]
     const candidates = this.registry.list({ capability })
-    const sources = sourceId ? candidates.filter(source => source.id === sourceId) : candidates
+    // A legacy numeric ID is a NetEase resource, not an ID shared by every platform.
+    const sources = sourceId ? candidates.filter(source => source.id === sourceId)
+      : capability === 'playback' ? candidates.filter(source => source.id === 'api-enhanced') : candidates
     if (sourceId && sources.length === 0) throw new MusicSourceError('SOURCE_UNAVAILABLE', 'selected source is unavailable')
     const sourceQuery = { ...query }
     if (sourceId) delete sourceQuery.source
@@ -217,7 +220,6 @@ export class MusicOrchestrator {
       throw new MusicSourceError('NO_SOURCE', `no enabled music source supports ${capability}`)
     }
 
-    let lastEmptyPlayback = null
     let lastFailedResponse = null
     for (const source of sources) {
       if (!this.registry.beginRequest(source)) continue
@@ -244,7 +246,8 @@ export class MusicOrchestrator {
 
         if (capability === 'playback') {
           const url = playbackUrl(result.body)
-          const mediaOk = ok && url !== ''
+          result.body.audioIntegrity ??= assessAudio({ url })
+          const mediaOk = ok && result.body.audioIntegrity.status === 'full'
           this.diagnostics.record({
             source: source.id,
             capability,
@@ -255,7 +258,7 @@ export class MusicOrchestrator {
               ? {}
               : {
                   errorCategory: ok
-                    ? DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL
+                    ? url === '' ? DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL : `audio_${result.body.audioIntegrity.status}`
                     : result.status >= 400
                       ? DIAGNOSTIC_CATEGORY_URL_EXPIRED_OR_UNREACHABLE
                       : DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
@@ -266,17 +269,15 @@ export class MusicOrchestrator {
             durationMs,
             ok,
             playbackOk: mediaOk,
+            // Preview/unknown is a valid provider answer, not a service outage.
+            circuitHealthy: ok && url !== '' && result.body.audioIntegrity.status !== 'unavailable',
             errorCategory: mediaOk
               ? ''
               : ok
-                ? DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL
+                ? url === '' ? DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL : `audio_${result.body.audioIntegrity.status}`
                 : DIAGNOSTIC_CATEGORY_SOURCE_FAILURE,
           })
-          if (mediaOk) return result
-          if (ok && url === '') {
-            lastEmptyPlayback = result
-            continue
-          }
+          if (ok) return result
         } else {
           this.registry.recordResult(source, {
             capability,
@@ -328,7 +329,6 @@ export class MusicOrchestrator {
       }
     }
 
-    if (lastEmptyPlayback) return lastEmptyPlayback
     if (lastFailedResponse) return lastFailedResponse
     throw new MusicSourceError('SOURCE_UNAVAILABLE', 'all enabled music sources are unavailable')
   }

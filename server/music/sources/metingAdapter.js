@@ -1,4 +1,5 @@
 import { createHmac } from 'node:crypto'
+import { assessAudio, trialFlag } from '../audioIntegrity.js'
 
 const ROUTE_TYPES = Object.freeze({
   search: 'search',
@@ -119,10 +120,21 @@ export class MetingAdapter {
 
     const first = asArray(payload)[0] || payload
     const url = typeof first === 'string' ? first : String(first?.url || '')
+    let catalogDurationMs = 0
+    try {
+      const detail = await this.fetchResource('song', resourceId, {}, timeoutMs)
+      const song = asArray(detail).find(item => String(item.url_id ?? item.id) === resourceId)
+      catalogDurationMs = song ? durationMs(song) : 0
+    } catch { /* Missing evidence is not a full recording. */ }
+    const audioIntegrity = assessAudio({ url, catalogDurationMs,
+      resourceDurationMs: Number(first?.durationMs || 0), trial: trialFlag(first),
+      identityMatches: (first?.sourceId ?? first?.id) === undefined ||
+        String(first.sourceId ?? first.id) === resourceId })
     return {
       status: 200,
       body: {
         code: 200,
+        audioIntegrity,
         data: url === '' ? [] : [{
           url,
           source: this.id,

@@ -67,7 +67,12 @@ const server = createServer(async (req, res) => {
       const mediaUrl = typeof body?.url === 'string' ? body.url : ''
       if (mediaUrl && !['http:', 'https:'].includes(new URL(mediaUrl).protocol)) throw new Error('Invalid provider URL')
       // Return JSON instead of fetching the audio through an upstream 302 redirect.
-      return json(res, 200, { url: mediaUrl, br: Number(body?.br || 0) })
+      // Preserve only evidence actually returned; core's URL-only result remains unknown.
+      return json(res, 200, { url: mediaUrl, br: Number(body?.br || 0),
+        ...(Number.isFinite(body?.durationMs) ? { durationMs: body.durationMs } : {}),
+        ...(typeof body?.isPreview === 'boolean' ? { isPreview: body.isPreview } : {}),
+        ...(typeof body?.trial === 'boolean' ? { trial: body.trial } : {}),
+        ...(body?.freeTrialInfo !== undefined ? { freeTrialInfo: body.freeTrialInfo } : {}) })
     }
     if (!Array.isArray(body) || body.some(song => !song?.id || !song?.name)) throw new Error('Invalid provider list')
     json(res, 200, body)

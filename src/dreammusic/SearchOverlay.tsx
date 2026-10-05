@@ -4,6 +4,7 @@ import { usePlayer } from './player/PlayerContext'
 import type { Track } from './player/reducer'
 import Icon from '../components/Icon'
 import './SearchOverlay.css'
+import { fullAudioUrl } from './audioIntegrity'
 
 const SOURCES = [
   ['', '自动选择'], ['api-enhanced', '网易云'], ['meting-tencent', '腾讯 / QQ'],
@@ -61,11 +62,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
     try {
       const response = await mediaUrl(song.playbackRef || song.mediaRef, state.level)
       if (!mounted.current) return
-      const url = response.data?.[0]?.url
-      if (!url) {
-        setError('当前音源没有可用播放链接，可能需要会员或内容授权；请换一首歌或切换音源')
-        return
-      }
+      const url = fullAudioUrl(response)
       if (response.catalogRef && response.catalogRef !== (song.catalogRef || song.mediaRef)) {
         setError('播放响应与所选歌曲不一致，请重新选择')
         return
@@ -79,7 +76,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
       } })
       if (!enqueue) onClose()
     } catch (error) {
-      if (mounted.current) setError(error instanceof NcmError ? error.message : '获取播放链接失败')
+      if (mounted.current) setError(error instanceof Error ? error.message : '获取播放链接失败')
     } finally { if (mounted.current) setPendingId(null) }
   }
   return (

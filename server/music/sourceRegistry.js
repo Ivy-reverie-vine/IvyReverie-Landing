@@ -96,6 +96,7 @@ export class MusicSourceRegistry {
     durationMs = 0,
     ok = false,
     playbackOk = false,
+    circuitHealthy = undefined,
     errorCategory = '',
   } = {}) {
     const source = typeof sourceOrId === 'string' ? this.get(sourceOrId) : sourceOrId
@@ -128,7 +129,7 @@ export class MusicSourceRegistry {
       }
     }
 
-    const healthy = capability === 'playback' ? playbackOk : ok
+    const healthy = circuitHealthy ?? (capability === 'playback' ? playbackOk : ok)
     if (healthy) {
       source.failureStreak = 0
       source.openUntilMs = 0

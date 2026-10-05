@@ -14,9 +14,9 @@ vi.mock('./api', () => ({
         },
       ],
   })),
-  mediaUrl: vi.fn(async () => ({ data: [{ url: 'https://x/1.mp3' as string | null }] })),
-  songUrlV1: vi.fn(async () => ({ data: [{ url: 'https://x/1.mp3' }] })),
-  songUrlMatch: vi.fn(async () => ({ data: [{ url: 'https://qq/1.mp3' }] })),
+  mediaUrl: vi.fn(async () => ({ audioIntegrity: { status: 'full' as const, reason: 'controlled_full', catalogDurationMs: 90000, resourceDurationMs: 90000, evidence: ['controlled'] }, data: [{ url: 'https://x/1.mp3' as string | null }] })),
+  songUrlV1: vi.fn(async () => ({ audioIntegrity: { status: 'full' as const, reason: 'controlled_full', catalogDurationMs: 90000, resourceDurationMs: 90000, evidence: ['controlled'] }, data: [{ url: 'https://x/1.mp3' }] })),
+  songUrlMatch: vi.fn(async () => ({ audioIntegrity: { status: 'full' as const, reason: 'controlled_full', catalogDurationMs: 90000, resourceDurationMs: 90000, evidence: ['controlled'] }, data: [{ url: 'https://qq/1.mp3' }] })),
   reportStats: vi.fn(),
   NcmError: class NcmError extends Error {
     code: string
@@ -92,7 +92,7 @@ describe('SearchOverlay — DM-05', () => {
     })
     // 解灰路径有两次 await，等 PLAY_TRACK 落地（当前曲变「晴天」）再断言
     await waitFor(() => expect(getByTestId('current').textContent).toBe('none'))
-    expect(await findByText(/当前音源没有可用播放链接/)).toBeInTheDocument()
+    expect(await findByText(/当前来源音频不可用/)).toBeInTheDocument()
     expect(mediaUrl).toHaveBeenCalledWith('tencent-ref', 'exhigh')
     expect(songUrlMatch).not.toHaveBeenCalled()
   })
@@ -103,4 +103,22 @@ describe('SearchOverlay — DM-05', () => {
     fireEvent.change(getByLabelText('音源'), { target: { value: 'meting-kugou' } })
     await waitFor(() => expect(mediaSearch).toHaveBeenLastCalledWith('晴天', 'meting-kugou'))
   })
+  for (const status of ['preview', 'unknown', 'unavailable'] as const) {
+    it(`keeps ${status} out of the audio element and lets the user retry the selected result`, async () => {
+      vi.mocked(mediaUrl).mockResolvedValueOnce({ data: [{ url: 'https://x/non-full.mp3' }],
+        audioIntegrity: { status, reason: 'controlled', catalogDurationMs: 90000, resourceDurationMs: 30000, evidence: [] } })
+      const ui = renderHarness()
+      fireEvent.change(ui.getByLabelText('搜索关键词'), { target: { value: '晴天' } })
+      const item = await ui.findByText('晴天')
+      fireEvent.click(item)
+      expect(await ui.findByRole('alert')).toHaveTextContent(/重试/)
+      expect(ui.getByTestId('current')).toHaveTextContent('none')
+      expect(ui.container.querySelector('audio')).not.toHaveAttribute('src')
+      expect(songUrlMatch).not.toHaveBeenCalled()
+      await waitFor(() => expect(item.closest('button')).not.toBeDisabled())
+      fireEvent.click(item)
+      await waitFor(() => expect(ui.getByTestId('current')).toHaveTextContent('晴天'))
+      expect(mediaUrl).toHaveBeenLastCalledWith('tencent-ref', 'exhigh')
+    })
+  }
 })

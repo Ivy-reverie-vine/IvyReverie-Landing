@@ -70,7 +70,7 @@ describe('MusicOrchestrator', () => {
     expect(calls).toEqual(['api-enhanced'])
   })
 
-  it('falls back after a source timeout', async () => {
+  it('ends a selected legacy playback after timeout without reusing its ID on another source', async () => {
     const events = diagnostics()
     const fallback = {
       id: 'fallback',
@@ -94,9 +94,9 @@ describe('MusicOrchestrator', () => {
       diagnostics: events,
     })
 
-    const result = await orchestrator.dispatch({ path: 'song/url/v1', query: { id: '1' } })
-
-    expect(result.body.data[0].url).toContain('song.mp3')
+    await expect(orchestrator.dispatch({ path: 'song/url/v1', query: { id: '1' } }))
+      .rejects.toMatchObject({ code: 'SOURCE_UNAVAILABLE' })
+    expect(orchestrator.registry.get('fallback').metrics.requests).toBe(0)
     expect(events.events).toEqual(expect.arrayContaining([
       expect.objectContaining({ source: 'api-enhanced', errorCategory: DIAGNOSTIC_CATEGORY_SOURCE_TIMEOUT }),
     ]))

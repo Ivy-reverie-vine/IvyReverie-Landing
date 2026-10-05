@@ -76,7 +76,8 @@ describe('MetingAdapter', () => {
 
     expect(first.body.data[0]).toMatchObject({ source: 'meting-kuwo', sourceId: 'kw-1' })
     expect(second.body.data[0].url).toBe('https://cdn.test/track.mp3')
-    expect(calls).toBe(1)
+    expect(calls).toBe(2) // URL and catalog evidence are independently cached.
+    expect(first.body.audioIntegrity.status).toBe('unknown')
   })
 
   it('maps a timeout to a safe source error', async () => {

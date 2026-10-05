@@ -529,7 +529,17 @@ export interface MediaIdentity {
   playbackSource?: string
   lyricsSource?: string
 }
-export interface SongUrlResult extends MediaIdentity { data?: Array<{ url: string | null; [k: string]: unknown }> }
+export interface AudioIntegrity {
+  status: 'full' | 'preview' | 'unknown' | 'unavailable'
+  reason: string
+  catalogDurationMs: number
+  resourceDurationMs: number
+  evidence: string[]
+}
+export interface SongUrlResult extends MediaIdentity {
+  data?: Array<{ url: string | null; [k: string]: unknown }>
+  audioIntegrity?: AudioIntegrity
+}
 export interface LyricResult extends MediaIdentity { lrc?: { lyric?: string }; yrc?: { lyric?: string }; [k: string]: unknown }
 export interface PersonalizedResult { result?: Array<{ id: number; name: string; picUrl: string }> }
 export interface PlaylistSummary {

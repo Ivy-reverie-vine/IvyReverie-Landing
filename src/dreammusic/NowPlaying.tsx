@@ -61,7 +61,9 @@ export default function NowPlaying() {
     setLyricHint('正在加载歌词…')
     setRetryable(false)
     const lyric: Promise<LyricResult> = track.mediaRef
-      ? mediaLyrics(track.catalogRef || track.mediaRef, track.playbackRef || track.mediaRef, controller.signal)
+      ? track.playbackRevision
+        ? mediaLyrics(track.catalogRef || track.mediaRef, track.playbackRef || track.mediaRef, controller.signal, true)
+        : mediaLyrics(track.catalogRef || track.mediaRef, track.playbackRef || track.mediaRef, controller.signal)
       : lyricNew(track.id)
     lyric
       .then((r) => {
@@ -90,7 +92,7 @@ export default function NowPlaying() {
       cancelled = true
       controller.abort()
     }
-  }, [track?.id, track?.mediaRef, track?.catalogRef, track?.playbackRef, track?.lyricsRef, lyricRetry])
+  }, [track?.id, track?.mediaRef, track?.catalogRef, track?.playbackRef, track?.lyricsRef, track?.playbackRevision, lyricRetry])
 
   const timeMs = state.currentTime * 1000
   const activeIdx = timelineTrusted ? findActiveIndex(lyrics.lines, timeMs) : -1

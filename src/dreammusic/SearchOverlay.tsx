@@ -69,6 +69,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
       }
       dispatch({ type: enqueue ? 'ADD_TO_QUEUE' : 'PLAY_TRACK', track: {
         ...toTrack(song), url,
+        recoveryToken: response.recoveryToken,
         playbackRef: response.playbackRef || song.playbackRef || song.mediaRef,
         lyricsRef: response.lyricsRef || song.lyricsRef || song.mediaRef,
         playbackSource: response.playbackSource || song.source,

@@ -15,7 +15,7 @@ import {
   type PlayerState,
   type PlayerAction,
 } from './reducer'
-import { songUrlV1, mediaUrl, reportStats } from '../api'
+import { songUrlV1, mediaUrl, recoverMediaUrl, reportStats } from '../api'
 
 import { fullAudioUrl } from '../audioIntegrity'
 
@@ -119,7 +119,7 @@ export function PlayerProvider({
       localStorage.setItem(
         key,
         JSON.stringify({
-          queue: state.queue.map(({ url: _url, ...metadata }) => metadata),
+          queue: state.queue.map(({ url: _url, recoveryToken: _token, ...metadata }) => metadata),
           currentIndex: state.currentIndex,
           mode: state.mode,
           level: state.level,
@@ -159,28 +159,37 @@ export function PlayerProvider({
   const track = currentTrack(state)
   const liveTrack = useRef(track)
   liveTrack.current = track
-  const retriedTrack = useRef<number | string | null>(null)
-  useEffect(() => { retriedTrack.current = null; setPlaybackError('') }, [track?.id])
+  const recovery = useRef<{ track: NonNullable<typeof track>; controller: AbortController; timer: ReturnType<typeof setTimeout>; deadline: number } | null>(null)
+  const recoveryAttempts = useRef(0)
+  const stopRecovery = () => {
+    if (recovery.current) { clearTimeout(recovery.current.timer); recovery.current.controller.abort(); recovery.current = null }
+  }
+  useEffect(() => {
+    recoveryAttempts.current = 0; setPlaybackError('')
+    return () => { stopRecovery(); pendingSeekRef.current = null }
+  }, [track?.id, state.currentIndex, track?.playbackRef, state.level])
+  useEffect(() => { if (!state.isPlaying) stopRecovery(); else recoveryAttempts.current = 0 }, [state.isPlaying])
   const trackUrl = track?.url
 
   // 切曲 / url 更新 → 设 src；若有待续播位置，canplay 后 seek
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
+    let onCanPlay: (() => void) | undefined
     if (trackUrl && audio.dataset.src !== trackUrl) {
       audio.src = trackUrl
       audio.dataset.src = trackUrl
       audio.load()
       if (pendingSeekRef.current != null) {
         const seekTo = pendingSeekRef.current
-        const onCanPlay = () => {
+        onCanPlay = () => {
           try {
             audio.currentTime = seekTo
           } catch {
             /* 忽略 */
           }
           pendingSeekRef.current = null
-          audio.removeEventListener('canplay', onCanPlay)
+          if (onCanPlay) audio.removeEventListener('canplay', onCanPlay)
         }
         audio.addEventListener('canplay', onCanPlay)
       }
@@ -188,7 +197,10 @@ export function PlayerProvider({
       audio.removeAttribute('src')
       delete audio.dataset.src
     }
-  }, [trackUrl])
+    return () => {
+      if (onCanPlay) audio.removeEventListener('canplay', onCanPlay)
+    }
+  }, [trackUrl, track])
 
   // 播放/暂停同步（切曲时若 isPlaying 则播）
   useEffect(() => {
@@ -196,13 +208,14 @@ export function PlayerProvider({
     if (!audio) return
     if (state.isPlaying && trackUrl) {
       Promise.resolve(audio.play()).catch(() => {
+        if (recovery.current || liveTrack.current !== track) return
         setPlaybackError('音频未能播放，请点击播放按钮重试或换一首歌')
         dispatch({ type: 'PAUSE' })
       })
     } else if (!state.isPlaying) {
       audio.pause()
     }
-  }, [state.isPlaying, state.currentIndex, trackUrl])
+  }, [state.isPlaying, state.currentIndex, trackUrl, track])
 
   // 当前曲缺 URL 时只解析选定资源，并要求可靠完整版。
   useEffect(() => {
@@ -214,6 +227,7 @@ export function PlayerProvider({
         const url = fullAudioUrl(r)
         if (!cancelled && url) {
           dispatch({ type: 'SET_TRACK_URL', id: track.id, url, identity: track.mediaRef ? {
+            recoveryToken: r.recoveryToken,
             catalogRef: r.catalogRef || track.catalogRef || track.mediaRef,
             playbackRef: r.playbackRef || track.playbackRef || track.mediaRef,
             lyricsRef: r.lyricsRef || track.lyricsRef || track.mediaRef,
@@ -251,6 +265,7 @@ export function PlayerProvider({
         if (!cancelled && url && url !== t.url) {
           pendingSeekRef.current = pos
           dispatch({ type: 'SET_TRACK_URL', id: t.id, url, identity: t.mediaRef ? {
+            recoveryToken: r.recoveryToken,
             catalogRef: r.catalogRef || t.catalogRef || t.mediaRef,
             playbackRef: r.playbackRef || t.playbackRef || t.mediaRef,
             lyricsRef: r.lyricsRef || t.lyricsRef || t.mediaRef,
@@ -279,30 +294,51 @@ export function PlayerProvider({
       {children}
       <audio
         ref={audioRef}
-        onPlaying={() => setPlaybackError('')}
+        onPlaying={() => { stopRecovery(); setPlaybackError('') }}
         onError={async () => {
           const failed = liveTrack.current
           if (!failed?.url) return
-          if (failed.mediaRef && retriedTrack.current !== failed.id) {
-            retriedTrack.current = failed.id
+          if (recovery.current?.track === failed) return
+          if (failed.mediaRef && failed.recoveryToken && recoveryAttempts.current < 2) {
+            const deadline = recovery.current?.deadline ?? Date.now() + 15000
+            stopRecovery()
+            recoveryAttempts.current++
+            const controller = new AbortController()
+            const timer = setTimeout(() => {
+              if (recovery.current?.controller !== controller) return
+              stopRecovery()
+              setPlaybackError('所选资源恢复超时，请点击播放重试或重新选择来源')
+              dispatch({ type: 'PAUSE' })
+            }, Math.max(1, deadline - Date.now()))
+            recovery.current = { track: failed, controller, timer, deadline }
+            const position = audioRef.current?.currentTime || state.currentTime
             try {
-              const result = await mediaUrl(failed.playbackRef || failed.mediaRef, state.level)
-              if (liveTrack.current?.id !== failed.id) return
+              const result = await recoverMediaUrl(failed.playbackRef || failed.mediaRef, failed.recoveryToken, controller.signal)
+              if (controller.signal.aborted || liveTrack.current !== failed) return
               const refreshed = fullAudioUrl(result)
-              if (refreshed && refreshed !== failed.url) {
+              if (refreshed && result.playbackRef === (failed.playbackRef || failed.mediaRef) &&
+                result.catalogRef === (failed.catalogRef || failed.mediaRef) &&
+                result.lyricsRef === (failed.lyricsRef ?? failed.mediaRef)) {
+                pendingSeekRef.current = position
+                // Reload even if a provider legitimately refreshed content at the same URL.
+                delete audioRef.current?.dataset.src
                 dispatch({ type: 'SET_TRACK_URL', id: failed.id, url: refreshed, identity: {
-                  catalogRef: result.catalogRef || failed.catalogRef || failed.mediaRef,
-                  playbackRef: result.playbackRef || failed.playbackRef || failed.mediaRef,
-                  lyricsRef: result.lyricsRef || failed.lyricsRef || failed.mediaRef,
-                  playbackSource: result.playbackSource || failed.source,
-                  lyricsSource: result.lyricsSource || failed.source,
+                  recoveryToken: result.recoveryToken,
+                  playbackRevision: (failed.playbackRevision || 0) + 1,
+                  catalogRef: failed.catalogRef || failed.mediaRef,
+                  playbackRef: result.playbackRef,
+                  lyricsRef: failed.lyricsRef ?? failed.mediaRef,
+                  playbackSource: result.playbackSource,
+                  lyricsSource: failed.lyricsSource,
                 } })
                 return
               }
-            } catch { /* Report a bounded failure after one same-source retry. */ }
+            } catch { /* Terminal state remains bound to this resource and selection. */ }
+            if (controller.signal.aborted || liveTrack.current !== failed) return
+            stopRecovery()
           }
-          if (liveTrack.current?.id !== failed.id) return
-          setPlaybackError('播放链接无法加载，请换一首歌或切换音源')
+          if (liveTrack.current !== failed) return
+          setPlaybackError('所选资源恢复失败，请重试或重新选择来源')
           dispatch({ type: 'PAUSE' })
         }}
         onTimeUpdate={(e) =>

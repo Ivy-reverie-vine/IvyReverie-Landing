@@ -527,6 +527,8 @@ export interface Song { id: number; name: string; [k: string]: unknown }
 export interface SearchResult { result?: { songs?: Song[] } }
 export interface SongDetailResult { songs?: Song[] }
 export interface MediaIdentity {
+  recoveryToken?: string
+  playbackRevision?: number
   catalogRef?: string
   playbackRef?: string
   lyricsRef?: string
@@ -590,11 +592,15 @@ export function mediaSearch(keywords: string, source = ''): Promise<{ data: Medi
 export function mediaUrl(mediaRef: string, level = 'exhigh'): Promise<SongUrlResult> {
   return ncmRequest('/song/url/v1', { mediaRef, level }, 'v2')
 }
+export function recoverMediaUrl(mediaRef: string, recoveryToken: string, signal: AbortSignal): Promise<SongUrlResult> {
+  return ncmRequest('/song/url/v1', { mediaRef, recover: 'true', recoveryToken }, 'v2', signal)
+}
 export function mediaDetail(mediaRef: string): Promise<{ data: MediaSong[] }> {
   return ncmRequest('/song/detail', { mediaRef }, 'v2')
 }
-export function mediaLyrics(catalogRef: string, playbackRef = catalogRef, signal?: AbortSignal): Promise<LyricResult> {
-  return ncmRequest('/lyric/new', { mediaRef: catalogRef, catalogRef, playbackRef }, 'v2', signal)
+export function mediaLyrics(catalogRef: string, playbackRef = catalogRef, signal?: AbortSignal, forceReload = false): Promise<LyricResult> {
+  return ncmRequest('/lyric/new', { mediaRef: catalogRef, catalogRef, playbackRef,
+    ...(forceReload ? { timestamp: Date.now() } : {}) }, 'v2', signal)
 }
 
 export function search(keywords: string, type = 1, limit = 30): Promise<SearchResult> {

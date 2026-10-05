@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { resolveManualPlayback } from './music/manualPlayback.js'
+import { rememberPlayback, recoverPlayback } from './music/playbackRecovery.js'
 import { resolveCatalogLyrics } from './music/catalogLyrics.js'
 import {
   createPlaybackDiagnostics,
@@ -175,6 +176,24 @@ export function createProxyRouter({
       }
     }
 
+    if (apiVersion === 'v2' && relPath === 'song/url/v1' && req.query.recover === 'true') {
+      const controller = new AbortController()
+      const cancel = () => { if (!res.writableEnded) controller.abort() }
+      res.on('close', cancel)
+      try {
+        const result = await recoverPlayback(orchestrator, { token: req.query.recoveryToken,
+          mediaRef: req.query.mediaRef, user, signal: controller.signal })
+        if (!controller.signal.aborted) {
+          const response = withMediaProxyUrl(result, req, user)
+          return res.status(response.status).json(response.body)
+        }
+      } catch (error) {
+        if (!controller.signal.aborted) return fail(res, error.code === 'INVALID_PLAYBACK_RECEIPT' ? 400 : 502,
+          '所选资源恢复失败，请重试或重新选择来源', error.code || 'PLAYBACK_RECOVERY_FAILED')
+      } finally { res.off('close', cancel) }
+      return
+    }
+
     if (apiVersion === 'v2' && relPath === 'song/url/v1' && ['true', 'other'].includes(req.query.manual)) {
       const controller = new AbortController()
       const cancel = () => { if (!res.writableEnded) controller.abort() }
@@ -184,7 +203,7 @@ export function createProxyRouter({
           catalogRef: req.query.catalogRef, mediaRef: req.query.mediaRef, searchSession: req.query.searchSession,
           otherRecording: req.query.manual === 'other' })
         if (controller.signal.aborted) return
-        const response = withMediaProxyUrl(result, req, user)
+        const response = withMediaProxyUrl(rememberPlayback(orchestrator, result, user, req.query), req, user)
         return res.status(response.status).json(response.body)
       } catch (error) {
         if (controller.signal.aborted) return
@@ -205,7 +224,7 @@ export function createProxyRouter({
           mediaRef: req.query.mediaRef, searchSession: req.query.searchSession, signal: controller.signal,
           mediaProxyAvailable: config.mediaProxy?.enabled === true && !!mediaReferences })
         if (controller.signal.aborted) return
-        const response = withMediaProxyUrl(result, req, user)
+        const response = withMediaProxyUrl(rememberPlayback(orchestrator, result, user, req.query), req, user)
         return res.status(response.status).json(response.body)
       } catch (error) {
         if (error.code === 'INVALID_SEARCH_SESSION') return fail(res, 400, '搜索会话失效，请重新搜索', error.code)
@@ -270,7 +289,7 @@ export function createProxyRouter({
           ? { ...result, body: toMediaV2Body(relPath, result.body, mediaRef) }
           : result
         const response = relPath === 'song/url/v1'
-          ? withMediaProxyUrl(normalized, req, user)
+          ? withMediaProxyUrl(apiVersion === 'v2' ? rememberPlayback(orchestrator, normalized, user, req.query) : normalized, req, user)
           : normalized
         return res.status(response.status).json(response.body)
       } catch (error) {

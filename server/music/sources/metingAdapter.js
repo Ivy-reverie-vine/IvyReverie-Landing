@@ -189,12 +189,14 @@ export class MetingAdapter {
     const cacheKey = `${this.platform}|${type}|${resourceId}|${page}|${limit}`
     const now = Date.now()
     const cached = this.cache.get(cacheKey)
-    if (cached && cached.expiresAt > now) return cached.payload
+    if (type === 'url' && query.refresh === 'true') this.cache.delete(cacheKey)
+    else if (cached && cached.expiresAt > now) return cached.payload
 
     const url = new URL(this.baseUrl)
     url.searchParams.set('server', this.platform)
     url.searchParams.set('type', type)
     url.searchParams.set('id', resourceId)
+    if (type === 'url' && query.refresh === 'true') url.searchParams.set('timestamp', String(Date.now()))
     if (query.page !== undefined) url.searchParams.set('page', String(query.page))
     if (query.limit !== undefined) url.searchParams.set('limit', String(query.limit))
     if (this.token && ['url', 'lrc', 'pic'].includes(type)) {

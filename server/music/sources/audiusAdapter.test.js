@@ -103,13 +103,15 @@ describe('AudiusAdapter', () => {
 
     const first = await adapter.request({ path: 'song/url/v1', query: { id: 'audius-1' } })
     const second = await adapter.request({ path: 'song/url/v1', query: { id: 'audius-1' } })
+    const refreshed = await adapter.request({ path: 'song/url/v1', query: { id: 'audius-1', refresh: 'true' } })
     now = 1201
     const third = await adapter.request({ path: 'song/url/v1', query: { id: 'audius-1' } })
 
     expect(first.body.data[0].url).toContain('track-1')
     expect(second.body.data[0].url).toContain('track-1')
-    expect(third.body.data[0].url).toContain('track-2')
-    expect(streamCalls).toBe(2)
+    expect(refreshed.body.data[0].url).toContain('track-2')
+    expect(third.body.data[0].url).toContain('track-3')
+    expect(streamCalls).toBe(3)
   })
 
   it('rejects tracks that are not streamable', async () => {

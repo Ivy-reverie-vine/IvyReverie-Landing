@@ -80,6 +80,7 @@ export class AudiusAdapter {
       throw new AudiusSourceError('NO_PLAYBACK', 'Audius track is not streamable')
     }
     const cacheKey = `playback|${trackId}`
+    if (query.refresh === 'true') this.cache.delete(cacheKey)
     const cached = this.getCache(cacheKey)
     if (cached) return { status: 200, body: { code: 200, data: [cached],
       audioIntegrity: assessAudio({ url: cached.url, catalogDurationMs: Number(track.duration) * 1000 }) } }

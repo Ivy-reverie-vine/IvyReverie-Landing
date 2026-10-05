@@ -93,7 +93,7 @@ export async function startIdentityGateway({ bilibili = false, mediaProxy = fals
     const cookie = login.headers.get('set-cookie').split(';')[0]
     const key = await request('/dreammusic/api/v1/auth/api-key', { headers: { Cookie: cookie } })
     const apiKey = key.body.data.apiKey
-    return { base, request, controls, song, orchestrator, users, config, diagnostics,
+    return { app, base, request, controls, song, orchestrator, users, config, diagnostics,
       userId: users.findByUsername('identity-user').id, cookie, apiKey, close }
   } catch (error) { await close(); throw error }
   async function close() {

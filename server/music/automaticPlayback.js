@@ -6,7 +6,7 @@ import { assessAudio } from './audioIntegrity.js'
 const platforms = new Set(['api-enhanced', 'meting-tencent', 'meting-kugou'])
 const positive = (value, fallback) => Number.isFinite(Number(value)) && Number(value) > 0 ? Number(value) : fallback
 
-async function boundedRequest(source, request, signal) {
+export async function boundedRequest(source, request, signal) {
   const controller = new AbortController()
   let timer, cancel
   try {

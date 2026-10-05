@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import { resolveManualPlayback } from './music/manualPlayback.js'
 import {
   createPlaybackDiagnostics,
   DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL,
@@ -171,6 +172,25 @@ export function createProxyRouter({
         if (error.code === 'INVALID_SEARCH_SESSION') return fail(res, 400, '搜索会话失效，请重新搜索', error.code)
         return fail(res, 502, '聚合搜索失败，请重试', 'SEARCH_FAILED')
       }
+    }
+
+    if (apiVersion === 'v2' && relPath === 'song/url/v1' && req.query.manual === 'true') {
+      const controller = new AbortController()
+      const cancel = () => { if (!res.writableEnded) controller.abort() }
+      res.on('close', cancel)
+      try {
+        const result = await resolveManualPlayback(orchestrator, { user, signal: controller.signal,
+          catalogRef: req.query.catalogRef, mediaRef: req.query.mediaRef, searchSession: req.query.searchSession })
+        if (controller.signal.aborted) return
+        const response = withMediaProxyUrl(result, req, user)
+        return res.status(response.status).json(response.body)
+      } catch (error) {
+        if (controller.signal.aborted) return
+        if (error.code === 'INVALID_SEARCH_SESSION') return fail(res, 400, '搜索会话失效，请重新搜索', error.code)
+        if (error.code === 'INVALID_SOURCE_SELECTION') return fail(res, 400, '所选来源未确认属于原录音', error.code)
+        if (error.code === 'SOURCE_UNAVAILABLE') return fail(res, 503, '所选来源暂不可用，请重试或重新选择', error.code)
+        return fail(res, 502, '所选来源解析失败，请重试或重新选择', 'PLAYBACK_FAILED')
+      } finally { res.off('close', cancel) }
     }
 
     if (apiVersion === 'v2' && relPath === 'song/url/v1' && req.query.automatic === 'true') {

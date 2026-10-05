@@ -54,7 +54,7 @@ HarmonyOS 与 Web 播放状态消费播放身份并显示音频来源，详情�
 
 HarmonyOS 的统一搜索入口调用 `GET /dreammusic/api/v2/search?aggregate=true&keywords=...&limit=30&pages=...`。`pages` 为 URL 编码的 JSON 对象，例如 `{"api-enhanced":0,"meting-tencent":0,"meting-kugou":0}`；首次省略时从三个来源的第 0 页开始。仅查询对象内的来源，因此继续翻页和失败重试可以分别提交各自的 offset。
 
-沿用真实注册表、来源开关、并发与熔断状态，并发调用已配置的网易、QQ、酷狗 adapter；关闭、未配置、拒绝、超时或无效响应的来源各自失败。单来源预算不超过其配置与 10 秒上限的较小值，不让慢来源无限挂住聚合 HTTP 请求。服务端只转发白名单分页与关键词，不接收平台 Cookie。搜索不解析逐曲音频、图片或歌词，也不合并跨平台录音。
+沿用真实注册表、来源开关、并发与熔断状态，并发调用已配置的网易、QQ、酷狗 adapter；关闭、未配置、拒绝、超时或无效响应的来源各自失败。单来源预算不超过其配置与 10 秒上限的较小值，不让慢来源无限挂住聚合 HTTP 请求。服务端只转发白名单分页与关键词，不接收平台 Cookie。搜索不解析逐曲音频、图片或歌词；旧聚合请求保留平台条目，同录音合并使用下述 T04 契约。
 
 HTTP 200 成功信封包含 `code:200`、来源条目 `data[]`、`sources[]` 和 `status`：
 
@@ -70,6 +70,20 @@ HTTP 200 成功信封包含 `code:200`、来源条目 `data[]`、`sources[]` 和
 `limit` 为 1–100 的整数，offset 为 0–100000 且必须是 limit 的倍数；空关键词、未知来源、空/非法 `pages` 返回 400 `INVALID_SEARCH_PAGE`。没有跨平台总数，也不把本轮分页结果当作完整曲库。来源条目沿用 T01 三角色身份，点播才解析单个引用。未携带 `aggregate=true` 的旧 v1/v2 搜索与 Web 显式单来源入口继续兼容。
 
 HarmonyOS 按来源保存成功页和失败页，追加时按 `mediaRef` 去重；失败重试不会回退已成功来源。改词、清空或退出页面立即使旧请求失效；搜索的后到结果只更新列表，不改播放队列与已选曲。未升级的旧网关回到原单来源入口，状态只报告实际查询的一个来源。验证入口：`server/proxy.search.test.js` 和 `../DreamMusic/scripts/check-aggregate-search.mjs`；前者控制第三方 HTTP，后者执行真实 ArkTS API、搜索交互、队列和播放器公开状态。
+
+## T04 同录音合并与稳定来源展开
+
+鸿蒙请求 `search?aggregate=true&merge=true`；未设置 `merge=true` 的旧聚合响应保持来源条目列表。`data[]` 保留本轮原平台条目，额外的 `groups[]` 是本次搜索会话的完整分组快照，包含稳定的 `id`、原始 `entries[]`、`matchPolicy` 和 `reason`。所有成员保留具体 `mediaRef` 及目录、音频、歌词引用；分组 ID 不是可播放引用。点播只发送用户选择的具体目录条目引用，本票不接入自动换源。
+
+首次请求返回 `searchSession`；后续分页/来源重试携带该值。会话绑定已认证用户、关键词和页大小，15 分钟失效；最多 200 个活跃会话、每会话 10000 个条目。过期、错误归属或条件不符返回 HTTP 400 `INVALID_SEARCH_SESSION`，不静默丢弃旧候选。客户端保留列表直到用户点击“重新搜索”；重启搜索不会改变已点播队列条目。会话是临时搜索状态，不是永久跨源绑定。
+
+`metadata-strict-v1` 门槛：NFKC、大小写和空白归一化后，**完整标题、全部歌手集合、专辑名都一致**，可用正数时长差不超过 **2 秒与较短录音 1% 中的较小值**。完整性证据不足、未知歌手、版本标记、非空副标题/别名、未解释的标题括号均保留独立结果；不删除 Live/翻唱/重录/伴奏/Remix/变速标记再比较。匹配须对组内每对条目成立，不允许链式容差扩张；同时适配多组的模糊条目独立显示，不选第一组兜底。
+
+标题、歌手、专辑、时长、`versionTags` 及可用 `originalTitle` 一并保留。本地 Meting sidecar 使用当前锁定的 formatter，同时保存 QQ interval/副标题、酷狗 duration/timelen/原文件名，防止格式化丢失版本与时长。外部 sidecar 缺失字段时不推断证据，不逐曲取详情或音频补证。此门槛是严格元数据政策，不是声纹/音频指纹确认；元数据相同但平台未标注差异的录音仍需要后续真实样本校验，不能据此宣称曲库级准确率或完整版已验证。
+
+客户端按组展示，展开后显示原平台条目并可点播；分组 ID、已选择 `selectedRef` 和展开状态跨分页/重试保留。迟到来源只补充成员，不改已选曲名、全部歌手、封面或队列身份。旧网关没有 `groups` 时，每条来源结果独立显示。
+
+验证：`server/proxy.recording.test.js`（实际认证 HTTP/SQLite/编排/adapters，第三方 HTTP 受控）、`node scripts/meting-runtime/check-recording-evidence.mjs`（实际安装的 Meting formatter，经实际聚合 HTTP）、`../DreamMusic/scripts/check-aggregate-search.mjs`（实际 ArkTS 来源展开/点播方法与播放公开状态）。真实平台网络、原生布局/触摸和音频解码的验收另行记录。
 
 ## 当前边界
 

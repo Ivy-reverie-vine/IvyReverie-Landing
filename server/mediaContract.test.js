@@ -51,6 +51,7 @@ describe('versioned mediaRef contract', () => {
         sourceId: '123',
         legacyId: 123,
         title: 'Test song',
+        versionTags: [],
         artists: ['Artist'],
         album: { name: 'Album', pictureUrl: 'https://cover.test/album.jpg' },
         durationMs: 187000,

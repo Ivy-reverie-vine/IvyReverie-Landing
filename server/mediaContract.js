@@ -48,6 +48,8 @@ function normalizeApiSong(raw) {
     sourceId,
     legacyId: Number(id),
     title: String(raw.name),
+    versionTags: [...(Array.isArray(raw.alia) ? raw.alia : []), ...(Array.isArray(raw.tns) ? raw.tns : []),
+      ...(typeof raw.version === 'string' ? [raw.version] : [])].filter(value => typeof value === 'string' && value.trim()),
     artists: artists.map((artist) => String(artist?.name || '')).filter(Boolean),
     album: {
       name: String(album.name || ''),

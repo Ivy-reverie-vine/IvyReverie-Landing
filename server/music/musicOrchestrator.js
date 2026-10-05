@@ -11,6 +11,8 @@ import { AudiusAdapter } from './sources/audiusAdapter.js'
 import { createMetingAdapters } from './sources/metingAdapter.js'
 import { parseMediaRef, toMediaV2Body } from '../mediaContract.js'
 import { MusicSourceRegistry } from './sourceRegistry.js'
+import { randomUUID } from 'node:crypto'
+import { RecordingSearchGroups } from './recordingMatcher.js'
 
 export const MUSIC_ROUTE_CAPABILITIES = Object.freeze({
   search: 'search',
@@ -48,6 +50,7 @@ export class MusicOrchestrator {
   constructor({ registry, diagnostics }) {
     this.registry = registry
     this.diagnostics = diagnostics
+    this.searchSessions = new Map()
   }
 
   supportsPath(path) {
@@ -83,6 +86,31 @@ export class MusicOrchestrator {
       Object.entries(pages).some(([id, offset]) => !ids.includes(id) ||
         !Number.isSafeInteger(offset) || offset < 0 || offset > 100000 || offset % limit !== 0)) {
       throw new MusicSourceError('INVALID_SEARCH_PAGE', 'invalid keywords, limit or source pages')
+    }
+    // Opt-in so older aggregate clients retain their flat response semantics.
+    let session, searchSession
+    if (query.merge === 'true') {
+      const now = Date.now()
+      for (const [key, value] of this.searchSessions) {
+        if (value.expiresAt <= now) this.searchSessions.delete(key)
+      }
+      searchSession = query.searchSession
+      if (searchSession !== undefined) {
+        session = this.searchSessions.get(searchSession)
+        if (!session || session.userId !== user.id || session.keywords !== keywords || session.limit !== limit) {
+          throw new MusicSourceError('INVALID_SEARCH_SESSION', 'search session expired or does not match this search')
+        }
+      } else {
+        if (Object.values(pages).some(offset => offset !== 0) || this.searchSessions.size >= 200) {
+          throw new MusicSourceError('INVALID_SEARCH_SESSION', 'start a new search from the first page')
+        }
+        searchSession = randomUUID()
+        session = { userId: user.id, keywords, limit, expiresAt: now + 15 * 60 * 1000, groups: new RecordingSearchGroups() }
+        this.searchSessions.set(searchSession, session)
+      }
+      if (session.groups.seen.size + Object.keys(pages).length * limit > 10000) {
+        throw new MusicSourceError('INVALID_SEARCH_SESSION', 'search session entry limit reached; narrow your search')
+      }
     }
     const sources = await Promise.all(Object.entries(pages).map(async ([id, offset]) => {
       const failed = errorCode => ({ source: id, status: 'failed', offset, nextOffset: offset,
@@ -132,7 +160,9 @@ export class MusicOrchestrator {
     }))
     const data = sources.flatMap(source => source.data)
     const failures = sources.filter(source => source.status === 'failed').length
-    return { status: 200, body: { code: 200, data, sources: sources.map(({ data: _data, ...page }) => page),
+    return { status: 200, body: { code: 200, data,
+      ...(session ? { searchSession, groups: session.groups.append(data) } : {}),
+      sources: sources.map(({ data: _data, ...page }) => page),
       status: failures === sources.length ? 'all_failed' : failures ? 'partial_failure' : data.length ? 'success' : 'empty' } }
   }
 

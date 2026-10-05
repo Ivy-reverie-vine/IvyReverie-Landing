@@ -2,6 +2,7 @@
 import { createServer } from 'node:http'
 import { createHmac, timingSafeEqual } from 'node:crypto'
 import Meting from '@meting/core'
+import { preserveRecordingEvidence } from './recording-evidence.mjs'
 
 const port = Number(process.env.METING_LOCAL_PORT || 8000)
 const token = process.env.METING_TOKEN
@@ -40,7 +41,7 @@ const server = createServer(async (req, res) => {
     json(res, 504, { message: 'Music provider timed out' })
   }, 6500)
   let failureReason = 'PROVIDER_RESPONSE_INVALID'
-  const meting = new Meting(platform).format(true)
+  const meting = preserveRecordingEvidence(new Meting(platform)).format(true)
   try {
     const cookie = process.env[`METING_COOKIE_${platform.toUpperCase()}`]
     if (cookie) meting.cookie(cookie)

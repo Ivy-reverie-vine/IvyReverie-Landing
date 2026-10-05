@@ -23,6 +23,7 @@ function asArtists(raw) {
 }
 
 function durationMs(raw) {
+  if (Number.isFinite(raw.durationMs) && raw.durationMs > 0) return Math.round(raw.durationMs)
   const value = Number(raw.duration ?? raw.dt ?? 0)
   if (!Number.isFinite(value) || value <= 0) return 0
   return value < 1000 ? Math.round(value * 1000) : Math.round(value)
@@ -142,6 +143,10 @@ export class MetingAdapter {
       sourceId: String(sourceId),
       kind: 'song',
       title,
+      originalTitle: typeof raw.originalTitle === 'string' ? raw.originalTitle : title,
+      versionTags: [...(Array.isArray(raw.versionTags) ? raw.versionTags : []),
+        ...(Array.isArray(raw.alia) ? raw.alia : []), ...(Array.isArray(raw.tns) ? raw.tns : []),
+        ...(typeof raw.version === 'string' ? [raw.version] : [])].filter(value => typeof value === 'string' && value.trim()),
       artists: asArtists(raw),
       album: {
         name: String(raw.album?.name ?? raw.album ?? raw.albumName ?? '').trim(),

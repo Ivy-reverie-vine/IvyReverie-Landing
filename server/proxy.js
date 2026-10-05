@@ -162,6 +162,7 @@ export function createProxyRouter({
         return res.status(result.status).json(result.body)
       } catch (error) {
         if (error.code === 'INVALID_SEARCH_PAGE') return fail(res, 400, '搜索关键词或来源分页无效', error.code)
+        if (error.code === 'INVALID_SEARCH_SESSION') return fail(res, 400, '搜索会话失效，请重新搜索', error.code)
         return fail(res, 502, '聚合搜索失败，请重试', 'SEARCH_FAILED')
       }
     }

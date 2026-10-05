@@ -40,7 +40,7 @@ try {
     records.push(record)
     console.log(JSON.stringify({ title: sample.title, status: record.status, textType: record.textType, elapsedMs: record.elapsedMs }))
   }
-  const evidence = { date: '2026-10-05', timezone: 'Asia/Shanghai', capturedAt: new Date().toISOString(),
+  const evidence = { date: new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai' }).format(new Date()), timezone: 'Asia/Shanghai', capturedAt: new Date().toISOString(),
     boundary: 'Real business HTTP/auth/SQLite and live LRCLIB. Catalog metadata and original missing lyrics controlled; no real audio/device or coverage claim.', records }
   const output = process.argv[2]
   if (output) writeFileSync(output, JSON.stringify(evidence, null, 2) + '\n')

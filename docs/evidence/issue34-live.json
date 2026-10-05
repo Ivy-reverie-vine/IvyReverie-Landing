@@ -1,0 +1,1624 @@
+{
+  "capturedAt": "2026-10-05T16:26:48.272Z",
+  "timezone": "Asia/Shanghai",
+  "boundary": "Live providers; disposable unbound local account; production gateway/player. Range is not completeness.",
+  "configuration": {
+    "sources": [
+      "api-enhanced",
+      "meting-tencent",
+      "meting-kugou",
+      "bilibili"
+    ],
+    "totalBudgetMs": 10000,
+    "bilibiliReserveMs": 3000
+  },
+  "scenarios": [
+    {
+      "key": "full",
+      "capturedAt": "2026-10-05T16:27:00.583Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+        "source": "api-enhanced",
+        "sourceId": "33984241",
+        "title": "Scheming Weasel (faster version)",
+        "artists": [
+          "Kevin MacLeod"
+        ],
+        "album": "Comedy Scoring",
+        "searchDurationMs": 0
+      },
+      "searchMs": 2814,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "33984241",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+              "title": "Scheming Weasel (faster version)",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg1OTI5ODIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1298592982",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg1OTI5ODIiLCJraW5kIjoic29uZyJ9",
+              "title": "Local Forecast - Elevator",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjQwMDg3NjUwMyIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "400876503",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjQwMDg3NjUwMyIsImtpbmQiOiJzb25nIn0",
+              "title": "Five Card Shuffle",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU0NDUxOTU2MiIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "544519562",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU0NDUxOTU2MiIsImtpbmQiOiJzb25nIn0",
+              "title": "Local Forecast",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg2NDg1MDgiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1298648508",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg2NDg1MDgiLCJraW5kIjoic29uZyJ9",
+              "title": "Arcadia",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNDg2ODAzODYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2148680386",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNDg2ODAzODYiLCJraW5kIjoic29uZyJ9",
+              "title": "The Builder",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQzIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "33984243",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQzIiwia2luZCI6InNvbmcifQ",
+              "title": "Sneaky Adventure",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTMwNjUxNzMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1393065173",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTMwNjUxNzMiLCJraW5kIjoic29uZyJ9",
+              "title": "Deep Haze",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg1OTUwNTYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1298595056",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg1OTUwNTYiLCJraW5kIjoic29uZyJ9",
+              "title": "Pixel Peeker Polka - faster",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg1OTUwNTciLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1298595057",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg1OTUwNTciLCJraW5kIjoic29uZyJ9",
+              "title": "Spazzmatica Polka",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwbDZiOXYwT1pPNDUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000l6b9v0OZO45",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwbDZiOXYwT1pPNDUiLCJraW5kIjoic29uZyJ9",
+              "title": "Monkeys Spinning Monkeys",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            },
+            {
+              "source": "meting-kugou",
+              "sourceId": "f09b7fae3d1a3860c10738ebb33dcbba",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImYwOWI3ZmFlM2QxYTM4NjBjMTA3MzhlYmIzM2RjYmJhIiwia2luZCI6InNvbmcifQ",
+              "title": "Monkeys Spinning Monkeys",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzN3NHaDkxc21FcmQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0037sGh91smErd",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzN3NHaDkxc21FcmQiLCJraW5kIjoic29uZyJ9",
+              "title": "Scheming Weasel",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyY2NJcEMweVhYNEEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002ccIpC0yXX4A",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyY2NJcEMweVhYNEEiLCJraW5kIjoic29uZyJ9",
+              "title": "Fluffing a Duck",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0ZVZ5WGQyZWk2aDYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "004eVyXd2ei6h6",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0ZVZ5WGQyZWk2aDYiLCJraW5kIjoic29uZyJ9",
+              "title": "Investigations",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNlhvTjAwWTkyQlciLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0026XoN00Y92BW",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNlhvTjAwWTkyQlciLCJraW5kIjoic29uZyJ9",
+              "title": "Breaktime",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZkRjVHkyNk40TjEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000fDcTy26N4N1",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZkRjVHkyNk40TjEiLCJraW5kIjoic29uZyJ9",
+              "title": "Local Forecast - Elevator",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzc3FTZ3kwQWx2bGoiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003sqSgy0Alvlj",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzc3FTZ3kwQWx2bGoiLCJraW5kIjoic29uZyJ9",
+              "title": "Look Busy",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAySXU3R3AzVEIwTW4iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002Iu7Gp3TB0Mn",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAySXU3R3AzVEIwTW4iLCJraW5kIjoic29uZyJ9",
+              "title": "Pixel Peeker Polka - faster",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAybDJjOXUyOUtFZWkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002l2c9u29KEei",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAybDJjOXUyOUtFZWkiLCJraW5kIjoic29uZyJ9",
+              "title": "Carefree",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxeTBZaXYwb2FTTHYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001y0Yiv0oaSLv",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxeTBZaXYwb2FTTHYiLCJraW5kIjoic29uZyJ9",
+              "title": "Merry Go",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            },
+            {
+              "source": "meting-kugou",
+              "sourceId": "3994b5d92c048e9469ec72e34e2108c9",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM5OTRiNWQ5MmMwNDhlOTQ2OWVjNzJlMzRlMjEwOGM5Iiwia2luZCI6InNvbmcifQ",
+              "title": "Merry Go",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEzNjZiYzlhOTFjZjc3NjI0YTZlYzc0NTJlY2VmZGQwIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a366bc9a91cf77624a6ec7452ecefdd0",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEzNjZiYzlhOTFjZjc3NjI0YTZlYzc0NTJlY2VmZGQwIiwia2luZCI6InNvbmcifQ",
+              "title": "Scheming Weasel (Faster)",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRhNmVmM2I0ZWZhYjdkZjhkZjM2NTUxMTA4NjljNzFlIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "4a6ef3b4efab7df8df3655110869c71e",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRhNmVmM2I0ZWZhYjdkZjhkZjM2NTUxMTA4NjljNzFlIiwia2luZCI6InNvbmcifQ",
+              "title": "Local Forecast Elevator",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjAyYzg3YzM1YzFhNTJhYjBhZmYxNDk4ZjYwYzViNGNjIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "02c87c35c1a52ab0aff1498f60c5b4cc",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjAyYzg3YzM1YzFhNTJhYjBhZmYxNDk4ZjYwYzViNGNjIiwia2luZCI6InNvbmcifQ",
+              "title": "Kevin MacLeod (Explicit)",
+              "artists": [
+                "HimLahey"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYwNGQ5OTkyY2Y3OGE2OGQ2NGY5ZTIzMzRhNTAwNDQyIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "604d9992cf78a68d64f9e2334a500442",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYwNGQ5OTkyY2Y3OGE2OGQ2NGY5ZTIzMzRhNTAwNDQyIiwia2luZCI6InNvbmcifQ",
+              "title": "Kevin Macleod (Explicit)",
+              "artists": [
+                "Yung Valentin"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjUwNWQ3NTkxOGY1ODAzYTIxOWIyZmFkNjE1MTIxYTMyIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "505d75918f5803a219b2fad615121a32",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjUwNWQ3NTkxOGY1ODAzYTIxOWIyZmFkNjE1MTIxYTMyIiwia2luZCI6InNvbmcifQ",
+              "title": "Carefree",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgxMzA5ZDc1ZDZmNjYyYzgwYWE4NGRkNWVhN2ZhYWUyIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "81309d75d6f662c80aa84dd5ea7faae2",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgxMzA5ZDc1ZDZmNjYyYzgwYWE4NGRkNWVhN2ZhYWUyIiwia2luZCI6InNvbmcifQ",
+              "title": "Sneaky Snitch",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjY1MWI4M2Y4MzUzZTEzZGI1MGJkMzM2ZWU1NWM5MmI1Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "651b83f8353e13db50bd336ee55c92b5",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjY1MWI4M2Y4MzUzZTEzZGI1MGJkMzM2ZWU1NWM5MmI1Iiwia2luZCI6InNvbmcifQ",
+              "title": "Pooka",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcxYjdiMDZkNTljYTNiMDU0NTUzMDZlYjg3ZDk4OTk3Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "71b7b06d59ca3b05455306eb87d98997",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcxYjdiMDZkNTljYTNiMDU0NTUzMDZlYjg3ZDk4OTk3Iiwia2luZCI6InNvbmcifQ",
+              "title": "Local Forecast",
+              "artists": [
+                "Kevin MacLeod"
+              ]
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "playbackSource": "api-enhanced",
+      "audioIntegrity": {
+        "status": "full",
+        "reason": "provider_duration_and_non_trial",
+        "catalogDurationMs": 89070,
+        "resourceDurationMs": 89070,
+        "evidence": [
+          "catalog_duration",
+          "provider_resource_duration",
+          "provider_non_trial"
+        ]
+      },
+      "playback": {
+        "status": "success",
+        "reason": "success",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 5,
+        "remainingBudgetMs": 9995,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+            "source": "api-enhanced",
+            "status": "full",
+            "matchReason": "selected_resource",
+            "reason": "provider_duration_and_non_trial",
+            "audioIntegrity": {
+              "status": "full",
+              "reason": "provider_duration_and_non_trial",
+              "catalogDurationMs": 89070,
+              "resourceDurationMs": 89070,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_non_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": false,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ"
+          ]
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "missing",
+          "timeline": "none",
+          "reason": "insufficient_catalog_metadata",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": true,
+            "attempted": true,
+            "status": "missing",
+            "reason": "insufficient_catalog_metadata"
+          },
+          "catalogStatus": "missing",
+          "retryable": false
+        },
+        "source": "",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+        "characters": 0
+      }
+    },
+    {
+      "key": "trial",
+      "capturedAt": "2026-10-05T16:29:11.229Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+        "source": "api-enhanced",
+        "sourceId": "18520488",
+        "title": "Never Gonna Give You Up",
+        "artists": [
+          "Rick Astley"
+        ],
+        "album": "Whenever You Need Somebody",
+        "searchDurationMs": 0
+      },
+      "searchMs": 1338,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "18520488",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxNzAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1399616170",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxNzAiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MjI2Mzg4ODYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1822638886",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MjI2Mzg4ODYiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MDc5NTkzMDUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2707959305",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MDc5NTkzMDUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDg2MTE2MjEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1948611621",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDg2MTE2MjEiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (2022 Remaster)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNTMxIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "18520531",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNTMxIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NTA4ODk1OTAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1450889590",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NTA4ODk1OTAiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Pianoforte)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxODEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1399616181",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxODEiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Pianoforte)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzA0NzciLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2635570477",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzA0NzciLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzYyMTIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2635576212",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzYyMTIiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVWw2WUgwcFFMTGUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001Ul6YH0pQLLe",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVWw2WUgwcFFMTGUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyYmNpQlQweWw2ZmwiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002bciBT0yl6fl",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyYmNpQlQweWw2ZmwiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up  - remix",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyaTVpOGkzVnl0VUIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002i5i8i3VytUB",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyaTVpOGkzVnl0VUIiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Dame Dame",
+                "Nito-Onna",
+                "Matt Aitken",
+                "Mike Stock",
+                "Pete Waterman",
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMmRQeGIza04zNWMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0032dPxb3kN35c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMmRQeGIza04zNWMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeWxVeUkwd2dxdVEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003ylUyI0wgquQ",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeWxVeUkwd2dxdVEiLCJraW5kIjoic29uZyJ9",
+              "title": "Betty (Get Money)",
+              "artists": [
+                "Yung Gravy"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwUmNrRHozSWQ5R2ciLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000RckDz3Id9Gg",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwUmNrRHozSWQ5R2ciLCJraW5kIjoic29uZyJ9",
+              "title": "Together Forever",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZzVTV1kyYU9OMmMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000g5SWY2aON2c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZzVTV1kyYU9OMmMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Juno Im Park",
+                "Hannah Trigwell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUo1VUwyMVVDamQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003eJ5UL21UCjd",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUo1VUwyMVVDamQiLCJraW5kIjoic29uZyJ9",
+              "title": "Whenever You Need Somebody",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwR1h5ZlQxY1l6dlMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000GXyfT1cYzvS",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwR1h5ZlQxY1l6dlMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzODBEZ2sxSW13bzAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "00380Dgk1Imwo0",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzODBEZ2sxSW13bzAiLCJraW5kIjoic29uZyJ9",
+              "title": "Together Forever",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgzMjU0MzY5ZjIwMzU4OTE1NGFlYzAzZmU0MzZjYmEyIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "83254369f203589154aec03fe436cba2",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgzMjU0MzY5ZjIwMzU4OTE1NGFlYzAzZmU0MzZjYmEyIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzYmU2NTlmMTNjNmU1YTM3NmE3ZDU1OGUzODcxZGNjIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "13be659f13c6e5a376a7d558e3871dcc",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzYmU2NTlmMTNjNmU1YTM3NmE3ZDU1OGUzODcxZGNjIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (单曲)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA2OTgwMTk2NTRiNTE4NzM3YzVhMTVjNjVlMmQ4OTE0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "0698019654b518737c5a15c65e2d8914",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA2OTgwMTk2NTRiNTE4NzM3YzVhMTVjNjVlMmQ4OTE0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Explicit)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3NzQ0MDMyMWY3NGY3ZDU3NmZjZjIzZjZiODliYWVmIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a77440321f74f7d576fcf23f6b89baef",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3NzQ0MDMyMWY3NGY3ZDU3NmZjZjIzZjZiODliYWVmIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjZmZTY2NTNkMWUzYmMxOTg4MjM5ZjBmYzJiMTU4NmFkIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "6fe6653d1e3bc1988239f0fc2b1586ad",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjZmZTY2NTNkMWUzYmMxOTg4MjM5ZjBmYzJiMTU4NmFkIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7\" Mix)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQzZDMxYWI2ZDVhMjc5MTg2YzdlYjUwYTllOTYyYjU3Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "43d31ab6d5a279186c7eb50a9e962b57",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQzZDMxYWI2ZDVhMjc5MTg2YzdlYjUwYTllOTYyYjU3Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7'' Mix)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE1OWFkN2Q0YzIxZDMxMmQzMmRmZTEzODdjZTUzYzVjIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a59ad7d4c21d312d32dfe1387ce53c5c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE1OWFkN2Q0YzIxZDMxMmQzMmRmZTEzODdjZTUzYzVjIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (完整版|7'VocalMix)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDZmMzY0NjVmMWQzYjVjY2ExZWJhYWIwODdlNjM1Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "d606f36465f1d3b5cca1ebaab087e635",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDZmMzY0NjVmMWQzYjVjY2ExZWJhYWIwODdlNjM1Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7\" Mix)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMyNDU5ODMxMjhiZjE2ODE5MGI0ZjYwOWFhNzFhNzZlIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "3245983128bf168190b4f609aa71a76e",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMyNDU5ODMxMjhiZjE2ODE5MGI0ZjYwOWFhNzFhNzZlIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (完整版|7Mix|-remix)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzN2MyMTk3MTYxZDg4MmMyYWRmMmVmZDI4ODZhY2Y1Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "137c2197161d882c2adf2efd2886acf5",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzN2MyMTk3MTYxZDg4MmMyYWRmMmVmZDI4ODZhY2Y1Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Cake Mix)",
+              "artists": [
+                "Rick Astley"
+              ]
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+      "audioIntegrity": {
+        "status": "unavailable",
+        "reason": "automatic_bilibili_manual_candidates",
+        "catalogDurationMs": 0,
+        "resourceDurationMs": 0,
+        "evidence": []
+      },
+      "playback": {
+        "status": "exhausted",
+        "reason": "bilibili_manual_candidates",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 1182,
+        "remainingBudgetMs": 8818,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+            "source": "api-enhanced",
+            "status": "preview",
+            "matchReason": "selected_resource",
+            "reason": "explicit_trial",
+            "audioIntegrity": {
+              "status": "preview",
+              "reason": "explicit_trial",
+              "catalogDurationMs": 214018,
+              "resourceDurationMs": 26827,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": true,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ"
+          ]
+        },
+        "bilibili": {
+          "status": "exhausted",
+          "query": "Never Gonna Give You Up Rick Astley",
+          "candidates": [
+            {
+              "source": "bilibili",
+              "bvid": "BV1KR4y1w7A3",
+              "title": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+              "uploader": "Sky光遇琴谱_瞳",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "source": "bilibili",
+              "bvid": "BV1xW411T7F8",
+              "title": "Two Steps From Hell - Never Give Up On Your Dreams",
+              "uploader": "TomUnknown",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "source": "bilibili",
+              "bvid": "BV1qbHGzqEZm",
+              "title": "Rick Astley - Never Gonna Give You Up动态鼓谱",
+              "uploader": "小娟音乐工作室",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "source": "bilibili",
+              "bvid": "BV1eb4y1U7kH",
+              "title": "Never gonna give you up慢速略降调＋3D环绕声",
+              "uploader": "丨V丨H丨M丨",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "source": "bilibili",
+              "bvid": "BV19eLG6aE45",
+              "title": "Never Gonna Give You Bad Apple!!",
+              "uploader": "Astral_Hikari",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxS1I0eTF3N0EzOjcyMzY0MTg4OCIsImtpbmQiOiJzb25nIn0",
+              "source": "bilibili",
+              "sourceId": "BV1KR4y1w7A3:723641888",
+              "resource": {
+                "bvid": "BV1KR4y1w7A3",
+                "cid": "723641888",
+                "page": 1,
+                "title": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+                "partTitle": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+                "uploader": {
+                  "id": "479784248",
+                  "name": "Sky光遇琴谱_瞳"
+                }
+              },
+              "title": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+              "artists": [],
+              "durationMs": 251000,
+              "status": "manual",
+              "reason": "recording_provenance_missing",
+              "match": {
+                "status": "manual",
+                "reason": "recording_provenance_missing",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 251000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxeFc0MTFUN0Y4OjM1NDQ5MjY2Iiwia2luZCI6InNvbmcifQ",
+              "source": "bilibili",
+              "sourceId": "BV1xW411T7F8:35449266",
+              "resource": {
+                "bvid": "BV1xW411T7F8",
+                "cid": "35449266",
+                "page": 1,
+                "title": "Two Steps From Hell - Never Give Up On Your Dreams",
+                "partTitle": "",
+                "uploader": {
+                  "id": "20274714",
+                  "name": "TomUnknown"
+                }
+              },
+              "title": "",
+              "artists": [],
+              "durationMs": 321000,
+              "status": "manual",
+              "reason": "recording_provenance_missing",
+              "match": {
+                "status": "manual",
+                "reason": "recording_provenance_missing",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 321000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxcWJIR3pxRVptOjMyODE1NTgyMTkzIiwia2luZCI6InNvbmcifQ",
+              "source": "bilibili",
+              "sourceId": "BV1qbHGzqEZm:32815582193",
+              "resource": {
+                "bvid": "BV1qbHGzqEZm",
+                "cid": "32815582193",
+                "page": 1,
+                "title": "Rick Astley - Never Gonna Give You Up动态鼓谱",
+                "partTitle": "Rick Astley - Never Gonna Give You Up动态鼓谱",
+                "uploader": {
+                  "id": "331285848",
+                  "name": "小娟音乐工作室"
+                }
+              },
+              "title": "Rick Astley - Never Gonna Give You Up动态鼓谱",
+              "artists": [],
+              "durationMs": 211000,
+              "status": "manual",
+              "reason": "different_recording_or_extra_segments",
+              "match": {
+                "status": "manual",
+                "reason": "different_recording_or_extra_segments",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 211000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxZWI0eTFVN2tIOjM5MDEyMzcyMSIsImtpbmQiOiJzb25nIn0",
+              "source": "bilibili",
+              "sourceId": "BV1eb4y1U7kH:390123721",
+              "resource": {
+                "bvid": "BV1eb4y1U7kH",
+                "cid": "390123721",
+                "page": 1,
+                "title": "Never gonna give you up慢速略降调＋3D环绕声",
+                "partTitle": "Never gonna give you up慢速略降调＋3D环绕声",
+                "uploader": {
+                  "id": "496037773",
+                  "name": "丨V丨H丨M丨"
+                }
+              },
+              "title": "Never gonna give you up慢速略降调＋3D环绕声",
+              "artists": [],
+              "durationMs": 269000,
+              "status": "manual",
+              "reason": "different_recording_or_extra_segments",
+              "match": {
+                "status": "manual",
+                "reason": "different_recording_or_extra_segments",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 269000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxOWVMRzZhRTQ1OjM4MzgwMTEyNDI3Iiwia2luZCI6InNvbmcifQ",
+              "source": "bilibili",
+              "sourceId": "BV19eLG6aE45:38380112427",
+              "resource": {
+                "bvid": "BV19eLG6aE45",
+                "cid": "38380112427",
+                "page": 1,
+                "title": "Never Gonna Give You Bad Apple!!",
+                "partTitle": "video_20260516_200155",
+                "uploader": {
+                  "id": "501091850",
+                  "name": "Astral_Hikari"
+                }
+              },
+              "title": "video_20260516_200155",
+              "artists": [],
+              "durationMs": 220000,
+              "status": "manual",
+              "reason": "recording_provenance_missing",
+              "match": {
+                "status": "manual",
+                "reason": "recording_provenance_missing",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 220000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            }
+          ],
+          "reason": "bilibili_manual_candidates"
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "available",
+          "timeline": "trusted",
+          "reason": "same_resource",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": false,
+            "attempted": false,
+            "status": "skipped"
+          },
+          "catalogStatus": "available"
+        },
+        "source": "api-enhanced",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+        "characters": 2485
+      }
+    }
+  ],
+  "http": [
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 21
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 3
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 68
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 200,
+      "elapsedMs": 80
+    },
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 537
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 217
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 199
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/nav",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": -101,
+      "elapsedMs": 120
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/wbi/search/type",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "dataKeys": [
+        "seid",
+        "page",
+        "pagesize",
+        "numResults",
+        "numPages",
+        "suggest_keyword",
+        "rqt_type",
+        "exp_list",
+        "is_hit_web_inf",
+        "egg_hit",
+        "result",
+        "show_column",
+        "in_black_key",
+        "in_white_key",
+        "next"
+      ],
+      "resultCount": 10,
+      "elapsedMs": 349
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 57
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 51
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 57
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 65
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 63
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 248
+    }
+  ],
+  "browser": [
+    {
+      "key": "full",
+      "event": "playing",
+      "time": 0.000587,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 3069,
+      "capturedAt": "2026-10-05T16:27:00.731Z"
+    },
+    {
+      "key": "full",
+      "event": "progress",
+      "time": 0.182908,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 3292,
+      "capturedAt": "2026-10-05T16:27:00.955Z"
+    },
+    {
+      "key": "full",
+      "event": "progress",
+      "time": 10.276726,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 13385,
+      "capturedAt": "2026-10-05T16:27:11.050Z"
+    },
+    {
+      "key": "full",
+      "event": "progress",
+      "time": 20.370145,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 23480,
+      "capturedAt": "2026-10-05T16:27:21.143Z"
+    },
+    {
+      "key": "full",
+      "event": "progress",
+      "time": 30.40486,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 33574,
+      "capturedAt": "2026-10-05T16:27:32.143Z"
+    },
+    {
+      "key": "full",
+      "event": "progress",
+      "time": 40.498288,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 43667,
+      "capturedAt": "2026-10-05T16:27:41.330Z"
+    },
+    {
+      "key": "full",
+      "event": "progress",
+      "time": 50.592647,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 53761,
+      "capturedAt": "2026-10-05T16:27:51.425Z"
+    },
+    {
+      "key": "full",
+      "event": "progress",
+      "time": 60.626278,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 63855,
+      "capturedAt": "2026-10-05T16:28:01.522Z"
+    },
+    {
+      "key": "full",
+      "event": "progress",
+      "time": 70.735548,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 73965,
+      "capturedAt": "2026-10-05T16:28:11.630Z"
+    },
+    {
+      "key": "full",
+      "event": "progress",
+      "time": 80.829269,
+      "duration": 89.07068,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 84058,
+      "capturedAt": "2026-10-05T16:28:21.724Z"
+    },
+    {
+      "key": "full",
+      "event": "pause",
+      "time": 89.07068,
+      "duration": 89.07068,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 92310,
+      "capturedAt": "2026-10-05T16:28:29.977Z"
+    },
+    {
+      "key": "full",
+      "event": "ended",
+      "time": 89.07068,
+      "duration": 89.07068,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 92312,
+      "capturedAt": "2026-10-05T16:28:29.983Z"
+    }
+  ],
+  "media": [
+    {
+      "key": "full",
+      "kind": "complete_get_and_decode",
+      "httpStatus": 200,
+      "bytes": 3565236,
+      "contentLength": 3565236,
+      "sha256": "f4d7bc55b5080f3d796d1608817fe720cda3bc39c4fa830809dd36d86c84971c",
+      "elapsedMs": 3669,
+      "decode": {
+        "status": "passed",
+        "exitCode": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "date": "2026-10-06",
+  "timezone": "Asia/Shanghai",
+  "capturedAt": "2026-10-05T16:27:31.555Z",
+  "boundary": "Real business HTTP/auth/SQLite and live LRCLIB. Catalog metadata and original missing lyrics controlled; no real audio/device or coverage claim.",
+  "records": [
+    {
+      "sample": {
+        "title": "Never Gonna Give You Up",
+        "artist": "Rick Astley",
+        "album": "Whenever You Need Somebody",
+        "duration": 213
+      },
+      "businessHttpStatus": 200,
+      "elapsedMs": 895,
+      "status": "available",
+      "source": "lrclib",
+      "textType": "synced",
+      "timeline": "uncertain",
+      "fallback": {
+        "provider": "lrclib",
+        "implemented": true,
+        "eligible": true,
+        "attempted": true,
+        "status": "available",
+        "reason": "available"
+      },
+      "publicResponses": [
+        {
+          "endpoint": "/api/get",
+          "httpStatus": 200,
+          "elapsedMs": 870,
+          "query": {
+            "track_name": "Never Gonna Give You Up",
+            "artist_name": "Rick Astley",
+            "album_name": "Whenever You Need Somebody",
+            "duration": "213"
+          },
+          "candidates": [
+            {
+              "id": 1009665,
+              "title": "Never Gonna Give You Up",
+              "artist": "Rick Astley",
+              "album": "Whenever You Need Somebody",
+              "duration": 214,
+              "instrumental": false,
+              "hasSynced": true,
+              "hasPlain": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": {
+        "title": "晴天",
+        "artist": "周杰伦",
+        "album": "叶惠美",
+        "duration": 269
+      },
+      "businessHttpStatus": 200,
+      "elapsedMs": 388,
+      "status": "available",
+      "source": "lrclib",
+      "textType": "synced",
+      "timeline": "trusted",
+      "fallback": {
+        "provider": "lrclib",
+        "implemented": true,
+        "eligible": true,
+        "attempted": true,
+        "status": "available",
+        "reason": "available"
+      },
+      "publicResponses": [
+        {
+          "endpoint": "/api/get",
+          "httpStatus": 200,
+          "elapsedMs": 383,
+          "query": {
+            "track_name": "晴天",
+            "artist_name": "周杰伦",
+            "album_name": "叶惠美",
+            "duration": "269"
+          },
+          "candidates": [
+            {
+              "id": 17788,
+              "title": "晴天",
+              "artist": "周杰伦",
+              "album": "叶惠美",
+              "duration": 270,
+              "instrumental": false,
+              "hasSynced": true,
+              "hasPlain": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": {
+        "title": "七里香",
+        "artist": "周杰伦",
+        "album": "七里香",
+        "duration": 299
+      },
+      "businessHttpStatus": 200,
+      "elapsedMs": 377,
+      "status": "available",
+      "source": "lrclib",
+      "textType": "synced",
+      "timeline": "trusted",
+      "fallback": {
+        "provider": "lrclib",
+        "implemented": true,
+        "eligible": true,
+        "attempted": true,
+        "status": "available",
+        "reason": "available"
+      },
+      "publicResponses": [
+        {
+          "endpoint": "/api/get",
+          "httpStatus": 200,
+          "elapsedMs": 373,
+          "query": {
+            "track_name": "七里香",
+            "artist_name": "周杰伦",
+            "album_name": "七里香",
+            "duration": "299"
+          },
+          "candidates": [
+            {
+              "id": 16363,
+              "title": "七里香",
+              "artist": "周杰伦",
+              "album": "七里香",
+              "duration": 297,
+              "instrumental": false,
+              "hasSynced": true,
+              "hasPlain": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": {
+        "title": "DreamMusic LRCLIB nonexistent sample 20261005",
+        "artist": "DreamMusic Test",
+        "album": "Synthetic Missing Probe",
+        "duration": 90,
+        "synthetic": true
+      },
+      "businessHttpStatus": 200,
+      "elapsedMs": 961,
+      "status": "missing",
+      "source": "",
+      "textType": "none",
+      "timeline": "none",
+      "fallback": {
+        "provider": "lrclib",
+        "implemented": true,
+        "eligible": true,
+        "attempted": true,
+        "status": "missing",
+        "reason": "no_match"
+      },
+      "publicResponses": [
+        {
+          "endpoint": "/api/get",
+          "httpStatus": 404,
+          "elapsedMs": 356,
+          "query": {
+            "track_name": "DreamMusic LRCLIB nonexistent sample 20261005",
+            "artist_name": "DreamMusic Test",
+            "album_name": "Synthetic Missing Probe",
+            "duration": "90"
+          },
+          "candidates": [
+            {
+              "hasSynced": false,
+              "hasPlain": false
+            }
+          ]
+        },
+        {
+          "endpoint": "/api/search",
+          "httpStatus": 200,
+          "elapsedMs": 602,
+          "query": {
+            "track_name": "DreamMusic LRCLIB nonexistent sample 20261005",
+            "artist_name": "DreamMusic Test",
+            "album_name": "Synthetic Missing Probe",
+            "duration": "90"
+          },
+          "candidates": []
+        }
+      ]
+    }
+  ]
+}

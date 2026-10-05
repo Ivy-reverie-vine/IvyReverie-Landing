@@ -54,6 +54,8 @@ http://localhost:3001/dreammusic/api/v1
 
 来源中立音乐能力使用独立的 v2 前缀：`/dreammusic/api/v2`。v2 的 `search` 返回版本化 `mediaRef`；`song/detail`、`song/url/v1` 和 `lyric/new` 必须回传同一 `mediaRef`。v1 保留给现有网易云兼容接口和账户能力；客户端不得自行拼接来源 ID 或上游 URL。
 
+鸿蒙统一搜索使用 `search?aggregate=true&keywords=...&limit=30&pages=...`，并发查询网易、QQ、酷狗；逐来源 offset、成功/空/失败状态与单来源重试见 [T03 聚合契约](media-ref-v2.md#t03三平台聚合搜索2026-10-05)。不要按列表长度计算全局分页或总数；搜索阶段不解析音频链接。
+
 ## 3. 推荐认证流程
 
 ### 3.1 注册

@@ -156,6 +156,16 @@ export function createProxyRouter({
       return res.json({ code: 301, message: '网易云绑定已失效，请重新扫码' })
     }
 
+    if (apiVersion === 'v2' && relPath === 'search' && req.query.aggregate === 'true') {
+      try {
+        const result = await orchestrator.aggregateSearch({ query: req.query, user })
+        return res.status(result.status).json(result.body)
+      } catch (error) {
+        if (error.code === 'INVALID_SEARCH_PAGE') return fail(res, 400, '搜索关键词或来源分页无效', error.code)
+        return fail(res, 502, '聚合搜索失败，请重试', 'SEARCH_FAILED')
+      }
+    }
+
     if (orchestrator.supportsPath(relPath)) {
       try {
         const mediaRef = typeof req.query.mediaRef === 'string' ? req.query.mediaRef : ''

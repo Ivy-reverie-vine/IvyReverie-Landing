@@ -50,6 +50,27 @@ HarmonyOS 与 Web 播放状态消费播放身份并显示音频来源，详情�
 
 单来源演示：运行 `D:\DreamMusic\Start-NightDream.cmd --source api-enhanced`（也可用 `tencent`），登录后在打开的 `/music-test.html` 搜索并试听；页面显示三种引用、原目录信息、实际音频来源及歌词，观察 `playing` 和进度。`--check` 只验证启动前置条件，不能证明真实来源或浏览器已播放。
 
+## T03：三平台聚合搜索（2026-10-05）
+
+HarmonyOS 的统一搜索入口调用 `GET /dreammusic/api/v2/search?aggregate=true&keywords=...&limit=30&pages=...`。`pages` 为 URL 编码的 JSON 对象，例如 `{"api-enhanced":0,"meting-tencent":0,"meting-kugou":0}`；首次省略时从三个来源的第 0 页开始。仅查询对象内的来源，因此继续翻页和失败重试可以分别提交各自的 offset。
+
+沿用真实注册表、来源开关、并发与熔断状态，并发调用已配置的网易、QQ、酷狗 adapter；关闭、未配置、拒绝、超时或无效响应的来源各自失败。单来源预算不超过其配置与 10 秒上限的较小值，不让慢来源无限挂住聚合 HTTP 请求。服务端只转发白名单分页与关键词，不接收平台 Cookie。搜索不解析逐曲音频、图片或歌词，也不合并跨平台录音。
+
+HTTP 200 成功信封包含 `code:200`、来源条目 `data[]`、`sources[]` 和 `status`：
+
+| 字段 | 值与语义 |
+| --- | --- |
+| `status` | `success`：所有请求来源成功且有结果；`empty`：全为空；`partial_failure`：部分来源失败（也可能暂无条目）；`all_failed`：请求来源全部失败 |
+| `sources[].source` | `api-enhanced` / `meting-tencent` / `meting-kugou` |
+| `sources[].status` | `ok` / `empty` / `failed` |
+| `offset` / `nextOffset` | 本次来源页和后续来源页；成功前进 `limit`，失败保持原 offset |
+| `hasMore` | 来源是否可继续翻页；网易依据 `more`，Meting 依据页是否填满，末页可能需要再请求一个空页确认 |
+| `errorCode` | 失败来源的 `SOURCE_UNAVAILABLE`、`SOURCE_REJECTED`、`SOURCE_TIMEOUT` 或 `UPSTREAM_INVALID_RESPONSE` 等类别 |
+
+`limit` 为 1–100 的整数，offset 为 0–100000 且必须是 limit 的倍数；空关键词、未知来源、空/非法 `pages` 返回 400 `INVALID_SEARCH_PAGE`。没有跨平台总数，也不把本轮分页结果当作完整曲库。来源条目沿用 T01 三角色身份，点播才解析单个引用。未携带 `aggregate=true` 的旧 v1/v2 搜索与 Web 显式单来源入口继续兼容。
+
+HarmonyOS 按来源保存成功页和失败页，追加时按 `mediaRef` 去重；失败重试不会回退已成功来源。改词、清空或退出页面立即使旧请求失效；搜索的后到结果只更新列表，不改播放队列与已选曲。未升级的旧网关回到原单来源入口，状态只报告实际查询的一个来源。验证入口：`server/proxy.search.test.js` 和 `../DreamMusic/scripts/check-aggregate-search.mjs`；前者控制第三方 HTTP，后者执行真实 ArkTS API、搜索交互、队列和播放器公开状态。
+
 ## 当前边界
 
 普通在线音乐仍是瞬态播放，不进入本地 SQLite。现有本地替换/下载链路只对带网易云数字 ID 的兼容结果运行；Audius、Meting 等非网易来源播放成功后保持在线播放，不伪装成可离线文件。后续若要支持跨来源本地库，需要单独设计 `source + sourceId` 的数据库迁移和权利校验。

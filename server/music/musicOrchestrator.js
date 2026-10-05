@@ -9,7 +9,7 @@ import {
 import { ApiEnhancedAdapter } from './sources/apiEnhancedAdapter.js'
 import { AudiusAdapter } from './sources/audiusAdapter.js'
 import { createMetingAdapters } from './sources/metingAdapter.js'
-import { parseMediaRef } from '../mediaContract.js'
+import { parseMediaRef, toMediaV2Body } from '../mediaContract.js'
 import { MusicSourceRegistry } from './sourceRegistry.js'
 
 export const MUSIC_ROUTE_CAPABILITIES = Object.freeze({
@@ -68,6 +68,72 @@ export class MusicOrchestrator {
 
   resetSourceCircuit(id) {
     return this.registry.resetCircuit(id)
+  }
+
+  // T03: independent source pages, never a fallback or an estimated global total.
+  async aggregateSearch({ query = {}, user }) {
+    const ids = ['api-enhanced', 'meting-tencent', 'meting-kugou']
+    const keywords = typeof query.keywords === 'string' ? query.keywords.trim() : ''
+    const limit = query.limit === undefined ? 30 : Number(query.limit)
+    let pages
+    try { pages = query.pages === undefined ? Object.fromEntries(ids.map(id => [id, 0])) : JSON.parse(query.pages) }
+    catch { throw new MusicSourceError('INVALID_SEARCH_PAGE', 'invalid source pages') }
+    if (!keywords || !Number.isInteger(limit) || limit < 1 || limit > 100 ||
+      !pages || Array.isArray(pages) || typeof pages !== 'object' || !Object.keys(pages).length ||
+      Object.entries(pages).some(([id, offset]) => !ids.includes(id) ||
+        !Number.isSafeInteger(offset) || offset < 0 || offset > 100000 || offset % limit !== 0)) {
+      throw new MusicSourceError('INVALID_SEARCH_PAGE', 'invalid keywords, limit or source pages')
+    }
+    const sources = await Promise.all(Object.entries(pages).map(async ([id, offset]) => {
+      const failed = errorCode => ({ source: id, status: 'failed', offset, nextOffset: offset,
+        hasMore: false, errorCode, data: [] })
+      const source = this.registry.get(id)
+      if (!source?.capabilities.has('search') || !this.registry.beginRequest(source)) return failed('SOURCE_UNAVAILABLE')
+      const startedAt = Date.now()
+      let timer
+      let ok = false
+      let category = ''
+      try {
+        const timeoutMs = Math.min(source.timeoutMs, 10000)
+        const result = await Promise.race([
+          source.adapter.request({ path: 'search', method: 'GET', user, timeoutMs,
+            query: { keywords, limit: String(limit), offset: String(offset), page: String(offset / limit + 1) } }),
+          new Promise((_, reject) => { timer = setTimeout(() => reject(
+            new MusicSourceError('SOURCE_TIMEOUT', 'source search timed out')), timeoutMs) }),
+        ])
+        if (!sourceResponseOk(result)) throw new MusicSourceError('SOURCE_REJECTED', 'source rejected search')
+        const raw = id === 'api-enhanced'
+          ? result.body?.result?.songs ?? (result.body?.result?.songCount === 0 ? [] : undefined)
+          : result.body?.data
+        if (!Array.isArray(raw) || raw.some(song => !song ||
+          (id === 'api-enhanced'
+            ? !Number.isSafeInteger(song.id) || song.id <= 0 || typeof song.name !== 'string' || !song.name.trim()
+            : typeof song.sourceId !== 'string' || !song.sourceId.trim() || song.source !== id ||
+              typeof song.title !== 'string' || !song.title.trim()))) {
+          throw new MusicSourceError('UPSTREAM_INVALID_RESPONSE', 'invalid search entries')
+        }
+        const data = toMediaV2Body('search', result.body).data
+        const hasMore = raw.length > 0 && (id === 'api-enhanced'
+          ? result.body.result.more === true : result.body.hasMore === true)
+        ok = true
+        return { source: id, status: data.length ? 'ok' : 'empty', offset,
+          nextOffset: offset + limit, hasMore, data }
+      } catch (error) {
+        category = error.code || errorCategory(error)
+        return failed(category)
+      } finally {
+        clearTimeout(timer)
+        const durationMs = Math.max(0, Date.now() - startedAt)
+        this.registry.recordResult(source, { capability: 'search', durationMs, ok, errorCategory: category })
+        this.diagnostics.record({ source: id, capability: 'search', stage: DIAGNOSTIC_STAGE_SOURCE_RESOLUTION,
+          durationMs, ok, ...(ok ? {} : { errorCategory: category }) })
+        this.registry.endRequest(source)
+      }
+    }))
+    const data = sources.flatMap(source => source.data)
+    const failures = sources.filter(source => source.status === 'failed').length
+    return { status: 200, body: { code: 200, data, sources: sources.map(({ data: _data, ...page }) => page),
+      status: failures === sources.length ? 'all_failed' : failures ? 'partial_failure' : data.length ? 'success' : 'empty' } }
   }
 
   async dispatch({ path, query, method, body, user, sourceId = '' }) {

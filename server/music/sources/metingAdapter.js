@@ -28,6 +28,13 @@ function durationMs(raw) {
   return value < 1000 ? Math.round(value * 1000) : Math.round(value)
 }
 
+function validSearchPayload(payload) {
+  return Array.isArray(payload) && payload.every(item => item && typeof item === 'object' &&
+    ['string', 'number'].includes(typeof (item.url_id ?? item.id)) &&
+    String(item.url_id ?? item.id).trim() &&
+    typeof (item.name ?? item.title) === 'string' && (item.name ?? item.title).trim())
+}
+
 export class MetingSourceError extends Error {
   constructor(code, message) {
     super(message)
@@ -89,6 +96,9 @@ export class MetingAdapter {
       return { status: 200, body: { code: 200, lrc: { lyric: String(payload?.lyric || '') }, tlyric: { lyric: String(payload?.tlyric || '') } } }
     }
     if (path === 'search' || path === 'song/detail') {
+      if (path === 'search' && !validSearchPayload(payload)) {
+        throw new MetingSourceError('UPSTREAM_INVALID_RESPONSE', 'Meting returned invalid search entries')
+      }
       const data = asArray(payload)
         .map((item) => this.normalizeSong(item))
         .filter(Boolean)
@@ -102,7 +112,8 @@ export class MetingAdapter {
           } catch { /* Artwork can be unavailable independently of the song. */ }
         }
       }
-      return { status: 200, body: { code: 200, data } }
+      return { status: 200, body: { code: 200, data,
+        ...(path === 'search' ? { hasMore: data.length >= Number(query.limit || 30) } : {}) } }
     }
 
     const first = asArray(payload)[0] || payload
@@ -186,6 +197,9 @@ export class MetingAdapter {
         payload = JSON.parse(text)
       } catch {
         throw new MetingSourceError('UPSTREAM_INVALID_RESPONSE', 'Meting returned invalid JSON')
+      }
+      if (type === 'search' && !validSearchPayload(payload)) {
+        throw new MetingSourceError('UPSTREAM_INVALID_RESPONSE', 'Meting returned invalid search entries')
       }
       this.cache.set(cacheKey, { payload, expiresAt: Date.now() + this.cacheTtlMs })
       return payload

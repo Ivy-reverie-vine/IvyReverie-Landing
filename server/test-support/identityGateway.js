@@ -16,17 +16,20 @@ export async function startIdentityGateway() {
   const dir = mkdtempSync(join(tmpdir(), 'dreammusic-identity-'))
   const db = openDb(dir)
   const users = createUserStore(db)
-  const controls = { beforeResponse: async () => {}, emptyUrl: false, failure: false, lyricsFailure: false, calls: [] }
+  const controls = { beforeResponse: async () => {}, thirdPartyResponse: () => null,
+    emptyUrl: false, failure: false, lyricsFailure: false, calls: [] }
   const song = { id: 123, name: '目录歌曲', ar: [{ name: '原歌手' }],
     al: { name: '目录专辑', picUrl: 'https://cover.test/catalog.jpg' }, dt: 90000 }
   const json = (body, status = 200) => new Response(JSON.stringify(body), {
     status, headers: { 'Content-Type': 'application/json' },
   })
   const config = loadConfig({ DATA_DIR: dir, UPSTREAM: 'http://upstream.test', REGISTER_CODE: 'identity-test' })
-  config.fetch = async (input) => {
+  config.fetch = async (input, init) => {
     const url = new URL(input)
     controls.calls.push(url)
-    await controls.beforeResponse(url)
+    await controls.beforeResponse(url, init?.signal)
+    const controlled = await controls.thirdPartyResponse(url)
+    if (controlled) return controlled
     const path = url.pathname
     if (path === '/search') return json({ code: 200, result: { songs: [song], more: false } })
     if (path === '/song/detail') return json({ code: 200, songs: [song] })
@@ -42,10 +45,12 @@ export async function startIdentityGateway() {
   const orchestrator = createMusicOrchestrator({ config, diagnostics, fetchUpstream: createConfiguredUpstreamFetcher(config) })
   for (const platform of ['tencent', 'kugou']) {
     const adapter = new MetingAdapter({ platform, baseUrl: 'http://meting.test/', minRequestIntervalMs: 0,
-      fetchImpl: async (input) => {
+      fetchImpl: async (input, init) => {
         const url = new URL(input)
         controls.calls.push(url)
-        await controls.beforeResponse(url)
+        await controls.beforeResponse(url, init?.signal)
+        const controlled = await controls.thirdPartyResponse(url)
+        if (controlled) return controlled
         const type = url.searchParams.get('type')
         if (type === 'url') return json({ url: 'https://audio.test/qq-001.mp3' })
         if (type === 'lrc') return json({ lyric: '[00:01]QQ歌词' })

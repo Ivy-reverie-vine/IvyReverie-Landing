@@ -88,7 +88,7 @@ export function toMediaV2Body(path, body, mediaRef = '') {
     return {
       code: body?.code === undefined ? 200 : body.code,
       data: rawSongs.filter(Boolean),
-      hasMore: body?.result?.more === true,
+      hasMore: body?.result?.more === true || body?.hasMore === true,
     }
   }
   if (path === 'song/detail') {

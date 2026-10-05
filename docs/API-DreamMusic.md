@@ -303,7 +303,7 @@ v2 不改变 v1 的网易云兼容响应。它只对登录账户开放来源中�
 
 | 接口路径 | 说明 |
 |---|---|
-| `/dreammusic/api/v2/search` | 搜索，返回标准化 `data[]` 和版本化 `mediaRef` |
+| `/dreammusic/api/v2/search` | 搜索，返回标准化 `data[]` 和版本化 `mediaRef`；`aggregate=true` 启用三平台并发搜索与逐来源分页，见 [聚合契约](media-ref-v2.md#t03三平台聚合搜索2026-10-05) |
 | `/dreammusic/api/v2/song/detail?mediaRef=...` | 按 `mediaRef` 获取单一来源详情/封面 |
 | `/dreammusic/api/v2/song/url/v1?mediaRef=...` | 按 `mediaRef` 获取短时播放链接 |
 | `/dreammusic/api/v2/lyric/new?mediaRef=...` | 按 `mediaRef` 获取歌词 |

@@ -8,6 +8,7 @@ import {
 } from '../playbackDiagnostics.js'
 import { ApiEnhancedAdapter } from './sources/apiEnhancedAdapter.js'
 import { AudiusAdapter } from './sources/audiusAdapter.js'
+import { BilibiliAdapter } from './sources/bilibiliAdapter.js'
 import { createMetingAdapters } from './sources/metingAdapter.js'
 import { parseMediaRef, toMediaV2Body } from '../mediaContract.js'
 import { MusicSourceRegistry } from './sourceRegistry.js'
@@ -380,5 +381,9 @@ export function createMusicOrchestrator({ config, diagnostics, fetchUpstream }) 
       capabilities: ['search', 'detail', 'playback'],
     })
   }
+  const bilibiliConfig = config.musicSources?.bilibili
+  registry.register(new BilibiliAdapter({ fetchImpl: config.fetch || globalThis.fetch }), {
+    ...bilibiliConfig, enabled: bilibiliConfig?.enabled === true,
+  })
   return new MusicOrchestrator({ registry, diagnostics, playbackBudget: config.automaticPlayback })
 }

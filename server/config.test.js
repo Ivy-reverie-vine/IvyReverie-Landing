@@ -8,6 +8,7 @@ describe('music source configuration', () => {
     expect(config.musicSources.meting.enabled).toBe(false)
     expect(config.musicSources.meting.platforms).toEqual(['tencent', 'kugou'])
     expect(config.musicSources.audius.enabled).toBe(false)
+    expect(config.musicSources.bilibili.enabled).toBe(false)
     expect(config.mediaProxy.enabled).toBe(false)
   })
 

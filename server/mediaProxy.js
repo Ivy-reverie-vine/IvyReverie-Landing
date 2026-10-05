@@ -15,12 +15,13 @@ function elapsed(startedAt) {
   return Math.max(0, Date.now() - startedAt)
 }
 
-async function pipeBody(body, res) {
+async function pipeBody(body, res, onChunk) {
   if (!body) return res.end()
   const stream = Readable.fromWeb(body)
+  stream.on('data', onChunk)
   stream.on('error', () => res.destroy())
   stream.pipe(res)
-  await once(stream, 'end').catch(() => {})
+  await once(stream, 'end')
 }
 
 /**
@@ -34,8 +35,16 @@ export function createMediaProxyRouter({ store, config, diagnostics, fetchImpl =
 
     const startedAt = Date.now()
     const controller = new AbortController()
-    const timer = setTimeout(() => controller.abort(), Math.max(1, Number(config.timeoutMs || 15000)))
-    const headers = {}
+    let timer
+    const resetTimeout = () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => controller.abort(), Math.max(1, Number(config.timeoutMs || 15000)))
+    }
+    resetTimeout()
+    let clientDisconnected = false
+    const disconnect = () => { if (!res.writableEnded) { clientDisconnected = true; controller.abort() } }
+    res.on('close', disconnect)
+    const headers = { ...reference.headers }
     if (req.get('range')) headers.Range = req.get('range')
     if (req.get('if-range')) headers['If-Range'] = req.get('if-range')
     try {
@@ -45,6 +54,7 @@ export function createMediaProxyRouter({ store, config, diagnostics, fetchImpl =
         redirect: 'follow',
         signal: controller.signal,
       })
+      resetTimeout()
       for (const name of RESPONSE_HEADERS) {
         const value = upstream.headers?.get?.(name)
         if (value) res.setHeader(name, value)
@@ -58,7 +68,7 @@ export function createMediaProxyRouter({ store, config, diagnostics, fetchImpl =
         ...((upstream.ok || upstream.status === 206) ? {} : { errorCategory: 'media_upstream_failure' }),
       })
       res.status(upstream.status)
-      await pipeBody(upstream.body, res)
+      await pipeBody(upstream.body, res, resetTimeout)
     } catch (error) {
       const timedOut = controller.signal.aborted || error?.name === 'AbortError'
       diagnostics.record({
@@ -67,11 +77,12 @@ export function createMediaProxyRouter({ store, config, diagnostics, fetchImpl =
         stage: 'media_transport',
         durationMs: elapsed(startedAt),
         ok: false,
-        errorCategory: timedOut ? 'media_upstream_timeout' : 'media_upstream_failure',
+        errorCategory: clientDisconnected ? 'media_client_cancelled' : timedOut ? 'media_upstream_timeout' : 'media_upstream_failure',
       })
-      if (!res.headersSent) res.status(timedOut ? 504 : 502).json({ code: timedOut ? 504 : 502, message: '媒体上游不可达' })
+      if (!clientDisconnected && !res.headersSent) res.status(timedOut ? 504 : 502).json({ code: timedOut ? 504 : 502, message: '媒体上游不可达' })
     } finally {
       clearTimeout(timer)
+      res.off('close', disconnect)
     }
   })
   return router

@@ -12,7 +12,7 @@ export class MediaReferenceStore {
     this.references = new Map()
   }
 
-  issue({ userId, upstreamUrl }) {
+  issue({ userId, upstreamUrl, headers = {} }) {
     const parsed = new URL(upstreamUrl)
     if (!['http:', 'https:'].includes(parsed.protocol)) {
       throw new Error('media reference requires an HTTP(S) URL')
@@ -22,7 +22,10 @@ export class MediaReferenceStore {
     const owner = String(userId)
     const signed = `${id}.${owner}.${expiresAt}`
     const token = `${signed}.${sign(this.secret, signed)}`
-    this.references.set(id, { userId: owner, upstreamUrl, expiresAt })
+    // Only adapter-provided public transport headers. Never forward account credentials.
+    const transportHeaders = Object.fromEntries(Object.entries(headers)
+      .filter(([name, value]) => ['referer', 'user-agent'].includes(name.toLowerCase()) && typeof value === 'string'))
+    this.references.set(id, { userId: owner, upstreamUrl, expiresAt, headers: transportHeaders })
     return token
   }
 
@@ -40,7 +43,7 @@ export class MediaReferenceStore {
       this.references.delete(id)
       return null
     }
-    return { ...reference }
+    return { ...reference, headers: { ...reference.headers } }
   }
 
   clear() {

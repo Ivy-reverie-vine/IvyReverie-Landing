@@ -61,6 +61,14 @@ export function loadConfig(env = process.env) {
     },
     /** 音乐来源注册配置；除 api-enhanced 外的来源必须单独 POC 后再启用 */
     musicSources: {
+      bilibili: {
+        enabled: env.BILIBILI_SOURCE_ENABLED === 'true',
+        priority: 20,
+        timeoutMs: Number(env.BILIBILI_SOURCE_TIMEOUT_MS || 8000),
+        maxConcurrent: Number(env.BILIBILI_SOURCE_MAX_CONCURRENT || 2),
+        circuitFailureThreshold: Number(env.BILIBILI_SOURCE_FAILURE_THRESHOLD || 3),
+        circuitOpenMs: Number(env.BILIBILI_SOURCE_CIRCUIT_OPEN_MS || 30000),
+      },
       apiEnhanced: {
         enabled: env.API_ENHANCED_SOURCE_ENABLED !== 'false',
         priority: 100,

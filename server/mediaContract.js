@@ -83,6 +83,9 @@ function normalizeInternalSong(raw) {
 }
 
 export function toMediaV2Body(path, body, mediaRef = '') {
+  if (body?.code !== undefined && body.code !== 200) {
+    return { ...body, ...(mediaRef ? { mediaRef, ...singleSourceIdentity(mediaRef) } : {}) }
+  }
   if (path === 'search') {
     const rawSongs = Array.isArray(body?.result?.songs)
       ? body.result.songs.map(normalizeApiSong)

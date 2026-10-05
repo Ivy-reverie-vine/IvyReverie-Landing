@@ -108,15 +108,20 @@ export function createProxyRouter({
   }
 
   function withMediaProxyUrl(result, req, user) {
-    if (mediaReferences === null || config.mediaProxy?.enabled !== true) return result
     const first = Array.isArray(result.body?.data) ? result.body.data[0] : null
     if (typeof first?.url !== 'string' || first.url === '') return result
-    const token = mediaReferences.issue({ userId: user.id, upstreamUrl: first.url })
+    if (mediaReferences === null || config.mediaProxy?.enabled !== true) {
+      if (first.mediaTransport?.requiresProxy) return { status: 503, body: {
+        code: 503, errorCode: 'MEDIA_PROXY_REQUIRED', message: '此音源需要启用媒体代理', data: [],
+        audioIntegrity: { ...result.body.audioIntegrity, status: 'unavailable', reason: 'media_proxy_required' },
+      } }
+      return result
+    }
+    const token = mediaReferences.issue({ userId: user.id, upstreamUrl: first.url, headers: first.mediaTransport?.headers })
     const configuredOrigin = String(config.mediaProxy.publicBaseUrl || '').replace(/\/$/, '')
     const origin = configuredOrigin || `${req.protocol}://${req.get('host')}`
-    const data = result.body.data.map((item, index) => index === 0
-      ? { ...item, url: `${origin}/dreammusic/media/stream/${token}` }
-      : item)
+    const data = result.body.data.map(({ mediaTransport: _transport, ...item }, index) => index === 0
+      ? { ...item, url: `${origin}/dreammusic/media/stream/${token}` } : item)
     return { ...result, body: { ...result.body, data } }
   }
 

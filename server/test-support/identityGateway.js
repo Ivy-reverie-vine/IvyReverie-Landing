@@ -11,8 +11,10 @@ import { createProxyRouter, createConfiguredUpstreamFetcher } from '../proxy.js'
 import { createMusicOrchestrator } from '../music/musicOrchestrator.js'
 import { MetingAdapter } from '../music/sources/metingAdapter.js'
 import { createPlaybackDiagnostics } from '../playbackDiagnostics.js'
+import { MediaReferenceStore } from '../mediaReference.js'
+import { createMediaProxyRouter } from '../mediaProxy.js'
 
-export async function startIdentityGateway() {
+export async function startIdentityGateway({ bilibili = false, mediaProxy = false, mediaTtlMs = 30000 } = {}) {
   const dir = mkdtempSync(join(tmpdir(), 'dreammusic-identity-'))
   const db = openDb(dir)
   const users = createUserStore(db)
@@ -23,12 +25,13 @@ export async function startIdentityGateway() {
   const json = (body, status = 200) => new Response(JSON.stringify(body), {
     status, headers: { 'Content-Type': 'application/json' },
   })
-  const config = loadConfig({ DATA_DIR: dir, UPSTREAM: 'http://upstream.test', REGISTER_CODE: 'identity-test' })
+  const config = loadConfig({ DATA_DIR: dir, UPSTREAM: 'http://upstream.test', REGISTER_CODE: 'identity-test',
+    BILIBILI_SOURCE_ENABLED: String(bilibili), MEDIA_PROXY_ENABLED: String(mediaProxy), MEDIA_PROXY_TTL_MS: String(mediaTtlMs) })
   config.fetch = async (input, init) => {
     const url = new URL(input)
     controls.calls.push(url)
     await controls.beforeResponse(url, init?.signal)
-    const controlled = await controls.thirdPartyResponse(url)
+    const controlled = await controls.thirdPartyResponse(url, init)
     if (controlled) return controlled
     const path = url.pathname
     if (path === '/search') return json({ code: 200, result: { songs: [song], more: false } })
@@ -62,10 +65,14 @@ export async function startIdentityGateway() {
   }
   const auth = createAuthRouter({ users, sessions: createSessionStore(60000), config })
   const app = express()
+  const mediaReferences = new MediaReferenceStore({ ttlMs: config.mediaProxy.ttlMs })
   app.use(express.json())
   app.use('/dreammusic/api/v1/auth', auth.router)
   for (const apiVersion of ['v1', 'v2']) app.use(`/dreammusic/api/${apiVersion}`,
-    createProxyRouter({ users, auth, config, diagnostics, musicOrchestrator: orchestrator, apiVersion }))
+    createProxyRouter({ users, auth, config, diagnostics, musicOrchestrator: orchestrator, apiVersion,
+      mediaReferences: mediaProxy ? mediaReferences : null }))
+  if (mediaProxy) app.use('/dreammusic/media', createMediaProxyRouter({ store: mediaReferences,
+    config: config.mediaProxy, diagnostics, fetchImpl: config.fetch }))
   const server = await new Promise(resolve => { const instance = app.listen(0, '127.0.0.1', () => resolve(instance)) })
   const base = `http://127.0.0.1:${server.address().port}`
   async function request(path, { headers = {}, body, method = body ? 'POST' : 'GET' } = {}) {
@@ -85,7 +92,7 @@ export async function startIdentityGateway() {
     const cookie = login.headers.get('set-cookie').split(';')[0]
     const key = await request('/dreammusic/api/v1/auth/api-key', { headers: { Cookie: cookie } })
     const apiKey = key.body.data.apiKey
-    return { base, request, controls, song, orchestrator, users, config,
+    return { base, request, controls, song, orchestrator, users, config, diagnostics,
       userId: users.findByUsername('identity-user').id, cookie, apiKey, close }
   } catch (error) { await close(); throw error }
   async function close() {

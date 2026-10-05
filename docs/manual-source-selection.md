@@ -7,7 +7,7 @@
 - `catalogRef`：原目录引用，作为展示、收藏及歌词身份。
 - `searchSession`：所属用户的聚合搜索会话；候选须在原目录分组内，并再次通过 `sameRecording` 判定。原目录自身允许重试。
 
-第一阶段仅接受网易、QQ、酷狗已确认的同录音候选。未知录音和 Bilibili 人工确认入口属于后续 T10；不能用此参数绕过其判断。
+此模式仅接受网易、QQ、酷狗已确认的同录音候选。其他录音和 Bilibili 人工确认使用 T10 的独立 `manual=other` 契约，见 [手动选择其他录音](manual-other-recordings.md)；不能用 `manual=true` 绕过其判断。
 
 返回 `mediaRef/catalogRef/lyricsRef` 保留原目录，`playbackRef/playbackSource` 指向用户指定音频，`lyricsSource` 仍为原目录平台。`audioIntegrity` 原样保留：`preview/unknown/unavailable` 不能作为成功播放；DreamMusic 只在 URL 非空且 `full` 时送入播放器。
 

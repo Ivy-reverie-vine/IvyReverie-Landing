@@ -160,6 +160,16 @@ export async function resolveAutomaticPlayback(orchestrator, selection) {
   playback.continuation.eligible = false
   let selected = null
   const finish = (status, reason) => {
+    // Bind discovered concrete parts to this user/search/catalog. Client snapshots
+    // are display data, never authority to resolve arbitrary manual candidates.
+    if (!selection.signal?.aborted) {
+      const session = orchestrator.searchSessions.get(selection.searchSession)
+      if (session) {
+        session.manualCandidates ??= new Map()
+        session.manualCandidates.set(selection.mediaRef, structuredClone(candidates.filter(candidate =>
+          candidate.status === 'manual' && candidate.mediaRef && candidate.resource)))
+      }
+    }
     playback.status = status; playback.reason = reason
     playback.elapsedMs = Date.now() - startedAt
     playback.remainingBudgetMs = Math.max(0, deadline - Date.now())

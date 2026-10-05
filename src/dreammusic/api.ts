@@ -515,7 +515,8 @@ async function ncmRequest<T>(
   }
 
   const lyricStatus = (data.lyrics as CatalogLyricsState | undefined)?.status
-  const reusable = path !== '/lyric/new' || !lyricStatus || ['available', 'instrumental'].includes(lyricStatus)
+  const lyricRetryable = (data.lyrics as CatalogLyricsState | undefined)?.retryable
+  const reusable = path !== '/lyric/new' || (lyricRetryable !== true && (!lyricStatus || ['available', 'instrumental'].includes(lyricStatus)))
   if (cacheable && reusable && !signal?.aborted) cache.set(url, { t: now, data })
   return data as T
 }
@@ -547,6 +548,7 @@ export interface CatalogLyricsState {
   status: 'available' | 'missing' | 'instrumental' | 'unsupported' | 'unavailable' | 'timeout' | 'failed' | 'cancelled'
   timeline: 'trusted' | 'uncertain' | 'none'
   reason: string
+  retryable?: boolean
   fallback: { provider: string; implemented: boolean; eligible: boolean }
 }
 export interface LyricResult extends MediaIdentity {

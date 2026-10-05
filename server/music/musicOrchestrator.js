@@ -16,6 +16,7 @@ import { randomUUID } from 'node:crypto'
 import { RecordingSearchGroups } from './recordingMatcher.js'
 import { assessAudio } from './audioIntegrity.js'
 import { resolveAutomaticPlayback } from './automaticPlayback.js'
+import { LrclibClient } from './lrclib.js'
 
 export const MUSIC_ROUTE_CAPABILITIES = Object.freeze({
   search: 'search',
@@ -385,5 +386,7 @@ export function createMusicOrchestrator({ config, diagnostics, fetchUpstream }) 
   registry.register(new BilibiliAdapter({ fetchImpl: config.fetch || globalThis.fetch }), {
     ...bilibiliConfig, enabled: bilibiliConfig?.enabled === true,
   })
-  return new MusicOrchestrator({ registry, diagnostics, playbackBudget: config.automaticPlayback })
+  const orchestrator = new MusicOrchestrator({ registry, diagnostics, playbackBudget: config.automaticPlayback })
+  orchestrator.lrclib = new LrclibClient({ fetchImpl: config.fetch || globalThis.fetch })
+  return orchestrator
 }

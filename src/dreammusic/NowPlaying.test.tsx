@@ -38,6 +38,39 @@ function Harness() {
 }
 
 describe('NowPlaying — DM-06', () => {
+  it('retries failed fallback lyrics without restarting audio, then displays LRCLIB static text', async () => {
+    const fallback = { provider: 'lrclib', implemented: true, eligible: true }
+    vi.mocked(mediaLyrics).mockResolvedValueOnce({ lyrics: { status: 'failed', timeline: 'none', reason: 'failed', retryable: true, fallback } })
+    vi.mocked(mediaLyrics).mockResolvedValueOnce({ lrc: { lyric: '[00:01]回退第一句\n[00:02]回退第二句' }, lyricsSource: 'lrclib',
+      lyrics: { status: 'available', timeline: 'uncertain', reason: 'audio_relation_unverified', fallback } })
+    function Source() {
+      const { state, dispatch } = usePlayer()
+      useEffect(() => { dispatch({ type: 'PLAY_TRACK', track: { id: 'catalog', name: '原曲', artist: '原歌手',
+        mediaRef: 'catalog', playbackRef: 'video', url: 'https://audio.test/video', picUrl: 'https://cover.test/image' } }) }, [dispatch])
+      return <><output data-testid="state">{JSON.stringify(state)}</output><NowPlaying /></>
+    }
+    const ui = render(<PlayerProvider><Source /></PlayerProvider>)
+    await ui.findByText('歌词暂时无法加载')
+    const audio = ui.container.querySelector('audio')!
+    fireEvent.timeUpdate(audio, { target: { currentTime: 10 } })
+    fireEvent.click(ui.getByRole('button', { name: '重试歌词' }))
+    await ui.findByText('回退第一句')
+    expect(ui.getByText('歌词来源：LRCLIB')).toBeInTheDocument()
+    expect(ui.getByText('歌词时间轴未确认，静态显示')).toBeInTheDocument()
+    expect(ui.container.querySelector('.dm-lyric-line.is-active')).toBeNull()
+    expect(ui.queryByRole('button', { name: '重试歌词' })).toBeNull()
+    const state = JSON.parse(ui.getByTestId('state').textContent || '{}')
+    expect(state.isPlaying).toBe(true); expect(state.currentTime).toBe(10)
+    expect(ui.container.querySelector('audio')).toBe(audio)
+  })
+
+  it('shows missing after an implemented fallback without claiming instrumental', async () => {
+    vi.mocked(lyricNew).mockResolvedValueOnce({ lyrics: { status: 'missing', timeline: 'none', reason: 'no_match',
+      fallback: { provider: 'lrclib', implemented: true, eligible: true } } })
+    const ui = render(<PlayerProvider><Harness /></PlayerProvider>)
+    await ui.findByText('暂无歌词')
+    expect(ui.queryByText('纯音乐，无歌词')).toBeNull()
+  })
   it('loads non-NetEase lyrics by mediaRef and preserves the cover URL', async () => {
     function SourceHarness() {
       const { dispatch } = usePlayer()

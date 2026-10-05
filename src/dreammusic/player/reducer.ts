@@ -25,6 +25,7 @@ export function musicSourceLabel(source: string): string {
     case 'meting-tencent': return '腾讯 / QQ'
     case 'meting-kugou': return '酷狗'
     case 'meting-kuwo': return '酷我'
+    case 'lrclib': return 'LRCLIB'
     default: return source
   }
 }

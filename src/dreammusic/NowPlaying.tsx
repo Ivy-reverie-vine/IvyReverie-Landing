@@ -22,6 +22,8 @@ export default function NowPlaying() {
   const [lyricHint, setLyricHint] = useState('正在加载歌词…')
   const [timelineTrusted, setTimelineTrusted] = useState(false)
   const [lyricsSource, setLyricsSource] = useState('')
+  const [lyricRetry, setLyricRetry] = useState(0)
+  const [retryable, setRetryable] = useState(false)
 
   // 切曲 → 拉封面（专辑小图用）+ 歌词
   useEffect(() => {
@@ -57,6 +59,7 @@ export default function NowPlaying() {
     setTimelineTrusted(false)
     setLyricsSource('')
     setLyricHint('正在加载歌词…')
+    setRetryable(false)
     const lyric: Promise<LyricResult> = track.mediaRef
       ? mediaLyrics(track.catalogRef || track.mediaRef, track.playbackRef || track.mediaRef, controller.signal)
       : lyricNew(track.id)
@@ -69,13 +72,17 @@ export default function NowPlaying() {
         setLyricsSource(r.lyricsSource || '')
         setLyrics(instrumental ? EMPTY_LYRICS : trusted ? parseLyric(r.lrc?.lyric, r.yrc?.lyric) : staticLyrics(r.lrc?.lyric, r.yrc?.lyric))
         const status = r.lyrics?.status
+        setRetryable(r.lyrics?.retryable === true || status === 'failed' || status === 'timeout' || status === 'unavailable')
+        const completedFallback = r.lyrics?.fallback.implemented === true
         setLyricHint(r.nolyric === true || status === 'instrumental' ? '纯音乐，无歌词'
-          : status === 'timeout' ? '原平台歌词请求超时' : status === 'failed' || status === 'unavailable' ? '原平台歌词暂时无法加载'
-            : status === 'unsupported' ? '原平台未提供歌词' : '原平台暂无歌词')
+          : status === 'timeout' ? completedFallback ? '歌词请求超时' : '原平台歌词请求超时'
+            : status === 'failed' || status === 'unavailable' ? completedFallback ? '歌词暂时无法加载' : '原平台歌词暂时无法加载'
+              : status === 'unsupported' ? '原平台未提供歌词' : completedFallback ? '暂无歌词' : '原平台暂无歌词')
       })
       .catch((error: unknown) => {
         if (!cancelled) {
           setLyrics(EMPTY_LYRICS)
+          setRetryable(true)
           setLyricHint(error instanceof Error && error.message === '当前音源未提供歌词' ? error.message : '歌词加载失败')
         }
       })
@@ -83,7 +90,7 @@ export default function NowPlaying() {
       cancelled = true
       controller.abort()
     }
-  }, [track?.id, track?.mediaRef, track?.catalogRef, track?.playbackRef, track?.lyricsRef])
+  }, [track?.id, track?.mediaRef, track?.catalogRef, track?.playbackRef, track?.lyricsRef, lyricRetry])
 
   const timeMs = state.currentTime * 1000
   const activeIdx = timelineTrusted ? findActiveIndex(lyrics.lines, timeMs) : -1
@@ -119,13 +126,15 @@ export default function NowPlaying() {
           )}
         </div>
 
-        <div className="dm-np-lyrics" role="region" aria-label="歌词">
+        <div className={`dm-np-lyrics${!timelineTrusted ? ' is-static' : ''}`} role="region" aria-label="歌词">
           {track && lyricsSource && <p className="dm-np-hint">歌词来源：{musicSourceLabel(lyricsSource)}</p>}
           {track && lyrics.lines.length > 0 && !timelineTrusted && <p className="dm-np-hint">歌词时间轴未确认，静态显示</p>}
           {!track && <p className="dm-np-hint">未播放</p>}
           {track && lyrics.lines.length === 0 && (
             <p className="dm-np-hint">{lyricHint}</p>
           )}
+          {track && retryable && <button type="button" className="dm-np-lyric-retry"
+            onClick={() => setLyricRetry(value => value + 1)}>重试歌词</button>}
           <ul className="dm-lyric-list">
             {lyrics.lines.map((line, i) => {
               const isActive = i === activeIdx

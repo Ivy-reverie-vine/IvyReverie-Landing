@@ -14,7 +14,7 @@ import { createPlaybackDiagnostics } from '../playbackDiagnostics.js'
 import { MediaReferenceStore } from '../mediaReference.js'
 import { createMediaProxyRouter } from '../mediaProxy.js'
 
-export async function startIdentityGateway({ bilibili = false, mediaProxy = false, mediaTtlMs = 30000 } = {}) {
+export async function startIdentityGateway({ bilibili = false, mediaProxy = false, mediaTtlMs = 30000, lrclib = false } = {}) {
   const dir = mkdtempSync(join(tmpdir(), 'dreammusic-identity-'))
   const db = openDb(dir)
   const users = createUserStore(db)
@@ -46,6 +46,7 @@ export async function startIdentityGateway({ bilibili = false, mediaProxy = fals
   }
   const diagnostics = createPlaybackDiagnostics()
   const orchestrator = createMusicOrchestrator({ config, diagnostics, fetchUpstream: createConfiguredUpstreamFetcher(config) })
+  if (!lrclib) orchestrator.lrclib = null // T01–T11 tests isolate their existing provider boundary
   for (const platform of ['tencent', 'kugou']) {
     const adapter = new MetingAdapter({ platform, baseUrl: 'http://meting.test/', minRequestIntervalMs: 0,
       fetchImpl: async (input, init) => {

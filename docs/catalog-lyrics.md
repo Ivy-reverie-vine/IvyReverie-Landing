@@ -1,5 +1,7 @@
 # T11：原目录歌词与音频来源解耦
 
+2026-10-05：T12 已在生产独立歌词链上增加 [LRCLIB 回退](lrclib-fallback.md)。下文 implemented=false/不请求 LRCLIB 描述 T11 原切片；当前 v2 catalogRef 调用以 T12 扩展契约为准，旧 v1/mediaRef-only 协议保持不变。
+
 对应 DreamMusic [Issue #30](https://github.com/Ivy-reverie-vine/DreamMusic/issues/30)，2026-10-05。
 
 ## 请求与身份

@@ -11,6 +11,7 @@ import {
   userPlaylist,
   playlistDetail,
   likedList,
+  mediaLyrics,
   __resetCache,
   __invalidateCache,
   NcmError,
@@ -42,6 +43,20 @@ describe('api — buildUrl（纯函数）', () => {
 })
 
 describe('api — 缓存（2 分钟同 URL 只请求一次）', () => {
+  it('does not cache original static lyrics when an LRCLIB upgrade failed', async () => {
+    const fn = mockFetch({ code: 200, lrc: { lyric: '原词' }, lyrics: { status: 'available', retryable: true } })
+    await mediaLyrics('catalog', 'audio')
+    await mediaLyrics('catalog', 'audio')
+    expect(fn).toHaveBeenCalledTimes(2)
+  })
+
+  it('keeps successful lyric timing isolated by the actual audio identity', async () => {
+    const fn = mockFetch({ code: 200, lyrics: { status: 'available', timeline: 'trusted' } })
+    await mediaLyrics('catalog', 'catalog')
+    await mediaLyrics('catalog', 'catalog')
+    await mediaLyrics('catalog', 'video')
+    expect(fn).toHaveBeenCalledTimes(2)
+  })
   it('相同参数第二次走缓存不发起 fetch', async () => {
     const fn = mockFetch({ code: 200, result: { songs: [] } })
     await search('周杰伦')

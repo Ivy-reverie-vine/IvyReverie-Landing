@@ -81,7 +81,8 @@ export class MetingAdapter {
     return ['search', 'detail', 'lyrics', 'playback']
   }
 
-  async request({ path, query = {}, timeoutMs = 8000 }) {
+  async request({ path, query = {}, timeoutMs = 8000, signal }) {
+    signal?.throwIfAborted()
     const type = ROUTE_TYPES[path]
     if (!type) {
       throw new MetingSourceError('CAPABILITY_UNSUPPORTED', `Meting does not support ${path}`)
@@ -93,7 +94,7 @@ export class MetingAdapter {
       throw new MetingSourceError('INVALID_REQUEST', `missing Meting resource id for ${path}`)
     }
 
-    const payload = await this.fetchResource(type, resourceId, query, timeoutMs)
+    const payload = await this.fetchResource(type, resourceId, query, timeoutMs, signal)
     if (path === 'lyric/new') {
       return { status: 200, body: { code: 200, lrc: { lyric: String(payload?.lyric || '') }, tlyric: { lyric: String(payload?.tlyric || '') } } }
     }
@@ -122,10 +123,11 @@ export class MetingAdapter {
     const url = typeof first === 'string' ? first : String(first?.url || '')
     let catalogDurationMs = 0
     try {
-      const detail = await this.fetchResource('song', resourceId, {}, timeoutMs)
+      const detail = await this.fetchResource('song', resourceId, {}, timeoutMs, signal)
       const song = asArray(detail).find(item => String(item.url_id ?? item.id) === resourceId)
       catalogDurationMs = song ? durationMs(song) : 0
     } catch { /* Missing evidence is not a full recording. */ }
+    signal?.throwIfAborted()
     const audioIntegrity = assessAudio({ url, catalogDurationMs,
       resourceDurationMs: Number(first?.durationMs || 0), trial: trialFlag(first),
       identityMatches: (first?.sourceId ?? first?.id) === undefined ||
@@ -179,7 +181,8 @@ export class MetingAdapter {
     this.cache.clear()
   }
 
-  async fetchResource(type, resourceId, query, timeoutMs) {
+  async fetchResource(type, resourceId, query, timeoutMs, signal) {
+    signal?.throwIfAborted()
     const page = query.page === undefined ? '' : String(query.page)
     const limit = query.limit === undefined ? '' : String(query.limit)
     const cacheKey = `${this.platform}|${type}|${resourceId}|${page}|${limit}`
@@ -201,10 +204,12 @@ export class MetingAdapter {
     }
 
     await this.waitForRateLimit()
+    signal?.throwIfAborted()
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), Math.max(1, Number(timeoutMs || 8000)))
     try {
-      const response = await this.fetchImpl(url, { method: 'GET', signal: controller.signal })
+      const response = await this.fetchImpl(url, { method: 'GET', signal: signal
+        ? AbortSignal.any([controller.signal, signal]) : controller.signal })
       const text = await response.text()
       if (!response.ok) {
         throw new MetingSourceError('SOURCE_HTTP_ERROR', `Meting returned HTTP ${response.status}`)
@@ -218,6 +223,7 @@ export class MetingAdapter {
       if (type === 'search' && !validSearchPayload(payload)) {
         throw new MetingSourceError('UPSTREAM_INVALID_RESPONSE', 'Meting returned invalid search entries')
       }
+      signal?.throwIfAborted()
       this.cache.set(cacheKey, { payload, expiresAt: Date.now() + this.cacheTtlMs })
       return payload
     } catch (error) {

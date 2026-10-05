@@ -14,6 +14,7 @@ import { MusicSourceRegistry } from './sourceRegistry.js'
 import { randomUUID } from 'node:crypto'
 import { RecordingSearchGroups } from './recordingMatcher.js'
 import { assessAudio } from './audioIntegrity.js'
+import { resolveAutomaticPlayback } from './automaticPlayback.js'
 
 export const MUSIC_ROUTE_CAPABILITIES = Object.freeze({
   search: 'search',
@@ -48,14 +49,19 @@ export class MusicSourceError extends Error {
 }
 
 export class MusicOrchestrator {
-  constructor({ registry, diagnostics }) {
+  constructor({ registry, diagnostics, playbackBudget }) {
     this.registry = registry
     this.diagnostics = diagnostics
     this.searchSessions = new Map()
+    this.playbackBudget = playbackBudget
   }
 
   supportsPath(path) {
     return Object.prototype.hasOwnProperty.call(MUSIC_ROUTE_CAPABILITIES, path)
+  }
+
+  resolveAutomaticPlayback(selection) {
+    return resolveAutomaticPlayback(this, selection)
   }
 
   sourceStatuses() {
@@ -374,5 +380,5 @@ export function createMusicOrchestrator({ config, diagnostics, fetchUpstream }) 
       capabilities: ['search', 'detail', 'playback'],
     })
   }
-  return new MusicOrchestrator({ registry, diagnostics })
+  return new MusicOrchestrator({ registry, diagnostics, playbackBudget: config.automaticPlayback })
 }

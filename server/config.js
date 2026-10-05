@@ -55,6 +55,10 @@ export function loadConfig(env = process.env) {
     rateLimitPerMin: Number(env.RATE_LIMIT_PER_MIN || 300),
     /** 上游来源请求超时，避免来源解灰/解析无限期阻塞播放器 */
     upstreamTimeoutMs: Number(env.UPSTREAM_TIMEOUT_MS || 15000),
+    automaticPlayback: {
+      totalMs: Number(env.AUTO_PLAYBACK_BUDGET_MS || 10000),
+      reserveMs: Number(env.AUTO_PLAYBACK_BILIBILI_RESERVE_MS || 3000),
+    },
     /** 音乐来源注册配置；除 api-enhanced 外的来源必须单独 POC 后再启用 */
     musicSources: {
       apiEnhanced: {

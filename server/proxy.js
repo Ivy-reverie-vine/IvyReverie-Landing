@@ -18,7 +18,8 @@ export function createConfiguredUpstreamFetcher(config) {
     const timer = setTimeout(() => controller.abort(), timeoutMs)
     try {
       const fetchImpl = config.fetch || globalThis.fetch
-      return await fetchImpl(url, { ...init, signal: controller.signal })
+      return await fetchImpl(url, { ...init, signal: init.signal
+        ? AbortSignal.any([controller.signal, init.signal]) : controller.signal })
     } catch (error) {
       if (controller.signal.aborted) {
         const timeout = new Error('upstream request timed out')
@@ -165,6 +166,23 @@ export function createProxyRouter({
         if (error.code === 'INVALID_SEARCH_SESSION') return fail(res, 400, '搜索会话失效，请重新搜索', error.code)
         return fail(res, 502, '聚合搜索失败，请重试', 'SEARCH_FAILED')
       }
+    }
+
+    if (apiVersion === 'v2' && relPath === 'song/url/v1' && req.query.automatic === 'true') {
+      const controller = new AbortController()
+      const cancel = () => { if (!res.writableEnded) controller.abort() }
+      res.on('close', cancel)
+      try {
+        const result = await orchestrator.resolveAutomaticPlayback({ user,
+          mediaRef: req.query.mediaRef, searchSession: req.query.searchSession, signal: controller.signal })
+        if (controller.signal.aborted) return
+        const response = withMediaProxyUrl(result, req, user)
+        return res.status(response.status).json(response.body)
+      } catch (error) {
+        if (error.code === 'INVALID_SEARCH_SESSION') return fail(res, 400, '搜索会话失效，请重新搜索', error.code)
+        if (error.code === 'INVALID_MEDIA_REF') return fail(res, 400, '所选条目不属于当前搜索', error.code)
+        return fail(res, 502, '自动寻找完整版失败，请重试', 'PLAYBACK_FAILED')
+      } finally { res.off('close', cancel) }
     }
 
     if (orchestrator.supportsPath(relPath)) {

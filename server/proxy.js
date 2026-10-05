@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { resolveManualPlayback } from './music/manualPlayback.js'
+import { resolveCatalogLyrics } from './music/catalogLyrics.js'
 import {
   createPlaybackDiagnostics,
   DIAGNOSTIC_CATEGORY_EMPTY_PLAYBACK_URL,
@@ -211,6 +212,23 @@ export function createProxyRouter({
         if (error.code === 'INVALID_MEDIA_REF') return fail(res, 400, '所选条目不属于当前搜索', error.code)
         return fail(res, 502, '自动寻找完整版失败，请重试', 'PLAYBACK_FAILED')
       } finally { res.off('close', cancel) }
+    }
+
+    if (apiVersion === 'v2' && relPath === 'lyric/new' && req.query.catalogRef !== undefined) {
+      const controller = new AbortController()
+      const cancel = () => { if (!res.writableEnded) controller.abort() }
+      res.on('close', cancel)
+      try {
+        if (req.query.mediaRef !== undefined && req.query.mediaRef !== req.query.catalogRef) {
+          return fail(res, 400, '歌词引用必须指向原目录条目', 'INVALID_MEDIA_REF')
+        }
+        const result = await resolveCatalogLyrics(orchestrator, { user, signal: controller.signal,
+          catalogRef: req.query.catalogRef, playbackRef: req.query.playbackRef ?? req.query.catalogRef })
+        if (!controller.signal.aborted) return res.status(result.status).json(result.body)
+      } catch (error) {
+        if (!controller.signal.aborted) return fail(res, 400, '歌词来源引用无效', error.code || 'INVALID_MEDIA_REF')
+      } finally { res.off('close', cancel) }
+      return
     }
 
     if (orchestrator.supportsPath(relPath)) {

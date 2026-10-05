@@ -96,7 +96,8 @@ export class MetingAdapter {
 
     const payload = await this.fetchResource(type, resourceId, query, timeoutMs, signal)
     if (path === 'lyric/new') {
-      return { status: 200, body: { code: 200, lrc: { lyric: String(payload?.lyric || '') }, tlyric: { lyric: String(payload?.tlyric || '') } } }
+      return { status: 200, body: { code: 200, nolyric: payload?.nolyric === true || payload?.instrumental === true,
+        lrc: { lyric: String(payload?.lyric || '') }, tlyric: { lyric: String(payload?.tlyric || '') } } }
     }
     if (path === 'search' || path === 'song/detail') {
       if (path === 'search' && !validSearchPayload(payload)) {

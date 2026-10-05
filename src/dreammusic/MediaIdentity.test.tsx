@@ -44,7 +44,7 @@ describe('T01 Web public playback state', () => {
     expect(ui.getByAltText('目录歌曲')).toHaveAttribute('src', 'https://cover.test/catalog.jpg')
     expect(ui.container.querySelector('audio')).toHaveAttribute('src', 'https://audio.test/123.mp3')
     expect(mediaDetail).not.toHaveBeenCalled()
-    expect(mediaLyrics).toHaveBeenCalledWith('catalog-123')
+    expect(mediaLyrics).toHaveBeenCalledWith('catalog-123', 'catalog-123', expect.any(AbortSignal))
   })
 
   it('resolves restored identity fields and retains them in public queue state', async () => {

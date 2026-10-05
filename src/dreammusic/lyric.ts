@@ -23,6 +23,14 @@ export interface Lyrics {
 
 export const EMPTY_LYRICS: Lyrics = { lines: [], hasYrc: false }
 
+/** Readable text survives uncertain timing; no timestamps are used for follow. */
+export function staticLyrics(lrc?: string, yrc?: string): Lyrics {
+  const parsed = parseLyric(lrc, yrc)
+  if (parsed.lines.length) return { lines: parsed.lines.map(line => ({ time: 0, text: line.text })), hasYrc: false }
+  return { lines: (lrc || yrc || '').split(/\r?\n/).map(raw => raw.replace(/\[[^\]]*\]|\(\d+,\d+,\d+\)/g, '').trim())
+    .filter(Boolean).map(text => ({ time: 0, text })), hasYrc: false }
+}
+
 /** 解析单行 yrc */
 function parseYrcLine(raw: string): LyricLine | null {
   const m = raw.match(/^\[(\d+),\d+\](.*)$/)

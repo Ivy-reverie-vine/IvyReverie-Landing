@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, waitFor } from '@testing-library/react'
+import { render, waitFor, fireEvent } from '@testing-library/react'
 import { useEffect } from 'react'
 import { PlayerProvider, usePlayer } from './player/PlayerContext'
 import NowPlaying from './NowPlaying'
@@ -20,7 +20,7 @@ vi.mock('./api', () => ({
   mediaDetail: vi.fn(async () => ({ data: [{ album: { pictureUrl: 'https://img/cover.jpg?signature=preserved' } }] })),
 }))
 
-import { lyricNew } from './api'
+import { lyricNew, mediaLyrics } from './api'
 
 beforeEach(() => {
   localStorage.clear()
@@ -83,16 +83,73 @@ describe('NowPlaying — DM-06', () => {
     expect(container.querySelector('.dm-np-hint')).toHaveTextContent('未播放')
   })
 
-  it('shows 纯音乐 hint when lyrics empty', async () => {
+  it('does not infer instrumental from an empty lyric result', async () => {
     vi.mocked(lyricNew).mockResolvedValueOnce({ lrc: { lyric: '' }, yrc: { lyric: '' } })
     const { findByText } = render(
       <PlayerProvider>
         <Harness />
       </PlayerProvider>,
     )
-    // 曲目存在但歌词空 → 纯音乐
-    await waitFor(() => expect(findByText).toBeDefined())
-    // 先确保 track 已设置（PLAY_TRACK 已 dispatch）
-    expect(await findByText('纯音乐，无歌词')).toBeInTheDocument()
+    expect(await findByText('原平台暂无歌词')).toBeInTheDocument()
+  })
+
+  it('preserves an explicit instrumental flag', async () => {
+    vi.mocked(lyricNew).mockResolvedValueOnce({ nolyric: true })
+    const ui = render(<PlayerProvider><Harness /></PlayerProvider>)
+    expect(await ui.findByText('纯音乐，无歌词')).toBeInTheDocument()
+  })
+
+  it('rechecks timing after audio changes and rejects late lyrics without interrupting playback', async () => {
+    const fallback = { provider: 'lrclib', implemented: false, eligible: false }
+    vi.mocked(mediaLyrics).mockResolvedValueOnce({ lrc: { lyric: '[00:01]原歌词' }, lyricsSource: 'api-enhanced',
+      lyrics: { status: 'available', timeline: 'trusted', reason: 'same_resource', fallback } })
+    let late!: (value: Awaited<ReturnType<typeof mediaLyrics>>) => void
+    vi.mocked(mediaLyrics).mockReturnValueOnce(new Promise(resolve => { late = resolve }))
+    vi.mocked(mediaLyrics).mockResolvedValueOnce({ lrc: { lyric: '新歌纯文本' }, lyricsSource: 'meting-tencent',
+      lyrics: { status: 'available', timeline: 'uncertain', reason: 'plain_text', fallback } })
+    function Switching() {
+      const { state, dispatch } = usePlayer()
+      const original = { id: 'catalog', name: '原曲', artist: '原歌手', mediaRef: 'catalog', catalogRef: 'catalog',
+        playbackRef: 'catalog', url: 'https://audio.test/original', picUrl: 'https://cover.test/image' }
+      useEffect(() => { dispatch({ type: 'PLAY_TRACK', track: original }) }, [dispatch])
+      return <><output data-testid="state">{JSON.stringify(state)}</output>
+        <button onClick={() => dispatch({ type: 'PLAY_TRACK', track: { ...original, playbackRef: 'qq', url: 'https://audio.test/qq' } })}>换源</button>
+        <button onClick={() => dispatch({ type: 'PLAY_TRACK', track: { ...original, id: 'next', mediaRef: 'next', catalogRef: 'next', playbackRef: 'next' } })}>切歌</button>
+        <NowPlaying /></>
+    }
+    const ui = render(<PlayerProvider><Switching /></PlayerProvider>)
+    await ui.findByText('原歌词')
+    fireEvent.timeUpdate(ui.container.querySelector('audio')!, { target: { currentTime: 2 } })
+    await waitFor(() => expect(ui.container.querySelector('.dm-lyric-line.is-active')).toHaveTextContent('原歌词'))
+    fireEvent.click(ui.getByText('换源'))
+    await ui.findByText('正在加载歌词…')
+    expect(ui.queryByText('原歌词')).toBeNull()
+    const calls = vi.mocked(mediaLyrics).mock.calls
+    const oldSignal = calls[calls.length - 1]?.[2]
+    expect(calls[calls.length - 1]?.slice(0, 2)).toEqual(['catalog', 'qq'])
+    fireEvent.click(ui.getByText('切歌'))
+    await ui.findByText('新歌纯文本')
+    expect(oldSignal?.aborted).toBe(true)
+    late({ lrc: { lyric: '[00:00]迟到旧词' }, lyrics: { status: 'available', timeline: 'trusted', reason: '', fallback } })
+    await waitFor(() => expect(ui.queryByText('迟到旧词')).toBeNull())
+    expect(ui.getByText('歌词时间轴未确认，静态显示')).toBeInTheDocument()
+    expect(ui.container.querySelector('.dm-lyric-line.is-active')).toBeNull()
+    expect(JSON.parse(ui.getByTestId('state').textContent || '{}').isPlaying).toBe(true)
+  })
+
+  it.each(['missing', 'unsupported', 'timeout', 'failed'] as const)('shows %s separately while audio plays', async status => {
+    const hints = { missing: '原平台暂无歌词', unsupported: '原平台未提供歌词', timeout: '原平台歌词请求超时', failed: '原平台歌词暂时无法加载' }
+    vi.mocked(mediaLyrics).mockResolvedValueOnce({ lyrics: { status, timeline: 'none', reason: status,
+      fallback: { provider: 'lrclib', implemented: false, eligible: true } } })
+    function Source() {
+      const { state, dispatch } = usePlayer()
+      useEffect(() => { dispatch({ type: 'PLAY_TRACK', track: { id: 'catalog', name: '原曲', artist: '原歌手',
+        mediaRef: 'catalog', playbackRef: 'qq', url: 'https://audio.test/qq', picUrl: 'https://cover.test/image' } }) }, [dispatch])
+      return <><output data-testid="state">{String(state.isPlaying)}</output><NowPlaying /></>
+    }
+    const ui = render(<PlayerProvider><Source /></PlayerProvider>)
+    await ui.findByText(hints[status])
+    expect(ui.getByTestId('state')).toHaveTextContent('true')
+    expect(ui.queryByText(/LRCLIB/)).toBeNull()
   })
 })

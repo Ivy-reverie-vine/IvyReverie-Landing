@@ -3,7 +3,7 @@ import { songDetail, lyricNew, mediaDetail, mediaLyrics, type LyricResult } from
 import { usePlayer } from './player/PlayerContext'
 import { musicSourceLabel } from './player/reducer'
 import Controls from './player/Controls'
-import { parseLyric, findActiveIndex, findActiveChar, EMPTY_LYRICS, type Lyrics } from './lyric'
+import { parseLyric, staticLyrics, findActiveIndex, findActiveChar, EMPTY_LYRICS, type Lyrics } from './lyric'
 import { applyThemeColor } from './theme'
 import Icon from '../components/Icon'
 import './NowPlaying.css'
@@ -20,6 +20,8 @@ export default function NowPlaying() {
   const [picUrl, setPicUrl] = useState<string | undefined>(undefined)
   const [lyrics, setLyrics] = useState<Lyrics>(EMPTY_LYRICS)
   const [lyricHint, setLyricHint] = useState('正在加载歌词…')
+  const [timelineTrusted, setTimelineTrusted] = useState(false)
+  const [lyricsSource, setLyricsSource] = useState('')
 
   // 切曲 → 拉封面（专辑小图用）+ 歌词
   useEffect(() => {
@@ -29,6 +31,7 @@ export default function NowPlaying() {
       return
     }
     let cancelled = false
+    const controller = new AbortController()
     // 封面：已有就用，否则拉 songDetail
     if (track.picUrl && (!track.mediaRef || track.catalogRef)) {
       setPicUrl(track.picUrl)
@@ -51,15 +54,24 @@ export default function NowPlaying() {
     }
     // 歌词
     setLyrics(EMPTY_LYRICS)
+    setTimelineTrusted(false)
+    setLyricsSource('')
     setLyricHint('正在加载歌词…')
     const lyric: Promise<LyricResult> = track.mediaRef
-      ? mediaLyrics(track.lyricsRef || track.mediaRef)
+      ? mediaLyrics(track.catalogRef || track.mediaRef, track.playbackRef || track.mediaRef, controller.signal)
       : lyricNew(track.id)
     lyric
       .then((r) => {
         if (cancelled) return
-        setLyrics(parseLyric(r.lrc?.lyric, r.yrc?.lyric))
-        setLyricHint('纯音乐，无歌词')
+        const trusted = track.mediaRef ? r.lyrics?.timeline === 'trusted' : true
+        const instrumental = r.nolyric === true || r.lyrics?.status === 'instrumental'
+        setTimelineTrusted(trusted)
+        setLyricsSource(r.lyricsSource || '')
+        setLyrics(instrumental ? EMPTY_LYRICS : trusted ? parseLyric(r.lrc?.lyric, r.yrc?.lyric) : staticLyrics(r.lrc?.lyric, r.yrc?.lyric))
+        const status = r.lyrics?.status
+        setLyricHint(r.nolyric === true || status === 'instrumental' ? '纯音乐，无歌词'
+          : status === 'timeout' ? '原平台歌词请求超时' : status === 'failed' || status === 'unavailable' ? '原平台歌词暂时无法加载'
+            : status === 'unsupported' ? '原平台未提供歌词' : '原平台暂无歌词')
       })
       .catch((error: unknown) => {
         if (!cancelled) {
@@ -69,11 +81,12 @@ export default function NowPlaying() {
       })
     return () => {
       cancelled = true
+      controller.abort()
     }
-  }, [track?.id, track?.mediaRef, track?.catalogRef, track?.lyricsRef])
+  }, [track?.id, track?.mediaRef, track?.catalogRef, track?.playbackRef, track?.lyricsRef])
 
   const timeMs = state.currentTime * 1000
-  const activeIdx = findActiveIndex(lyrics.lines, timeMs)
+  const activeIdx = timelineTrusted ? findActiveIndex(lyrics.lines, timeMs) : -1
   const activeLine = activeIdx >= 0 ? lyrics.lines[activeIdx] : undefined
   const activeChar = findActiveChar(activeLine, timeMs)
 
@@ -107,6 +120,8 @@ export default function NowPlaying() {
         </div>
 
         <div className="dm-np-lyrics" role="region" aria-label="歌词">
+          {track && lyricsSource && <p className="dm-np-hint">歌词来源：{musicSourceLabel(lyricsSource)}</p>}
+          {track && lyrics.lines.length > 0 && !timelineTrusted && <p className="dm-np-hint">歌词时间轴未确认，静态显示</p>}
           {!track && <p className="dm-np-hint">未播放</p>}
           {track && lyrics.lines.length === 0 && (
             <p className="dm-np-hint">{lyricHint}</p>

@@ -458,6 +458,7 @@ async function ncmRequest<T>(
   path: string,
   params: Record<string, unknown> = {},
   version: 'v1' | 'v2' = 'v1',
+  signal?: AbortSignal,
 ): Promise<T> {
   const url = buildUrl(path, params, version)
   const now = Date.now()
@@ -470,7 +471,7 @@ async function ncmRequest<T>(
 
   let res: Response
   try {
-    res = await fetch(url, { credentials: 'include' })
+    res = await fetch(url, { credentials: 'include', signal })
   } catch {
     throw new NcmError('网络异常，请检查 API 服务是否在运行', 'NETWORK')
   }
@@ -513,7 +514,9 @@ async function ncmRequest<T>(
     }
   }
 
-  if (cacheable) cache.set(url, { t: now, data })
+  const lyricStatus = (data.lyrics as CatalogLyricsState | undefined)?.status
+  const reusable = path !== '/lyric/new' || !lyricStatus || ['available', 'instrumental'].includes(lyricStatus)
+  if (cacheable && reusable && !signal?.aborted) cache.set(url, { t: now, data })
   return data as T
 }
 
@@ -540,7 +543,16 @@ export interface SongUrlResult extends MediaIdentity {
   data?: Array<{ url: string | null; [k: string]: unknown }>
   audioIntegrity?: AudioIntegrity
 }
-export interface LyricResult extends MediaIdentity { lrc?: { lyric?: string }; yrc?: { lyric?: string }; [k: string]: unknown }
+export interface CatalogLyricsState {
+  status: 'available' | 'missing' | 'instrumental' | 'unsupported' | 'unavailable' | 'timeout' | 'failed' | 'cancelled'
+  timeline: 'trusted' | 'uncertain' | 'none'
+  reason: string
+  fallback: { provider: string; implemented: boolean; eligible: boolean }
+}
+export interface LyricResult extends MediaIdentity {
+  lrc?: { lyric?: string }; yrc?: { lyric?: string }; nolyric?: boolean
+  lyrics?: CatalogLyricsState; [k: string]: unknown
+}
 export interface PersonalizedResult { result?: Array<{ id: number; name: string; picUrl: string }> }
 export interface PlaylistSummary {
   id: number
@@ -579,8 +591,8 @@ export function mediaUrl(mediaRef: string, level = 'exhigh'): Promise<SongUrlRes
 export function mediaDetail(mediaRef: string): Promise<{ data: MediaSong[] }> {
   return ncmRequest('/song/detail', { mediaRef }, 'v2')
 }
-export function mediaLyrics(mediaRef: string): Promise<LyricResult> {
-  return ncmRequest('/lyric/new', { mediaRef }, 'v2')
+export function mediaLyrics(catalogRef: string, playbackRef = catalogRef, signal?: AbortSignal): Promise<LyricResult> {
+  return ncmRequest('/lyric/new', { mediaRef: catalogRef, catalogRef, playbackRef }, 'v2', signal)
 }
 
 export function search(keywords: string, type = 1, limit = 30): Promise<SearchResult> {

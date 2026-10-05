@@ -1,4 +1,4 @@
-# 同录音音乐平台自动播放（DreamMusic #25 / T06）
+# 同录音自动播放（DreamMusic #25 / T06、#27 / T08）
 
 日期：2026-10-05。NightDream 保留具体资源 `mediaRef`，在已有 v2 播放路由上增加 opt-in 自动编排；v1 和未携带 automatic 的 v2 请求仍只解析具体来源。
 
@@ -13,7 +13,7 @@
 ## 预算与终态
 
 - `AUTO_PLAYBACK_BUDGET_MS`：默认 10000，总自动解析预算。
-- `AUTO_PLAYBACK_BILIBILI_RESERVE_MS`：默认 3000，为未来 B 站阶段保留的时间；普通平台阶段默认最多 7000ms。
+- `AUTO_PLAYBACK_BILIBILI_RESERVE_MS`：默认 3000，为 B 站阶段保留的时间；普通平台阶段默认最多 7000ms。平台提前耗尽时直接接续剩余总预算。
 - 每个候选的超时为来源配置超时和阶段剩余预算的较小值，涵盖 URL、详情证据与正文读取，不能逐次重置总预算。
 - 客户端自动请求不执行普通查询的网络重试；重新点播是新操作。鉴权/base 获取和网络传输不计入服务端解析计时，客户端保留既有 15 秒传输超时。
 - HTTP 断开、切歌或恢复另一音轨会取消解析；服务端传递 AbortSignal，客户端销毁 HTTP 请求并用请求序号阻止旧结果覆盖。
@@ -23,11 +23,11 @@
 | status | 含义 |
 | --- | --- |
 | success | 首个可靠完整版已选定 |
-| exhausted | 当前已确认且可用的音乐平台候选已全部尝试，无可靠完整版 |
-| timeout | 普通平台阶段预算到期；reason 为 music_stage_budget |
+| exhausted | 已启用的自动候选耗尽，无可靠完整版；保留手动候选/来源失败理由 |
+| timeout | 总预算到期时 reason=total_budget；B 站关闭时保留 music_stage_budget |
 | cancelled | 请求取消；reason 为 request_cancelled。HTTP 已断开时不再发送响应 |
 
-`playback` 保留 `totalBudgetMs`、`stageBudgetMs`、`elapsedMs`、`remainingBudgetMs` 和 `attempts`。每项尝试包括具体引用、来源、状态、理由、匹配理由，以及已取得的完整性证据。B 站尚未实现：`continuation` 明确返回 `stage=bilibili`、`enabled=false`、剩余预算下的 `eligible`、原目录引用和候选引用；本票不会发起 B 站请求，也不会声称 B 站回退成功。后续接续必须沿用原始 deadline 和剩余预算，不能把它当作新的 10 秒。
+`playback` 保留 `totalBudgetMs`、`stageBudgetMs`、`elapsedMs`、`remainingBudgetMs` 和 `attempts`。每项尝试包括具体引用、来源、状态、理由、匹配理由，以及已取得的完整性证据。#27 已接上 B 站：平台成功立即结束；否则在原始 deadline 内搜索和读取分 P，按录音证据及完整版门禁决定。B 站关闭时保留原 `continuation.enabled=false` 契约；接续后 `enabled=true/eligible=false`，结果和可识别候选在 `playback.bilibili`。规则与实测见 [Bilibili 回退](bilibili-fallback.md)。
 
 ## 身份和客户端
 

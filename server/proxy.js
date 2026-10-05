@@ -179,7 +179,8 @@ export function createProxyRouter({
       res.on('close', cancel)
       try {
         const result = await orchestrator.resolveAutomaticPlayback({ user,
-          mediaRef: req.query.mediaRef, searchSession: req.query.searchSession, signal: controller.signal })
+          mediaRef: req.query.mediaRef, searchSession: req.query.searchSession, signal: controller.signal,
+          mediaProxyAvailable: config.mediaProxy?.enabled === true && !!mediaReferences })
         if (controller.signal.aborted) return
         const response = withMediaProxyUrl(result, req, user)
         return res.status(response.status).json(response.body)

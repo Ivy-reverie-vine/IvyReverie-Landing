@@ -18,6 +18,7 @@ beforeEach(() => {
     gateway.orchestrator.registry.resetCircuit(source.id)
     gateway.orchestrator.registry.setEnabled(source.id, true)
   }
+  gateway.orchestrator.setSourceEnabled('bilibili', false)
 })
 
 async function selection({ mismatch = false } = {}) {

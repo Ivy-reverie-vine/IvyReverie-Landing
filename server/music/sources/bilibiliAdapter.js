@@ -1,4 +1,5 @@
 import { assessAudio, trialFlag } from '../audioIntegrity.js'
+import { searchBilibili } from './bilibiliSearch.js'
 
 const USER_AGENT = 'Mozilla/5.0'
 const RESOURCE = /^(BV[0-9A-Za-z]{10}):([1-9][0-9]*)$/
@@ -10,16 +11,48 @@ function failure(code, message, status = 502) {
   return error
 }
 
-// Concrete BV/CID resources only. No song-name search or implicit first-part fallback.
+// Concrete playback requires BV/CID. Search/part discovery never selects a first part.
 export class BilibiliAdapter {
   constructor({ fetchImpl = globalThis.fetch } = {}) {
     this.id = 'bilibili'
     this.fetchImpl = fetchImpl
   }
 
-  capabilities() { return ['detail', 'playback'] }
+  // Video discovery yields BV hints, not playable song refs; keep it out of the
+  // public single-source song-search contract until manual candidate UI exists.
+  capabilities() { return ['fallbackSearch', 'detail', 'playback'] }
 
   async request({ path, query = {}, timeoutMs = 8000, signal }) {
+    if (path === 'search' || path === 'song/parts') {
+      const deadline = AbortSignal.timeout(Math.max(1, Number(timeoutMs)))
+      const requestSignal = signal ? AbortSignal.any([signal, deadline]) : deadline
+      const headers = { Referer: 'https://search.bilibili.com/', 'User-Agent': USER_AGENT }
+      try {
+        if (path === 'search') {
+          if (typeof query.keywords !== 'string' || !query.keywords.trim()) throw failure('INVALID_SEARCH', '缺少搜索词', 400)
+          const search = await searchBilibili(this, query.keywords, headers, requestSignal)
+          if (!Array.isArray(search.result)) throw failure('BILIBILI_SEARCH_INCOMPLETE', 'B 站未返回完整搜索结果')
+          const data = search.result.filter(item => /^BV[0-9A-Za-z]{10}$/.test(item.bvid)).slice(0, 5)
+            .map(item => ({ bvid: item.bvid, title: String(item.title || '').replace(/<[^>]*>/g, ''),
+              uploader: String(item.author || '') }))
+          return { status: 200, body: { code: 200, data } }
+        }
+        if (!/^BV[0-9A-Za-z]{10}$/.test(String(query.id || ''))) throw failure('INVALID_BILIBILI_RESOURCE', 'BV 无效', 400)
+        const video = await this.json('/x/web-interface/view', { bvid: query.id }, headers, requestSignal)
+        if (video.bvid !== query.id) throw failure('RESOURCE_IDENTITY_MISMATCH', '返回的视频身份不符')
+        const data = (Array.isArray(video.pages) ? video.pages : []).filter(part => Number.isSafeInteger(Number(part.cid)) && Number(part.cid) > 0).slice(0, 20).map(part => ({
+          source: this.id, sourceId: `${video.bvid}:${part.cid}`, kind: 'song',
+          title: String(part.part || ''), artists: [], album: { name: String(video.title || '') },
+          description: String(video.desc || '').slice(0, 16000), durationMs: Number(part.duration || 0) * 1000,
+          resource: { bvid: video.bvid, cid: String(part.cid), page: part.page, title: String(video.title || ''),
+            partTitle: String(part.part || ''), uploader: { id: String(video.owner?.mid || ''), name: String(video.owner?.name || '') } },
+        }))
+        return { status: 200, body: { code: 200, data } }
+      } catch (error) {
+        return this.errorResult(requestSignal.aborted ? failure('SOURCE_TIMEOUT', 'B 站搜索超时', 504)
+          : error.code ? error : failure('BILIBILI_UPSTREAM_FAILURE', 'B 站搜索失败'))
+      }
+    }
     const match = RESOURCE.exec(String(query.id || ''))
     if (!match || !Number.isSafeInteger(Number(match[2]))) {
       return this.errorResult(failure('INVALID_BILIBILI_RESOURCE', '需要指定有效的 BV 和 CID', 400))
@@ -62,7 +95,9 @@ export class BilibiliAdapter {
       const audioIntegrity = assessAudio({ url, catalogDurationMs: detail.durationMs,
         resourceDurationMs, trial: trialFlag(playback) })
       audioIntegrity.evidence.push('bilibili_cid_membership', 'dash_audio_representation')
-      return { status: 200, body: { code: 200, audioIntegrity, data: [{ url, source: this.id,
+      return { status: 200, body: { code: 200, audioIntegrity,
+        ...(query.recordingEvidence === true ? { recordingCandidate: { ...detail, description: String(video.desc || '').slice(0, 16000) } } : {}),
+        data: [{ url, source: this.id,
         sourceId: detail.sourceId, resource, durationMs: resourceDurationMs,
         media: { container: 'mp4', mimeType: 'audio/mp4', codecs: track.codecs, delivery: 'dash_audio',
           representationId: track.id, dashDurationMs: Number(playback.dash.duration || 0) * 1000 },

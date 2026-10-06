@@ -2,6 +2,15 @@ import { parseMediaRef, createMediaRef, toMediaV2Body } from '../mediaContract.j
 import { boundedRequest } from './automaticPlayback.js'
 import { DIAGNOSTIC_STAGE_SOURCE_RESOLUTION } from '../playbackDiagnostics.js'
 
+function withoutCreditHeaders(value) {
+  if (typeof value !== 'string') return ''
+  return value.split(/\r?\n/).filter(line => {
+    if (!line.trim().startsWith('{')) return true
+    try { const header = JSON.parse(line); return !(header.t === -1 && Array.isArray(header.c)) }
+    catch { return true }
+  }).join('\n')
+}
+
 // Content belongs to the catalog; timing belongs to the concrete audio relation.
 // Cross-resource timing remains uncertain even for a matched recording.
 async function resolveOriginalCatalogLyrics(orchestrator, { catalogRef, playbackRef = catalogRef, signal, user }) {
@@ -54,7 +63,9 @@ async function resolveOriginalCatalogLyrics(orchestrator, { catalogRef, playback
       status = 'failed'
       return result(status, {}, 'provider_rejected')
     }
-    const body = response.body || {}
+    const raw = response.body || {}
+    const body = { ...raw, lrc: { ...raw.lrc, lyric: withoutCreditHeaders(raw.lrc?.lyric) },
+      yrc: { ...raw.yrc, lyric: withoutCreditHeaders(raw.yrc?.lyric) } }
     const content = [body.lrc?.lyric, body.yrc?.lyric].filter(value => typeof value === 'string')
       .join('\n').replace(/\[[^\]]*\]|\(\d+,\d+,\d+\)/g, '').trim()
     status = body.nolyric === true || body.instrumental === true ? 'instrumental' : content ? 'available' : 'missing'
@@ -85,7 +96,7 @@ async function catalogMetadata(orchestrator, catalogRef, user, signal) {
   for (const session of orchestrator.searchSessions.values()) {
     if (session.userId !== user?.id || session.expiresAt <= Date.now()) continue
     const entry = session.groups.groups.flatMap(group => group.entries).find(row => row.mediaRef === catalogRef)
-    if (entry) return entry
+    if (entry && entry.durationMs > 0 && entry.title && entry.artists?.length && entry.album?.name) return entry
   }
   const source = orchestrator.registry.get(catalog.source)
   if (!source?.enabled || !source.capabilities.has('detail') || !orchestrator.registry.beginRequest(source)) return null

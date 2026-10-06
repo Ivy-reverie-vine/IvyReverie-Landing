@@ -24,11 +24,14 @@ const samples = [
   { key: 'full', keyword: 'Kevin MacLeod', id: '33984241' },
   { key: 'trial', keyword: 'Never Gonna Give You Up Rick Astley', id: '18520488' },
   { key: 'lyrics', keyword: '晴天 周杰伦', id: '2652820720' },
+  { key: 'lrclibPlain', keyword: 'Profoundly in Love with Pandora', id: '1465951' },
+  { key: 'lrclibMissing', keyword: 'I Want to Be Straight', id: '36578812' },
+  { key: 'lrclibSynced', keyword: 'Sweet Gene Vincent', id: '2673931252' },
 ]
 const report = { capturedAt: new Date().toISOString(), timezone: 'Asia/Shanghai',
   boundary: 'Live providers; disposable unbound local account; production gateway/player. Range is not completeness.',
   configuration: { sources: ['api-enhanced', 'meting-tencent', 'meting-kugou', 'bilibili'],
-    totalBudgetMs: 10000, bilibiliReserveMs: 3000 }, scenarios: [], http: [], browser: [], media: [] }
+    totalBudgetMs: 10000, bilibiliReserveMs: 3000 }, scenarios: [], http: [], business: [], browser: [], media: [] }
 let db, sidecar, server, vite, closed = false
 const selected = new Map()
 function save() { mkdirSync(dirname(output), { recursive: true }); writeFileSync(output, JSON.stringify(report, null, 2) + '\n') }
@@ -88,6 +91,16 @@ try {
   const references = new MediaReferenceStore({ ttlMs: config.mediaProxy.ttlMs })
   const app = express()
   app.use(express.json({ limit: '64kb' }))
+  app.use((req, res, next) => {
+    const media = req.path.startsWith('/dreammusic/media/')
+    if (media || req.path === '/dreammusic/api/v2/song/url/v1') {
+      const started = Date.now()
+      res.on('finish', () => { report.business.push({ path: media ? '/dreammusic/media/stream/[token]' : req.path,
+        httpStatus: res.statusCode, recovery: req.query.recover === 'true', automatic: req.query.automatic === 'true',
+        manual: req.query.manual === 'other', range: !!req.headers.range, elapsedMs: Date.now() - started }); save() })
+    }
+    next()
+  })
   app.use('/dreammusic/api/v1/auth', auth.router)
   for (const apiVersion of ['v1', 'v2']) app.use(`/dreammusic/api/${apiVersion}`,
     createProxyRouter({ users, auth, config, diagnostics, musicOrchestrator: orchestrator, apiVersion, mediaReferences: references }))

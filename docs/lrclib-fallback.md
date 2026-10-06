@@ -48,3 +48,7 @@ LRCLIB 缓存只保存匹配后的提供方内容（15 分钟、最多 256 项�
 
 浏览器生产 NowPlaying 组件截图：[同步](assets/issue31-synced-desktop.jpg)、[静态](assets/issue31-static-desktop.jpg)、[失败与重试](assets/issue31-retry-mobile.jpg)。
 浏览器仅验证歌词 UI（受控第三方、临时无有效音频的测试条目），不宣称真实媒体 playing/进度或鸿蒙原生布局验收。
+
+## 2026-10-06：T15真实回退补充
+
+原目录搜索缺少时长/元数据时，不直接拿不完整搜索快照查询LRCLIB；补取该引用自身详情并核对ID。网易`{"t":-1,"c":[...]}`作词/作曲元数据头无正文时归missing，保留真实正文后再决定是否回退。真实样本：网易1465951→LRCLIB25549173 plain；网易2673931252仅元数据头→LRCLIB34577799 synced；网易36578812空词→真实get404/search无匹配。三者都有实际音频、生产组件状态及浏览器进度，见DreamMusic `docs/research/issue-34-validation.md`；以上章节保留T12原契约与历史受控样本边界。

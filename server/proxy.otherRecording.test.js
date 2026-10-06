@@ -61,7 +61,9 @@ describe('T10 explicit independent recording through authenticated HTTP', () => 
     const { body } = await request(selected)
     expect(body.audioIntegrity.status).toBe(value === 'unknown' ? 'unknown' : 'preview')
     expect(body.manualSelection.match.status).toBe('manual')
-    expect(gateway.controls.calls.every(url => url.host === 'api.bilibili.com')).toBe(true)
+    expect(gateway.controls.calls.every(url => url.host === 'api.bilibili.com' ||
+      (value === 'unknown' && url.href === 'https://audio.test/mv.m4a'))).toBe(true)
+    expect(gateway.controls.calls.filter(url => url.pathname === '/x/player/playurl')).toHaveLength(1)
   })
   it('rejects undiscovered refs, wrong original catalog, foreign/expired sessions and same-recording mode', async () => {
     const forged = { ...params, manual: 'other', mediaRef: createMediaRef({ source: 'bilibili', sourceId: bvid + ':222' }) }

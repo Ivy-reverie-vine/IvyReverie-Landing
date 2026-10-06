@@ -541,6 +541,8 @@ export interface AudioIntegrity {
   catalogDurationMs: number
   resourceDurationMs: number
   evidence: string[]
+  inspection?: { decoded: boolean; reason?: string; policy?: string; durationMs?: number;
+    bytes?: number; sha256?: string; elapsedMs?: number }
 }
 export interface SongUrlResult extends MediaIdentity {
   data?: Array<{ url: string | null; [k: string]: unknown }>

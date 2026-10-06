@@ -1,0 +1,1415 @@
+{
+  "capturedAt": "2026-10-06T05:40:23.343Z",
+  "timezone": "Asia/Shanghai",
+  "boundary": "Live providers; disposable unbound local account; production gateway/player. Range is not completeness.",
+  "configuration": {
+    "sources": [
+      "api-enhanced",
+      "meting-tencent",
+      "meting-kugou",
+      "bilibili"
+    ],
+    "totalBudgetMs": 10000,
+    "bilibiliReserveMs": 3000
+  },
+  "scenarios": [
+    {
+      "key": "trial",
+      "capturedAt": "2026-10-06T05:41:20.256Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+        "source": "api-enhanced",
+        "sourceId": "18520488",
+        "title": "Never Gonna Give You Up",
+        "artists": [
+          "Rick Astley"
+        ],
+        "album": "Whenever You Need Somebody",
+        "searchDurationMs": 0
+      },
+      "searchMs": 2284,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "18520488",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxNzAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1399616170",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxNzAiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best of Me",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNTMxIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "18520531",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNTMxIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Playlist: The Very Best Of Rick Astley",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MDc5NTkzMDUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2707959305",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MDc5NTkzMDUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Chart Toppers",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NTA4ODk1OTAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1450889590",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NTA4ODk1OTAiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Pianoforte)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up (Pianoforte)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MjI2Mzg4ODYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1822638886",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MjI2Mzg4ODYiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best of Me",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzYyMTIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2635576212",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzYyMTIiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best Of Me: Never Edition",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDg2MTE2MjEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1948611621",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDg2MTE2MjEiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (2022 Remaster)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody (2022 Remaster)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0MDQxNzkxODUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1404179185",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0MDQxNzkxODUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Pianoforte)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up (Pianoforte)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0MzQwMTc1OTgiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "3434017598",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0MzQwMTc1OTgiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Hits 80's 90's 2000's – Three Decades of Hits: The Greatest Hits of the 80's, 90's and 2000's!",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVWw2WUgwcFFMTGUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001Ul6YH0pQLLe",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVWw2WUgwcFFMTGUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Old School House Party (Explicit)",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyYmNpQlQweWw2ZmwiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002bciBT0yl6fl",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyYmNpQlQweWw2ZmwiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up  - remix",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "101 80s Anthems",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyaTVpOGkzVnl0VUIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002i5i8i3VytUB",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyaTVpOGkzVnl0VUIiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Dame Dame",
+                "Nito-Onna",
+                "Matt Aitken",
+                "Mike Stock",
+                "Pete Waterman",
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up",
+              "durationMs": 128000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwR1h5ZlQxY1l6dlMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000GXyfT1cYzvS",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwR1h5ZlQxY1l6dlMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Happiness Forever (Explicit)",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMmRQeGIza04zNWMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0032dPxb3kN35c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMmRQeGIza04zNWMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "This Is...80s",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeWxVeUkwd2dxdVEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003ylUyI0wgquQ",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeWxVeUkwd2dxdVEiLCJraW5kIjoic29uZyJ9",
+              "title": "Betty (Get Money)",
+              "artists": [
+                "Yung Gravy"
+              ],
+              "album": "Betty (Get Money)",
+              "durationMs": 146000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZzVTV1kyYU9OMmMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000g5SWY2aON2c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZzVTV1kyYU9OMmMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Juno Im Park",
+                "Hannah Trigwell"
+              ],
+              "album": "Never Gonna Give You Up",
+              "durationMs": 199000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwUmNrRHozSWQ5R2ciLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000RckDz3Id9Gg",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwUmNrRHozSWQ5R2ciLCJraW5kIjoic29uZyJ9",
+              "title": "Together Forever",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Songs for Mum",
+              "durationMs": 200000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUDZDSkYyUG1IM1EiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001P6CJF2PmH3Q",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUDZDSkYyUG1IM1EiLCJraW5kIjoic29uZyJ9",
+              "title": "Together Forever (7\")",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Pure... 80s",
+              "durationMs": 205000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzODBEZ2sxSW13bzAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "00380Dgk1Imwo0",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzODBEZ2sxSW13bzAiLCJraW5kIjoic29uZyJ9",
+              "title": "Together Forever",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Rick Astley-Greatest Hits",
+              "durationMs": 202000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgzMjU0MzY5ZjIwMzU4OTE1NGFlYzAzZmU0MzZjYmEyIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "83254369f203589154aec03fe436cba2",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgzMjU0MzY5ZjIwMzU4OTE1NGFlYzAzZmU0MzZjYmEyIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzYmU2NTlmMTNjNmU1YTM3NmE3ZDU1OGUzODcxZGNjIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "13be659f13c6e5a376a7d558e3871dcc",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzYmU2NTlmMTNjNmU1YTM3NmE3ZDU1OGUzODcxZGNjIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (单曲)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Collection",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA2OTgwMTk2NTRiNTE4NzM3YzVhMTVjNjVlMmQ4OTE0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "0698019654b518737c5a15c65e2d8914",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA2OTgwMTk2NTRiNTE4NzM3YzVhMTVjNjVlMmQ4OTE0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Explicit)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Old School House Party (Explicit)",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRlNWVjYTgxNGExOTVmNzJmZTEyYWQ1YWFmOTM3ZWJkIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "4e5eca814a195f72fe12ad5aaf937ebd",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRlNWVjYTgxNGExOTVmNzJmZTEyYWQ1YWFmOTM3ZWJkIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7\" Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "This Is...80s",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3NzQ0MDMyMWY3NGY3ZDU3NmZjZjIzZjZiODliYWVmIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a77440321f74f7d576fcf23f6b89baef",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3NzQ0MDMyMWY3NGY3ZDU3NmZjZjIzZjZiODliYWVmIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "80s Party Anthems",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQzZDMxYWI2ZDVhMjc5MTg2YzdlYjUwYTllOTYyYjU3Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "43d31ab6d5a279186c7eb50a9e962b57",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQzZDMxYWI2ZDVhMjc5MTg2YzdlYjUwYTllOTYyYjU3Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7'' Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "101 80s Anthems",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE1OWFkN2Q0YzIxZDMxMmQzMmRmZTEzODdjZTUzYzVjIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a59ad7d4c21d312d32dfe1387ce53c5c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE1OWFkN2Q0YzIxZDMxMmQzMmRmZTEzODdjZTUzYzVjIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (完整版|7'VocalMix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "I Love 80s",
+              "durationMs": 211000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDZmMzY0NjVmMWQzYjVjY2ExZWJhYWIwODdlNjM1Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "d606f36465f1d3b5cca1ebaab087e635",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDZmMzY0NjVmMWQzYjVjY2ExZWJhYWIwODdlNjM1Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7\" Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "100 Hits Of The '80s",
+              "durationMs": 209000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzN2MyMTk3MTYxZDg4MmMyYWRmMmVmZDI4ODZhY2Y1Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "137c2197161d882c2adf2efd2886acf5",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzN2MyMTk3MTYxZDg4MmMyYWRmMmVmZDI4ODZhY2Y1Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Cake Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody (Deluxe Edition / Remastered 2022)",
+              "durationMs": 347000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMyNDU5ODMxMjhiZjE2ODE5MGI0ZjYwOWFhNzFhNzZlIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "3245983128bf168190b4f609aa71a76e",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMyNDU5ODMxMjhiZjE2ODE5MGI0ZjYwOWFhNzFhNzZlIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (完整版|7Mix|-remix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "101 80s Anthems",
+              "durationMs": 212000
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+      "audioIntegrity": {
+        "status": "unavailable",
+        "reason": "automatic_bilibili_manual_candidates",
+        "catalogDurationMs": 0,
+        "resourceDurationMs": 0,
+        "evidence": []
+      },
+      "playback": {
+        "status": "exhausted",
+        "reason": "bilibili_manual_candidates",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 2289,
+        "remainingBudgetMs": 7711,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+            "source": "api-enhanced",
+            "status": "preview",
+            "matchReason": "selected_resource",
+            "reason": "explicit_trial",
+            "audioIntegrity": {
+              "status": "preview",
+              "reason": "explicit_trial",
+              "catalogDurationMs": 214018,
+              "resourceDurationMs": 26827,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": true,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ"
+          ]
+        },
+        "bilibili": {
+          "status": "exhausted",
+          "query": "Never Gonna Give You Up Rick Astley",
+          "candidates": [
+            {
+              "source": "bilibili",
+              "bvid": "BV1KR4y1w7A3",
+              "title": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+              "uploader": "Sky光遇琴谱_瞳",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "source": "bilibili",
+              "bvid": "BV1eb4y1U7kH",
+              "title": "Never gonna give you up慢速略降调＋3D环绕声",
+              "uploader": "丨V丨H丨M丨",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "source": "bilibili",
+              "bvid": "BV1qbHGzqEZm",
+              "title": "Rick Astley - Never Gonna Give You Up动态鼓谱",
+              "uploader": "小娟音乐工作室",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "source": "bilibili",
+              "bvid": "BV1xW411T7F8",
+              "title": "Two Steps From Hell - Never Give Up On Your Dreams",
+              "uploader": "TomUnknown",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "source": "bilibili",
+              "bvid": "BV1GJ411x7h7",
+              "title": "【官方 MV】Never Gonna Give You Up - Rick Astley",
+              "uploader": "索尼音乐中国",
+              "status": "manual",
+              "reason": "parts_inspected"
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxS1I0eTF3N0EzOjcyMzY0MTg4OCIsImtpbmQiOiJzb25nIn0",
+              "source": "bilibili",
+              "sourceId": "BV1KR4y1w7A3:723641888",
+              "resource": {
+                "bvid": "BV1KR4y1w7A3",
+                "cid": "723641888",
+                "page": 1,
+                "title": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+                "partTitle": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+                "uploader": {
+                  "id": "479784248",
+                  "name": "Sky光遇琴谱_瞳"
+                }
+              },
+              "title": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+              "artists": [],
+              "durationMs": 251000,
+              "status": "manual",
+              "reason": "recording_provenance_missing",
+              "match": {
+                "status": "manual",
+                "reason": "recording_provenance_missing",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 251000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxZWI0eTFVN2tIOjM5MDEyMzcyMSIsImtpbmQiOiJzb25nIn0",
+              "source": "bilibili",
+              "sourceId": "BV1eb4y1U7kH:390123721",
+              "resource": {
+                "bvid": "BV1eb4y1U7kH",
+                "cid": "390123721",
+                "page": 1,
+                "title": "Never gonna give you up慢速略降调＋3D环绕声",
+                "partTitle": "Never gonna give you up慢速略降调＋3D环绕声",
+                "uploader": {
+                  "id": "496037773",
+                  "name": "丨V丨H丨M丨"
+                }
+              },
+              "title": "Never gonna give you up慢速略降调＋3D环绕声",
+              "artists": [],
+              "durationMs": 269000,
+              "status": "manual",
+              "reason": "different_recording_or_extra_segments",
+              "match": {
+                "status": "manual",
+                "reason": "different_recording_or_extra_segments",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 269000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxcWJIR3pxRVptOjMyODE1NTgyMTkzIiwia2luZCI6InNvbmcifQ",
+              "source": "bilibili",
+              "sourceId": "BV1qbHGzqEZm:32815582193",
+              "resource": {
+                "bvid": "BV1qbHGzqEZm",
+                "cid": "32815582193",
+                "page": 1,
+                "title": "Rick Astley - Never Gonna Give You Up动态鼓谱",
+                "partTitle": "Rick Astley - Never Gonna Give You Up动态鼓谱",
+                "uploader": {
+                  "id": "331285848",
+                  "name": "小娟音乐工作室"
+                }
+              },
+              "title": "Rick Astley - Never Gonna Give You Up动态鼓谱",
+              "artists": [],
+              "durationMs": 211000,
+              "status": "manual",
+              "reason": "different_recording_or_extra_segments",
+              "match": {
+                "status": "manual",
+                "reason": "different_recording_or_extra_segments",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 211000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxeFc0MTFUN0Y4OjM1NDQ5MjY2Iiwia2luZCI6InNvbmcifQ",
+              "source": "bilibili",
+              "sourceId": "BV1xW411T7F8:35449266",
+              "resource": {
+                "bvid": "BV1xW411T7F8",
+                "cid": "35449266",
+                "page": 1,
+                "title": "Two Steps From Hell - Never Give Up On Your Dreams",
+                "partTitle": "",
+                "uploader": {
+                  "id": "20274714",
+                  "name": "TomUnknown"
+                }
+              },
+              "title": "",
+              "artists": [],
+              "durationMs": 321000,
+              "status": "manual",
+              "reason": "recording_provenance_missing",
+              "match": {
+                "status": "manual",
+                "reason": "recording_provenance_missing",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 321000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxR0o0MTF4N2g3OjEzNzY0OTE5OSIsImtpbmQiOiJzb25nIn0",
+              "source": "bilibili",
+              "sourceId": "BV1GJ411x7h7:137649199",
+              "resource": {
+                "bvid": "BV1GJ411x7h7",
+                "cid": "137649199",
+                "page": 1,
+                "title": "【官方 MV】Never Gonna Give You Up - Rick Astley",
+                "partTitle": "Never Gonna Give You Up - Rick Astley",
+                "uploader": {
+                  "id": "486906719",
+                  "name": "索尼音乐中国"
+                }
+              },
+              "title": "Never Gonna Give You Up - Rick Astley",
+              "artists": [],
+              "durationMs": 213000,
+              "status": "manual",
+              "reason": "different_recording_or_extra_segments",
+              "match": {
+                "status": "manual",
+                "reason": "different_recording_or_extra_segments",
+                "evidence": {
+                  "policy": "bilibili-credits-v1",
+                  "title": "",
+                  "artists": [],
+                  "album": "",
+                  "catalogDurationMs": 214018,
+                  "partDurationMs": 213000,
+                  "catalogLink": false,
+                  "originalAlbumAudio": false
+                }
+              }
+            }
+          ],
+          "reason": "bilibili_manual_candidates"
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "available",
+          "timeline": "trusted",
+          "reason": "same_resource",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": false,
+            "attempted": false,
+            "status": "skipped"
+          },
+          "catalogStatus": "available"
+        },
+        "source": "api-enhanced",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+        "characters": 2485
+      }
+    },
+    {
+      "key": "trial",
+      "mode": "manual_other_recording",
+      "selectedSourceId": "BV1KR4y1w7A3:723641888",
+      "capturedAt": "2026-10-06T05:41:41.037Z",
+      "elapsedMs": 1556,
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxS1I0eTF3N0EzOjcyMzY0MTg4OCIsImtpbmQiOiJzb25nIn0",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJiaWxpYmlsaSIsInNvdXJjZUlkIjoiQlYxS1I0eTF3N0EzOjcyMzY0MTg4OCIsImtpbmQiOiJzb25nIn0",
+      "lyricsRef": "",
+      "playbackSource": "bilibili",
+      "audioIntegrity": {
+        "status": "full",
+        "reason": "decoded_complete_media",
+        "catalogDurationMs": 251000,
+        "resourceDurationMs": 250602,
+        "evidence": [
+          "catalog_duration",
+          "provider_resource_duration",
+          "complete_media_decode",
+          "decoded_resource_duration",
+          "bilibili_cid_membership",
+          "dash_audio_representation"
+        ],
+        "inspection": {
+          "decoded": true,
+          "durationMs": 250602.833,
+          "bytes": 2108684,
+          "sha256": "dce712144c2a866b944bbb4d09daf249c7f780e872508e889f89dc4c46e1e42d",
+          "elapsedMs": 1321,
+          "policy": "complete-aac-decode-v1"
+        }
+      },
+      "manualSelection": {
+        "originalCatalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+        "reason": "recording_provenance_missing",
+        "match": {
+          "status": "manual",
+          "reason": "recording_provenance_missing",
+          "evidence": {
+            "policy": "bilibili-credits-v1",
+            "title": "",
+            "artists": [],
+            "album": "",
+            "catalogDurationMs": 214018,
+            "partDurationMs": 251000,
+            "catalogLink": false,
+            "originalAlbumAudio": false
+          }
+        },
+        "lyricsMode": "none",
+        "entry": {
+          "title": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+          "artists": [],
+          "album": {
+            "name": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+            "pictureUrl": "http://i2.hdslb.com/bfs/archive/6f46c70758d588306c783467210c73a34574cbca.jpg"
+          },
+          "durationMs": 251000,
+          "resource": {
+            "bvid": "BV1KR4y1w7A3",
+            "cid": "723641888",
+            "page": 1,
+            "title": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+            "partTitle": "【sky光遇】 Never gonna give you up 完整版sky studio 整活专用 语瞳原创",
+            "uploader": {
+              "id": "479784248",
+              "name": "Sky光遇琴谱_瞳"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "http": [
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 565
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1306
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 185
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/nav",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": -101,
+      "elapsedMs": 130
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/wbi/search/type",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "dataKeys": [
+        "seid",
+        "page",
+        "pagesize",
+        "numResults",
+        "numPages",
+        "suggest_keyword",
+        "rqt_type",
+        "exp_list",
+        "is_hit_web_inf",
+        "egg_hit",
+        "result",
+        "show_column",
+        "in_black_key",
+        "in_white_key",
+        "next"
+      ],
+      "resultCount": 10,
+      "elapsedMs": 410
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 47
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 55
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 50
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 49
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 49
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 271
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 153
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/player/playurl",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 73
+    },
+    {
+      "host": "upos-sz-mirrorcos.bilivideo.com",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 200,
+      "elapsedMs": 412
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/view",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "elapsedMs": 54
+    },
+    {
+      "host": "upos-sz-mirrorcos.bilivideo.com",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 110
+    }
+  ],
+  "browser": [
+    {
+      "key": "trial",
+      "event": "playing",
+      "time": 0.000735,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 26160,
+      "sinceHandoffMs": 424,
+      "capturedAt": "2026-10-06T05:41:41.475Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 0.20723,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 26408,
+      "sinceHandoffMs": 672,
+      "capturedAt": "2026-10-06T05:41:41.721Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 10.301378,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 36502,
+      "sinceHandoffMs": 10766,
+      "capturedAt": "2026-10-06T05:41:51.818Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 20.355442,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 46596,
+      "sinceHandoffMs": 20860,
+      "capturedAt": "2026-10-06T05:42:01.911Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 30.269369,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 56690,
+      "sinceHandoffMs": 30954,
+      "capturedAt": "2026-10-06T05:42:12.008Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 40.263265,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 66783,
+      "sinceHandoffMs": 41047,
+      "capturedAt": "2026-10-06T05:42:22.099Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 50.356312,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 76877,
+      "sinceHandoffMs": 51141,
+      "capturedAt": "2026-10-06T05:42:32.192Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 60.46231,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 86982,
+      "sinceHandoffMs": 61246,
+      "capturedAt": "2026-10-06T05:42:42.296Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 70.544347,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 97065,
+      "sinceHandoffMs": 71329,
+      "capturedAt": "2026-10-06T05:42:52.378Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 80.637877,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 107158,
+      "sinceHandoffMs": 81422,
+      "capturedAt": "2026-10-06T05:43:02.471Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 90.730749,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 117252,
+      "sinceHandoffMs": 91516,
+      "capturedAt": "2026-10-06T05:43:12.566Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 100.840416,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 127360,
+      "sinceHandoffMs": 101624,
+      "capturedAt": "2026-10-06T05:43:22.673Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 110.799684,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 137439,
+      "sinceHandoffMs": 111703,
+      "capturedAt": "2026-10-06T05:43:32.752Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 120.892928,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 147533,
+      "sinceHandoffMs": 121797,
+      "capturedAt": "2026-10-06T05:43:42.848Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 130.807383,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 157627,
+      "sinceHandoffMs": 131891,
+      "capturedAt": "2026-10-06T05:43:52.941Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 140.879992,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 167720,
+      "sinceHandoffMs": 141984,
+      "capturedAt": "2026-10-06T05:44:03.033Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 150.974298,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 177814,
+      "sinceHandoffMs": 152078,
+      "capturedAt": "2026-10-06T05:44:13.128Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 161.066779,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 187907,
+      "sinceHandoffMs": 162171,
+      "capturedAt": "2026-10-06T05:44:23.220Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 171.161712,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 198002,
+      "sinceHandoffMs": 172266,
+      "capturedAt": "2026-10-06T05:44:33.315Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 181.255735,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 208096,
+      "sinceHandoffMs": 182360,
+      "capturedAt": "2026-10-06T05:44:43.409Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 191.348248,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 218188,
+      "sinceHandoffMs": 192452,
+      "capturedAt": "2026-10-06T05:44:53.501Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 201.442631,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 228284,
+      "sinceHandoffMs": 202548,
+      "capturedAt": "2026-10-06T05:45:03.600Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 211.536493,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 238377,
+      "sinceHandoffMs": 212641,
+      "capturedAt": "2026-10-06T05:45:13.691Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 221.570134,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 248470,
+      "sinceHandoffMs": 222734,
+      "capturedAt": "2026-10-06T05:45:23.784Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 231.355415,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 258596,
+      "sinceHandoffMs": 232860,
+      "capturedAt": "2026-10-06T05:45:33.911Z"
+    },
+    {
+      "key": "trial",
+      "event": "progress",
+      "time": 240.637299,
+      "duration": 250.6025,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 268658,
+      "sinceHandoffMs": 242922,
+      "capturedAt": "2026-10-06T05:45:43.972Z"
+    },
+    {
+      "key": "trial",
+      "event": "pause",
+      "time": 250.6025,
+      "duration": 250.6025,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 278641,
+      "sinceHandoffMs": 252905,
+      "capturedAt": "2026-10-06T05:45:53.956Z"
+    },
+    {
+      "key": "trial",
+      "event": "ended",
+      "time": 250.6025,
+      "duration": 250.6025,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 278643,
+      "sinceHandoffMs": 252907,
+      "capturedAt": "2026-10-06T05:45:53.963Z"
+    }
+  ],
+  "media": []
+}

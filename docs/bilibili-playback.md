@@ -10,7 +10,7 @@
 
 详情的 `title/artists/album/durationMs` 与 `resource` 分别保留。`resource` 包含 BV、CID、page、视频名、分 P 名及 uploader；UP 主不进入 `artists`。播放响应继续保留 catalogRef/playbackRef/lyricsRef 和 playbackSource，附加资源时长及 `media`（容器、MIME、codec、DASH 形态、representationId、DASH 时长）。本票选择 B 站自身资源，没有接受任意外部目录与 B 站录音的匹配声明。
 
-`audioIntegrity` 沿用 #24。目录时长来自**选定分 P**，资源时长来自 `timelength`；BV/CID 归属及 DASH 形态只是来源证据，不是整曲证明。真实样本没有显式非试听标记，即使 URL 可读、播放器时长吻合并且进度推进，仍为 `unknown`。生产 Web/ArkTS 完整版门禁保持有效。
+`audioIntegrity` 沿用 #24。目录时长来自**选定分 P**，资源时长来自 `timelength`；BV/CID归属、DASH形态、URL可读与前段Range不证明完整。2026-10-06的T15修正增加完整AAC读取、容器检查与实际PCM样本数验证，无试听字段时也可取得独立full证据；无法完成检查仍unknown，显式试听仍拒绝。规则、引擎与边界见[Bilibili回退的T15补充](bilibili-fallback.md)。下方指定BV旧样本的unknown是当时结论，不代替新链路验收。
 
 ## 服务端媒体传输
 

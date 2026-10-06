@@ -38,6 +38,15 @@ afterEach(async () => { await gateway.close() })
 const resolve = () => gateway.request(path, { headers: { 'X-API-Key': gateway.apiKey } })
 
 describe('T08 automatic Bilibili fallback through actual HTTP/auth/SQLite/registry/adapters', () => {
+  it('does not use another provider resource as the selected catalog audio reference', async () => {
+    const original = gateway.controls.thirdPartyResponse
+    gateway.controls.thirdPartyResponse = url => url.pathname === '/song/url/v1'
+      ? json({ code: 200, data: [{ id: 124, url: 'https://audio.test/wrong-preview.mp3', time: 27000,
+        freeTrialInfo: { start: 1, end: 28 } }] }) : original(url)
+    const { body } = await resolve()
+    expect(body.playback.attempts[0].audioIntegrity.reason).toBe('resource_identity_mismatch')
+    expect(gateway.controls.calls.some(url => url.href === 'https://audio.test/wrong-preview.mp3')).toBe(false)
+  })
   it('does no Bilibili work when an ordinary platform supplies full audio', async () => {
     mode = 'platform-full'
     const { body } = await resolve()

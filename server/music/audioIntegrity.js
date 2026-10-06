@@ -1,5 +1,5 @@
 // Provider duration describes the resolved resource, never lyrics, bitrate or a Range probe.
-export function assessAudio({ url, catalogDurationMs = 0, resourceDurationMs = 0, trial, identityMatches = true }) {
+export function assessAudio({ url, catalogDurationMs = 0, resourceDurationMs = 0, trial, identityMatches = true, inspection }) {
   const catalog = Number.isFinite(catalogDurationMs) && catalogDurationMs > 0 ? catalogDurationMs : 0
   const resource = Number.isFinite(resourceDurationMs) && resourceDurationMs > 0 ? resourceDurationMs : 0
   const evidence = []
@@ -19,7 +19,13 @@ export function assessAudio({ url, catalogDurationMs = 0, resourceDurationMs = 0
   if (catalog && resource && Math.abs(catalog - resource) > tolerance) {
     return result(resource < catalog ? 'preview' : 'unknown', resource < catalog ? 'resource_shorter' : 'duration_mismatch')
   }
-  if (!catalog || !resource || trial !== false) return result('unknown', 'missing_evidence')
+  if (inspection?.decoded === true && inspection.policy === 'complete-aac-decode-v1' && catalog &&
+    Number.isFinite(inspection.durationMs) && inspection.durationMs > 0 &&
+    Math.abs(catalog - inspection.durationMs) <= tolerance) {
+    evidence.push('complete_media_decode', 'decoded_resource_duration')
+    return { ...result('full', 'decoded_complete_media'), inspection }
+  }
+  if (!catalog || !resource || trial !== false) return { ...result('unknown', 'missing_evidence'), ...(inspection ? { inspection } : {}) }
   return result('full', 'provider_duration_and_non_trial')
 }
 

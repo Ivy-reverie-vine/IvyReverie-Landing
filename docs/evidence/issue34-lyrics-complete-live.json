@@ -1,0 +1,2245 @@
+{
+  "capturedAt": "2026-10-06T06:02:25.185Z",
+  "timezone": "Asia/Shanghai",
+  "boundary": "Live providers; disposable unbound local account; production gateway/player. Range is not completeness.",
+  "configuration": {
+    "sources": [
+      "api-enhanced",
+      "meting-tencent",
+      "meting-kugou",
+      "bilibili"
+    ],
+    "totalBudgetMs": 10000,
+    "bilibiliReserveMs": 3000
+  },
+  "scenarios": [
+    {
+      "key": "lrclibSynced",
+      "capturedAt": "2026-10-06T06:03:12.124Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+        "source": "api-enhanced",
+        "sourceId": "2673931252",
+        "title": "Sweet Gene Vincent",
+        "artists": [
+          "Ian Dury"
+        ],
+        "album": "New Boots and Panties!! (Deluxe Edition)",
+        "searchDurationMs": 0
+      },
+      "searchMs": 2798,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MTU2NDQzIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "27156443",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MTU2NDQzIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Theme Time Radio Hour: Season 3 with your Host Bob Dylan",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUyMzk3NjY4NiIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "523976686",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUyMzk3NjY4NiIsImtpbmQiOiJzb25nIn0",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Robbie Willliams"
+              ],
+              "album": "Brand New Boots and Panties",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4Njc1MTk0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "28675194",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4Njc1MTk0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury & the Blockheads"
+              ],
+              "album": "Suggs Selection",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2673931252",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzU1NjkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "3341635569",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzU1NjkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "In Concert (Sweet Gene Vincent: The Clash Collection)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzY3NjgiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "3341636768",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzY3NjgiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "In Concert (In The Flesh: Blondie Collection)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4NTYxMzk0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "28561394",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4NTYxMzk0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!!",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2Nzc2MDMwNTUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2677603055",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2Nzc2MDMwNTUiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Sex & Drugs & Rock & Roll - The Essential Collection",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5Mjk3ODkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2673929789",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5Mjk3ODkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Backing Track) [Demo]",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU2MjI4ODU5MCIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "562288590",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU2MjI4ODU5MCIsImtpbmQiOiJzb25nIn0",
+              "title": "Sweet Gene Vincent (Bbc John Peel Sessions, 12/12/1977)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots & Panties (40th Anniversary Edition) (audio Version)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUmczRTg0S2l5R3MiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003Rg3E84KiyGs",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUmczRTg0S2l5R3MiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Robbie Willliams"
+              ],
+              "album": "Brand New Boots and Panties",
+              "durationMs": 247000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUVSMWswOTVpOFkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003eER1k095i8Y",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUVSMWswOTVpOFkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Explicit)",
+              "durationMs": 215000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzd2xNRUg0QUI4WlIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003wlMEH4AB8ZR",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzd2xNRUg0QUI4WlIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Warts 'n' Audience",
+              "durationMs": 269000
+            },
+            {
+              "source": "meting-kugou",
+              "sourceId": "8d6eedefbc9b73f228ce853d76279a14",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjhkNmVlZGVmYmM5YjczZjIyOGNlODUzZDc2Mjc5YTE0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Warts 'n' Audience",
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0xYWVEwbGlZMm4iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001KLXYQ0liY2n",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0xYWVEwbGlZMm4iLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Greatest",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyc0hFTlEwT1p6ZGYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002sHENQ0OZzdf",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyc0hFTlEwT1p6ZGYiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live At Rockpalast (WDR Studio L, Cologne, 21.02.1978)",
+              "durationMs": 256000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeGZ3N2gzMVJlbjEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003xfw7h31Ren1",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeGZ3N2gzMVJlbjEiLCJraW5kIjoic29uZyJ9",
+              "title": "Just a Girl",
+              "artists": [
+                "Suede"
+              ],
+              "album": "Attitude / Golden Gun",
+              "durationMs": 161000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxZlpEU1gzUkNHZTMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001fZDSX3RCGe3",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxZlpEU1gzUkNHZTMiLCJraW5kIjoic29uZyJ9",
+              "title": "Just a Girl",
+              "artists": [
+                "Suede",
+                "Justine Frischmann"
+              ],
+              "album": "Suede (Remastered) [Deluxe Edition]",
+              "durationMs": 181000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0Y1hTckoyVk1taWEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "004cXSrJ2VMmia",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0Y1hTckoyVk1taWEiLCJraW5kIjoic29uZyJ9",
+              "title": "Dolls",
+              "artists": [
+                "Primal Scream"
+              ],
+              "album": "Riot City Blues (Expanded Edition)",
+              "durationMs": 238000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzT09tWloxRUFnSVQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003OOmZZ1EAgIT",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzT09tWloxRUFnSVQiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent(Originally Performed By Ian Dury)",
+              "artists": [
+                "Paris Music"
+              ],
+              "album": "Karaoke Hits Rock, Vol. 15",
+              "durationMs": 216000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSzBlNmYwdkc2YUsiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000K0e6f0vG6aK",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSzBlNmYwdkc2YUsiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (made popular by Ian Dury & The Blockheads)",
+              "artists": [
+                "Party Tyme"
+              ],
+              "album": "Rock Male Hits 17 - Party Tyme (Backing Versions)",
+              "durationMs": 210000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBhYjIwMGI3OWNmYWYyY2E2Yzg3OTVjZTdlNTkxY2Q0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "0ab200b79cfaf2ca6c8795ce7e591cd4",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBhYjIwMGI3OWNmYWYyY2E2Yzg3OTVjZTdlNTkxY2Q0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "Rock Summer",
+              "durationMs": 152000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzMjEzOTRkM2Y3ZTcwODU2OGY4MzA5YzYwMWU0ZTU4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "1321394d3f7e708568f8309c601e4e58",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzMjEzOTRkM2Y3ZTcwODU2OGY4MzA5YzYwMWU0ZTU4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Explicit)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition) [Explicit]",
+              "durationMs": 221000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYzNjk3NGE3MDQ2ZDE3OThjMzcxYjFiMTU1ZGFiMDA2Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "636974a7046d1798c371b1b155dab006",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYzNjk3NGE3MDQ2ZDE3OThjMzcxYjFiMTU1ZGFiMDA2Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Backing Track|Demo|Explicit)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition) [Explicit]",
+              "durationMs": 337000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM2YmMxMWIwYTQ0ZDQ1ZWU4YWQ1NWE1NmJhYWQ0NmY4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "36bc11b0a44d45ee8ad55a56baad46f8",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM2YmMxMWIwYTQ0ZDQ1ZWU4YWQ1NWE1NmJhYWQ0NmY4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Mosy"
+              ],
+              "album": "Sweet Gene Vincent",
+              "durationMs": 78000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQxYmU3YjU4OThmZTI4MWFhZDgyZmZiMGM5ZjUwNjVkIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "d1be7b5898fe281aad82ffb0c9f5065d",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQxYmU3YjU4OThmZTI4MWFhZDgyZmZiMGM5ZjUwNjVkIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live At Rockpalast",
+              "durationMs": 256000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImU1MjA0MzJhY2RiMGY1MTExZmM0MzZiNjhiNzQ3ZDQ2Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "e520432acdb0f5111fc436b68b747d46",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImU1MjA0MzJhY2RiMGY1MTExZmM0MzZiNjhiNzQ3ZDQ2Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live|Explicit)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Do It Yourself (Deluxe Edition) [Explicit]",
+              "durationMs": 235000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYyN2IwYmVkZGU0NjYwNmE3M2JkNGFlMGE3NTNjYWRmIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "627b0bedde46606a73bd4ae0a753cadf",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYyN2IwYmVkZGU0NjYwNmE3M2JkNGFlMGE3NTNjYWRmIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live|Explicit)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live! Warts 'N' Audience…Plus! (Explicit)",
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEwYzc2M2RjYjIxYmJmOTUwNzIzZTQ1Nzk3NGEzZjc0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a0c763dcb21bbf950723e457974a3f74",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEwYzc2M2RjYjIxYmJmOTUwNzIzZTQ1Nzk3NGEzZjc0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Do It Yourself (Deluxe Edition)",
+              "durationMs": 235000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxMDM4NjdjOGVjMjg0M2MwN2QyNmQ4OTE1ZTJkYjJhIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "2103867c8ec2843c07d26d8915e2db2a",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxMDM4NjdjOGVjMjg0M2MwN2QyNmQ4OTE1ZTJkYjJhIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Karaoke Version Originally Performed by Ian Dury & the Blockheads)",
+              "artists": [
+                "Singer's Best"
+              ],
+              "album": "Sweet Gene Vincent (Karaoke Version Originally Performed by Ian Dury & the Blockheads)",
+              "durationMs": 216000
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+      "playbackSource": "api-enhanced",
+      "audioIntegrity": {
+        "status": "full",
+        "reason": "provider_duration_and_non_trial",
+        "catalogDurationMs": 221053,
+        "resourceDurationMs": 221053,
+        "evidence": [
+          "catalog_duration",
+          "provider_resource_duration",
+          "provider_non_trial"
+        ]
+      },
+      "playback": {
+        "status": "success",
+        "reason": "success",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 247,
+        "remainingBudgetMs": 9753,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+            "source": "api-enhanced",
+            "status": "full",
+            "matchReason": "selected_resource",
+            "reason": "provider_duration_and_non_trial",
+            "audioIntegrity": {
+              "status": "full",
+              "reason": "provider_duration_and_non_trial",
+              "catalogDurationMs": 221053,
+              "resourceDurationMs": 221053,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_non_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": false,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9"
+          ]
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "available",
+          "timeline": "trusted",
+          "reason": "lrclib_catalog_metadata_match",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": true,
+            "attempted": true,
+            "status": "available",
+            "reason": "available"
+          },
+          "catalogStatus": "missing",
+          "retryable": false,
+          "textType": "synced"
+        },
+        "source": "lrclib",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJscmNsaWIiLCJzb3VyY2VJZCI6IjM0NTc3Nzk5Iiwia2luZCI6InNvbmcifQ",
+        "characters": 1804
+      }
+    },
+    {
+      "key": "lrclibMissing",
+      "capturedAt": "2026-10-06T06:07:22.199Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM2NTc4ODEyIiwia2luZCI6InNvbmcifQ",
+        "source": "api-enhanced",
+        "sourceId": "36578812",
+        "title": "I Want to Be Straight",
+        "artists": [
+          "Ian Dury"
+        ],
+        "album": "*** & Drugs & Rock & Roll",
+        "searchDurationMs": 0
+      },
+      "searchMs": 3574,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzMjIxMzIzNTYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1322132356",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzMjIxMzIzNTYiLCJraW5kIjoic29uZyJ9",
+              "title": "airplane mode",
+              "artists": [
+                "limbo"
+              ],
+              "album": "Discography",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUxODg5NTUzMCIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "518895530",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUxODg5NTUzMCIsImtpbmQiOiJzb25nIn0",
+              "title": "Airplane Mode (Instrumental)",
+              "artists": [
+                "limbo"
+              ],
+              "album": "Airplane Mode (Instrumental)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NzYxNzc2MjYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1976177626",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NzYxNzc2MjYiLCJraW5kIjoic29uZyJ9",
+              "title": "Cool Kids (our version)",
+              "artists": [
+                "Echosmith"
+              ],
+              "album": "Cool Kids (our version)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwMzM3OTE5NTAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2033791950",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwMzM3OTE5NTAiLCJraW5kIjoic29uZyJ9",
+              "title": "I Want To Be Straight (Live)",
+              "artists": [
+                "Bonafido"
+              ],
+              "album": "I Want To Be Straight (Live)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM2NTc4ODEyIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "36578812",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM2NTc4ODEyIiwia2luZCI6InNvbmcifQ",
+              "title": "I Want to Be Straight",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "*** & Drugs & Rock & Roll",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NDQwNTA2MDEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1844050601",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NDQwNTA2MDEiLCJraW5kIjoic29uZyJ9",
+              "title": "Airplane Mode",
+              "artists": [
+                "Limbo"
+              ],
+              "album": "Holo",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3NTE4NzQzMzUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2751874335",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3NTE4NzQzMzUiLCJraW5kIjoic29uZyJ9",
+              "title": "airplane mode (boosted)",
+              "artists": [
+                "Limbo"
+              ],
+              "album": "airplane mode (remixed)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2ODEyMDM4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "26812038",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2ODEyMDM4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Cand Te Uiti In Ochii Mei",
+              "artists": [
+                "Elena",
+                "Tiger One"
+              ],
+              "album": "Hot Hits Best Of: Romanian Music Express Volume 7",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6Ijg2MjA5ODI2NCIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "862098264",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6Ijg2MjA5ODI2NCIsImtpbmQiOiJzb25nIn0",
+              "title": "God Bless The Dead (prod.DJ FORGOTTEN)",
+              "artists": [
+                "2Pac",
+                "XXXTENTACION",
+                "The Notorious B.I.G."
+              ],
+              "album": "God Bless The Dead (prod.DJ FORGOTTEN)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTAxOTgyODIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1850198282",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTAxOTgyODIiLCJraW5kIjoic29uZyJ9",
+              "title": "Who I Want",
+              "artists": [
+                "Lil Baby",
+                "Lil Durk"
+              ],
+              "album": "The Voice of the Heroes",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzRHNPTFQxcEhaNzQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003DsOLT1pHZ74",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzRHNPTFQxcEhaNzQiLCJraW5kIjoic29uZyJ9",
+              "title": "I Want to Be Straight",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "*** & ***** & Rock & Roll - The Essential Collection (Explicit)",
+              "durationMs": 200000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxQTF1NjAzV1RGc1QiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001A1u603WTFsT",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxQTF1NjAzV1RGc1QiLCJraW5kIjoic29uZyJ9",
+              "title": "I Want To Be Straight",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Laughter",
+              "durationMs": 198000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwR1BLOTI0Zm15ZHEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000GPK924fmydq",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwR1BLOTI0Zm15ZHEiLCJraW5kIjoic29uZyJ9",
+              "title": "I Want to Be Straight",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Reasons To Be Cheerful: The Best Of Ian Dury",
+              "durationMs": 200000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0T05ZT0MySG51TTMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "004ONYOC2HnuM3",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0T05ZT0MySG51TTMiLCJraW5kIjoic29uZyJ9",
+              "title": "I Love You 3000 II",
+              "artists": [
+                "88rising",
+                "Stephanie Poetri",
+                "王嘉尔"
+              ],
+              "album": "Head In The Clouds II (Explicit)",
+              "durationMs": 209000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxNU8xamoxTEpXdXIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0015O1jj1LJWur",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxNU8xamoxTEpXdXIiLCJraW5kIjoic29uZyJ9",
+              "title": "I Want To Be Straight",
+              "artists": [
+                "Bonafido"
+              ],
+              "album": "I Want To Be Straight (Live)",
+              "durationMs": 171000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzSHkxalk0RGJ0UmEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003Hy1jY4DbtRa",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzSHkxalk0RGJ0UmEiLCJraW5kIjoic29uZyJ9",
+              "title": "爱",
+              "artists": [
+                "王嘉尔"
+              ],
+              "album": "MIRRORS",
+              "durationMs": 210000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyWTQ3NlowbHh4NUYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002Y476Z0lxx5F",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyWTQ3NlowbHh4NUYiLCJraW5kIjoic29uZyJ9",
+              "title": "I Want To Be Straight",
+              "artists": [
+                "Dennis Brennan AxitH",
+                "Dennis Brennan"
+              ],
+              "album": "I Think of You",
+              "durationMs": 173000
+            },
+            {
+              "source": "meting-kugou",
+              "sourceId": "d3b7632e300f3cfd90e4f4e34d750871",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQzYjc2MzJlMzAwZjNjZmQ5MGU0ZjRlMzRkNzUwODcxIiwia2luZCI6InNvbmcifQ",
+              "title": "I Want To Be Straight",
+              "artists": [
+                "Dennis Brennan AxitH",
+                "Dennis Brennan"
+              ],
+              "album": "I Think of You",
+              "durationMs": 173000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNFEyVGM0WEFKT2ciLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0024Q2Tc4XAJOg",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNFEyVGM0WEFKT2ciLCJraW5kIjoic29uZyJ9",
+              "title": "I Love You 3000 III",
+              "artists": [
+                "KnowKnow",
+                "Higher Brothers"
+              ],
+              "album": "Mr. Enjoy Da Money",
+              "durationMs": 210000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzTGdOdksxeXFpZW0iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003LgNvK1yqiem",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzTGdOdksxeXFpZW0iLCJraW5kIjoic29uZyJ9",
+              "title": "That's Not All",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "I Want To Be Straight",
+              "durationMs": 168000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzWU5XZHkyNXlQSk0iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003YNWdy25yPJM",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzWU5XZHkyNXlQSk0iLCJraW5kIjoic29uZyJ9",
+              "title": "I Love You 3000",
+              "artists": [
+                "해리안 윤소안"
+              ],
+              "album": "Harryan Yoonsoan Cover Playlist 3",
+              "durationMs": 214000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImM2NmMzOGU1MjAwZjNiNWI4NDBmN2ZmZDJlYzVhYWRmIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "c66c38e5200f3b5b840f7ffd2ec5aadf",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImM2NmMzOGU1MjAwZjNiNWI4NDBmN2ZmZDJlYzVhYWRmIiwia2luZCI6InNvbmcifQ",
+              "title": "I Want to Be Straight (Explicit)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Laughter (Deluxe Edition) [Explicit]",
+              "durationMs": 198000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA1MGE2ZjU2ZTllYzgxM2I5ZTAwOTk0NDA1NjNlMmYwIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "050a6f56e9ec813b9e0099440563e2f0",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA1MGE2ZjU2ZTllYzgxM2I5ZTAwOTk0NDA1NjNlMmYwIiwia2luZCI6InNvbmcifQ",
+              "title": "I Want to Be Straight",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Reasons To Be Cheerful: The Best Of Ian Dury",
+              "durationMs": 198000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImM2NTYyNWRkNzhlZDhiYWQ3YzdmMTJkZDk3NTExNjVhIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "c65625dd78ed8bad7c7f12dd9751165a",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImM2NTYyNWRkNzhlZDhiYWQ3YzdmMTJkZDk3NTExNjVhIiwia2luZCI6InNvbmcifQ",
+              "title": "I Want To Be Straight",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Greatest",
+              "durationMs": 199000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjE0ZmEzMjBiOWQ0NzEwNzUwZGE2YzFkM2NjYWE1NzdiIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "14fa320b9d4710750da6c1d3ccaa577b",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjE0ZmEzMjBiOWQ0NzEwNzUwZGE2YzFkM2NjYWE1NzdiIiwia2luZCI6InNvbmcifQ",
+              "title": "I Want To Be Straight (Live)",
+              "artists": [
+                "Bonafido"
+              ],
+              "album": "I Want To Be Straight (Live)",
+              "durationMs": 171000
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM2NTc4ODEyIiwia2luZCI6InNvbmcifQ",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM2NTc4ODEyIiwia2luZCI6InNvbmcifQ",
+      "playbackSource": "api-enhanced",
+      "audioIntegrity": {
+        "status": "full",
+        "reason": "provider_duration_and_non_trial",
+        "catalogDurationMs": 198760,
+        "resourceDurationMs": 198760,
+        "evidence": [
+          "catalog_duration",
+          "provider_resource_duration",
+          "provider_non_trial"
+        ]
+      },
+      "playback": {
+        "status": "success",
+        "reason": "success",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 405,
+        "remainingBudgetMs": 9595,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM2NTc4ODEyIiwia2luZCI6InNvbmcifQ",
+            "source": "api-enhanced",
+            "status": "full",
+            "matchReason": "selected_resource",
+            "reason": "provider_duration_and_non_trial",
+            "audioIntegrity": {
+              "status": "full",
+              "reason": "provider_duration_and_non_trial",
+              "catalogDurationMs": 198760,
+              "resourceDurationMs": 198760,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_non_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": false,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM2NTc4ODEyIiwia2luZCI6InNvbmcifQ",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM2NTc4ODEyIiwia2luZCI6InNvbmcifQ"
+          ]
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "missing",
+          "timeline": "none",
+          "reason": "no_match",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": true,
+            "attempted": true,
+            "status": "missing",
+            "reason": "no_match"
+          },
+          "catalogStatus": "missing",
+          "retryable": false
+        },
+        "source": "",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM2NTc4ODEyIiwia2luZCI6InNvbmcifQ",
+        "characters": 0
+      }
+    }
+  ],
+  "http": [
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 806
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 240
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 5
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/get",
+      "method": "GET",
+      "httpStatus": 200,
+      "elapsedMs": 928
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 5
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 4
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 176
+    },
+    {
+      "host": "m701.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 373
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 226
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 177
+    },
+    {
+      "host": "m701.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 71
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 171
+    },
+    {
+      "host": "m701.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 67
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 268
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 638
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 231
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 173
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 249
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/get",
+      "method": "GET",
+      "httpStatus": 404,
+      "elapsedMs": 569
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "elapsedMs": 867
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 5
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 3
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 295
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/get",
+      "method": "GET",
+      "httpStatus": 404,
+      "elapsedMs": 352
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "elapsedMs": 920
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "error": "AbortError",
+      "elapsedMs": 15012
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 460
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 159
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 133
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 217
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 308
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 100
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/get",
+      "method": "GET",
+      "httpStatus": 404,
+      "elapsedMs": 601
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "elapsedMs": 354
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 3
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 7
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 3
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 4
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 7
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 227
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 248
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 102
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/get",
+      "method": "GET",
+      "httpStatus": 404,
+      "elapsedMs": 797
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/get",
+      "method": "GET",
+      "httpStatus": 404,
+      "elapsedMs": 605
+    }
+  ],
+  "browser": [
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 0.000775,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 4880,
+      "sinceHandoffMs": 759,
+      "capturedAt": "2026-10-06T06:03:12.900Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 0.140515,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 5068,
+      "sinceHandoffMs": 947,
+      "capturedAt": "2026-10-06T06:03:13.088Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 10.240543,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 15167,
+      "sinceHandoffMs": 11046,
+      "capturedAt": "2026-10-06T06:03:23.188Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 20.33537,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 25259,
+      "sinceHandoffMs": 21138,
+      "capturedAt": "2026-10-06T06:03:33.276Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 30.43662,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 35360,
+      "sinceHandoffMs": 31239,
+      "capturedAt": "2026-10-06T06:03:43.377Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 40.500356,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 45446,
+      "sinceHandoffMs": 41325,
+      "capturedAt": "2026-10-06T06:03:53.466Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 50.640642,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 55588,
+      "sinceHandoffMs": 51467,
+      "capturedAt": "2026-10-06T06:04:03.608Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 60.775632,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 65717,
+      "sinceHandoffMs": 61596,
+      "capturedAt": "2026-10-06T06:04:13.736Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 70.875858,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 75820,
+      "sinceHandoffMs": 71699,
+      "capturedAt": "2026-10-06T06:04:23.839Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 80.960149,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 85908,
+      "sinceHandoffMs": 81787,
+      "capturedAt": "2026-10-06T06:04:33.924Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 91.080541,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 96024,
+      "sinceHandoffMs": 91903,
+      "capturedAt": "2026-10-06T06:04:44.040Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 101.160243,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 106112,
+      "sinceHandoffMs": 101991,
+      "capturedAt": "2026-10-06T06:04:54.128Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 111.260356,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 116210,
+      "sinceHandoffMs": 112089,
+      "capturedAt": "2026-10-06T06:05:04.226Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 121.390522,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 126334,
+      "sinceHandoffMs": 122213,
+      "capturedAt": "2026-10-06T06:05:14.352Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 131.452197,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 136434,
+      "sinceHandoffMs": 132313,
+      "capturedAt": "2026-10-06T06:05:24.452Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 141.520475,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 146524,
+      "sinceHandoffMs": 142403,
+      "capturedAt": "2026-10-06T06:05:34.541Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 151.600237,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 156613,
+      "sinceHandoffMs": 152492,
+      "capturedAt": "2026-10-06T06:05:44.629Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 161.731565,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 166734,
+      "sinceHandoffMs": 162613,
+      "capturedAt": "2026-10-06T06:05:54.753Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "error",
+      "time": 168.820414,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 173832,
+      "sinceHandoffMs": 169711,
+      "capturedAt": "2026-10-06T06:06:01.849Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "pause",
+      "time": 168.820414,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 173833,
+      "sinceHandoffMs": 169712,
+      "capturedAt": "2026-10-06T06:06:01.858Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 168.820414,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 1,
+      "error": null,
+      "sinceSelectionMs": 174387,
+      "sinceHandoffMs": 170266,
+      "capturedAt": "2026-10-06T06:06:02.404Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 168.820877,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 174472,
+      "sinceHandoffMs": 170351,
+      "capturedAt": "2026-10-06T06:06:02.488Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 171.180679,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 176873,
+      "sinceHandoffMs": 172752,
+      "capturedAt": "2026-10-06T06:06:04.890Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 181.240769,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 186959,
+      "sinceHandoffMs": 182838,
+      "capturedAt": "2026-10-06T06:06:14.975Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 191.340846,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 197075,
+      "sinceHandoffMs": 192954,
+      "capturedAt": "2026-10-06T06:06:25.092Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 201.369945,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 207166,
+      "sinceHandoffMs": 203045,
+      "capturedAt": "2026-10-06T06:06:35.184Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 211.446491,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 217279,
+      "sinceHandoffMs": 213158,
+      "capturedAt": "2026-10-06T06:06:45.298Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "pause",
+      "time": 221.053333,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 227037,
+      "sinceHandoffMs": 222916,
+      "capturedAt": "2026-10-06T06:06:55.054Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "ended",
+      "time": 221.053333,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 227042,
+      "sinceHandoffMs": 222921,
+      "capturedAt": "2026-10-06T06:06:55.063Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "playing",
+      "time": 0.000501,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 6624,
+      "sinceHandoffMs": 859,
+      "capturedAt": "2026-10-06T06:07:23.072Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 0.020962,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 6666,
+      "sinceHandoffMs": 901,
+      "capturedAt": "2026-10-06T06:07:23.114Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 9.855728,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 16761,
+      "sinceHandoffMs": 10996,
+      "capturedAt": "2026-10-06T06:07:33.210Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 19.947567,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 26852,
+      "sinceHandoffMs": 21087,
+      "capturedAt": "2026-10-06T06:07:43.300Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 29.903666,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 36948,
+      "sinceHandoffMs": 31183,
+      "capturedAt": "2026-10-06T06:07:53.396Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 39.996237,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 47041,
+      "sinceHandoffMs": 41276,
+      "capturedAt": "2026-10-06T06:08:03.489Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 49.949666,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 57134,
+      "sinceHandoffMs": 51369,
+      "capturedAt": "2026-10-06T06:08:13.585Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 59.754736,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 67260,
+      "sinceHandoffMs": 61495,
+      "capturedAt": "2026-10-06T06:08:23.707Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 69.815746,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 77400,
+      "sinceHandoffMs": 71635,
+      "capturedAt": "2026-10-06T06:08:33.847Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 79.909461,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 87494,
+      "sinceHandoffMs": 81729,
+      "capturedAt": "2026-10-06T06:08:43.940Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 89.983292,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 97587,
+      "sinceHandoffMs": 91822,
+      "capturedAt": "2026-10-06T06:08:54.034Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 100.076142,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 107681,
+      "sinceHandoffMs": 101916,
+      "capturedAt": "2026-10-06T06:09:04.128Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 110.170783,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 117775,
+      "sinceHandoffMs": 112010,
+      "capturedAt": "2026-10-06T06:09:14.221Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 120.264268,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 127869,
+      "sinceHandoffMs": 122104,
+      "capturedAt": "2026-10-06T06:09:24.315Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 130.358047,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 137963,
+      "sinceHandoffMs": 132198,
+      "capturedAt": "2026-10-06T06:09:34.408Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 140.448273,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 148072,
+      "sinceHandoffMs": 142307,
+      "capturedAt": "2026-10-06T06:09:44.519Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 150.541215,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 158166,
+      "sinceHandoffMs": 152401,
+      "capturedAt": "2026-10-06T06:09:54.612Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 160.610765,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 168275,
+      "sinceHandoffMs": 162510,
+      "capturedAt": "2026-10-06T06:10:04.720Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "error",
+      "time": 166.36022,
+      "duration": 198.76,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 174025,
+      "sinceHandoffMs": 168260,
+      "capturedAt": "2026-10-06T06:10:10.474Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "pause",
+      "time": 166.36022,
+      "duration": 198.76,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 174026,
+      "sinceHandoffMs": 168261,
+      "capturedAt": "2026-10-06T06:10:10.477Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "playing",
+      "time": 166.36022,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 1,
+      "error": null,
+      "sinceSelectionMs": 175313,
+      "sinceHandoffMs": 169548,
+      "capturedAt": "2026-10-06T06:10:11.760Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "playing",
+      "time": 166.36062,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 175426,
+      "sinceHandoffMs": 169661,
+      "capturedAt": "2026-10-06T06:10:11.871Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 169.232363,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 178338,
+      "sinceHandoffMs": 172573,
+      "capturedAt": "2026-10-06T06:10:14.785Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 179.30449,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 188431,
+      "sinceHandoffMs": 182666,
+      "capturedAt": "2026-10-06T06:10:24.879Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "progress",
+      "time": 189.358475,
+      "duration": 198.76,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 198525,
+      "sinceHandoffMs": 192760,
+      "capturedAt": "2026-10-06T06:10:34.971Z"
+    },
+    {
+      "key": "lrclibMissing",
+      "event": "pause",
+      "time": 196.069052,
+      "duration": 198.76,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 205958,
+      "sinceHandoffMs": 200193,
+      "capturedAt": "2026-10-06T06:10:42.404Z"
+    }
+  ],
+  "media": []
+}

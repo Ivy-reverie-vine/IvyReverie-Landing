@@ -12,6 +12,7 @@ RUN npm run build
 # ---------- runtime stage ----------
 FROM node:22-alpine
 WORKDIR /app
+RUN apk add --no-cache ffmpeg
 ENV NODE_ENV=production \
     PORT=3001 \
     UPSTREAM=http://api-enhanced:3000 \

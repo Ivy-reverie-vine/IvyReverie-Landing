@@ -1,0 +1,891 @@
+{
+  "capturedAt": "2026-10-06T05:58:15.273Z",
+  "timezone": "Asia/Shanghai",
+  "boundary": "Live providers; disposable unbound local account; production gateway/player. Range is not completeness.",
+  "configuration": {
+    "sources": [
+      "api-enhanced",
+      "meting-tencent",
+      "meting-kugou",
+      "bilibili"
+    ],
+    "totalBudgetMs": 10000,
+    "bilibiliReserveMs": 3000
+  },
+  "scenarios": [
+    {
+      "key": "lrclibPlain",
+      "capturedAt": "2026-10-06T05:59:09.205Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NjU5NTEiLCJraW5kIjoic29uZyJ9",
+        "source": "api-enhanced",
+        "sourceId": "1465951",
+        "title": "Profoundly in Love with Pandora",
+        "artists": [
+          "Ian Dury"
+        ],
+        "album": "Reasons To Be Cheerful: The Best Of Ian Dury",
+        "searchDurationMs": 0
+      },
+      "searchMs": 2582,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NjU5NTEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1465951",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NjU5NTEiLCJraW5kIjoic29uZyJ9",
+              "title": "Profoundly in Love with Pandora",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Reasons To Be Cheerful: The Best Of Ian Dury",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNDIzMzU3NzIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2142335772",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNDIzMzU3NzIiLCJraW5kIjoic29uZyJ9",
+              "title": "Unconditional Love",
+              "artists": [
+                "Suno.ai"
+              ],
+              "album": "Unconditional Love",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNTAyMzc0NzkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2150237479",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNTAyMzc0NzkiLCJraW5kIjoic29uZyJ9",
+              "title": "Ephemeral Beauty ( ความงาม ) by @cryptomoonkmusic",
+              "artists": [
+                "Suno.ai"
+              ],
+              "album": "Ephemeral Beauty ( ความงาม ) by @cryptomoonkmusic",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzS0JmZXcyazhCeFAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003KBfew2k8BxP",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzS0JmZXcyazhCeFAiLCJraW5kIjoic29uZyJ9",
+              "title": "Profoundly in Love with Pandora",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Reasons To Be Cheerful: The Best Of Ian Dury",
+              "durationMs": 213000
+            },
+            {
+              "source": "meting-kugou",
+              "sourceId": "f1fc010ac3bd9e728934d1359dab2db7",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImYxZmMwMTBhYzNiZDllNzI4OTM0ZDEzNTlkYWIyZGI3Iiwia2luZCI6InNvbmcifQ",
+              "title": "Profoundly in Love with Pandora",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Reasons To Be Cheerful: The Best Of Ian Dury",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwazdITjAyYWFybmIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000k7HN02aarnb",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwazdITjAyYWFybmIiLCJraW5kIjoic29uZyJ9",
+              "title": "I Can't Believe That You're In Love With Me",
+              "artists": [
+                "Edmond Hall's Swingtet"
+              ],
+              "album": "Profoundly Blue",
+              "durationMs": 183000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUkhMeHg0SnBzQ3kiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003RHLxx4JpsCy",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUkhMeHg0SnBzQ3kiLCJraW5kIjoic29uZyJ9",
+              "title": "Thank You",
+              "artists": [
+                "Dido"
+              ],
+              "album": "想你 恋你 爱你 In Love With You",
+              "durationMs": 218000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAySHUzYVMwaldJNG4iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002Hu3aS0jWI4n",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAySHUzYVMwaldJNG4iLCJraW5kIjoic29uZyJ9",
+              "title": "I Can't Believe That You're In Love With Me",
+              "artists": [
+                "Edmond Hall's Swingtet"
+              ],
+              "album": "Profoundly Blue",
+              "durationMs": 222000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwWGRZSloxZnZmb2kiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000XdYJZ1fvfoi",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwWGRZSloxZnZmb2kiLCJraW5kIjoic29uZyJ9",
+              "title": "WANTCHU",
+              "artists": [
+                "keshi"
+              ],
+              "album": "i think im falling in love with you (again) [Explicit]",
+              "durationMs": 199000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxQm5wbE4waGpINkoiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001BnplN0hjH6J",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxQm5wbE4waGpINkoiLCJraW5kIjoic29uZyJ9",
+              "title": "I Can't Believe That You're In Love With Me",
+              "artists": [
+                "Edmond Hall's Swingtet"
+              ],
+              "album": "Profoundly Blue: Memorable Sessions With Edmond Hall",
+              "durationMs": 183000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwNk15ZjAwNFF2VTQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0006Myf004QvU4",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwNk15ZjAwNFF2VTQiLCJraW5kIjoic29uZyJ9",
+              "title": "When You're In Love With A Beautiful Woman",
+              "artists": [
+                "Dr.Hook"
+              ],
+              "album": "Club Classics The 30 Most Wanted",
+              "durationMs": 177000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyMkdZYU4zbVFGZXQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0022GYaN3mQFet",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyMkdZYU4zbVFGZXQiLCJraW5kIjoic29uZyJ9",
+              "title": "I Can't Believe That You're In Love With Me",
+              "artists": [
+                "Edmond Hall's Swingtet"
+              ],
+              "album": "Profoundly Blue: Memorable Sessions With Edmond Hall",
+              "durationMs": 222000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyR1NBSWcxTXpLcXIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002GSAIg1MzKqr",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyR1NBSWcxTXpLcXIiLCJraW5kIjoic29uZyJ9",
+              "title": "When You're In Love With A Beautiful Woman",
+              "artists": [
+                "Dr.Hook"
+              ],
+              "album": "爱情百分百 (一)",
+              "durationMs": 164000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwTktOUEQzb3k0WVMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000NKNPD3oy4YS",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwTktOUEQzb3k0WVMiLCJraW5kIjoic29uZyJ9",
+              "title": "I Can't Believe That You're In Love With Me",
+              "artists": [
+                "Edmond Hall"
+              ],
+              "album": "Profoundly Blue (The Best Of)",
+              "durationMs": 185000
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NjU5NTEiLCJraW5kIjoic29uZyJ9",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NjU5NTEiLCJraW5kIjoic29uZyJ9",
+      "playbackSource": "api-enhanced",
+      "audioIntegrity": {
+        "status": "full",
+        "reason": "provider_duration_and_non_trial",
+        "catalogDurationMs": 213000,
+        "resourceDurationMs": 213551,
+        "evidence": [
+          "catalog_duration",
+          "provider_resource_duration",
+          "provider_non_trial"
+        ]
+      },
+      "playback": {
+        "status": "success",
+        "reason": "success",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 592,
+        "remainingBudgetMs": 9408,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NjU5NTEiLCJraW5kIjoic29uZyJ9",
+            "source": "api-enhanced",
+            "status": "full",
+            "matchReason": "selected_resource",
+            "reason": "provider_duration_and_non_trial",
+            "audioIntegrity": {
+              "status": "full",
+              "reason": "provider_duration_and_non_trial",
+              "catalogDurationMs": 213000,
+              "resourceDurationMs": 213551,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_non_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": false,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NjU5NTEiLCJraW5kIjoic29uZyJ9",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NjU5NTEiLCJraW5kIjoic29uZyJ9"
+          ]
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "available",
+          "timeline": "uncertain",
+          "reason": "plain_text",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": true,
+            "attempted": true,
+            "status": "available",
+            "reason": "available"
+          },
+          "catalogStatus": "missing",
+          "retryable": false,
+          "textType": "plain"
+        },
+        "source": "lrclib",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJscmNsaWIiLCJzb3VyY2VJZCI6IjI1NTQ5MTczIiwia2luZCI6InNvbmcifQ",
+        "characters": 1417
+      }
+    }
+  ],
+  "http": [
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 471
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 250
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 340
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 246
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/get",
+      "method": "GET",
+      "httpStatus": 200,
+      "elapsedMs": 648
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 6
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 3
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 178
+    },
+    {
+      "host": "m8.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 626
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 210
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 225
+    },
+    {
+      "host": "m8.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 79
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 187
+    },
+    {
+      "host": "m8.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 71
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 300
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 10
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 14
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 6
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 9
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 3
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 248
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 234
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 3
+    },
+    {
+      "host": "m7.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 248
+    }
+  ],
+  "browser": [
+    {
+      "key": "lrclibPlain",
+      "event": "playing",
+      "time": 0.000703,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 5393,
+      "sinceHandoffMs": 1118,
+      "capturedAt": "2026-10-06T05:59:10.339Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 0.14191,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 5575,
+      "sinceHandoffMs": 1300,
+      "capturedAt": "2026-10-06T05:59:10.519Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 10.236834,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 15670,
+      "sinceHandoffMs": 11395,
+      "capturedAt": "2026-10-06T05:59:20.616Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 20.248751,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 25762,
+      "sinceHandoffMs": 21487,
+      "capturedAt": "2026-10-06T05:59:30.708Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 30.300552,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 35883,
+      "sinceHandoffMs": 31608,
+      "capturedAt": "2026-10-06T05:59:40.833Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 39.940363,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 46058,
+      "sinceHandoffMs": 41783,
+      "capturedAt": "2026-10-06T05:59:51.004Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 49.673177,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 56247,
+      "sinceHandoffMs": 51972,
+      "capturedAt": "2026-10-06T06:00:01.191Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 59.765944,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 66340,
+      "sinceHandoffMs": 62065,
+      "capturedAt": "2026-10-06T06:00:11.284Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 69.51839,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 76512,
+      "sinceHandoffMs": 72237,
+      "capturedAt": "2026-10-06T06:00:21.458Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 79.180343,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 86684,
+      "sinceHandoffMs": 82409,
+      "capturedAt": "2026-10-06T06:00:31.630Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 88.920591,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 96887,
+      "sinceHandoffMs": 92612,
+      "capturedAt": "2026-10-06T06:00:41.832Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 98.880456,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 107104,
+      "sinceHandoffMs": 102829,
+      "capturedAt": "2026-10-06T06:00:52.050Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 108.916134,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 117193,
+      "sinceHandoffMs": 112918,
+      "capturedAt": "2026-10-06T06:01:02.140Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 119.000422,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 127299,
+      "sinceHandoffMs": 123024,
+      "capturedAt": "2026-10-06T06:01:12.244Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 129.136049,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 137429,
+      "sinceHandoffMs": 133154,
+      "capturedAt": "2026-10-06T06:01:22.376Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 138.860295,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 147438,
+      "sinceHandoffMs": 143163,
+      "capturedAt": "2026-10-06T06:01:32.381Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 148.915856,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 157531,
+      "sinceHandoffMs": 153256,
+      "capturedAt": "2026-10-06T06:01:42.477Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 158.736319,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 167633,
+      "sinceHandoffMs": 163358,
+      "capturedAt": "2026-10-06T06:01:52.577Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "error",
+      "time": 167.980491,
+      "duration": 213.537959,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 177005,
+      "sinceHandoffMs": 172730,
+      "capturedAt": "2026-10-06T06:02:01.952Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "pause",
+      "time": 167.980491,
+      "duration": 213.537959,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 177006,
+      "sinceHandoffMs": 172731,
+      "capturedAt": "2026-10-06T06:02:01.963Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "playing",
+      "time": 167.980491,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 1,
+      "error": null,
+      "sinceSelectionMs": 177644,
+      "sinceHandoffMs": 173369,
+      "capturedAt": "2026-10-06T06:02:02.592Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 167.980872,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 177737,
+      "sinceHandoffMs": 173462,
+      "capturedAt": "2026-10-06T06:02:02.682Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "playing",
+      "time": 167.981978,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 177738,
+      "sinceHandoffMs": 173463,
+      "capturedAt": "2026-10-06T06:02:02.691Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "progress",
+      "time": 177.900856,
+      "duration": 213.537959,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 187883,
+      "sinceHandoffMs": 183608,
+      "capturedAt": "2026-10-06T06:02:12.830Z"
+    },
+    {
+      "key": "lrclibPlain",
+      "event": "pause",
+      "time": 187.146263,
+      "duration": 213.537959,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 197464,
+      "sinceHandoffMs": 193189,
+      "capturedAt": "2026-10-06T06:02:22.424Z"
+    }
+  ],
+  "media": []
+}

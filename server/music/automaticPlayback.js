@@ -1,6 +1,6 @@
 import { createMediaRef, parseMediaRef } from '../mediaContract.js'
 import { sameRecording } from './recordingMatcher.js'
-import { assessBilibiliRecording } from './bilibiliMatcher.js'
+import { assessBilibiliRecording, canCompareBilibiliAudio } from './bilibiliMatcher.js'
 import { assessAudio } from './audioIntegrity.js'
 
 const platforms = new Set(['api-enhanced', 'meting-tencent', 'meting-kugou'])
@@ -53,7 +53,7 @@ async function resolveMusicPlayback(orchestrator, { mediaRef, searchSession, use
   const attempts = []
   const lanes = [...new Set(candidates.map(entry => entry.source))]
   return new Promise(resolve => {
-    let settled = false, pending = lanes.length, timer
+    let settled = false, pending = lanes.length, timer, recordingReference
     const finish = (status, selected = null, reason = status) => {
       if (settled) return
       settled = true
@@ -75,7 +75,7 @@ async function resolveMusicPlayback(orchestrator, { mediaRef, searchSession, use
           audioIntegrity: { status: 'unavailable', reason: 'automatic_' + reason,
             catalogDurationMs: catalog.durationMs, resourceDurationMs: 0, evidence: [] } }
       controller.abort()
-      resolve({ status: 200, body })
+      resolve({ status: 200, body, recordingReference })
     }
     const cancelled = () => finish('cancelled', null, 'request_cancelled')
     signal?.addEventListener('abort', cancelled, { once: true })
@@ -105,6 +105,15 @@ async function resolveMusicPlayback(orchestrator, { mediaRef, searchSession, use
             if (settled) return
             const ok = result.status >= 200 && result.status < 300 && result.body?.code === 200
             const integrity = result.body?.audioIntegrity
+            const media = result.body?.data?.[0], trial = media?.freeTrialInfo
+            if (ok && entry.mediaRef === mediaRef && entry.source === 'api-enhanced' &&
+              integrity?.status === 'preview' && integrity?.reason === 'explicit_trial' && media?.url &&
+              Number.isFinite(trial?.start) && trial.start >= 0 && Number.isFinite(trial?.end) && trial.end > trial.start &&
+              trial.end * 1000 <= integrity.catalogDurationMs + 2000 &&
+              Math.abs((trial.end - trial.start) * 1000 - integrity.resourceDurationMs) <= 2000) {
+              recordingReference = { url: media.url, catalogRef: mediaRef,
+                startSeconds: trial.start, durationMs: integrity.resourceDurationMs }
+            }
             attempt.status = ok ? integrity?.status ?? 'unknown' : 'unavailable'
             attempt.reason = ok ? integrity?.reason ?? 'missing_evidence' : 'SOURCE_REJECTED'
             attempt.audioIntegrity = integrity
@@ -141,6 +150,8 @@ async function resolveMusicPlayback(orchestrator, { mediaRef, searchSession, use
 export async function resolveAutomaticPlayback(orchestrator, selection) {
   const startedAt = Date.now()
   const result = await resolveMusicPlayback(orchestrator, selection, startedAt)
+  const recordingReference = result.recordingReference
+  delete result.recordingReference
   const playback = result.body.playback
   const source = orchestrator.registry.get('bilibili')
   if (!playback.continuation.eligible || !source?.enabled) return result
@@ -240,11 +251,13 @@ export async function resolveAutomaticPlayback(orchestrator, selection) {
           resource: entry.resource, title: entry.title, artists: entry.artists, durationMs: entry.durationMs,
           status: 'manual', reason: match.reason, match }
         candidates.push(candidate)
-        if (match.status !== 'same_recording') continue
+        const compareAudio = recordingReference && canCompareBilibiliAudio(catalog, entry)
+        if (match.status !== 'same_recording' && !compareAudio) continue
         const attempt = { source: 'bilibili', mediaRef: entry.mediaRef, status: 'pending', matchReason: match.reason }
         playback.attempts.push(attempt)
         try {
-          const resolved = await request('song/url/v1', { id: entry.sourceId, recordingEvidence: true }, 'playback')
+          const resolved = await request('song/url/v1', { id: entry.sourceId, recordingEvidence: true,
+            ...(compareAudio ? { recordingReference } : {}) }, 'playback')
           // Recheck the details obtained with this fresh playurl, not stale search text.
           const currentMatch = assessBilibiliRecording(catalog, resolved.body.recordingCandidate)
           candidate.match = currentMatch
@@ -252,7 +265,7 @@ export async function resolveAutomaticPlayback(orchestrator, selection) {
           const audioIntegrity = assessAudio({ url: resolved.body.data[0]?.url,
             catalogDurationMs: catalog.durationMs, resourceDurationMs: original.resourceDurationMs,
             trial: original.evidence.includes('provider_trial') ? true
-              : original.evidence.includes('provider_non_trial') ? false : undefined })
+              : original.evidence.includes('provider_non_trial') ? false : undefined, inspection: original.inspection })
           candidate.audioIntegrity = audioIntegrity
           attempt.audioIntegrity = audioIntegrity
           attempt.status = audioIntegrity.status

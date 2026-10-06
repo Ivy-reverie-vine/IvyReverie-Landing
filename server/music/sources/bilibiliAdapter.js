@@ -1,5 +1,6 @@
 import { assessAudio, trialFlag } from '../audioIntegrity.js'
 import { searchBilibili } from './bilibiliSearch.js'
+import { inspectCompleteAac } from '../completeMedia.js'
 
 const USER_AGENT = 'Mozilla/5.0'
 const RESOURCE = /^(BV[0-9A-Za-z]{10}):([1-9][0-9]*)$/
@@ -13,9 +14,10 @@ function failure(code, message, status = 502) {
 
 // Concrete playback requires BV/CID. Search/part discovery never selects a first part.
 export class BilibiliAdapter {
-  constructor({ fetchImpl = globalThis.fetch } = {}) {
+  constructor({ fetchImpl = globalThis.fetch, inspectionEnabled = true } = {}) {
     this.id = 'bilibili'
     this.fetchImpl = fetchImpl
+    this.inspectionEnabled = inspectionEnabled
   }
 
   // Video discovery yields BV hints, not playable song refs; keep it out of the
@@ -92,11 +94,22 @@ export class BilibiliAdapter {
       const url = String(track.baseUrl || track.base_url)
       if (!/^https?:$/.test(new URL(url).protocol)) throw failure('BILIBILI_NO_AUDIO', '音频 URL 无效')
       const resourceDurationMs = Number(playback.timelength || 0)
-      const audioIntegrity = assessAudio({ url, catalogDurationMs: detail.durationMs,
+      let audioIntegrity = assessAudio({ url, catalogDurationMs: detail.durationMs,
         resourceDurationMs, trial: trialFlag(playback) })
+      let audioMatch
+      if (this.inspectionEnabled && ((audioIntegrity.status === 'unknown' && audioIntegrity.reason === 'missing_evidence') || query.recordingReference?.url)) {
+        const inspected = await inspectCompleteAac({ url, headers, fetchImpl: this.fetchImpl,
+          signal: requestSignal, reference: query.recordingReference })
+        const { audioMatch: compared, ...inspection } = inspected
+        audioMatch = compared
+        requestSignal.throwIfAborted()
+        audioIntegrity = assessAudio({ url, catalogDurationMs: detail.durationMs,
+          resourceDurationMs, trial: trialFlag(playback), inspection })
+      }
       audioIntegrity.evidence.push('bilibili_cid_membership', 'dash_audio_representation')
       return { status: 200, body: { code: 200, audioIntegrity,
-        ...(query.recordingEvidence === true ? { recordingCandidate: { ...detail, description: String(video.desc || '').slice(0, 16000) } } : {}),
+        ...(query.recordingEvidence === true ? { recordingCandidate: { ...detail, ...(audioMatch ? { audioMatch } : {}),
+          description: String(video.desc || '').slice(0, 16000) } } : {}),
         data: [{ url, source: this.id,
         sourceId: detail.sourceId, resource, durationMs: resourceDurationMs,
         media: { container: 'mp4', mimeType: 'audio/mp4', codecs: track.codecs, delivery: 'dash_audio',

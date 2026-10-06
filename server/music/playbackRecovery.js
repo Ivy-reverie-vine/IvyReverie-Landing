@@ -15,11 +15,14 @@ export function rememberPlayback(orchestrator, result, user, query = {}) {
   if (store.size >= 1000) store.delete(store.keys().next().value)
   const token = randomUUID()
   const session = orchestrator.searchSessions.get(query.searchSession)
-  const catalog = session?.groups.groups.flatMap(group => group.entries).find(row => row.mediaRef === body.catalogRef)
+  const selectedCatalog = session?.groups.groups.flatMap(group => group.entries).find(row => row.mediaRef === body.catalogRef)
+  const catalog = selectedCatalog ? { ...selectedCatalog,
+    durationMs: selectedCatalog.durationMs || body.audioIntegrity.catalogDurationMs } : null
+  const audioMatch = body.playback?.bilibili?.candidates?.find(row => row.mediaRef === body.playbackRef)?.match?.evidence?.audioMatch
   const identity = Object.fromEntries(['mediaRef', 'catalogRef', 'playbackRef', 'lyricsRef', 'playbackSource', 'lyricsSource']
     .map(key => [key, body[key]]))
   store.set(token, { userId: user.id, expiresAt: Date.now() + 24 * 60 * 60 * 1000,
-    identity, catalog, automatic: query.automatic === 'true', manualSelection: body.manualSelection })
+    identity, catalog, audioMatch, automatic: query.automatic === 'true', manualSelection: body.manualSelection })
   return { ...result, body: { ...body, recoveryToken: token } }
 }
 
@@ -41,6 +44,11 @@ export async function recoverPlayback(orchestrator, { token, mediaRef, user, sig
     if (!source.enabled) reject('SOURCE_UNAVAILABLE')
     if (result.status !== 200 || result.body?.code !== 200) reject('PLAYBACK_RECOVERY_FAILED')
     const full = result.body?.audioIntegrity?.status === 'full' && !!result.body?.data?.[0]?.url
+    if (receipt.audioMatch?.matched) {
+      if (!full || !result.body.recordingCandidate ||
+        result.body.audioIntegrity?.inspection?.sha256 !== receipt.audioMatch.resourceSha256) reject('IDENTITY_MISMATCH')
+      result.body.recordingCandidate.audioMatch = receipt.audioMatch
+    }
     if (receipt.automatic && parsed.source === 'bilibili' &&
       (!receipt.catalog || !result.body.recordingCandidate ||
         assessBilibiliRecording(receipt.catalog, result.body.recordingCandidate).status !== 'same_recording')) {

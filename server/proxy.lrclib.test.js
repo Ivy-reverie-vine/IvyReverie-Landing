@@ -14,6 +14,7 @@ const request = (catalog = ref(), audio = catalog) => gateway.request('/dreammus
 beforeAll(async () => { gateway = await startIdentityGateway({ lrclib: true }) })
 afterAll(async () => { await gateway.close() })
 beforeEach(() => {
+  gateway.orchestrator.searchSessions.clear()
   gateway.controls.calls.length = 0
   gateway.controls.beforeResponse = async () => {}
   gateway.controls.thirdPartyResponse = url => url.pathname === '/lyric/new' ? json({ code: 200, lrc: { lyric: '' } })
@@ -26,6 +27,29 @@ beforeEach(() => {
 })
 
 describe('T12 real HTTP catalog → LRCLIB fallback', () => {
+  it('treats Netease JSON credit headers without verses as missing and continues to LRCLIB', async () => {
+    gateway.controls.thirdPartyResponse = url => url.pathname === '/lyric/new'
+      ? json({ code: 200, lrc: { lyric: '{"t":-1,"c":[{"tx":"作词: "},{"tx":"原歌手"}]}\n' } })
+      : url.hostname === 'lrclib.net' ? json(row()) : null
+    const { body } = await request()
+    expect(body.lyricsSource).toBe('lrclib')
+    expect(body.lyrics.catalogStatus).toBe('missing')
+  })
+  it('hydrates missing duration from the selected catalog detail before live-style LRCLIB lookup', async () => {
+    gateway.controls.thirdPartyResponse = url => url.pathname === '/search'
+      ? json({ code: 200, result: { songs: [{ ...gateway.song, dt: 0 }], more: false } })
+      : url.pathname === '/lyric/new' ? json({ code: 200, lrc: { lyric: '' } })
+        : url.hostname === 'lrclib.net' ? json(row()) : null
+    const search = await gateway.request('/dreammusic/api/v2/search?aggregate=true&merge=true&keywords=目录',
+      { headers: { 'X-API-Key': gateway.apiKey } })
+    const selected = search.body.data.find(song => song.source === 'api-enhanced')
+    expect(selected.durationMs).toBe(0)
+    const result = await request(selected.mediaRef)
+    expect(result.body.lyricsSource).toBe('lrclib')
+    const lookup = gateway.controls.calls.find(url => url.hostname === 'lrclib.net')
+    expect(lookup.searchParams.get('duration')).toBe('90')
+    expect(gateway.controls.calls.filter(url => url.pathname === '/song/detail')).toHaveLength(1)
+  })
   it('uses server catalog metadata in order and retains actual lyric identity', async () => {
     const { body } = await request()
     expect(body.lyrics).toMatchObject({ status: 'available', timeline: 'trusted', textType: 'synced',

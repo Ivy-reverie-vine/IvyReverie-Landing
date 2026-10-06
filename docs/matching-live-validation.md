@@ -1,6 +1,6 @@
 # T15 / DreamMusic #34：真实匹配播放采样
 
-2026-10-06（Asia/Shanghai）。**当前验收未完成，DreamMusic #34保持OPEN。** 不修改父#19、来源生产默认开关、匹配/完整性规则或下载入库边界。
+2026-10-06（Asia/Shanghai）。T15核心真实场景已通过。仅关闭DreamMusic #34，不修改父#19/#35、来源生产默认开关或下载入库边界；完整性及录音证据的修正见`bilibili-fallback.md`。
 
 ## 复现
 
@@ -16,6 +16,9 @@ node app.js
 
 ```powershell
 node --check scripts/check-matching-live.mjs
+# 本机需要已安装、支持Chromaprint的ffmpeg和ffprobe；缺引擎仍未知，不会改记full。
+ffmpeg -hide_banner -h muxer=chromaprint
+$env:LIVE_MATCHING_REPORT='docs/evidence/issue34-new-run.json'
 node --disable-warning=ExperimentalWarning scripts/check-matching-live.mjs
 # 打开 http://127.0.0.1:5187/server/test-support/matching-live.html
 # 输入 q 回车，或用下一条命令收尾
@@ -31,6 +34,10 @@ Invoke-RestMethod -Method Post http://127.0.0.1:5187/test/shutdown
 | 播放固定完整样本 | 网易33984241 / Kevin MacLeod / Scheming Weasel (faster version)，真实聚合→automatic→原生playing/ended |
 | 验证明确试听与B站回退 | 网易18520488 / Rick Astley；真实试听后才搜索B站。只允许选本次实际返回的具体mediaRef，再明确确认后调用生产manual=other |
 | 验证原平台歌词 | 网易2652820720 / Lucky小爱 / 晴天(深情版)，实际条目与歌词来源可追溯；不是搜索词所指的周杰伦录音 |
+| 验证真实 LRCLIB 文本 | 网易1465951 / Profoundly in Love with Pandora，原平台真正空词→LRCLIB plain，静态显示 |
+| 验证真实 LRCLIB 同步 | 网易2673931252 / Sweet Gene Vincent，仅元数据头→LRCLIB synced，使用可靠时间轴 |
+| 验证真实歌词未命中 | 网易36578812 / I Want to Be Straight，真实get404/search无匹配，暂无歌词且音频继续 |
+| 重载已过期链接 | 先自动B站成功，等30秒签名到期再点击；cache-busting要求真实HTTP，旧代理404→生产恢复同一资源→新媒体200/playing |
 
 选择候选只保存待确认状态，不发playurl；确认后full才送入生产播放器，unknown/preview/失败保留停止。这个诊断页面验证网关和播放器，不替代HarmonyOS SourceSelection触摸验收。
 
@@ -62,8 +69,8 @@ LRCLIB是真实公共服务，但目录元数据/原平台缺词受控；恢复�
 
 ## 当前结论
 
-三平台聚合、普通网易完整音频、真实试听进入B站回退、原平台同步歌词、本轮受控410恢复通过。实际完整样本89.07068秒播放结束，完整GET3565236字节、FFmpeg解码通过。
+三平台聚合、普通网易完整音频、真实试听→搜索→B站自动匹配、自动拒绝→手动独立整曲、原平台及真实LRCLIB同步/文本/未命中、真实公开音频在代理签名到期后的恢复均已通过。普通样本89.07068秒、手动样本250.6025秒播放结束；自动样本整文件1167163字节、实测PCM212394.75ms。
 
-B站一次风控只返回v_voucher，另一次搜索得到五个分P且全部manual；手动确认实际候选BV1KR4y1w7A3:723641888后仍为unknown，未进入解码。没有真实B站自动成功、手动完整音频或LRCLIB仅普通文本的完整浏览器链路。三个LRCLIB同步命中与合成未命中只按其受控边界记录。
+B站搜索仍可能返回v_voucher，独立失败轮次保留；成功样本经实际搜索发现BV1GJ411x7h7:137649199，并用原目录真实试听的约24秒声音指纹及完整媒体验证自动起播，解析4973ms。手动候选BV1KR4y1w7A3:723641888只有完整媒体解码后才full，没有把“愿意播放”当完整证据。新的真实LRCLIB样本替代早期受控缺词/合成未命中作为最终验收。
 
-对应回归3文件/34项、TypeScript/Vite build通过。详细逐场景PASS/PARTIAL/BLOCKED/NOT EXECUTED及本轮截图见DreamMusic仓库`docs/research/issue-34-validation.md`。关键真实场景缺失，必须保持#34 OPEN。
+全量54文件/335项及后续两个反例的相关4文件/40项、TypeScript/Vite build通过，ArkTS签名HAP/主机检查通过。最终矩阵、分轮JSON及截图见DreamMusic仓库`docs/research/issue-34-validation.md`。Docker daemon未启动，未验证容器构建；未声称真机或父规格完成。

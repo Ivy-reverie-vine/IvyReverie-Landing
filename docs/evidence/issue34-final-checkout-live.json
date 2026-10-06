@@ -1,0 +1,4910 @@
+{
+  "capturedAt": "2026-10-06T06:22:23.115Z",
+  "timezone": "Asia/Shanghai",
+  "boundary": "Live providers; disposable unbound local account; production gateway/player. Range is not completeness.",
+  "configuration": {
+    "sources": [
+      "api-enhanced",
+      "meting-tencent",
+      "meting-kugou",
+      "bilibili"
+    ],
+    "totalBudgetMs": 10000,
+    "bilibiliReserveMs": 3000
+  },
+  "scenarios": [
+    {
+      "key": "trial",
+      "capturedAt": "2026-10-06T06:23:56.200Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+        "source": "api-enhanced",
+        "sourceId": "18520488",
+        "title": "Never Gonna Give You Up",
+        "artists": [
+          "Rick Astley"
+        ],
+        "album": "Whenever You Need Somebody",
+        "searchDurationMs": 0
+      },
+      "searchMs": 3340,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "18520488",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxNzAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1399616170",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxNzAiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best of Me",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNTMxIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "18520531",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNTMxIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Playlist: The Very Best Of Rick Astley",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MDc5NTkzMDUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2707959305",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MDc5NTkzMDUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Chart Toppers",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDg2MTE2MjEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1948611621",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDg2MTE2MjEiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (2022 Remaster)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody (2022 Remaster)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MjI2Mzg4ODYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1822638886",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MjI2Mzg4ODYiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best of Me",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NTA4ODk1OTAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1450889590",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NTA4ODk1OTAiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Pianoforte)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up (Pianoforte)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MjUyMTU4MDUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1925215805",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MjUyMTU4MDUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Instrumental)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody (Deluxe Edition / Remastered 2022)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NTk0Mzg3NDQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1959438744",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NTk0Mzg3NDQiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "80s Party Anthems",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzYyMTIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2635576212",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzYyMTIiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best Of Me: Never Edition",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVWw2WUgwcFFMTGUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001Ul6YH0pQLLe",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVWw2WUgwcFFMTGUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Old School House Party (Explicit)",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyYmNpQlQweWw2ZmwiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002bciBT0yl6fl",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyYmNpQlQweWw2ZmwiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up  - remix",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "101 80s Anthems",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyaTVpOGkzVnl0VUIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002i5i8i3VytUB",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyaTVpOGkzVnl0VUIiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Dame Dame",
+                "Nito-Onna",
+                "Matt Aitken",
+                "Mike Stock",
+                "Pete Waterman",
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up",
+              "durationMs": 128000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwR1h5ZlQxY1l6dlMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000GXyfT1cYzvS",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwR1h5ZlQxY1l6dlMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Happiness Forever (Explicit)",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMmRQeGIza04zNWMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0032dPxb3kN35c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMmRQeGIza04zNWMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "This Is...80s",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeWxVeUkwd2dxdVEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003ylUyI0wgquQ",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeWxVeUkwd2dxdVEiLCJraW5kIjoic29uZyJ9",
+              "title": "Betty (Get Money)",
+              "artists": [
+                "Yung Gravy"
+              ],
+              "album": "Betty (Get Money)",
+              "durationMs": 146000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZzVTV1kyYU9OMmMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000g5SWY2aON2c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZzVTV1kyYU9OMmMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Juno Im Park",
+                "Hannah Trigwell"
+              ],
+              "album": "Never Gonna Give You Up",
+              "durationMs": 199000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwUmNrRHozSWQ5R2ciLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000RckDz3Id9Gg",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwUmNrRHozSWQ5R2ciLCJraW5kIjoic29uZyJ9",
+              "title": "Together Forever",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Songs for Mum",
+              "durationMs": 200000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUDZDSkYyUG1IM1EiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001P6CJF2PmH3Q",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUDZDSkYyUG1IM1EiLCJraW5kIjoic29uZyJ9",
+              "title": "Together Forever (7\")",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Pure... 80s",
+              "durationMs": 205000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzODBEZ2sxSW13bzAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "00380Dgk1Imwo0",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzODBEZ2sxSW13bzAiLCJraW5kIjoic29uZyJ9",
+              "title": "Together Forever",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Rick Astley-Greatest Hits",
+              "durationMs": 202000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgzMjU0MzY5ZjIwMzU4OTE1NGFlYzAzZmU0MzZjYmEyIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "83254369f203589154aec03fe436cba2",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgzMjU0MzY5ZjIwMzU4OTE1NGFlYzAzZmU0MzZjYmEyIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzYmU2NTlmMTNjNmU1YTM3NmE3ZDU1OGUzODcxZGNjIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "13be659f13c6e5a376a7d558e3871dcc",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzYmU2NTlmMTNjNmU1YTM3NmE3ZDU1OGUzODcxZGNjIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (单曲)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Collection",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA2OTgwMTk2NTRiNTE4NzM3YzVhMTVjNjVlMmQ4OTE0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "0698019654b518737c5a15c65e2d8914",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA2OTgwMTk2NTRiNTE4NzM3YzVhMTVjNjVlMmQ4OTE0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Explicit)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Old School House Party (Explicit)",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRlNWVjYTgxNGExOTVmNzJmZTEyYWQ1YWFmOTM3ZWJkIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "4e5eca814a195f72fe12ad5aaf937ebd",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRlNWVjYTgxNGExOTVmNzJmZTEyYWQ1YWFmOTM3ZWJkIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7\" Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "This Is...80s",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3NzQ0MDMyMWY3NGY3ZDU3NmZjZjIzZjZiODliYWVmIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a77440321f74f7d576fcf23f6b89baef",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3NzQ0MDMyMWY3NGY3ZDU3NmZjZjIzZjZiODliYWVmIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "80s Party Anthems",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQzZDMxYWI2ZDVhMjc5MTg2YzdlYjUwYTllOTYyYjU3Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "43d31ab6d5a279186c7eb50a9e962b57",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQzZDMxYWI2ZDVhMjc5MTg2YzdlYjUwYTllOTYyYjU3Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7'' Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "101 80s Anthems",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE1OWFkN2Q0YzIxZDMxMmQzMmRmZTEzODdjZTUzYzVjIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a59ad7d4c21d312d32dfe1387ce53c5c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE1OWFkN2Q0YzIxZDMxMmQzMmRmZTEzODdjZTUzYzVjIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (完整版|7'VocalMix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "I Love 80s",
+              "durationMs": 211000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDZmMzY0NjVmMWQzYjVjY2ExZWJhYWIwODdlNjM1Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "d606f36465f1d3b5cca1ebaab087e635",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDZmMzY0NjVmMWQzYjVjY2ExZWJhYWIwODdlNjM1Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7\" Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "100 Hits Of The '80s",
+              "durationMs": 209000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzN2MyMTk3MTYxZDg4MmMyYWRmMmVmZDI4ODZhY2Y1Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "137c2197161d882c2adf2efd2886acf5",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzN2MyMTk3MTYxZDg4MmMyYWRmMmVmZDI4ODZhY2Y1Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Cake Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody (Deluxe Edition / Remastered 2022)",
+              "durationMs": 347000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMyNDU5ODMxMjhiZjE2ODE5MGI0ZjYwOWFhNzFhNzZlIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "3245983128bf168190b4f609aa71a76e",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMyNDU5ODMxMjhiZjE2ODE5MGI0ZjYwOWFhNzFhNzZlIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (完整版|7Mix|-remix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "101 80s Anthems",
+              "durationMs": 212000
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+      "audioIntegrity": {
+        "status": "unavailable",
+        "reason": "automatic_BILIBILI_SEARCH_INCOMPLETE",
+        "catalogDurationMs": 0,
+        "resourceDurationMs": 0,
+        "evidence": []
+      },
+      "playback": {
+        "status": "exhausted",
+        "reason": "BILIBILI_SEARCH_INCOMPLETE",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 1020,
+        "remainingBudgetMs": 8980,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+            "source": "api-enhanced",
+            "status": "preview",
+            "matchReason": "selected_resource",
+            "reason": "explicit_trial",
+            "audioIntegrity": {
+              "status": "preview",
+              "reason": "explicit_trial",
+              "catalogDurationMs": 214018,
+              "resourceDurationMs": 26827,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": true,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ"
+          ]
+        },
+        "bilibili": {
+          "status": "exhausted",
+          "query": "Never Gonna Give You Up Rick Astley",
+          "candidates": [],
+          "reason": "BILIBILI_SEARCH_INCOMPLETE"
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "available",
+          "timeline": "trusted",
+          "reason": "same_resource",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": false,
+            "attempted": false,
+            "status": "skipped"
+          },
+          "catalogStatus": "available"
+        },
+        "source": "api-enhanced",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+        "characters": 2485
+      }
+    },
+    {
+      "key": "trial",
+      "capturedAt": "2026-10-06T06:29:48.216Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+        "source": "api-enhanced",
+        "sourceId": "18520488",
+        "title": "Never Gonna Give You Up",
+        "artists": [
+          "Rick Astley"
+        ],
+        "album": "Whenever You Need Somebody",
+        "searchDurationMs": 0
+      },
+      "searchMs": 3194,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "18520488",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxNzAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1399616170",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEzOTk2MTYxNzAiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best of Me",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNTMxIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "18520531",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNTMxIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Playlist: The Very Best Of Rick Astley",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MDc5NTkzMDUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2707959305",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MDc5NTkzMDUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Chart Toppers",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDg2MTE2MjEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1948611621",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDg2MTE2MjEiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (2022 Remaster)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody (2022 Remaster)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MjI2Mzg4ODYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1822638886",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MjI2Mzg4ODYiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best of Me",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NTA4ODk1OTAiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1450889590",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0NTA4ODk1OTAiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Pianoforte)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up (Pianoforte)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MjUyMTU4MDUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1925215805",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MjUyMTU4MDUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Instrumental)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody (Deluxe Edition / Remastered 2022)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NTk0Mzg3NDQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "1959438744",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NTk0Mzg3NDQiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "80s Party Anthems",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzYyMTIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2635576212",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MzU1NzYyMTIiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best Of Me: Never Edition",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVWw2WUgwcFFMTGUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001Ul6YH0pQLLe",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVWw2WUgwcFFMTGUiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Old School House Party (Explicit)",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyYmNpQlQweWw2ZmwiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002bciBT0yl6fl",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyYmNpQlQweWw2ZmwiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up  - remix",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "101 80s Anthems",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMmRQeGIza04zNWMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0032dPxb3kN35c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMmRQeGIza04zNWMiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "This Is...80s",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyaTVpOGkzVnl0VUIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002i5i8i3VytUB",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyaTVpOGkzVnl0VUIiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Dame Dame",
+                "Nito-Onna",
+                "Matt Aitken",
+                "Mike Stock",
+                "Pete Waterman",
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up",
+              "durationMs": 128000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxNnQ5d3c0WGlHZEoiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0016t9ww4XiGdJ",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxNnQ5d3c0WGlHZEoiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "80s: 100 Remixes",
+              "durationMs": 347000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeWxVeUkwd2dxdVEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003ylUyI0wgquQ",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeWxVeUkwd2dxdVEiLCJraW5kIjoic29uZyJ9",
+              "title": "Betty (Get Money)",
+              "artists": [
+                "Yung Gravy"
+              ],
+              "album": "Betty (Get Money)",
+              "durationMs": 146000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSXVIRG0ybmFZWlEiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000IuHDm2naYZQ",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSXVIRG0ybmFZWlEiLCJraW5kIjoic29uZyJ9",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best of Me",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwUmNrRHozSWQ5R2ciLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000RckDz3Id9Gg",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwUmNrRHozSWQ5R2ciLCJraW5kIjoic29uZyJ9",
+              "title": "Together Forever",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Songs for Mum",
+              "durationMs": 200000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUo1VUwyMVVDamQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003eJ5UL21UCjd",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUo1VUwyMVVDamQiLCJraW5kIjoic29uZyJ9",
+              "title": "Whenever You Need Somebody",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Best of Me",
+              "durationMs": 235000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxOGluQ0sxNjFIaGMiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0018inCK161Hhc",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxOGluQ0sxNjFIaGMiLCJraW5kIjoic29uZyJ9",
+              "title": "Whenever You Need Somebody",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Wired For Sound The 80s",
+              "durationMs": 208000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgzMjU0MzY5ZjIwMzU4OTE1NGFlYzAzZmU0MzZjYmEyIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "83254369f203589154aec03fe436cba2",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgzMjU0MzY5ZjIwMzU4OTE1NGFlYzAzZmU0MzZjYmEyIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Never Gonna Give You Up",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzYmU2NTlmMTNjNmU1YTM3NmE3ZDU1OGUzODcxZGNjIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "13be659f13c6e5a376a7d558e3871dcc",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzYmU2NTlmMTNjNmU1YTM3NmE3ZDU1OGUzODcxZGNjIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (单曲)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "The Collection",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA2OTgwMTk2NTRiNTE4NzM3YzVhMTVjNjVlMmQ4OTE0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "0698019654b518737c5a15c65e2d8914",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjA2OTgwMTk2NTRiNTE4NzM3YzVhMTVjNjVlMmQ4OTE0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Explicit)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Old School House Party (Explicit)",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRlNWVjYTgxNGExOTVmNzJmZTEyYWQ1YWFmOTM3ZWJkIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "4e5eca814a195f72fe12ad5aaf937ebd",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRlNWVjYTgxNGExOTVmNzJmZTEyYWQ1YWFmOTM3ZWJkIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7\" Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "This Is...80s",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3NzQ0MDMyMWY3NGY3ZDU3NmZjZjIzZjZiODliYWVmIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a77440321f74f7d576fcf23f6b89baef",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3NzQ0MDMyMWY3NGY3ZDU3NmZjZjIzZjZiODliYWVmIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Remastered 2022)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "80s Party Anthems",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQzZDMxYWI2ZDVhMjc5MTg2YzdlYjUwYTllOTYyYjU3Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "43d31ab6d5a279186c7eb50a9e962b57",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQzZDMxYWI2ZDVhMjc5MTg2YzdlYjUwYTllOTYyYjU3Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7'' Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "101 80s Anthems",
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE1OWFkN2Q0YzIxZDMxMmQzMmRmZTEzODdjZTUzYzVjIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a59ad7d4c21d312d32dfe1387ce53c5c",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE1OWFkN2Q0YzIxZDMxMmQzMmRmZTEzODdjZTUzYzVjIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (完整版|7'VocalMix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "I Love 80s",
+              "durationMs": 211000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDZmMzY0NjVmMWQzYjVjY2ExZWJhYWIwODdlNjM1Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "d606f36465f1d3b5cca1ebaab087e635",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDZmMzY0NjVmMWQzYjVjY2ExZWJhYWIwODdlNjM1Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (7\" Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "100 Hits Of The '80s",
+              "durationMs": 209000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzN2MyMTk3MTYxZDg4MmMyYWRmMmVmZDI4ODZhY2Y1Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "137c2197161d882c2adf2efd2886acf5",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzN2MyMTk3MTYxZDg4MmMyYWRmMmVmZDI4ODZhY2Y1Iiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (Cake Mix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "Whenever You Need Somebody (Deluxe Edition / Remastered 2022)",
+              "durationMs": 347000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMyNDU5ODMxMjhiZjE2ODE5MGI0ZjYwOWFhNzFhNzZlIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "3245983128bf168190b4f609aa71a76e",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMyNDU5ODMxMjhiZjE2ODE5MGI0ZjYwOWFhNzFhNzZlIiwia2luZCI6InNvbmcifQ",
+              "title": "Never Gonna Give You Up (完整版|7Mix|-remix)",
+              "artists": [
+                "Rick Astley"
+              ],
+              "album": "101 80s Anthems",
+              "durationMs": 212000
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+      "audioIntegrity": {
+        "status": "unavailable",
+        "reason": "automatic_BILIBILI_SEARCH_INCOMPLETE",
+        "catalogDurationMs": 0,
+        "resourceDurationMs": 0,
+        "evidence": []
+      },
+      "playback": {
+        "status": "exhausted",
+        "reason": "BILIBILI_SEARCH_INCOMPLETE",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 632,
+        "remainingBudgetMs": 9368,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+            "source": "api-enhanced",
+            "status": "preview",
+            "matchReason": "selected_resource",
+            "reason": "explicit_trial",
+            "audioIntegrity": {
+              "status": "preview",
+              "reason": "explicit_trial",
+              "catalogDurationMs": 214018,
+              "resourceDurationMs": 26827,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": true,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ"
+          ]
+        },
+        "bilibili": {
+          "status": "exhausted",
+          "query": "Never Gonna Give You Up Rick Astley",
+          "candidates": [],
+          "reason": "BILIBILI_SEARCH_INCOMPLETE"
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "available",
+          "timeline": "trusted",
+          "reason": "same_resource",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": false,
+            "attempted": false,
+            "status": "skipped"
+          },
+          "catalogStatus": "available"
+        },
+        "source": "api-enhanced",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4NTIwNDg4Iiwia2luZCI6InNvbmcifQ",
+        "characters": 2485
+      }
+    },
+    {
+      "key": "lrclibSynced",
+      "capturedAt": "2026-10-06T06:46:08.493Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+        "source": "api-enhanced",
+        "sourceId": "2673931252",
+        "title": "Sweet Gene Vincent",
+        "artists": [
+          "Ian Dury"
+        ],
+        "album": "New Boots and Panties!! (Deluxe Edition)",
+        "searchDurationMs": 0
+      },
+      "searchMs": 3951,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MTU2NDQzIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "27156443",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MTU2NDQzIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Theme Time Radio Hour: Season 3 with your Host Bob Dylan",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUyMzk3NjY4NiIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "523976686",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUyMzk3NjY4NiIsImtpbmQiOiJzb25nIn0",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Robbie Willliams"
+              ],
+              "album": "Brand New Boots and Panties",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4Njc1MTk0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "28675194",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4Njc1MTk0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury & the Blockheads"
+              ],
+              "album": "Suggs Selection",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2673931252",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzU1NjkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "3341635569",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzU1NjkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "In Concert (Sweet Gene Vincent: The Clash Collection)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzY3NjgiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "3341636768",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzY3NjgiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "In Concert (In The Flesh: Blondie Collection)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4NTYxMzk0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "28561394",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4NTYxMzk0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!!",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2Nzc2MDMwNTUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2677603055",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2Nzc2MDMwNTUiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Sex & Drugs & Rock & Roll - The Essential Collection",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5Mjk3ODkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2673929789",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5Mjk3ODkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Backing Track) [Demo]",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU2MjI4ODU5MCIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "562288590",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU2MjI4ODU5MCIsImtpbmQiOiJzb25nIn0",
+              "title": "Sweet Gene Vincent (Bbc John Peel Sessions, 12/12/1977)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots & Panties (40th Anniversary Edition) (audio Version)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUmczRTg0S2l5R3MiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003Rg3E84KiyGs",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUmczRTg0S2l5R3MiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Robbie Willliams"
+              ],
+              "album": "Brand New Boots and Panties",
+              "durationMs": 247000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUVSMWswOTVpOFkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003eER1k095i8Y",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUVSMWswOTVpOFkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Explicit)",
+              "durationMs": 215000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzd2xNRUg0QUI4WlIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003wlMEH4AB8ZR",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzd2xNRUg0QUI4WlIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Warts 'n' Audience",
+              "durationMs": 269000
+            },
+            {
+              "source": "meting-kugou",
+              "sourceId": "8d6eedefbc9b73f228ce853d76279a14",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjhkNmVlZGVmYmM5YjczZjIyOGNlODUzZDc2Mjc5YTE0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Warts 'n' Audience",
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0xYWVEwbGlZMm4iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001KLXYQ0liY2n",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0xYWVEwbGlZMm4iLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Greatest",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyc0hFTlEwT1p6ZGYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002sHENQ0OZzdf",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyc0hFTlEwT1p6ZGYiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live At Rockpalast (WDR Studio L, Cologne, 21.02.1978)",
+              "durationMs": 256000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzT09tWloxRUFnSVQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003OOmZZ1EAgIT",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzT09tWloxRUFnSVQiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent(Originally Performed By Ian Dury)",
+              "artists": [
+                "Paris Music"
+              ],
+              "album": "Karaoke Hits Rock, Vol. 15",
+              "durationMs": 216000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSzBlNmYwdkc2YUsiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000K0e6f0vG6aK",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSzBlNmYwdkc2YUsiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (made popular by Ian Dury & The Blockheads)",
+              "artists": [
+                "Party Tyme"
+              ],
+              "album": "Rock Male Hits 17 - Party Tyme (Backing Versions)",
+              "durationMs": 210000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxanhra0IxZHZoNE8iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001jxkkB1dvh4O",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxanhra0IxZHZoNE8iLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Live! Warts 'N' Audience…Plus!",
+              "durationMs": 269000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzbmtwbDkwcFlLbXIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003nkpl90pYKmr",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzbmtwbDkwcFlLbXIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "Rock Summer",
+              "durationMs": 152000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMUQ5VTUzOGJ5U3UiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0031D9U538bySu",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMUQ5VTUzOGJ5U3UiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "TV Baby"
+              ],
+              "album": "Dignity Don't Dance",
+              "durationMs": 196000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBhYjIwMGI3OWNmYWYyY2E2Yzg3OTVjZTdlNTkxY2Q0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "0ab200b79cfaf2ca6c8795ce7e591cd4",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBhYjIwMGI3OWNmYWYyY2E2Yzg3OTVjZTdlNTkxY2Q0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "Rock Summer",
+              "durationMs": 152000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzMjEzOTRkM2Y3ZTcwODU2OGY4MzA5YzYwMWU0ZTU4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "1321394d3f7e708568f8309c601e4e58",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzMjEzOTRkM2Y3ZTcwODU2OGY4MzA5YzYwMWU0ZTU4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Explicit)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition) [Explicit]",
+              "durationMs": 221000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYzNjk3NGE3MDQ2ZDE3OThjMzcxYjFiMTU1ZGFiMDA2Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "636974a7046d1798c371b1b155dab006",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYzNjk3NGE3MDQ2ZDE3OThjMzcxYjFiMTU1ZGFiMDA2Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Backing Track|Demo|Explicit)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition) [Explicit]",
+              "durationMs": 337000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM2YmMxMWIwYTQ0ZDQ1ZWU4YWQ1NWE1NmJhYWQ0NmY4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "36bc11b0a44d45ee8ad55a56baad46f8",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM2YmMxMWIwYTQ0ZDQ1ZWU4YWQ1NWE1NmJhYWQ0NmY4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Mosy"
+              ],
+              "album": "Sweet Gene Vincent",
+              "durationMs": 78000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQxYmU3YjU4OThmZTI4MWFhZDgyZmZiMGM5ZjUwNjVkIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "d1be7b5898fe281aad82ffb0c9f5065d",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQxYmU3YjU4OThmZTI4MWFhZDgyZmZiMGM5ZjUwNjVkIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live At Rockpalast",
+              "durationMs": 256000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImU1MjA0MzJhY2RiMGY1MTExZmM0MzZiNjhiNzQ3ZDQ2Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "e520432acdb0f5111fc436b68b747d46",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImU1MjA0MzJhY2RiMGY1MTExZmM0MzZiNjhiNzQ3ZDQ2Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live|Explicit)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Do It Yourself (Deluxe Edition) [Explicit]",
+              "durationMs": 235000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYyN2IwYmVkZGU0NjYwNmE3M2JkNGFlMGE3NTNjYWRmIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "627b0bedde46606a73bd4ae0a753cadf",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYyN2IwYmVkZGU0NjYwNmE3M2JkNGFlMGE3NTNjYWRmIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live|Explicit)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live! Warts 'N' Audience…Plus! (Explicit)",
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEwYzc2M2RjYjIxYmJmOTUwNzIzZTQ1Nzk3NGEzZjc0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a0c763dcb21bbf950723e457974a3f74",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEwYzc2M2RjYjIxYmJmOTUwNzIzZTQ1Nzk3NGEzZjc0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Do It Yourself (Deluxe Edition)",
+              "durationMs": 235000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxMDM4NjdjOGVjMjg0M2MwN2QyNmQ4OTE1ZTJkYjJhIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "2103867c8ec2843c07d26d8915e2db2a",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxMDM4NjdjOGVjMjg0M2MwN2QyNmQ4OTE1ZTJkYjJhIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Karaoke Version Originally Performed by Ian Dury & the Blockheads)",
+              "artists": [
+                "Singer's Best"
+              ],
+              "album": "Sweet Gene Vincent (Karaoke Version Originally Performed by Ian Dury & the Blockheads)",
+              "durationMs": 216000
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+      "playbackSource": "api-enhanced",
+      "audioIntegrity": {
+        "status": "full",
+        "reason": "provider_duration_and_non_trial",
+        "catalogDurationMs": 221053,
+        "resourceDurationMs": 221053,
+        "evidence": [
+          "catalog_duration",
+          "provider_resource_duration",
+          "provider_non_trial"
+        ]
+      },
+      "playback": {
+        "status": "success",
+        "reason": "success",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 446,
+        "remainingBudgetMs": 9554,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+            "source": "api-enhanced",
+            "status": "full",
+            "matchReason": "selected_resource",
+            "reason": "provider_duration_and_non_trial",
+            "audioIntegrity": {
+              "status": "full",
+              "reason": "provider_duration_and_non_trial",
+              "catalogDurationMs": 221053,
+              "resourceDurationMs": 221053,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_non_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": false,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9"
+          ]
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "available",
+          "timeline": "trusted",
+          "reason": "lrclib_catalog_metadata_match",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": true,
+            "attempted": true,
+            "status": "available",
+            "reason": "available"
+          },
+          "catalogStatus": "missing",
+          "retryable": false,
+          "textType": "synced"
+        },
+        "source": "lrclib",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJscmNsaWIiLCJzb3VyY2VJZCI6IjM0NTc3Nzk5Iiwia2luZCI6InNvbmcifQ",
+        "characters": 1804
+      }
+    },
+    {
+      "key": "lrclibSynced",
+      "capturedAt": "2026-10-06T06:50:29.035Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+        "source": "api-enhanced",
+        "sourceId": "2673931252",
+        "title": "Sweet Gene Vincent",
+        "artists": [
+          "Ian Dury"
+        ],
+        "album": "New Boots and Panties!! (Deluxe Edition)",
+        "searchDurationMs": 0
+      },
+      "searchMs": 1926,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MTU2NDQzIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "27156443",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MTU2NDQzIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Theme Time Radio Hour: Season 3 with your Host Bob Dylan",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUyMzk3NjY4NiIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "523976686",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUyMzk3NjY4NiIsImtpbmQiOiJzb25nIn0",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Robbie Willliams"
+              ],
+              "album": "Brand New Boots and Panties",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4Njc1MTk0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "28675194",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4Njc1MTk0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury & the Blockheads"
+              ],
+              "album": "Suggs Selection",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2673931252",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzU1NjkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "3341635569",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzU1NjkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "In Concert (Sweet Gene Vincent: The Clash Collection)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzY3NjgiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "3341636768",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzY3NjgiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "In Concert (In The Flesh: Blondie Collection)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4NTYxMzk0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "28561394",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4NTYxMzk0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!!",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2Nzc2MDMwNTUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2677603055",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2Nzc2MDMwNTUiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Sex & Drugs & Rock & Roll - The Essential Collection",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5Mjk3ODkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2673929789",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5Mjk3ODkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Backing Track) [Demo]",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU2MjI4ODU5MCIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "562288590",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU2MjI4ODU5MCIsImtpbmQiOiJzb25nIn0",
+              "title": "Sweet Gene Vincent (Bbc John Peel Sessions, 12/12/1977)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots & Panties (40th Anniversary Edition) (audio Version)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUmczRTg0S2l5R3MiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003Rg3E84KiyGs",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUmczRTg0S2l5R3MiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Robbie Willliams"
+              ],
+              "album": "Brand New Boots and Panties",
+              "durationMs": 247000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUVSMWswOTVpOFkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003eER1k095i8Y",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUVSMWswOTVpOFkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Explicit)",
+              "durationMs": 215000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzd2xNRUg0QUI4WlIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003wlMEH4AB8ZR",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzd2xNRUg0QUI4WlIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Warts 'n' Audience",
+              "durationMs": 269000
+            },
+            {
+              "source": "meting-kugou",
+              "sourceId": "8d6eedefbc9b73f228ce853d76279a14",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjhkNmVlZGVmYmM5YjczZjIyOGNlODUzZDc2Mjc5YTE0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Warts 'n' Audience",
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0xYWVEwbGlZMm4iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001KLXYQ0liY2n",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0xYWVEwbGlZMm4iLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Greatest",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyc0hFTlEwT1p6ZGYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002sHENQ0OZzdf",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyc0hFTlEwT1p6ZGYiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live At Rockpalast (WDR Studio L, Cologne, 21.02.1978)",
+              "durationMs": 256000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzT09tWloxRUFnSVQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003OOmZZ1EAgIT",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzT09tWloxRUFnSVQiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent(Originally Performed By Ian Dury)",
+              "artists": [
+                "Paris Music"
+              ],
+              "album": "Karaoke Hits Rock, Vol. 15",
+              "durationMs": 216000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSzBlNmYwdkc2YUsiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000K0e6f0vG6aK",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSzBlNmYwdkc2YUsiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (made popular by Ian Dury & The Blockheads)",
+              "artists": [
+                "Party Tyme"
+              ],
+              "album": "Rock Male Hits 17 - Party Tyme (Backing Versions)",
+              "durationMs": 210000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxanhra0IxZHZoNE8iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001jxkkB1dvh4O",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxanhra0IxZHZoNE8iLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Live! Warts 'N' Audience…Plus!",
+              "durationMs": 269000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzbmtwbDkwcFlLbXIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003nkpl90pYKmr",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzbmtwbDkwcFlLbXIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "Rock Summer",
+              "durationMs": 152000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMUQ5VTUzOGJ5U3UiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0031D9U538bySu",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMUQ5VTUzOGJ5U3UiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "TV Baby"
+              ],
+              "album": "Dignity Don't Dance",
+              "durationMs": 196000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBhYjIwMGI3OWNmYWYyY2E2Yzg3OTVjZTdlNTkxY2Q0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "0ab200b79cfaf2ca6c8795ce7e591cd4",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBhYjIwMGI3OWNmYWYyY2E2Yzg3OTVjZTdlNTkxY2Q0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "Rock Summer",
+              "durationMs": 152000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzMjEzOTRkM2Y3ZTcwODU2OGY4MzA5YzYwMWU0ZTU4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "1321394d3f7e708568f8309c601e4e58",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzMjEzOTRkM2Y3ZTcwODU2OGY4MzA5YzYwMWU0ZTU4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Explicit)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition) [Explicit]",
+              "durationMs": 221000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYzNjk3NGE3MDQ2ZDE3OThjMzcxYjFiMTU1ZGFiMDA2Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "636974a7046d1798c371b1b155dab006",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYzNjk3NGE3MDQ2ZDE3OThjMzcxYjFiMTU1ZGFiMDA2Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Backing Track|Demo|Explicit)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition) [Explicit]",
+              "durationMs": 337000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM2YmMxMWIwYTQ0ZDQ1ZWU4YWQ1NWE1NmJhYWQ0NmY4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "36bc11b0a44d45ee8ad55a56baad46f8",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM2YmMxMWIwYTQ0ZDQ1ZWU4YWQ1NWE1NmJhYWQ0NmY4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Mosy"
+              ],
+              "album": "Sweet Gene Vincent",
+              "durationMs": 78000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQxYmU3YjU4OThmZTI4MWFhZDgyZmZiMGM5ZjUwNjVkIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "d1be7b5898fe281aad82ffb0c9f5065d",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQxYmU3YjU4OThmZTI4MWFhZDgyZmZiMGM5ZjUwNjVkIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live At Rockpalast",
+              "durationMs": 256000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImU1MjA0MzJhY2RiMGY1MTExZmM0MzZiNjhiNzQ3ZDQ2Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "e520432acdb0f5111fc436b68b747d46",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImU1MjA0MzJhY2RiMGY1MTExZmM0MzZiNjhiNzQ3ZDQ2Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live|Explicit)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Do It Yourself (Deluxe Edition) [Explicit]",
+              "durationMs": 235000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYyN2IwYmVkZGU0NjYwNmE3M2JkNGFlMGE3NTNjYWRmIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "627b0bedde46606a73bd4ae0a753cadf",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYyN2IwYmVkZGU0NjYwNmE3M2JkNGFlMGE3NTNjYWRmIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live|Explicit)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live! Warts 'N' Audience…Plus! (Explicit)",
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEwYzc2M2RjYjIxYmJmOTUwNzIzZTQ1Nzk3NGEzZjc0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a0c763dcb21bbf950723e457974a3f74",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEwYzc2M2RjYjIxYmJmOTUwNzIzZTQ1Nzk3NGEzZjc0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Do It Yourself (Deluxe Edition)",
+              "durationMs": 235000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxMDM4NjdjOGVjMjg0M2MwN2QyNmQ4OTE1ZTJkYjJhIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "2103867c8ec2843c07d26d8915e2db2a",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxMDM4NjdjOGVjMjg0M2MwN2QyNmQ4OTE1ZTJkYjJhIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Karaoke Version Originally Performed by Ian Dury & the Blockheads)",
+              "artists": [
+                "Singer's Best"
+              ],
+              "album": "Sweet Gene Vincent (Karaoke Version Originally Performed by Ian Dury & the Blockheads)",
+              "durationMs": 216000
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+      "playbackSource": "api-enhanced",
+      "audioIntegrity": {
+        "status": "full",
+        "reason": "provider_duration_and_non_trial",
+        "catalogDurationMs": 221053,
+        "resourceDurationMs": 221053,
+        "evidence": [
+          "catalog_duration",
+          "provider_resource_duration",
+          "provider_non_trial"
+        ]
+      },
+      "playback": {
+        "status": "success",
+        "reason": "success",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 225,
+        "remainingBudgetMs": 9775,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+            "source": "api-enhanced",
+            "status": "full",
+            "matchReason": "selected_resource",
+            "reason": "provider_duration_and_non_trial",
+            "audioIntegrity": {
+              "status": "full",
+              "reason": "provider_duration_and_non_trial",
+              "catalogDurationMs": 221053,
+              "resourceDurationMs": 221053,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_non_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": false,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9"
+          ]
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "available",
+          "timeline": "trusted",
+          "reason": "lrclib_catalog_metadata_match",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": true,
+            "attempted": true,
+            "status": "available",
+            "reason": "available"
+          },
+          "catalogStatus": "missing",
+          "retryable": false,
+          "textType": "synced"
+        },
+        "source": "lrclib",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJscmNsaWIiLCJzb3VyY2VJZCI6IjM0NTc3Nzk5Iiwia2luZCI6InNvbmcifQ",
+        "characters": 1804
+      }
+    },
+    {
+      "key": "lrclibSynced",
+      "capturedAt": "2026-10-06T06:55:43.489Z",
+      "catalog": {
+        "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+        "source": "api-enhanced",
+        "sourceId": "2673931252",
+        "title": "Sweet Gene Vincent",
+        "artists": [
+          "Ian Dury"
+        ],
+        "album": "New Boots and Panties!! (Deluxe Edition)",
+        "searchDurationMs": 0
+      },
+      "searchMs": 3292,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": false
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok",
+          "offset": 0,
+          "nextOffset": 10,
+          "hasMore": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MTU2NDQzIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "27156443",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MTU2NDQzIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Theme Time Radio Hour: Season 3 with your Host Bob Dylan",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUyMzk3NjY4NiIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "523976686",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjUyMzk3NjY4NiIsImtpbmQiOiJzb25nIn0",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Robbie Willliams"
+              ],
+              "album": "Brand New Boots and Panties",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4Njc1MTk0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "28675194",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4Njc1MTk0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury & the Blockheads"
+              ],
+              "album": "Suggs Selection",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2673931252",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzU1NjkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "3341635569",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzU1NjkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "In Concert (Sweet Gene Vincent: The Clash Collection)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzY3NjgiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "3341636768",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDE2MzY3NjgiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "In Concert (In The Flesh: Blondie Collection)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4NTYxMzk0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "28561394",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI4NTYxMzk0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!!",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2Nzc2MDMwNTUiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2677603055",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2Nzc2MDMwNTUiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Sex & Drugs & Rock & Roll - The Essential Collection",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5Mjk3ODkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "2673929789",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5Mjk3ODkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (Backing Track) [Demo]",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU2MjI4ODU5MCIsImtpbmQiOiJzb25nIn0",
+          "entries": [
+            {
+              "source": "api-enhanced",
+              "sourceId": "562288590",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjU2MjI4ODU5MCIsImtpbmQiOiJzb25nIn0",
+              "title": "Sweet Gene Vincent (Bbc John Peel Sessions, 12/12/1977)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots & Panties (40th Anniversary Edition) (audio Version)",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUmczRTg0S2l5R3MiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003Rg3E84KiyGs",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUmczRTg0S2l5R3MiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Robbie Willliams"
+              ],
+              "album": "Brand New Boots and Panties",
+              "durationMs": 247000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUVSMWswOTVpOFkiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003eER1k095i8Y",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZUVSMWswOTVpOFkiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Explicit)",
+              "durationMs": 215000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzd2xNRUg0QUI4WlIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003wlMEH4AB8ZR",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzd2xNRUg0QUI4WlIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Warts 'n' Audience",
+              "durationMs": 269000
+            },
+            {
+              "source": "meting-kugou",
+              "sourceId": "8d6eedefbc9b73f228ce853d76279a14",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjhkNmVlZGVmYmM5YjczZjIyOGNlODUzZDc2Mjc5YTE0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Warts 'n' Audience",
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0xYWVEwbGlZMm4iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001KLXYQ0liY2n",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0xYWVEwbGlZMm4iLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Greatest",
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyc0hFTlEwT1p6ZGYiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "002sHENQ0OZzdf",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyc0hFTlEwT1p6ZGYiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live At Rockpalast (WDR Studio L, Cologne, 21.02.1978)",
+              "durationMs": 256000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzT09tWloxRUFnSVQiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003OOmZZ1EAgIT",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzT09tWloxRUFnSVQiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent(Originally Performed By Ian Dury)",
+              "artists": [
+                "Paris Music"
+              ],
+              "album": "Karaoke Hits Rock, Vol. 15",
+              "durationMs": 216000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSzBlNmYwdkc2YUsiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "000K0e6f0vG6aK",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwSzBlNmYwdkc2YUsiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent (made popular by Ian Dury & The Blockheads)",
+              "artists": [
+                "Party Tyme"
+              ],
+              "album": "Rock Male Hits 17 - Party Tyme (Backing Versions)",
+              "durationMs": 210000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxanhra0IxZHZoNE8iLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "001jxkkB1dvh4O",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxanhra0IxZHZoNE8iLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Live! Warts 'N' Audience…Plus!",
+              "durationMs": 269000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzbmtwbDkwcFlLbXIiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "003nkpl90pYKmr",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzbmtwbDkwcFlLbXIiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "Rock Summer",
+              "durationMs": 152000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMUQ5VTUzOGJ5U3UiLCJraW5kIjoic29uZyJ9",
+          "entries": [
+            {
+              "source": "meting-tencent",
+              "sourceId": "0031D9U538bySu",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzMUQ5VTUzOGJ5U3UiLCJraW5kIjoic29uZyJ9",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "TV Baby"
+              ],
+              "album": "Dignity Don't Dance",
+              "durationMs": 196000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBhYjIwMGI3OWNmYWYyY2E2Yzg3OTVjZTdlNTkxY2Q0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "0ab200b79cfaf2ca6c8795ce7e591cd4",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBhYjIwMGI3OWNmYWYyY2E2Yzg3OTVjZTdlNTkxY2Q0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "The Clash"
+              ],
+              "album": "Rock Summer",
+              "durationMs": 152000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzMjEzOTRkM2Y3ZTcwODU2OGY4MzA5YzYwMWU0ZTU4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "1321394d3f7e708568f8309c601e4e58",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEzMjEzOTRkM2Y3ZTcwODU2OGY4MzA5YzYwMWU0ZTU4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Explicit)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition) [Explicit]",
+              "durationMs": 221000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYzNjk3NGE3MDQ2ZDE3OThjMzcxYjFiMTU1ZGFiMDA2Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "636974a7046d1798c371b1b155dab006",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYzNjk3NGE3MDQ2ZDE3OThjMzcxYjFiMTU1ZGFiMDA2Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Backing Track|Demo|Explicit)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "New Boots and Panties!! (Deluxe Edition) [Explicit]",
+              "durationMs": 337000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM2YmMxMWIwYTQ0ZDQ1ZWU4YWQ1NWE1NmJhYWQ0NmY4Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "36bc11b0a44d45ee8ad55a56baad46f8",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM2YmMxMWIwYTQ0ZDQ1ZWU4YWQ1NWE1NmJhYWQ0NmY4Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent",
+              "artists": [
+                "Mosy"
+              ],
+              "album": "Sweet Gene Vincent",
+              "durationMs": 78000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQxYmU3YjU4OThmZTI4MWFhZDgyZmZiMGM5ZjUwNjVkIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "d1be7b5898fe281aad82ffb0c9f5065d",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQxYmU3YjU4OThmZTI4MWFhZDgyZmZiMGM5ZjUwNjVkIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live At Rockpalast",
+              "durationMs": 256000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImU1MjA0MzJhY2RiMGY1MTExZmM0MzZiNjhiNzQ3ZDQ2Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "e520432acdb0f5111fc436b68b747d46",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImU1MjA0MzJhY2RiMGY1MTExZmM0MzZiNjhiNzQ3ZDQ2Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live|Explicit)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Do It Yourself (Deluxe Edition) [Explicit]",
+              "durationMs": 235000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYyN2IwYmVkZGU0NjYwNmE3M2JkNGFlMGE3NTNjYWRmIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "627b0bedde46606a73bd4ae0a753cadf",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjYyN2IwYmVkZGU0NjYwNmE3M2JkNGFlMGE3NTNjYWRmIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live|Explicit)",
+              "artists": [
+                "Ian Dury",
+                "The Blockheads"
+              ],
+              "album": "Live! Warts 'N' Audience…Plus! (Explicit)",
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEwYzc2M2RjYjIxYmJmOTUwNzIzZTQ1Nzk3NGEzZjc0Iiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "a0c763dcb21bbf950723e457974a3f74",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEwYzc2M2RjYjIxYmJmOTUwNzIzZTQ1Nzk3NGEzZjc0Iiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Live)",
+              "artists": [
+                "Ian Dury"
+              ],
+              "album": "Do It Yourself (Deluxe Edition)",
+              "durationMs": 235000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxMDM4NjdjOGVjMjg0M2MwN2QyNmQ4OTE1ZTJkYjJhIiwia2luZCI6InNvbmcifQ",
+          "entries": [
+            {
+              "source": "meting-kugou",
+              "sourceId": "2103867c8ec2843c07d26d8915e2db2a",
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxMDM4NjdjOGVjMjg0M2MwN2QyNmQ4OTE1ZTJkYjJhIiwia2luZCI6InNvbmcifQ",
+              "title": "Sweet Gene Vincent (Karaoke Version Originally Performed by Ian Dury & the Blockheads)",
+              "artists": [
+                "Singer's Best"
+              ],
+              "album": "Sweet Gene Vincent (Karaoke Version Originally Performed by Ian Dury & the Blockheads)",
+              "durationMs": 216000
+            }
+          ]
+        }
+      ],
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+      "playbackSource": "api-enhanced",
+      "audioIntegrity": {
+        "status": "full",
+        "reason": "provider_duration_and_non_trial",
+        "catalogDurationMs": 221053,
+        "resourceDurationMs": 221053,
+        "evidence": [
+          "catalog_duration",
+          "provider_resource_duration",
+          "provider_non_trial"
+        ]
+      },
+      "playback": {
+        "status": "success",
+        "reason": "success",
+        "totalBudgetMs": 10000,
+        "stageBudgetMs": 7000,
+        "elapsedMs": 427,
+        "remainingBudgetMs": 9573,
+        "attempts": [
+          {
+            "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+            "source": "api-enhanced",
+            "status": "full",
+            "matchReason": "selected_resource",
+            "reason": "provider_duration_and_non_trial",
+            "audioIntegrity": {
+              "status": "full",
+              "reason": "provider_duration_and_non_trial",
+              "catalogDurationMs": 221053,
+              "resourceDurationMs": 221053,
+              "evidence": [
+                "catalog_duration",
+                "provider_resource_duration",
+                "provider_non_trial"
+              ]
+            }
+          }
+        ],
+        "continuation": {
+          "stage": "bilibili",
+          "enabled": false,
+          "eligible": false,
+          "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9",
+          "candidates": [
+            "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NzM5MzEyNTIiLCJraW5kIjoic29uZyJ9"
+          ]
+        }
+      },
+      "lyrics": {
+        "state": {
+          "status": "available",
+          "timeline": "trusted",
+          "reason": "lrclib_catalog_metadata_match",
+          "catalogSource": "api-enhanced",
+          "fallback": {
+            "provider": "lrclib",
+            "implemented": true,
+            "eligible": true,
+            "attempted": true,
+            "status": "available",
+            "reason": "available"
+          },
+          "catalogStatus": "missing",
+          "retryable": false,
+          "textType": "synced"
+        },
+        "source": "lrclib",
+        "ref": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJscmNsaWIiLCJzb3VyY2VJZCI6IjM0NTc3Nzk5Iiwia2luZCI6InNvbmcifQ",
+        "characters": 1804
+      }
+    }
+  ],
+  "http": [
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 572
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 324
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 391
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/nav",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": -101,
+      "elapsedMs": 200
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/wbi/search/type",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "dataKeys": [
+        "v_voucher"
+      ],
+      "resultCount": null,
+      "elapsedMs": 99
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 578
+    },
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 574
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 225
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 214
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/nav",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": -101,
+      "elapsedMs": 110
+    },
+    {
+      "host": "api.bilibili.com",
+      "path": "/x/web-interface/wbi/search/type",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 0,
+      "dataKeys": [
+        "v_voucher"
+      ],
+      "resultCount": null,
+      "elapsedMs": 81
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 326
+    },
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 777
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 242
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 203
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 284
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "lrclib.net",
+      "path": "/api/get",
+      "method": "GET",
+      "httpStatus": 200,
+      "elapsedMs": 859
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 5
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 4
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 344
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 436
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 462
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 198
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 58
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 170
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 131
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 291
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 624
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 222
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "m701.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 71
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 242
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 183
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 76
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 172
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 79
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 327
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 614
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 233
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 192
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 318
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "m701.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 79
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 169
+    }
+  ],
+  "business": [
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 401,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 401,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 200,
+      "recovery": false,
+      "automatic": true,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 1022
+    },
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 200,
+      "recovery": false,
+      "automatic": true,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 633
+    },
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 200,
+      "recovery": false,
+      "automatic": true,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 448
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 200,
+      "recovery": true,
+      "automatic": false,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 662
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 206,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 876
+    },
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 200,
+      "recovery": false,
+      "automatic": true,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 225
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 1
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 404,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 0
+    },
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 200,
+      "recovery": true,
+      "automatic": false,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 427
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 206,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 818
+    },
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 200,
+      "recovery": false,
+      "automatic": true,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 428
+    }
+  ],
+  "browser": [
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 0.000737,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 6152,
+      "sinceHandoffMs": 488,
+      "capturedAt": "2026-10-06T06:46:09.000Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 0.132527,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 6332,
+      "sinceHandoffMs": 668,
+      "capturedAt": "2026-10-06T06:46:09.180Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 10.24059,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 16441,
+      "sinceHandoffMs": 10777,
+      "capturedAt": "2026-10-06T06:46:19.290Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 20.300385,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 26561,
+      "sinceHandoffMs": 20897,
+      "capturedAt": "2026-10-06T06:46:29.408Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 30.400773,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 36653,
+      "sinceHandoffMs": 30989,
+      "capturedAt": "2026-10-06T06:46:39.500Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 40.400397,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 46778,
+      "sinceHandoffMs": 41114,
+      "capturedAt": "2026-10-06T06:46:49.626Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 50.49603,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 56868,
+      "sinceHandoffMs": 51204,
+      "capturedAt": "2026-10-06T06:46:59.714Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 60.595534,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 66970,
+      "sinceHandoffMs": 61306,
+      "capturedAt": "2026-10-06T06:47:09.817Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 70.690433,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 77063,
+      "sinceHandoffMs": 71399,
+      "capturedAt": "2026-10-06T06:47:19.910Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 80.760455,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 87154,
+      "sinceHandoffMs": 81490,
+      "capturedAt": "2026-10-06T06:47:29.999Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 90.816352,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 97270,
+      "sinceHandoffMs": 91606,
+      "capturedAt": "2026-10-06T06:47:40.116Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 100.390928,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 107526,
+      "sinceHandoffMs": 101862,
+      "capturedAt": "2026-10-06T06:47:50.372Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 110.170237,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 117666,
+      "sinceHandoffMs": 112002,
+      "capturedAt": "2026-10-06T06:48:00.512Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 120.031472,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 127785,
+      "sinceHandoffMs": 122121,
+      "capturedAt": "2026-10-06T06:48:10.631Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 130.031094,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 137943,
+      "sinceHandoffMs": 132279,
+      "capturedAt": "2026-10-06T06:48:20.787Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 140.101206,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 148034,
+      "sinceHandoffMs": 142370,
+      "capturedAt": "2026-10-06T06:48:30.877Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 150.195285,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 158126,
+      "sinceHandoffMs": 152462,
+      "capturedAt": "2026-10-06T06:48:40.970Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 160.292415,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 168345,
+      "sinceHandoffMs": 162681,
+      "capturedAt": "2026-10-06T06:48:51.188Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "error",
+      "time": 163.060248,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 171112,
+      "sinceHandoffMs": 165448,
+      "capturedAt": "2026-10-06T06:48:53.957Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "pause",
+      "time": 163.060248,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 171113,
+      "sinceHandoffMs": 165449,
+      "capturedAt": "2026-10-06T06:48:53.962Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 163.060248,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 1,
+      "error": null,
+      "sinceSelectionMs": 171920,
+      "sinceHandoffMs": 166256,
+      "capturedAt": "2026-10-06T06:48:54.764Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 163.060554,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 172085,
+      "sinceHandoffMs": 166421,
+      "capturedAt": "2026-10-06T06:48:54.929Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 169.350152,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 178455,
+      "sinceHandoffMs": 172791,
+      "capturedAt": "2026-10-06T06:49:01.299Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 179.443211,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 188548,
+      "sinceHandoffMs": 182884,
+      "capturedAt": "2026-10-06T06:49:11.392Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 189.537848,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 198644,
+      "sinceHandoffMs": 192980,
+      "capturedAt": "2026-10-06T06:49:21.487Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 199.630279,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 208736,
+      "sinceHandoffMs": 203072,
+      "capturedAt": "2026-10-06T06:49:31.581Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 209.724539,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 218830,
+      "sinceHandoffMs": 213166,
+      "capturedAt": "2026-10-06T06:49:41.674Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 219.818617,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 228924,
+      "sinceHandoffMs": 223260,
+      "capturedAt": "2026-10-06T06:49:51.770Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "pause",
+      "time": 221.053333,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 230185,
+      "sinceHandoffMs": 224521,
+      "capturedAt": "2026-10-06T06:49:53.029Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "ended",
+      "time": 221.053333,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 230187,
+      "sinceHandoffMs": 224523,
+      "capturedAt": "2026-10-06T06:49:53.034Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 0.000199,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 2358,
+      "sinceHandoffMs": 138,
+      "capturedAt": "2026-10-06T06:50:29.184Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 0.183601,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 2583,
+      "sinceHandoffMs": 363,
+      "capturedAt": "2026-10-06T06:50:29.410Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 10.277273,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 12676,
+      "sinceHandoffMs": 10456,
+      "capturedAt": "2026-10-06T06:50:39.502Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 20.351773,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 22770,
+      "sinceHandoffMs": 20550,
+      "capturedAt": "2026-10-06T06:50:49.597Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 30.445594,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 32864,
+      "sinceHandoffMs": 30644,
+      "capturedAt": "2026-10-06T06:50:59.690Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 40.537791,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 42957,
+      "sinceHandoffMs": 40737,
+      "capturedAt": "2026-10-06T06:51:09.782Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 50.631786,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 53051,
+      "sinceHandoffMs": 50831,
+      "capturedAt": "2026-10-06T06:51:19.876Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 60.725522,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 63145,
+      "sinceHandoffMs": 60925,
+      "capturedAt": "2026-10-06T06:51:29.970Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 70.819071,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 73238,
+      "sinceHandoffMs": 71018,
+      "capturedAt": "2026-10-06T06:51:40.065Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 80.912917,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 83332,
+      "sinceHandoffMs": 81112,
+      "capturedAt": "2026-10-06T06:51:50.158Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 91.022074,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 93441,
+      "sinceHandoffMs": 91221,
+      "capturedAt": "2026-10-06T06:52:00.267Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 101.101901,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 103521,
+      "sinceHandoffMs": 101301,
+      "capturedAt": "2026-10-06T06:52:10.347Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 111.19364,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 113613,
+      "sinceHandoffMs": 111393,
+      "capturedAt": "2026-10-06T06:52:20.438Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 121.28823,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 123707,
+      "sinceHandoffMs": 121487,
+      "capturedAt": "2026-10-06T06:52:30.534Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 131.382958,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 133802,
+      "sinceHandoffMs": 131582,
+      "capturedAt": "2026-10-06T06:52:40.628Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 141.476049,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 143895,
+      "sinceHandoffMs": 141675,
+      "capturedAt": "2026-10-06T06:52:50.721Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 151.568615,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 153988,
+      "sinceHandoffMs": 151768,
+      "capturedAt": "2026-10-06T06:53:00.814Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 161.643259,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 164083,
+      "sinceHandoffMs": 161863,
+      "capturedAt": "2026-10-06T06:53:10.908Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "error",
+      "time": 163.060311,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 165501,
+      "sinceHandoffMs": 163281,
+      "capturedAt": "2026-10-06T06:53:12.329Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "pause",
+      "time": 163.060311,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": false,
+      "readyState": 4,
+      "error": 2,
+      "sinceSelectionMs": 165501,
+      "sinceHandoffMs": 163281,
+      "capturedAt": "2026-10-06T06:53:12.332Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 163.060311,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 1,
+      "error": null,
+      "sinceSelectionMs": 166080,
+      "sinceHandoffMs": 163860,
+      "capturedAt": "2026-10-06T06:53:12.907Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 163.060749,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 166176,
+      "sinceHandoffMs": 163956,
+      "capturedAt": "2026-10-06T06:53:13.001Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 170.988046,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 174145,
+      "sinceHandoffMs": 171925,
+      "capturedAt": "2026-10-06T06:53:20.970Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 181.081535,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 184238,
+      "sinceHandoffMs": 182018,
+      "capturedAt": "2026-10-06T06:53:31.064Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 191.17552,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 194332,
+      "sinceHandoffMs": 192112,
+      "capturedAt": "2026-10-06T06:53:41.158Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 201.250146,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 204426,
+      "sinceHandoffMs": 202206,
+      "capturedAt": "2026-10-06T06:53:51.251Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 211.343573,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 214520,
+      "sinceHandoffMs": 212300,
+      "capturedAt": "2026-10-06T06:54:01.346Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "pause",
+      "time": 221.053333,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 224258,
+      "sinceHandoffMs": 222038,
+      "capturedAt": "2026-10-06T06:54:11.085Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "ended",
+      "time": 221.053333,
+      "duration": 221.053333,
+      "paused": true,
+      "ended": true,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 224260,
+      "sinceHandoffMs": 222040,
+      "capturedAt": "2026-10-06T06:54:11.090Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "playing",
+      "time": 0.000342,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 4300,
+      "sinceHandoffMs": 151,
+      "capturedAt": "2026-10-06T06:55:43.651Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 0.168358,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 4509,
+      "sinceHandoffMs": 360,
+      "capturedAt": "2026-10-06T06:55:43.861Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 10.122335,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 14603,
+      "sinceHandoffMs": 10454,
+      "capturedAt": "2026-10-06T06:55:53.955Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 20.214986,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 24697,
+      "sinceHandoffMs": 20548,
+      "capturedAt": "2026-10-06T06:56:04.052Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 30.325759,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 34807,
+      "sinceHandoffMs": 30658,
+      "capturedAt": "2026-10-06T06:56:14.157Z"
+    },
+    {
+      "key": "lrclibSynced",
+      "event": "progress",
+      "time": 40.399002,
+      "duration": 221.053333,
+      "paused": false,
+      "ended": false,
+      "readyState": 4,
+      "error": null,
+      "sinceSelectionMs": 44900,
+      "sinceHandoffMs": 40751,
+      "capturedAt": "2026-10-06T06:56:24.251Z"
+    }
+  ],
+  "media": []
+}

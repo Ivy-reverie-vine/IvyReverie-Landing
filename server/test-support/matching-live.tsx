@@ -5,7 +5,8 @@ import { login } from '../../src/dreammusic/api'
 import NowPlaying from '../../src/dreammusic/NowPlaying'
 
 function Harness() {
-  const { dispatch, audioRef, playbackError } = usePlayer()
+  const { state, dispatch, audioRef, playbackError } = usePlayer()
+  const currentTrack = state.queue[state.currentIndex]
   const [record, setRecord] = useState<unknown>(null)
   const [busy, setBusy] = useState(false)
   const [status, setStatus] = useState('等待选择真实样本')
@@ -84,6 +85,15 @@ function Harness() {
     <button disabled={busy} onClick={() => select('full')}>播放固定完整样本</button>{' '}
     <button disabled={busy} onClick={() => select('trial')}>验证明确试听与 B 站回退</button>{' '}
     <button disabled={busy} onClick={() => select('lyrics')}>验证原平台歌词</button>{' '}
+    <button disabled={busy} onClick={() => select('lrclibPlain')}>验证真实 LRCLIB 文本</button>{' '}
+    <button disabled={busy} onClick={() => select('lrclibMissing')}>验证真实歌词未命中</button>{' '}
+    <button disabled={busy} onClick={() => select('lrclibSynced')}>验证真实 LRCLIB 同步</button>{' '}
+    <button disabled={busy || !currentTrack?.url} onClick={() => {
+      const audio = audioRef.current!
+      const expired = new URL(currentTrack!.url!, window.location.href)
+      expired.searchParams.set('reload', String(Date.now())) // Require HTTP, not a previously buffered/cache hit.
+      audio.src = expired.toString(); audio.load(); void audio.play().catch(() => {})
+    }}>重载已过期链接</button>{' '}
     <button onClick={() => dispatch({ type: 'PAUSE' })}>暂停</button>
     <p role="status">{playbackError || status}</p>
     {candidates.length > 0 && <section aria-label="手动候选"><h2>自动拒绝的具体候选</h2>
@@ -93,6 +103,9 @@ function Harness() {
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
       <section style={{ background: '#282331', color: 'white', minHeight: 400 }}><NowPlaying /></section>
       <section><h2>原生媒体状态</h2><pre id="native">{JSON.stringify(native, null, 2)}</pre>
+        <pre id="identity">{JSON.stringify({ name: currentTrack?.name, catalogRef: currentTrack?.catalogRef,
+          playbackRef: currentTrack?.playbackRef, playbackSource: currentTrack?.playbackSource,
+          lyricsRef: currentTrack?.lyricsRef, revision: currentTrack?.playbackRevision }, null, 2)}</pre>
         <h2>本轮真实解析证据</h2><pre id="record" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', maxHeight: 500, overflow: 'auto' }}>{JSON.stringify(record, null, 2)}</pre></section>
     </div>
   </main>

@@ -7,9 +7,31 @@ const credit = (description, names) => {
   return matches.length === 1 ? matches[0][1].trim() : ''
 }
 
-// Search ranking and uploader identity are never recording evidence. Require explicit
-// recording credits, the original catalog link, exact part title and strict duration.
+export function canCompareBilibiliAudio(catalog, entry) {
+  const text = [entry.resource.title, entry.resource.partTitle, entry.description].join(' ').replace(/\b(mv|music video)\b/gi, '')
+  const part = normalize(entry.resource.partTitle), title = normalize(catalog.title)
+  const artist = normalize((catalog.artists || []).join(' '))
+  return recordingEvidence(catalog).eligible && !unsafe.test(text) &&
+    [title, `${artist} - ${title}`, `${title} - ${artist}`].includes(part) &&
+    Math.abs(catalog.durationMs - entry.durationMs) <= Math.min(2000, catalog.durationMs * 0.01)
+}
+
+// Search ranking and uploader identity are never recording evidence. Require a
+// catalog-bound audio match, or explicit credits/provenance, plus part/duration checks.
 export function assessBilibiliRecording(catalog, entry) {
+  if (canCompareBilibiliAudio(catalog, entry) && entry.audioMatch?.matched === false) {
+    return { status: 'manual', reason: entry.audioMatch.reason || 'audio_content_unverified', evidence: {
+      policy: 'catalog-preview-chromaprint-v1', title: catalog.title, artists: catalog.artists, album: catalog.album.name,
+      catalogDurationMs: catalog.durationMs, partDurationMs: entry.durationMs,
+      catalogLink: false, originalAlbumAudio: false, audioMatch: entry.audioMatch } }
+  }
+  if (canCompareBilibiliAudio(catalog, entry) && entry.audioMatch?.matched === true &&
+    entry.audioMatch.policy === 'catalog-preview-chromaprint-v1' && entry.audioMatch.catalogRef === catalog.mediaRef) {
+    return { status: 'same_recording', reason: 'catalog_preview_audio_and_duration', evidence: {
+      policy: entry.audioMatch.policy, title: catalog.title, artists: catalog.artists, album: catalog.album.name,
+      catalogDurationMs: catalog.durationMs, partDurationMs: entry.durationMs,
+      catalogLink: false, originalAlbumAudio: false, audioMatch: entry.audioMatch } }
+  }
   const description = String(entry.description || '')
   const title = credit(description, '歌名|歌曲|曲名|track|song')
   const artist = credit(description, '歌手|演唱者|artist')

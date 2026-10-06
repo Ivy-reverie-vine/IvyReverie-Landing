@@ -1,5 +1,6 @@
 // @vitest-environment node
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest'
+import { spawnSync } from 'node:child_process'
 import { startIdentityGateway } from './test-support/identityGateway.js'
 import { createMediaRef, parseMediaRef } from './mediaContract.js'
 import { createServer } from 'node:http'
@@ -8,11 +9,27 @@ const bvid = 'BV1GJ411x7h7'
 const ref = cid => createMediaRef({ source: 'bilibili', sourceId: `${bvid}:${cid}` })
 const json = body => new Response(JSON.stringify(body), { headers: { 'Content-Type': 'application/json' } })
 let gateway, mode, calls, mediaServer, mediaBase, mediaCalls
+let completeAudio
+beforeAll(() => {
+  const generated = spawnSync('ffmpeg', ['-v', 'error', '-f', 'lavfi', '-i', 'sine=frequency=440:duration=90',
+    '-c:a', 'aac', '-b:a', '32k', '-f', 'mp4', '-movflags', 'frag_keyframe+empty_moov', 'pipe:1'],
+    { windowsHide: true, maxBuffer: 2 * 1024 * 1024 })
+  if (generated.status !== 0) throw new Error('Bilibili complete-media regression requires ffmpeg')
+  completeAudio = generated.stdout
+})
 beforeEach(async () => {
   gateway = await startIdentityGateway({ bilibili: true, mediaProxy: true })
   mode = 'ok'; calls = []; mediaCalls = []
   mediaServer = createServer((req, res) => {
     mediaCalls.push({ path: req.url, headers: req.headers })
+    if (mode === 'partial-body') {
+      const partial = completeAudio.subarray(0, Math.floor(completeAudio.length / 3))
+      res.writeHead(200, { 'Content-Type': 'audio/mp4', 'Content-Length': partial.length }); return res.end(partial)
+    }
+    if (['complete', 'complete206', 'complete200range'].includes(mode)) {
+      res.writeHead(mode === 'complete206' ? 206 : 200, { 'Content-Type': 'audio/mp4', 'Content-Length': completeAudio.length,
+        ...(mode !== 'complete' ? { 'Content-Range': `bytes 0-${completeAudio.length - 1}/${completeAudio.length}` } : {}) }); return res.end(completeAudio)
+    }
     if (req.url === '/redirect') { res.writeHead(302, { Location: '/audio.m4a' }); return res.end() }
     res.writeHead(mode === 'media-failure' ? 503 : 206, {
       'Content-Type': 'audio/mp4', 'Content-Range': 'bytes 0-3/400', 'Accept-Ranges': 'bytes',
@@ -44,6 +61,21 @@ const request = (path, mediaRef = ref(222)) => gateway.request('/dreammusic/api/
   new URLSearchParams({ mediaRef, id: '111', cid: '111' }), { headers: { 'X-API-Key': gateway.apiKey } })
 
 describe('specified Bilibili part through real HTTP/auth/orchestration/adapter/proxy', () => {
+  it('does not trust declared full duration when a complete HTTP response contains truncated audio', async () => {
+    mode = 'partial-body'
+    const result = await request('song/url/v1')
+    expect(result.body.audioIntegrity.status).not.toBe('full')
+    expect(result.body.audioIntegrity.inspection.decoded).toBe(false)
+  })
+  it.each(['complete', 'complete206', 'complete200range'])('proves the complete selected AAC by full HTTP read and decoding (%s) when provider trial markers are absent', async value => {
+    mode = value
+    const result = await request('song/url/v1')
+    expect(result.body.audioIntegrity).toMatchObject({ status: 'full', reason: 'decoded_complete_media' })
+    expect(result.body.audioIntegrity.evidence).toContain('complete_media_decode')
+    expect(result.body.audioIntegrity.inspection).toMatchObject({ bytes: completeAudio.length, decoded: true })
+    expect(mediaCalls.length).toBeGreaterThan(0)
+    expect(mediaCalls.every(call => !call.headers.range)).toBe(true)
+  })
   it('preserves the selected second part, uploader and unknown integrity; streams with server headers and Range', async () => {
     const detail = await request('song/detail')
     expect(detail.body.data[0]).toMatchObject({ source: 'bilibili', sourceId: `${bvid}:222`,
@@ -56,6 +88,7 @@ describe('specified Bilibili part through real HTTP/auth/orchestration/adapter/p
     expect(result.body.data[0]).toMatchObject({ resource: { page: 2, cid: '222' }, media: { delivery: 'dash_audio', codecs: 'mp4a.40.2' } })
     expect(JSON.stringify(result.body)).not.toContain('mediaTransport')
     expect(result.body.data[0].url).not.toContain(mediaBase)
+    mediaCalls.length = 0 // Full-inspection attempt is separate from the client's Range request.
     const media = await fetch(result.body.data[0].url, { headers: { Range: 'bytes=0-3', 'If-Range': '"media-etag"' } })
     expect(media.status).toBe(206)
     expect(media.headers.get('content-range')).toBe('bytes 0-3/400')

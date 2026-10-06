@@ -1,0 +1,4240 @@
+{
+  "capturedAt": "2026-10-06T07:08:05.000Z",
+  "boundary": "Native HAP requests through a transparent loopback relay; real providers, no response substitution.",
+  "requests": [
+    {
+      "capturedAt": "2026-10-06T07:08:33.954Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v2/search",
+      "httpStatus": 200,
+      "elapsedMs": 4096,
+      "code": 200,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok"
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok"
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok"
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MTg1Njc0OTkiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4MTg1Njc0OTkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1818567499",
+              "title": "Kevin",
+              "artists": [
+                "HOYO-MiX"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwNDczNjczNjIiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwNDczNjczNjIiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2047367362",
+              "title": "罗曼蒂克",
+              "artists": [
+                "Kevin罗凯文",
+                "Top Barry"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzYyOTc2MTEiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzYyOTc2MTEiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3376297611",
+              "title": "Lucky (雨声沉溺纯享版)",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxMTk3NjU4OTUiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxMTk3NjU4OTUiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2119765895",
+              "title": "雨夜街头",
+              "artists": [
+                "Mikey-18",
+                "Kevin罗凯文",
+                "豪一鸽"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MzI4NDA0MjQiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MzI4NDA0MjQiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1932840424",
+              "title": "Na Na Na",
+              "artists": [
+                "KeVin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNTQ5NDcxMzkiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNTQ5NDcxMzkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2154947139",
+              "title": "俯冲的灵魂",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjQwMDg3NjUwNyIsImtpbmQiOiJzb25nIn0",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjQwMDg3NjUwNyIsImtpbmQiOiJzb25nIn0",
+              "source": "api-enhanced",
+              "sourceId": "400876507",
+              "title": "Merry Go",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzYzMDAzMDAiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzYzMDAzMDAiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3376300300",
+              "title": "Lucky+Go Girl (Emo版)",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjQwMzcxMTY0MCIsImtpbmQiOiJzb25nIn0",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjQwMzcxMTY0MCIsImtpbmQiOiJzb25nIn0",
+              "source": "api-enhanced",
+              "sourceId": "403711640",
+              "title": "Monkeys Spinning Monkeys",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0MjM4OTk4ODkiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0MjM4OTk4ODkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3423899889",
+              "title": "白海",
+              "artists": [
+                "加木",
+                "Kevin罗凯文"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzODczNzMzMzgiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzODczNzMzMzgiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3387373338",
+              "title": "厘米",
+              "artists": [
+                "Kevin罗凯文"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NDA1NDUwMzgiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NDA1NDUwMzgiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2640545038",
+              "title": "我不在乎世界如何荒唐（JJ&Patti）",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMTQxMzY4MDIiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMTQxMzY4MDIiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3314136802",
+              "title": "Anyhow (纯享版)",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MTAzMzAwNjgiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2MTAzMzAwNjgiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2610330068",
+              "title": "一般的爱",
+              "artists": [
+                "Mikey-18",
+                "Kevin罗凯文"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMTQxNDA5MDgiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMTQxNDA5MDgiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3314140908",
+              "title": "Lost Control（国庆高速进行曲DJ）",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MzM2MzAzMjQiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MzM2MzAzMjQiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1933630324",
+              "title": "Faded And Tried",
+              "artists": [
+                "KeVin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzYyOTgwMzIiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzYyOTgwMzIiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3376298032",
+              "title": "lucky (卡点版)",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzYyOTMyNzMiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzYyOTMyNzMiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3376293273",
+              "title": "Lightning Moment奔跑旋律",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE2MTQzNzAiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE2MTQzNzAiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1614370",
+              "title": "Through the Arbor",
+              "artists": [
+                "Kevin Kern"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+              "source": "api-enhanced",
+              "sourceId": "33984241",
+              "title": "Scheming Weasel (faster version)",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwMzU3ODMwMzciLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwMzU3ODMwMzciLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2035783037",
+              "title": "旧枷锁",
+              "artists": [
+                "Kevin罗凯文",
+                "ICE Berry",
+                "Top Barry"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjM4Iiwia2luZCI6InNvbmcifQ",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjM4Iiwia2luZCI6InNvbmcifQ",
+              "source": "api-enhanced",
+              "sourceId": "33984238",
+              "title": "Investigations",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNDQ1ODk3NjkiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNDQ1ODk3NjkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2144589769",
+              "title": "无效呼叫",
+              "artists": [
+                "koos",
+                "Kevin罗凯文"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwMzM5MjI5NDAiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwMzM5MjI5NDAiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2033922940",
+              "title": "微醺停摆",
+              "artists": [
+                "Kevin罗凯文",
+                "张程皓"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg1OTI5ODIiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjEyOTg1OTI5ODIiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1298592982",
+              "title": "Local Forecast - Elevator",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMjAwNzA5ODEiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMjAwNzA5ODEiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3320070981",
+              "title": "虫洞",
+              "artists": [
+                "koos",
+                "Kevin罗凯文"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxMzk0MDA4NjkiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxMzk0MDA4NjkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2139400869",
+              "title": "绷住",
+              "artists": [
+                "Kevin罗凯文",
+                "翁杰Winjay"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjQwMDg3NTQ2MSIsImtpbmQiOiJzb25nIn0",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjQwMDg3NTQ2MSIsImtpbmQiOiJzb25nIn0",
+              "source": "api-enhanced",
+              "sourceId": "400875461",
+              "title": "Breaktime",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0MDYyMDE5NTUiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0MDYyMDE5NTUiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1406201955",
+              "title": "Plain Jane",
+              "artists": [
+                "KEVIN"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MzE2ODkzNDUiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MzE2ODkzNDUiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1931689345",
+              "title": "3LAU & Carly Paige - Touch Slowed 2.0",
+              "artists": [
+                "KeVin"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzc1Q5TmcxT0IwNEoiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzc1Q5TmcxT0IwNEoiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003sT9Ng1OB04J",
+              "title": "茫",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 227000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwc2JIN2kxaGpVT2YiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwc2JIN2kxaGpVT2YiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000sbH7i1hjUOf",
+              "title": "茫",
+              "artists": [
+                "严浩翔",
+                "贺峻霖"
+              ],
+              "durationMs": 210000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzdWd4NjUzakUyWGwiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzdWd4NjUzakUyWGwiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003ugx653jE2Xl",
+              "title": "지나갈 테니",
+              "artists": [
+                "EXO"
+              ],
+              "durationMs": 218000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0JkODUxVEk3YXgiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0JkODUxVEk3YXgiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001KBd851TI7ax",
+              "title": "微风吹",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxWmJyOU0zQ3k2bDkiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxWmJyOU0zQ3k2bDkiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001Zbr9M3Cy6l9",
+              "title": "爱我别爱他",
+              "artists": [
+                "董唧唧",
+                "李润祺"
+              ],
+              "durationMs": 236000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeFh1RW8xeXZqOHciLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeFh1RW8xeXZqOHciLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003xXuEo1yvj8w",
+              "title": "需一",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 208000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxNWhRVGEwSm9TbVIiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxNWhRVGEwSm9TbVIiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0015hQTa0JoSmR",
+              "title": "还是会靠近",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 195000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0RldTTU0yeGVvZFIiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0RldTTU0yeGVvZFIiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "004FWSMM2xeodR",
+              "title": "请杀死我的浪漫",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 272000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyV2ZNMFczZGVYS0ciLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyV2ZNMFczZGVYS0ciLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002WfM0W3deXKG",
+              "title": "外面下着雨",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 189000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwY1RpYlIya3R4aDUiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwY1RpYlIya3R4aDUiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000cTibR2ktxh5",
+              "title": "释怀是种不自然的呼吸",
+              "artists": [
+                "伯远"
+              ],
+              "durationMs": 253000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyRnVjOXAxUVBhTXAiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyRnVjOXAxUVBhTXAiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002Fuc9p1QPaMp",
+              "title": "자각몽",
+              "artists": [
+                "monogram"
+              ],
+              "durationMs": 218000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxek95SXQxRVhxeXgiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxek95SXQxRVhxeXgiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001zOyIt1EXqyx",
+              "title": "偏见先生",
+              "artists": [
+                "善宇"
+              ],
+              "durationMs": 193000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUVlPVzM0MkphVzgiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUVlPVzM0MkphVzgiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001QYOW342JaW8",
+              "title": "第一人称",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 241000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVm9RY0sxbGNWUUkiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVm9RY0sxbGNWUUkiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001VoQcK1lcVQI",
+              "title": "练习情人节",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 261000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAydW5BaDUwajQxa0oiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAydW5BaDUwajQxa0oiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002unAh50j41kJ",
+              "title": "如果我明天就会消失",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 211000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyM29UOTE0RmxLRk0iLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyM29UOTE0RmxLRk0iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0023oT914FlKFM",
+              "title": "ALL EYEZ ON KEVHIANO",
+              "artists": [
+                "KevinCee23"
+              ],
+              "durationMs": 113000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzenNCQUgzNExXOFAiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzenNCQUgzNExXOFAiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003zsBAH34LW8P",
+              "title": "晴天下的雨",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 250000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZ3JJU1owWmo4Y2ciLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwZ3JJU1owWmo4Y2ciLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000grISZ0Zj8cg",
+              "title": "My lady",
+              "artists": [
+                "Itemukev"
+              ],
+              "durationMs": 294000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUE5pdkcyelc2TkUiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzUE5pdkcyelc2TkUiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003PNivG2zW6NE",
+              "title": "明信片",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 245000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxczFxbmk0MDU2UngiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxczFxbmk0MDU2UngiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001s1qni4056Rx",
+              "title": "混蛋之歌",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 240000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzdXBSZWQzWXdyNVQiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzdXBSZWQzWXdyNVQiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003upRed3Ywr5T",
+              "title": "落叶知秋",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 167000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0WEZBTlIweTJQTjMiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0WEZBTlIweTJQTjMiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "004XFANR0y2PN3",
+              "title": "需一（键盘弹唱）",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 86000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZ1NPc2IweER4WVUiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZ1NPc2IweER4WVUiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003gSOsb0xDxYU",
+              "title": "Lucid Dream",
+              "artists": [
+                "Kevin",
+                "Ye Dam"
+              ],
+              "durationMs": 218000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVFJZRzczdUlGV0YiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVFJZRzczdUlGV0YiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001TRYG73uIFWF",
+              "title": "夏夜晚风",
+              "artists": [
+                "李润祺",
+                "黄唯铭"
+              ],
+              "durationMs": 170000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0QTA2WmsxVm1DNm4iLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0QTA2WmsxVm1DNm4iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "004A06Zk1VmC6n",
+              "title": "谜底",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 222000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNThvQzgwbENLdTQiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNThvQzgwbENLdTQiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "00258oC80lCKu4",
+              "title": "Through the Arbor",
+              "artists": [
+                "Kevin Kern"
+              ],
+              "durationMs": 225000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxbFdYdUgxUmRycnMiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxbFdYdUgxUmRycnMiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001lWXuH1Rdrrs",
+              "title": "需一",
+              "artists": [
+                "李润祺",
+                "董唧唧"
+              ],
+              "durationMs": 217000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyMXRIM2QxV3hkSEkiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyMXRIM2QxV3hkSEkiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0021tH3d1WxdHI",
+              "title": "Love Again",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 222000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAySWNjU00zRmFZc2oiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAySWNjU00zRmFZc2oiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002IccSM3FaYsj",
+              "title": "CRUSH",
+              "artists": [
+                "ICE杨长青"
+              ],
+              "durationMs": 144000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwb0Rjb0IycHRwOGsiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwb0Rjb0IycHRwOGsiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000oDcoB2ptp8k",
+              "title": "Made It",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 198000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMwY2IwOTQ3YjhkYjVhNWNhNjg3MDIzMDRiOTU2NmIxIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMwY2IwOTQ3YjhkYjVhNWNhNjg3MDIzMDRiOTU2NmIxIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "30cb0947b8db5a5ca68702304b9566b1",
+              "title": "Your Idol",
+              "artists": [
+                "Saja Boys",
+                "Andrew 崔",
+                "Neckwav",
+                "Danny Jung",
+                "KEVIN",
+                "samUIL Lee",
+                "KPop Demon Hunters Cast"
+              ],
+              "durationMs": 191000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjdlZWFjYzdkYjI4ZThlN2IyZDQxMmM5NTlmYjZiNTcwIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjdlZWFjYzdkYjI4ZThlN2IyZDQxMmM5NTlmYjZiNTcwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "7eeacc7db28e8e7b2d412c959fb6b570",
+              "title": "Soda Pop",
+              "artists": [
+                "Saja Boys",
+                "Andrew 崔",
+                "Neckwav",
+                "Danny Jung",
+                "KEVIN",
+                "samUIL Lee",
+                "KPop Demon Hunters Cast"
+              ],
+              "durationMs": 150000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQyMjcyNDRiODJmY2I3MWRkMjdiYmFmNGVmZGVjMjE5Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQyMjcyNDRiODJmY2I3MWRkMjdiYmFmNGVmZGVjMjE5Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "4227244b82fcb71dd27bbaf4efdec219",
+              "title": "Love Again",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 222000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEyYmY5Mjc4YjJmZTgwNzdlOWJmODQ2Nzc1ZmZkYjc3Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjEyYmY5Mjc4YjJmZTgwNzdlOWJmODQ2Nzc1ZmZkYjc3Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "12bf9278b2fe8077e9bf846775ffdb77",
+              "title": "Suspense opening",
+              "artists": [
+                "Mark.kevin"
+              ],
+              "durationMs": 123000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcxMjM1ZWRlNWQ1MWVhNGMyMjY3ODljNzA0Mjg2NjhlIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcxMjM1ZWRlNWQ1MWVhNGMyMjY3ODljNzA0Mjg2NjhlIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "71235ede5d51ea4c226789c70428668e",
+              "title": "Soda Pop",
+              "artists": [
+                "Saja Boys",
+                "Andrew 崔",
+                "Neckwav",
+                "Danny Chung",
+                "Kevin",
+                "samUIL Lee",
+                "KPop Demon Hunters Cast"
+              ],
+              "durationMs": 150000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3YzQ4YmE3OGQxNjQ0YmMxYjQ4NTFjMTk1YjU1YTUzIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE3YzQ4YmE3OGQxNjQ0YmMxYjQ4NTFjMTk1YjU1YTUzIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "a7c48ba78d1644bc1b4851c195b55a53",
+              "title": "Lucid Dream",
+              "artists": [
+                "Kevin",
+                "Ye Dam"
+              ],
+              "durationMs": 218000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijg0Yzk4NzljZDNmMjFjODQxZTc5YzNmNDM0YmE4OTJkIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijg0Yzk4NzljZDNmMjFjODQxZTc5YzNmNDM0YmE4OTJkIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "84c9879cd3f21c841e79c3f434ba892d",
+              "title": "PLAYERUNKNOWN'S BATTLEGROUNDS (耳机试听版)",
+              "artists": [
+                "Mark.kevin"
+              ],
+              "durationMs": 511000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjVkOTJhNDk0MGQ2ZDI2MjJjMmI2MWZhNjhhYTM0NDIwIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjVkOTJhNDk0MGQ2ZDI2MjJjMmI2MWZhNjhhYTM0NDIwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "5d92a4940d6d2622c2b61fa68aa34420",
+              "title": "Your Idol",
+              "artists": [
+                "Saja Boys",
+                "Andrew 崔",
+                "Neckwav",
+                "Danny Chung",
+                "Kevin",
+                "samUIL Lee",
+                "KPop Demon Hunters Cast"
+              ],
+              "durationMs": 191000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRmMjYxMDY3MTMzMGUwYzZjNTJhMzBlZDIyNDQwMTY1Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjRmMjYxMDY3MTMzMGUwYzZjNTJhMzBlZDIyNDQwMTY1Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "4f2610671330e0c6c52a30ed22440165",
+              "title": "Chemical Love",
+              "artists": [
+                "Kevin",
+                "Cherry"
+              ],
+              "durationMs": 348000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc3YzZkMDgyYzgxNDgzYTVjYzIyMmU0OGE0YzhhN2Y3Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc3YzZkMDgyYzgxNDgzYTVjYzIyMmU0OGE0YzhhN2Y3Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "77c6d082c81483a5cc222e48a4c8a7f7",
+              "title": "车载音乐劲爆DJ舞曲",
+              "artists": [
+                "电离蛙"
+              ],
+              "durationMs": 373000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQ1NTkzMDAyZWRlYmUxNTY0ZDk5ZWU0ZTU2OGY2Mzg4Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQ1NTkzMDAyZWRlYmUxNTY0ZDk5ZWU0ZTU2OGY2Mzg4Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "45593002edebe1564d99ee4e568f6388",
+              "title": "快乐东西",
+              "artists": [
+                "Mark.kevin"
+              ],
+              "durationMs": 117000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQ4M2IxNmE1Y2FlYTM4NDllNjNiZDI0NWU2NmVkZjE2Iiwia2luZCI6InNvbmcifQ",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQ4M2IxNmE1Y2FlYTM4NDllNjNiZDI0NWU2NmVkZjE2Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "483b16a5caea3849e63bd245e66edf16",
+              "title": "DAY1",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 174000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjU2Mjg5YTRmMThiYTQxZjYxN2Q4MjVjOTZhZTJiYjRmIiwia2luZCI6InNvbmcifQ",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjU2Mjg5YTRmMThiYTQxZjYxN2Q4MjVjOTZhZTJiYjRmIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "56289a4f18ba41f617d825c96ae2bb4f",
+              "title": "可惜我没有遇到我的董小姐",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 193000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImRhNDc5OWE1ODQ0NWM0MDQxODFhMWRjMmMyMzBiNmVjIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImRhNDc5OWE1ODQ0NWM0MDQxODFhMWRjMmMyMzBiNmVjIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "da4799a58445c404181a1dc2c230b6ec",
+              "title": "Kevin (Explicit)",
+              "artists": [
+                "NBASuperfan71"
+              ],
+              "durationMs": 96000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjJlNzlhZTI3NTMwOGU4MmM3ODAwNmU3MmI4OThjZGYwIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjJlNzlhZTI3NTMwOGU4MmM3ODAwNmU3MmI4OThjZGYwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "2e79ae275308e82c78006e72b898cdf0",
+              "title": "Kevin",
+              "artists": [
+                "Krisz2008"
+              ],
+              "durationMs": 266000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImYwM2YzZjAzMzRmMDc1NzY5YjExYmNhY2RmY2Q4MzcwIiwia2luZCI6InNvbmcifQ",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImYwM2YzZjAzMzRmMDc1NzY5YjExYmNhY2RmY2Q4MzcwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "f03f3f0334f075769b11bcacdfcd8370",
+              "title": "乱象",
+              "artists": [
+                "剑走",
+                "Kevin"
+              ],
+              "durationMs": 239000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjNhNDRjNjkyNmZmZTNiOTU4YzFlYjMwZDUyYjY0YjM5Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjNhNDRjNjkyNmZmZTNiOTU4YzFlYjMwZDUyYjY0YjM5Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "3a44c6926ffe3b958c1eb30d52b64b39",
+              "title": "Summer- (钢琴曲——)",
+              "artists": [
+                "Mark.kevin"
+              ],
+              "durationMs": 152000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjAyZjFkM2M4NzE4ZGE1Yzk0MGRhOTdiYzI3YWY5ZGI2Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjAyZjFkM2M4NzE4ZGE1Yzk0MGRhOTdiYzI3YWY5ZGI2Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "02f1d3c8718da5c940da97bc27af9db6",
+              "title": "NO ESCAPE (MV版)",
+              "artists": [
+                "Kevin"
+              ],
+              "durationMs": 128000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMxZDU0MDNlNmI2MjM2NDg1ZGRhNTI5MjgwNDlkZGZmIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMxZDU0MDNlNmI2MjM2NDg1ZGRhNTI5MjgwNDlkZGZmIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "31d5403e6b6236485dda52928049ddff",
+              "title": "kevin",
+              "artists": [
+                "ilyhiryu"
+              ],
+              "durationMs": 174000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjE4NGZlMmYzNGQwNDA3OWRhMWNiNjkxMmNmZDgzNzFjIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjE4NGZlMmYzNGQwNDA3OWRhMWNiNjkxMmNmZDgzNzFjIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "184fe2f34d04079da1cb6912cfd8371c",
+              "title": "Gai-T.C.W & 沧海一声笑 (B.Z Brothers/kevin Remix)",
+              "artists": [
+                "B.Z Brothers",
+                "kevin"
+              ],
+              "durationMs": 345000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjlkMTQ0MWZmZmUyMGM4ZDY1MzI3MjBlZWI0ZDRlNjg5Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjlkMTQ0MWZmZmUyMGM4ZDY1MzI3MjBlZWI0ZDRlNjg5Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "9d1441fffe20c8d6532720eeb4d4e689",
+              "title": "Kevin (Skit)(Explicit)",
+              "artists": [
+                "Joyner Lucas"
+              ],
+              "durationMs": 54000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcwYmQwYTRiZDZmYjU2YjhhM2YyMGYzNDdkMGIzM2I2Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcwYmQwYTRiZDZmYjU2YjhhM2YyMGYzNDdkMGIzM2I2Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "70bd0a4bd6fb56b8a3f20f347d0b33b6",
+              "title": "KEVIN",
+              "artists": [
+                "Chris Loys"
+              ],
+              "durationMs": 186000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImJjZGM0OWJmOTBjYWZjMmM1NmJkNWJiM2ZjZGRlOTBmIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImJjZGM0OWJmOTBjYWZjMmM1NmJkNWJiM2ZjZGRlOTBmIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "bcdc49bf90cafc2c56bd5bb3fcdde90f",
+              "title": "kévin",
+              "artists": [
+                "abdelpoudre"
+              ],
+              "durationMs": 200000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImIyMTVjMmMwNmM2N2RiYTMwZjkxNmI5ZTIzMDA0OWEzIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImIyMTVjMmMwNmM2N2RiYTMwZjkxNmI5ZTIzMDA0OWEzIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "b215c2c06c67dba30f916b9e230049a3",
+              "title": "Kevin (Boast No More)",
+              "artists": [
+                "Vargholt"
+              ],
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjZmZmQ1ZTkxYzgwZjlmYzZlMGE5NmVkMWFmMzRiNzFmIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjZmZmQ1ZTkxYzgwZjlmYzZlMGE5NmVkMWFmMzRiNzFmIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "6ffd5e91c80f9fc6e0a96ed1af34b71f",
+              "title": "Kevin",
+              "artists": [
+                "Sean Taylor"
+              ],
+              "durationMs": 312000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjU2MGNjYjZiMGM3OThjN2E5NWE4ZGUxMjg1YzU1NWI5Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjU2MGNjYjZiMGM3OThjN2E5NWE4ZGUxMjg1YzU1NWI5Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "560ccb6b0c798c7a95a8de1285c555b9",
+              "title": "Kevin (Explicit)",
+              "artists": [
+                "Jackass",
+                "LInguarius",
+                "meet me after class"
+              ],
+              "durationMs": 133000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcyZTg2NGY2YzQyZjA0ZDFmOWVhY2U1MjBkNmEwYTA2Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcyZTg2NGY2YzQyZjA0ZDFmOWVhY2U1MjBkNmEwYTA2Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "72e864f6c42f04d1f9eace520d6a0a06",
+              "title": "Kevin",
+              "artists": [
+                "Edison Escorsa"
+              ],
+              "durationMs": 69000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImM0ZTJmNWM4ZjczOThhYmM0NGQ0NDExMGNiNzAzYTFhIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImM0ZTJmNWM4ZjczOThhYmM0NGQ0NDExMGNiNzAzYTFhIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "c4e2f5c8f7398abc44d44110cb703a1a",
+              "title": "Kevin",
+              "artists": [
+                "昨夜派对（L.N Party）"
+              ],
+              "durationMs": 168000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc3MTIxZmFjZjcwZTM4NWUzZmE2ZDk5ZWU2N2Y0MjNjIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc3MTIxZmFjZjcwZTM4NWUzZmE2ZDk5ZWU2N2Y0MjNjIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "77121facf70e385e3fa6d99ee67f423c",
+              "title": "Kevin",
+              "artists": [
+                "Ghostown"
+              ],
+              "durationMs": 207000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc2Yzc0ZThkNDI0ZmM3ZWI3OGY3MzZjYmI4YWZiNTliIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc2Yzc0ZThkNDI0ZmM3ZWI3OGY3MzZjYmI4YWZiNTliIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "76c74e8d424fc7eb78f736cbb8afb59b",
+              "title": "Kevin",
+              "artists": [
+                "Lovasnay"
+              ],
+              "durationMs": 80000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-10-06T07:08:44.605Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v2/search",
+      "httpStatus": 200,
+      "elapsedMs": 2331,
+      "code": 200,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok"
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok"
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok"
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+              "source": "api-enhanced",
+              "sourceId": "33984241",
+              "title": "Scheming Weasel (faster version)",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQyIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQyIiwia2luZCI6InNvbmcifQ",
+              "source": "api-enhanced",
+              "sourceId": "33984242",
+              "title": "Scheming Weasel (slower version)",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MjM1NTE3NzAiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5MjM1NTE3NzAiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1923551770",
+              "title": "Scheming Weasel (Peukie Remix)",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNDg2ODAzODMiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNDg2ODAzODMiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2148680383",
+              "title": "Scheming Weasel (Faster)",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxMzc3ODcwMDYiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxMzc3ODcwMDYiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2137787006",
+              "title": "Scheming Weasel (slower version)",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzN3NHaDkxc21FcmQiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzN3NHaDkxc21FcmQiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0037sGh91smErd",
+              "title": "Scheming Weasel",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 89000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyWlBQcXQyMk5vTFYiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyWlBQcXQyMk5vTFYiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002ZPPqt22NoLV",
+              "title": "Scheming Weasel",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 110000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAydWRvb0MwalZkRXMiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAydWRvb0MwalZkRXMiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002udooC0jVdEs",
+              "title": "Scheming Weasel (Faster)",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 89000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUnprNnAwQ0NDYUUiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUnprNnAwQ0NDYUUiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001Rzk6p0CCCaE",
+              "title": "Scheming Weasel",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 59000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0NTVZdUkxNHdFT2ciLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0NTVZdUkxNHdFT2ciLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "00455YuI14wEOg",
+              "title": "Scheming Weasel",
+              "artists": [
+                "Kevin MacLeod",
+                "Peukie"
+              ],
+              "durationMs": 62000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzc1Q5TmcxT0IwNEoiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzc1Q5TmcxT0IwNEoiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003sT9Ng1OB04J",
+              "title": "茫",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 227000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwTWh1SXAzZmRSRGEiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwTWh1SXAzZmRSRGEiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000MhuIp3fdRDa",
+              "title": "如愿",
+              "artists": [
+                "杨丞琳",
+                "胡宇桐",
+                "李润祺"
+              ],
+              "durationMs": 268000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxZFFUMFM0VWhDUGIiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxZFFUMFM0VWhDUGIiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001dQT0S4UhCPb",
+              "title": "Your Idol",
+              "artists": [
+                "Saja Boys",
+                "앤드류 최",
+                "Neckwav",
+                "대니 정",
+                "케빈",
+                "samUIL Lee",
+                "KPop Demon Hunters Cast"
+              ],
+              "durationMs": 191000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNnRyMXkwdEl6cDYiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNnRyMXkwdEl6cDYiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0026tr1y0tIzp6",
+              "title": "川流不息",
+              "artists": [
+                "吴陌川"
+              ],
+              "durationMs": 150000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0JkODUxVEk3YXgiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxS0JkODUxVEk3YXgiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001KBd851TI7ax",
+              "title": "微风吹",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 212000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyZ0lsUVIzampOYm4iLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyZ0lsUVIzampOYm4iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002gIlQR3jjNbn",
+              "title": "爱要坦荡荡",
+              "artists": [
+                "张震岳",
+                "品冠",
+                "焦迈奇",
+                "胡宇桐",
+                "李润祺"
+              ],
+              "durationMs": 246000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwcGNPV1AwTU1CM2UiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwcGNPV1AwTU1CM2UiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000pcOWP0MMB3e",
+              "title": "Soda Pop",
+              "artists": [
+                "Saja Boys",
+                "앤드류 최",
+                "Neckwav",
+                "대니 정",
+                "케빈",
+                "samUIL Lee",
+                "KPop Demon Hunters Cast"
+              ],
+              "durationMs": 150000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeFh1RW8xeXZqOHciLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzeFh1RW8xeXZqOHciLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003xXuEo1yvj8w",
+              "title": "需一",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 208000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxWmJyOU0zQ3k2bDkiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxWmJyOU0zQ3k2bDkiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001Zbr9M3Cy6l9",
+              "title": "爱我别爱他",
+              "artists": [
+                "董唧唧",
+                "李润祺"
+              ],
+              "durationMs": 236000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0RldTTU0yeGVvZFIiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0RldTTU0yeGVvZFIiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "004FWSMM2xeodR",
+              "title": "请杀死我的浪漫",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 272000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxNWhRVGEwSm9TbVIiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxNWhRVGEwSm9TbVIiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0015hQTa0JoSmR",
+              "title": "还是会靠近",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 195000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyV2ZNMFczZGVYS0ciLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyV2ZNMFczZGVYS0ciLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002WfM0W3deXKG",
+              "title": "外面下着雨",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 189000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNThvQzgwbENLdTQiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNThvQzgwbENLdTQiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "00258oC80lCKu4",
+              "title": "Through the Arbor",
+              "artists": [
+                "Kevin Kern"
+              ],
+              "durationMs": 225000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUVlPVzM0MkphVzgiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxUVlPVzM0MkphVzgiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001QYOW342JaW8",
+              "title": "第一人称",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 241000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVm9RY0sxbGNWUUkiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVm9RY0sxbGNWUUkiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001VoQcK1lcVQI",
+              "title": "练习情人节",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 261000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0MWxvRTEzT3R2MjAiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0MWxvRTEzT3R2MjAiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0041loE13Otv20",
+              "title": "树洞有光",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 237000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAydW5BaDUwajQxa0oiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAydW5BaDUwajQxa0oiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002unAh50j41kJ",
+              "title": "如果我明天就会消失",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 211000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyUHdwZFMxMUk0c0siLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyUHdwZFMxMUk0c0siLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002PwpdS11I4sK",
+              "title": "绿色阁",
+              "artists": [
+                "Kevin Kern"
+              ],
+              "durationMs": 286000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzdXBSZWQzWXdyNVQiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzdXBSZWQzWXdyNVQiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003upRed3Ywr5T",
+              "title": "落叶知秋",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 167000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZ1NPc2IweER4WVUiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzZ1NPc2IweER4WVUiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003gSOsb0xDxYU",
+              "title": "Lucid Dream",
+              "artists": [
+                "Kevin",
+                "Ye Dam"
+              ],
+              "durationMs": 218000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyY2JHb1gyODZvVGkiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyY2JHb1gyODZvVGkiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002cbGoX286oTi",
+              "title": "Scheming Weasel",
+              "artists": [
+                "Kandré Joe",
+                "Abdelmoujib Ftouh"
+              ],
+              "durationMs": 163000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0WEZBTlIweTJQTjMiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0WEZBTlIweTJQTjMiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "004XFANR0y2PN3",
+              "title": "需一（键盘弹唱）",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 86000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwc3VvNVEyS2tUbU8iLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwc3VvNVEyS2tUbU8iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000suo5Q2KkTmO",
+              "title": "Scheming Weasel",
+              "artists": [
+                "Club Unicorn"
+              ],
+              "durationMs": 59000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVFJZRzczdUlGV0YiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxVFJZRzczdUlGV0YiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001TRYG73uIFWF",
+              "title": "夏夜晚风",
+              "artists": [
+                "李润祺",
+                "黄唯铭"
+              ],
+              "durationMs": 170000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0QTA2WmsxVm1DNm4iLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0QTA2WmsxVm1DNm4iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "004A06Zk1VmC6n",
+              "title": "谜底",
+              "artists": [
+                "李润祺"
+              ],
+              "durationMs": 222000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ4NmMxODFjNDU0ZDA1MWU0NTMxMGYzMGZhNTkwYThiIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ4NmMxODFjNDU0ZDA1MWU0NTMxMGYzMGZhNTkwYThiIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "d86c181c454d051e45310f30fa590a8b",
+              "title": "Weasels (Explicit)",
+              "artists": [
+                "Creeztos.AI"
+              ],
+              "durationMs": 184000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM1NDI4MDhlOWNjNmFmZjMyYjJkODI4MWEwYjFkYTIwIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM1NDI4MDhlOWNjNmFmZjMyYjJkODI4MWEwYjFkYTIwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "3542808e9cc6aff32b2d8281a0b1da20",
+              "title": "Weasel (feat. Teyah)",
+              "artists": [
+                "Sled Dogs",
+                "Teyah"
+              ],
+              "durationMs": 229000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2YjY4Yjg2Y2YwNzFmMmE4MzY0MTYzOTFjZjEwMmRhIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2YjY4Yjg2Y2YwNzFmMmE4MzY0MTYzOTFjZjEwMmRhIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "d6b68b86cf071f2a836416391cf102da",
+              "title": "got me fucked up (Explicit)",
+              "artists": [
+                "Crip Daniels"
+              ],
+              "durationMs": 110000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjE2ZmE4ZDY0MmRiZTZmODdkMTNlM2I0ODA3OTFhNjNlIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjE2ZmE4ZDY0MmRiZTZmODdkMTNlM2I0ODA3OTFhNjNlIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "16fa8d642dbe6f87d13e3b480791a63e",
+              "title": "No Clothes (feat. WHXISA)(Explicit)",
+              "artists": [
+                "Crip Daniels",
+                "Boarism",
+                "WHXISA"
+              ],
+              "durationMs": 80000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjNlMjA2MGY4YjFiNWRkMmU3Y2U0NWFlMjYzMTE1M2NjIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjNlMjA2MGY4YjFiNWRkMmU3Y2U0NWFlMjYzMTE1M2NjIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "3e2060f8b1b5dd2e7ce45ae2631153cc",
+              "title": "Weasels",
+              "artists": [
+                "Bravinchy"
+              ],
+              "durationMs": 120000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjY3ZmVkM2RkOTY4NjU5ZjA4MGJlNmYwYWUwMWEwYTdlIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjY3ZmVkM2RkOTY4NjU5ZjA4MGJlNmYwYWUwMWEwYTdlIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "67fed3dd968659f080be6f0ae01a0a7e",
+              "title": "Weasels",
+              "artists": [
+                "Dark Hootenanny"
+              ],
+              "durationMs": 42000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM4MTVkMjQ3N2QzNzcxYjAzNzhkY2YzODIwMTcxYzA4Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjM4MTVkMjQ3N2QzNzcxYjAzNzhkY2YzODIwMTcxYzA4Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "3815d2477d3771b0378dcf3820171c08",
+              "title": "weasel",
+              "artists": [
+                "Della Dove"
+              ],
+              "durationMs": 156000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjhhOWQwMTU4YzNkMWJlZDlhZjZmNDExNGJmMjRiMTQyIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjhhOWQwMTU4YzNkMWJlZDlhZjZmNDExNGJmMjRiMTQyIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "8a9d0158c3d1bed9af6f4114bf24b142",
+              "title": "Weasel",
+              "artists": [
+                "Percie Zin"
+              ],
+              "durationMs": 216000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImUxOTA4Y2ZkNTU4OTM4YmVmMDczMTZiYWJhOGRiYTg5Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImUxOTA4Y2ZkNTU4OTM4YmVmMDczMTZiYWJhOGRiYTg5Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "e1908cfd558938bef07316baba8dba89",
+              "title": "Weasel",
+              "artists": [
+                "Face First"
+              ],
+              "durationMs": 257000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIzNmU5NTVjNDZiOWI4ZDVjMWY2N2I4ZTIwZTM4ZWMwIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIzNmU5NTVjNDZiOWI4ZDVjMWY2N2I4ZTIwZTM4ZWMwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "236e955c46b9b8d5c1f67b8e20e38ec0",
+              "title": "Weasel",
+              "artists": [
+                "Dread Captain James"
+              ],
+              "durationMs": 153000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImIzOTRjOTZiOGQzMGMzYzUyMzM1ZTc0NGExMWY5OTM1Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImIzOTRjOTZiOGQzMGMzYzUyMzM1ZTc0NGExMWY5OTM1Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "b394c96b8d30c3c52335e744a11f9935",
+              "title": "Criptonite (feat. WHXISA & Yung Stiff Rick)(Explicit)",
+              "artists": [
+                "Crip Daniels",
+                "WHXISA",
+                "Yung Stiff Rick"
+              ],
+              "durationMs": 169000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjdmNzZiOTFkNDU2MWM2Nzk3NjRjODgzMmQ1ZDk4MmEwIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjdmNzZiOTFkNDU2MWM2Nzk3NjRjODgzMmQ1ZDk4MmEwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "7f76b91d4561c679764c8832d5d982a0",
+              "title": "Rugratz (feat. Yung Stiff Rick)(Explicit)",
+              "artists": [
+                "Crip Daniels",
+                "Yung Stiff Rick"
+              ],
+              "durationMs": 149000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcwMGFiOTg2N2YwYjRkZDMxMjBhOWQ0MGZlNzViYjYwIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcwMGFiOTg2N2YwYjRkZDMxMjBhOWQ0MGZlNzViYjYwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "700ab9867f0b4dd3120a9d40fe75bb60",
+              "title": "white boy cypher (feat. Boarism & WHXISA)(Explicit)",
+              "artists": [
+                "Crip Daniels",
+                "Boarism",
+                "WHXISA"
+              ],
+              "durationMs": 134000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImI5MDhjYWM2YTE1NzdlMDJhNWNkNzkzMDA1NzQ0NzhhIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImI5MDhjYWM2YTE1NzdlMDJhNWNkNzkzMDA1NzQ0NzhhIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "b908cac6a1577e02a5cd79300574478a",
+              "title": "she like persona music (feat. Tezzon & WHXISA)(Explicit)",
+              "artists": [
+                "Crip Daniels",
+                "Tezzon",
+                "WHXISA"
+              ],
+              "durationMs": 138000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxZTdlNmVmZjQzM2YxMDUyNDZhYTRlNjFkYTRkZGRiIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIxZTdlNmVmZjQzM2YxMDUyNDZhYTRlNjFkYTRkZGRiIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "21e7e6eff433f105246aa4e61da4dddb",
+              "title": "weasel (feat. Ushinatta)(Explicit)",
+              "artists": [
+                "Slawtr",
+                "Ushinatta"
+              ],
+              "durationMs": 115000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc5OGQwNTVhM2FjNTM1YzkwM2IyOGVjMDI2YzE2NTE0Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc5OGQwNTVhM2FjNTM1YzkwM2IyOGVjMDI2YzE2NTE0Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "798d055a3ac535c903b28ec026c16514",
+              "title": "weasel",
+              "artists": [
+                "cryfae"
+              ],
+              "durationMs": 213000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE4MGI3ZjJiNmE5NmM5MjllNmM2OGRjNDVkMzYzZjJmIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImE4MGI3ZjJiNmE5NmM5MjllNmM2OGRjNDVkMzYzZjJmIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "a80b7f2b6a96c929e6c68dc45d363f2f",
+              "title": "Weasel (feat. WHXISA)(Explicit)",
+              "artists": [
+                "Crip Daniels",
+                "WHXISA"
+              ],
+              "durationMs": 127000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIzNzgxNDczYmM2NzE4NTk4NjE4YTg5NmY3MGU4MjE0Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIzNzgxNDczYmM2NzE4NTk4NjE4YTg5NmY3MGU4MjE0Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "23781473bc6718598618a896f70e8214",
+              "title": "Weasel (Explicit)",
+              "artists": [
+                "Nip Nippler",
+                "LocalNigs"
+              ],
+              "durationMs": 66000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijg5N2M1ZmY0N2E4MzBiOGVlNTllY2E3ZGNkMzY4ZmQ5Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijg5N2M1ZmY0N2E4MzBiOGVlNTllY2E3ZGNkMzY4ZmQ5Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "897c5ff47a830b8ee59eca7dcd368fd9",
+              "title": "Weasel (Explicit)",
+              "artists": [
+                "icmdex"
+              ],
+              "durationMs": 95000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMxMzU0M2VkY2VkYWE3MzlkYzRjOGQ3MjYwYTcyNWVkIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjMxMzU0M2VkY2VkYWE3MzlkYzRjOGQ3MjYwYTcyNWVkIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "313543edcedaa739dc4c8d7260a725ed",
+              "title": "WEASEL (Explicit)",
+              "artists": [
+                "I.R.A.T.E. Infinite Rebellion Against The Establishment"
+              ],
+              "durationMs": 224000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc4NDM3NWRhZjZhYWRhM2YwMjgxNDJiMzM4MTkyNDlmIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc4NDM3NWRhZjZhYWRhM2YwMjgxNDJiMzM4MTkyNDlmIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "784375daf6aada3f028142b33819249f",
+              "title": "Weasel (Explicit)",
+              "artists": [
+                "Procta Gein"
+              ],
+              "durationMs": 209000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjU5MDQwYjkyZjVkYzUxMTZjMmNkMTU5NDMyODhmOWQ5Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjU5MDQwYjkyZjVkYzUxMTZjMmNkMTU5NDMyODhmOWQ5Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "59040b92f5dc5116c2cd15943288f9d9",
+              "title": "Glass Edges (Weasel)",
+              "artists": [
+                "PNW Nate"
+              ],
+              "durationMs": 191000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImZjNDYxYmUxYzVjYzc4MmE3Nzg5MjFhOTE0ZWZhZTQ1Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImZjNDYxYmUxYzVjYzc4MmE3Nzg5MjFhOTE0ZWZhZTQ1Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "fc461be1c5cc782a778921a914efae45",
+              "title": "Weasel",
+              "artists": [
+                "Driller"
+              ],
+              "durationMs": 114000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImM0ZDFjZDRmZDA4NjZiZjk4NWZlMGUwZTkxN2I3NWVmIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImM0ZDFjZDRmZDA4NjZiZjk4NWZlMGUwZTkxN2I3NWVmIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "c4d1cd4fd0866bf985fe0e0e917b75ef",
+              "title": "Up, Down, All Around",
+              "artists": [
+                "NewRinaldi"
+              ],
+              "durationMs": 157000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImJjYjYwYmMxMDhhMGIyYWFkMzY1NDM1MDJmYTVkNTRjIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImJjYjYwYmMxMDhhMGIyYWFkMzY1NDM1MDJmYTVkNTRjIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "bcb60bc108a0b2aad36543502fa5d54c",
+              "title": "Not done now",
+              "artists": [
+                "Brandino"
+              ],
+              "durationMs": 252000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEzNjZiYzlhOTFjZjc3NjI0YTZlYzc0NTJlY2VmZGQwIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImEzNjZiYzlhOTFjZjc3NjI0YTZlYzc0NTJlY2VmZGQwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "a366bc9a91cf77624a6ec7452ecefdd0",
+              "title": "Scheming Weasel (Faster)",
+              "artists": [
+                "Kevin MacLeod"
+              ],
+              "durationMs": 89000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIwZDY5MWRiMWVkNTM5MmZlNDZhY2ZmNDY4MWI0ODZlIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjIwZDY5MWRiMWVkNTM5MmZlNDZhY2ZmNDY4MWI0ODZlIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "20d691db1ed5392fe46acff4681b486e",
+              "title": "When I Tell You (Pop Go Da Weasel)(Explicit)",
+              "artists": [
+                "Kyng Stárr Royàl"
+              ],
+              "durationMs": 150000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjExNWZkNTU0MzViYjVlNDFlOTBjZGY1YjRmNTI0NjQxIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjExNWZkNTU0MzViYjVlNDFlOTBjZGY1YjRmNTI0NjQxIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "115fd55435bb5e41e90cdf5b4f524641",
+              "title": "Pop Goes The Weasel",
+              "artists": [
+                "EFV REALM"
+              ],
+              "durationMs": 202000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImZjYmVhZTI1ZDFiN2ZhM2FhMTRkYjhmYjU3MGJjYmEyIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImZjYmVhZTI1ZDFiN2ZhM2FhMTRkYjhmYjU3MGJjYmEyIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "fcbeae25d1b7fa3aa14db8fb570bcba2",
+              "title": "Don Weasel",
+              "artists": [
+                "Christian Music"
+              ],
+              "durationMs": 185000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjJkODgxMjk4ZGUxM2Q4MjFjZWQxNjJmNmYwOWRmNjQzIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjJkODgxMjk4ZGUxM2Q4MjFjZWQxNjJmNmYwOWRmNjQzIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "2d881298de13d821ced162f6f09df643",
+              "title": "Pop Goes the Weasel (Burp Version)",
+              "artists": [
+                "Burp Box"
+              ],
+              "durationMs": 45000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-10-06T07:09:02.415Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v2/song/url/v1",
+      "httpStatus": 200,
+      "elapsedMs": 570,
+      "code": 200,
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "lyricsRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "playbackSource": "api-enhanced",
+      "lyricsSource": "api-enhanced",
+      "audioIntegrity": {
+        "status": "full",
+        "reason": "provider_duration_and_non_trial",
+        "evidence": [
+          "catalog_duration",
+          "provider_resource_duration",
+          "provider_non_trial"
+        ]
+      },
+      "playback": {
+        "status": "success",
+        "reason": "success",
+        "elapsedMs": 559
+      }
+    },
+    {
+      "capturedAt": "2026-10-06T07:09:02.413Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v2/lyric/new",
+      "httpStatus": 200,
+      "elapsedMs": 585,
+      "code": 200,
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "lyricsRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "lyricsSource": "",
+      "lyrics": {
+        "status": "missing",
+        "timeline": "none",
+        "reason": "insufficient_catalog_metadata",
+        "catalogSource": "api-enhanced",
+        "fallback": {
+          "provider": "lrclib",
+          "implemented": true,
+          "eligible": true,
+          "attempted": true,
+          "status": "missing",
+          "reason": "insufficient_catalog_metadata"
+        },
+        "catalogStatus": "missing",
+        "retryable": false
+      },
+      "lyricCharacters": 0
+    },
+    {
+      "capturedAt": "2026-10-06T07:09:03.420Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v2/song/detail",
+      "httpStatus": 200,
+      "elapsedMs": 167,
+      "code": 200
+    },
+    {
+      "capturedAt": "2026-10-06T07:09:04.698Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v2/lyric/new",
+      "httpStatus": 200,
+      "elapsedMs": 9,
+      "code": 200,
+      "catalogRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "playbackRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "lyricsRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTg0MjQxIiwia2luZCI6InNvbmcifQ",
+      "lyricsSource": "",
+      "lyrics": {
+        "status": "missing",
+        "timeline": "none",
+        "reason": "insufficient_catalog_metadata",
+        "catalogSource": "api-enhanced",
+        "fallback": {
+          "provider": "lrclib",
+          "implemented": true,
+          "eligible": true,
+          "attempted": true,
+          "status": "missing",
+          "reason": "insufficient_catalog_metadata"
+        },
+        "catalogStatus": "missing",
+        "retryable": false
+      },
+      "lyricCharacters": 0
+    },
+    {
+      "capturedAt": "2026-10-06T07:09:33.629Z",
+      "method": "POST",
+      "path": "/dreammusic/api/v1/auth/stats",
+      "httpStatus": 200,
+      "elapsedMs": 14
+    },
+    {
+      "capturedAt": "2026-10-06T07:10:03.572Z",
+      "method": "POST",
+      "path": "/dreammusic/api/v1/auth/stats",
+      "httpStatus": 200,
+      "elapsedMs": 21
+    },
+    {
+      "capturedAt": "2026-10-06T07:13:48.553Z",
+      "method": "POST",
+      "path": "/dreammusic/api/v1/auth/stats",
+      "httpStatus": 200,
+      "elapsedMs": 27
+    },
+    {
+      "capturedAt": "2026-10-06T07:13:53.754Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v2/search",
+      "httpStatus": 200,
+      "elapsedMs": 4629,
+      "code": 200,
+      "sources": [
+        {
+          "source": "api-enhanced",
+          "status": "ok"
+        },
+        {
+          "source": "meting-tencent",
+          "status": "ok"
+        },
+        {
+          "source": "meting-kugou",
+          "status": "ok"
+        }
+      ],
+      "groups": [
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NTI4MjA3MjAiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NTI4MjA3MjAiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2652820720",
+              "title": "晴天(深情版)",
+              "artists": [
+                "Lucky小爱"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NjgzOTczNTkiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NjgzOTczNTkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2668397359",
+              "title": "晴天 (原唱 周杰伦)",
+              "artists": [
+                "RyaVocal"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NTM3MTQ0NDMiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NTM3MTQ0NDMiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2653714443",
+              "title": "晴天 (女声版))",
+              "artists": [
+                "GYBeat"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDU4OTQ3ODkiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NDU4OTQ3ODkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1945894789",
+              "title": "晴天 (钢琴版) [原唱: 周杰伦]",
+              "artists": [
+                "纪钧瀚 (Bryan Chi)"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0NDA0NDE0NzkiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0NDA0NDE0NzkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3440441479",
+              "title": "晴天",
+              "artists": [
+                "Jay"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MzAxNTEzOTMiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3MzAxNTEzOTMiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2730151393",
+              "title": "晴天(DJ版)",
+              "artists": [
+                "DJ阿罗"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTExMTYyMTgiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzOTExMTYyMTgiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3391116218",
+              "title": "晴天",
+              "artists": [
+                "梦里啥都有"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzODc2NTM5ODkiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzODc2NTM5ODkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3387653989",
+              "title": "晴天 (Cover 蓝心羽)",
+              "artists": [
+                "小汤圆"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NTM5NzM4NzQiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NTM5NzM4NzQiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2653973874",
+              "title": "晴天 (女生版)",
+              "artists": [
+                "余不不"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0MTIwMjIxMjQiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0MTIwMjIxMjQiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1412022124",
+              "title": "晴天",
+              "artists": [
+                "空匪"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0NDM0MTI1NzkiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0NDM0MTI1NzkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3443412579",
+              "title": "晴天",
+              "artists": [
+                "舟子"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NTgzMzY2NTgiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI2NTgzMzY2NTgiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2658336658",
+              "title": "晴天 (钢琴版)",
+              "artists": [
+                "CIP Music"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzODc4ODQxNjIiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzODc4ODQxNjIiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3387884162",
+              "title": "晴天",
+              "artists": [
+                "DJ阿哲"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzI4MTY1ODQiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzI4MTY1ODQiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3372816584",
+              "title": "你还要我怎样 (Cover 薛之谦)",
+              "artists": [
+                "晴天"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3NTc5MjI1ODQiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjI3NTc5MjI1ODQiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2757922584",
+              "title": "晴天 (吉他版) (原唱：周杰伦)",
+              "artists": [
+                "郭衡 (Guo Heng)"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzk3MTY1NzkiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNzk3MTY1NzkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3379716579",
+              "title": "晴天 (R&B版)",
+              "artists": [
+                "屿间凉音"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4ODE0MjEyMDgiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE4ODE0MjEyMDgiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1881421208",
+              "title": "晴天（尤克里里指弹）",
+              "artists": [
+                "葵葵"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0MjI3ODY1ODciLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0MjI3ODY1ODciLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3422786587",
+              "title": "晴天（故事的小黄花）",
+              "artists": [
+                "Davi刁少志"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNTYzNDM4MTkiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNTYzNDM4MTkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3356343819",
+              "title": "晴天",
+              "artists": [
+                "JustForFun"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNTA3Njg1MDIiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIxNTA3Njg1MDIiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2150768502",
+              "title": "晴天(钢琴曲)(原唱：周杰伦)",
+              "artists": [
+                "酷客音乐"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NTU2NTExMzIiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE5NTU2NTExMzIiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1955651132",
+              "title": "晴天和猫",
+              "artists": [
+                "花粥"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMjQzNDcwNTYiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMjQzNDcwNTYiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3324347056",
+              "title": "晴天 (消失的下雨天)",
+              "artists": [
+                "赵小泉"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDU2ODI2MjgiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzNDU2ODI2MjgiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3345682628",
+              "title": "晴天",
+              "artists": [
+                "雷米克斯"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0NDM4MTQwNzkiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0NDM4MTQwNzkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3443814079",
+              "title": "晴天",
+              "artists": [
+                "DJ阿福"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzODU1NDQ0NzQiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzODU1NDQ0NzQiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3385544474",
+              "title": "晴天",
+              "artists": [
+                "我是蛋宝"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM1NDIzMyIsImtpbmQiOiJzb25nIn0",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM1NDIzMyIsImtpbmQiOiJzb25nIn0",
+              "source": "api-enhanced",
+              "sourceId": "354233",
+              "title": "晴天",
+              "artists": [
+                "朱孝天"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMjQ4NTI1MDkiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjMzMjQ4NTI1MDkiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3324852509",
+              "title": "晴天",
+              "artists": [
+                "B-KLl"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0MzYwMjI4ODQiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjM0MzYwMjI4ODQiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "3436022884",
+              "title": "晴天(吉他版)",
+              "artists": [
+                "沅吴"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwNzY0ODgzNTYiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjIwNzY0ODgzNTYiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "2076488356",
+              "title": "晴天",
+              "artists": [
+                "Заря"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0OTEyMjg0NDQiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJhcGktZW5oYW5jZWQiLCJzb3VyY2VJZCI6IjE0OTEyMjg0NDQiLCJraW5kIjoic29uZyJ9",
+              "source": "api-enhanced",
+              "sourceId": "1491228444",
+              "title": "晴天",
+              "artists": [
+                "TOYOKI",
+                "brokeboiishawty"
+              ],
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzOU1uWWIwcXhZaFYiLCJraW5kIjoic29uZyJ9",
+          "reason": "same_recording_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzOU1uWWIwcXhZaFYiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0039MnYb0qxYhV",
+              "title": "晴天",
+              "artists": [
+                "周杰伦"
+              ],
+              "durationMs": 269000
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImIzYTUyYTdhOTU4YmYwYWVkMGViZmJhMmU5YTgxOGI3Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "b3a52a7a958bf0aed0ebfba2e9a818b7",
+              "title": "晴天",
+              "artists": [
+                "周杰伦"
+              ],
+              "durationMs": 269000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0MnJsR3gyV0hCckciLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0MnJsR3gyV0hCckciLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0042rlGx2WHBrG",
+              "title": "晴天",
+              "artists": [
+                "Lucky小爱"
+              ],
+              "durationMs": 278000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxQmJ5d3EyZ2ljYWUiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxQmJ5d3EyZ2ljYWUiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001Bbywq2gicae",
+              "title": "搁浅",
+              "artists": [
+                "周杰伦"
+              ],
+              "durationMs": 240000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxeXBvWGYwcWFZaTYiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxeXBvWGYwcWFZaTYiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001ypoXf0qaYi6",
+              "title": "晴",
+              "artists": [
+                "汪苏泷"
+              ],
+              "durationMs": 250000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0RnMyRlAxRXZaWWMiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0RnMyRlAxRXZaWWMiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "004Fs2FP1EvZYc",
+              "title": "晴天",
+              "artists": [
+                "周杰伦"
+              ],
+              "durationMs": 249000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxTGNQRXYxVEVlbmgiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxTGNQRXYxVEVlbmgiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001LcPEv1TEenh",
+              "title": "晴天",
+              "artists": [
+                "梅菜扣肉肉"
+              ],
+              "durationMs": 268000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwcGdiRVExQzRIc3YiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwcGdiRVExQzRIc3YiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000pgbEQ1C4Hsv",
+              "title": "晴天",
+              "artists": [
+                "刘瑞琦"
+              ],
+              "durationMs": 286000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzWVMxVHoyS1A2YXEiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzWVMxVHoyS1A2YXEiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003YS1Tz2KP6aq",
+              "title": "晴天",
+              "artists": [
+                "关诗敏"
+              ],
+              "durationMs": 231000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzc1pzNFAyaEZVVlEiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzc1pzNFAyaEZVVlEiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003sZs4P2hFUVQ",
+              "title": "像晴天像雨天",
+              "artists": [
+                "汪苏泷"
+              ],
+              "durationMs": 236000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0TUE1VEowR3dhNW4iLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0TUE1VEowR3dhNW4iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "004MA5TJ0Gwa5n",
+              "title": "晴天",
+              "artists": [
+                "启蒙动画精选"
+              ],
+              "durationMs": 166000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwdmR0cGsyNHdHUjgiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwdmR0cGsyNHdHUjgiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000vdtpk24wGR8",
+              "title": "晴天",
+              "artists": [
+                "Missy"
+              ],
+              "durationMs": 86000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzb2V4TnYxV0NSTDAiLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzb2V4TnYxV0NSTDAiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003oexNv1WCRL0",
+              "title": "晴天",
+              "artists": [
+                "蓝心羽"
+              ],
+              "durationMs": 176000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwdnVkSW0xaklIZm8iLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwdnVkSW0xaklIZm8iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000vudIm1jIHfo",
+              "title": "晴天 - 钢琴独奏版",
+              "artists": [
+                "Shawn Ying"
+              ],
+              "durationMs": 238000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0OHVHUVUzUVM1WE4iLCJraW5kIjoic29uZyJ9",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0OHVHUVUzUVM1WE4iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0048uGQU3QS5XN",
+              "title": "晴天",
+              "artists": [
+                "旺仔小乔"
+              ],
+              "durationMs": 14000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyeGRsQWwyVlBjZk0iLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyeGRsQWwyVlBjZk0iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002xdlAl2VPcfM",
+              "title": "晴天",
+              "artists": [
+                "一块吐司"
+              ],
+              "durationMs": 154000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0M1ozQ1MxV3MweVgiLCJraW5kIjoic29uZyJ9",
+          "reason": "same_recording_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0M1ozQ1MxV3MweVgiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0043Z3CS1Ws0yX",
+              "title": "晴天",
+              "artists": [
+                "小柔Channel"
+              ],
+              "durationMs": 286000
+            },
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjczMDc5MjFlODYxMTU0NDk1Y2RjYjVhM2U5ZmYwMWJhIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "7307921e861154495cdcb5a3e9ff01ba",
+              "title": "晴天",
+              "artists": [
+                "小柔Channel"
+              ],
+              "durationMs": 286000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyTGNwZ0kwYWNvWDkiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyTGNwZ0kwYWNvWDkiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002LcpgI0acoX9",
+              "title": "等晴天",
+              "artists": [
+                "周深"
+              ],
+              "durationMs": 268000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxQjN5eHUwekFtUUwiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxQjN5eHUwekFtUUwiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001B3yxu0zAmQL",
+              "title": "雨后晴天",
+              "artists": [
+                "梓渝"
+              ],
+              "durationMs": 186000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzVFkxMG0wWDVwOW8iLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAzVFkxMG0wWDVwOW8iLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "003TY10m0X5p9o",
+              "title": "晴天",
+              "artists": [
+                "lan"
+              ],
+              "durationMs": 266000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAweTB5dFQ0SnhCR2siLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAweTB5dFQ0SnhCR2siLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000y0ytT4JxBGk",
+              "title": "晴天 阴天 雨天",
+              "artists": [
+                "郑中基"
+              ],
+              "durationMs": 169000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyR0VJSDEyV2JFY0IiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyR0VJSDEyV2JFY0IiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002GEIH12WbEcB",
+              "title": "Sunny Day",
+              "artists": [
+                "Joy Williams"
+              ],
+              "durationMs": 158000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0VWhOZ2Ewa0hDWVIiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDA0VWhOZ2Ewa0hDWVIiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "004UhNga0kHCYR",
+              "title": "像晴天像雨天",
+              "artists": [
+                "汪苏泷"
+              ],
+              "durationMs": 243000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxdjMyVk0xT1JxbjUiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxdjMyVk0xT1JxbjUiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001v32VM1ORqn5",
+              "title": "晴天",
+              "artists": [
+                "吉拉朵"
+              ],
+              "durationMs": 130000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwODNrYzQxWWNGdVIiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwODNrYzQxWWNGdVIiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "00083kc41YcFuR",
+              "title": "晴天",
+              "artists": [
+                "昼夜"
+              ],
+              "durationMs": 253000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwbHFWc0YzT0xZQmsiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwbHFWc0YzT0xZQmsiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "000lqVsF3OLYBk",
+              "title": "晴天（睡眠音乐 催眠曲5分钟入睡）",
+              "artists": [
+                "高效睡眠AYC"
+              ],
+              "durationMs": 138000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyeEtWMzYxaE1qWWQiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyeEtWMzYxaE1qWWQiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002xKV361hMjYd",
+              "title": "晴天",
+              "artists": [
+                "易广成"
+              ],
+              "durationMs": 64000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxT0F4YnUyWDVTb3AiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAxT0F4YnUyWDVTb3AiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "001OAxbu2X5Sop",
+              "title": "晴天和猫",
+              "artists": [
+                "花粥"
+              ],
+              "durationMs": 188000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwN3h3QTcwVHNJUjkiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAwN3h3QTcwVHNJUjkiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "0007xwA70TsIR9",
+              "title": "晴天",
+              "artists": [
+                "胡缺六弄"
+              ],
+              "durationMs": 269000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNTBjaDkyYlNzb2EiLCJraW5kIjoic29uZyJ9",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyNTBjaDkyYlNzb2EiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "00250ch92bSsoa",
+              "title": "晴天",
+              "artists": [
+                "TOP登陆少年组合"
+              ],
+              "durationMs": 275000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyWGR5SHkxU1dXVjUiLCJraW5kIjoic29uZyJ9",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmctdGVuY2VudCIsInNvdXJjZUlkIjoiMDAyWGR5SHkxU1dXVjUiLCJraW5kIjoic29uZyJ9",
+              "source": "meting-tencent",
+              "sourceId": "002XdyHy1SWWV5",
+              "title": "半晴天",
+              "artists": [
+                "陶喆"
+              ],
+              "durationMs": 294000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQ4YzY4NWY2NzlmZmM3Y2YwOGI4YTgzNDFjYTlkYjQ0Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjQ4YzY4NWY2NzlmZmM3Y2YwOGI4YTgzNDFjYTlkYjQ0Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "48c685f679ffc7cf08b8a8341ca9db44",
+              "title": "晴天",
+              "artists": [
+                "蓝心羽"
+              ],
+              "durationMs": 176000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjkxYTY2MmE2ZGQ2Zjc0YTk2YjBhNzYwOWVhZWZkZjNhIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjkxYTY2MmE2ZGQ2Zjc0YTk2YjBhNzYwOWVhZWZkZjNhIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "91a662a6dd6f74a96b0a7609eaefdf3a",
+              "title": "晴天 (温柔女声版)",
+              "artists": [
+                "吉拉朵"
+              ],
+              "durationMs": 130000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImViMmNkMzBkZDcyNTg5OTRmMDA4ZTZkYmRjZTc5MDI0Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImViMmNkMzBkZDcyNTg5OTRmMDA4ZTZkYmRjZTc5MDI0Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "eb2cd30dd7258994f008e6dbdce79024",
+              "title": "晴天 (Live)",
+              "artists": [
+                "周杰伦"
+              ],
+              "durationMs": 299000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjZiYzQzM2EyYzE0OWZmYzQzZjgzMDljNzNhNTM3NjAxIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjZiYzQzM2EyYzE0OWZmYzQzZjgzMDljNzNhNTM3NjAxIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "6bc433a2c149ffc43f8309c73a537601",
+              "title": "晴天 (DJ降调0.9x版)",
+              "artists": [
+                "Missy"
+              ],
+              "durationMs": 86000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBkZjY5ZmFlYWVhYzczNThlNDY2NWJjN2FjZDcyYjVmIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjBkZjY5ZmFlYWVhYzczNThlNDY2NWJjN2FjZDcyYjVmIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "0df69faeaeac7358e4665bc7acd72b5f",
+              "title": "晴天 (女声独唱版)",
+              "artists": [
+                "梅菜扣肉肉"
+              ],
+              "durationMs": 268000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjUwZDBmYzMwYWQ5ODAzZmUyOWQ0ZDdhMTc1Mzk4ZmI1Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjUwZDBmYzMwYWQ5ODAzZmUyOWQ0ZDdhMTc1Mzk4ZmI1Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "50d0fc30ad9803fe29d4d7a175398fb5",
+              "title": "晴天 (DJ版)",
+              "artists": [
+                "ProdbyMend"
+              ],
+              "durationMs": 144000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjE5NGZlMjA0MGVhYTkzMzQ4ZjNkNjYzNjFlYWNhZGNlIiwia2luZCI6InNvbmcifQ",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjE5NGZlMjA0MGVhYTkzMzQ4ZjNkNjYzNjFlYWNhZGNlIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "194fe2040eaa93348f3d66361eacadce",
+              "title": "晴天",
+              "artists": [
+                "周杰伦小公举"
+              ],
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjI1NDAxMzc4YWY3Zjg0MjU4YTYwZDJhM2ZiMzQ2M2QzIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjI1NDAxMzc4YWY3Zjg0MjU4YTYwZDJhM2ZiMzQ2M2QzIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "25401378af7f84258a60d2a3fb3463d3",
+              "title": "晴天",
+              "artists": [
+                "欧阳耀莹"
+              ],
+              "durationMs": 144000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjlkZDhlMDNiMDc1MDlkNWI0YmM3NDQzMTgxODNiYjNkIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjlkZDhlMDNiMDc1MDlkNWI0YmM3NDQzMTgxODNiYjNkIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "9dd8e03b07509d5b4bc744318183bb3d",
+              "title": "晴天 (DJ版)",
+              "artists": [
+                "DJ朔风"
+              ],
+              "durationMs": 175000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgwZTBiNWJkZDlhY2ZkZjk1MzJmNmQ0NzMzYTI2ZjY3Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjgwZTBiNWJkZDlhY2ZkZjk1MzJmNmQ0NzMzYTI2ZjY3Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "80e0b5bdd9acfdf9532f6d4733a26f67",
+              "title": "晴天 (合唱版Live)",
+              "artists": [
+                "易广成"
+              ],
+              "durationMs": 64000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc2MDk2YzA1OWIyNmViYWExNmI0ODJmOTIxYTA3YmUwIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc2MDk2YzA1OWIyNmViYWExNmI0ODJmOTIxYTA3YmUwIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "76096c059b26ebaa16b482f921a07be0",
+              "title": "晴天 (Live)",
+              "artists": [
+                "周杰伦"
+              ],
+              "durationMs": 249000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ3ZWI4NGNhZjBlZmZkZTU5NzI4YzFmOTkzNjJmZGNhIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ3ZWI4NGNhZjBlZmZkZTU5NzI4YzFmOTkzNjJmZGNhIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "d7eb84caf0effde59728c1f99362fdca",
+              "title": "晴天",
+              "artists": [
+                "吉拉朵"
+              ],
+              "durationMs": 130000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjdhZGJhMTM1ODg2YTQ0MWYzNWEzMDVhYTJhY2M1MTVkIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjdhZGJhMTM1ODg2YTQ0MWYzNWEzMDVhYTJhY2M1MTVkIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "7adba135886a441f35a305aa2acc515d",
+              "title": "好不容易",
+              "artists": [
+                "告五人"
+              ],
+              "durationMs": 295000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImNlYzllOGQ0OTUwYWVmMWFlY2EyMTNmZGE2ZjQxOTM0Iiwia2luZCI6InNvbmcifQ",
+          "reason": "insufficient_evidence",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImNlYzllOGQ0OTUwYWVmMWFlY2EyMTNmZGE2ZjQxOTM0Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "cec9e8d4950aef1aeca213fda6f41934",
+              "title": "晴天",
+              "artists": [
+                "刘瑞琦"
+              ],
+              "durationMs": 284000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImY0NzZhMDY0YzZmNGRiMjkyYjFiMzI3YTRhNzA5MzE0Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImY0NzZhMDY0YzZmNGRiMjkyYjFiMzI3YTRhNzA5MzE0Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "f476a064c6f4db292b1b327a4a709314",
+              "title": "晴天",
+              "artists": [
+                "凌霄(庄云霄)"
+              ],
+              "durationMs": 269000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjdjZDViYmI1YTA2N2MwM2Y5NmYyYWM5MTNjYWFlNWQ4Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjdjZDViYmI1YTA2N2MwM2Y5NmYyYWM5MTNjYWFlNWQ4Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "7cd5bbb5a067c03f96f2ac913caae5d8",
+              "title": "晴天 (Live)",
+              "artists": [
+                "旺仔小乔"
+              ],
+              "durationMs": 247000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImY4NDE5ZDgzMzZjNjY3NmYxMjgzZTg3MzY0MmNiYWZiIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImY4NDE5ZDgzMzZjNjY3NmYxMjgzZTg3MzY0MmNiYWZiIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "f8419d8336c6676f1283e873642cbafb",
+              "title": "晴天 (钢琴版) (纯音乐)",
+              "artists": [
+                "昼夜"
+              ],
+              "durationMs": 253000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjFlYTA3M2E0NTgyNmVhNTAwY2MwNzRkYjA0NGM1N2NkIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjFlYTA3M2E0NTgyNmVhNTAwY2MwNzRkYjA0NGM1N2NkIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "1ea073a45826ea500cc074db044c57cd",
+              "title": "晴天 (0.8X)",
+              "artists": [
+                "网络歌手"
+              ],
+              "durationMs": 112000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc0Zjc2YjY0Y2ViNzZmMzRiNGE1OTkwMDQxYWZiMjI2Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc0Zjc2YjY0Y2ViNzZmMzRiNGE1OTkwMDQxYWZiMjI2Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "74f76b64ceb76f34b4a5990041afb226",
+              "title": "晴天 (女声版)",
+              "artists": [
+                "杨瑾儿"
+              ],
+              "durationMs": 270000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDlhODhiOGQyZWZkOTVlYWUwNTU5OGJlNWY5ZTgzIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImQ2MDlhODhiOGQyZWZkOTVlYWUwNTU5OGJlNWY5ZTgzIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "d609a88b8d2efd95eae05598be5f9e83",
+              "title": "晴天 (Live)",
+              "artists": [
+                "关诗敏"
+              ],
+              "durationMs": 232000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImY0NTAwYTA4ZWQ1NDA0ZmQyMDEwMWFhMTU2ZTYwMDc0Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImY0NTAwYTA4ZWQ1NDA0ZmQyMDEwMWFhMTU2ZTYwMDc0Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "f4500a08ed5404fd20101aa156e60074",
+              "title": "晴天 (钢琴曲)(remix: Jay Chou)",
+              "artists": [
+                "jaycd"
+              ],
+              "durationMs": 203000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImFkNGE4YzM1ZTk1ZThkMTlkODViNzcyODhiMDllYTUzIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImFkNGE4YzM1ZTk1ZThkMTlkODViNzcyODhiMDllYTUzIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "ad4a8c35e95e8d19d85b77288b09ea53",
+              "title": "晴天 (DJ版)",
+              "artists": [
+                "Kishan"
+              ],
+              "durationMs": 196000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImIzYTY2ZWU4YzdkMjAwYTBmN2JiMTViN2U4Zjc5NmRiIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImIzYTY2ZWU4YzdkMjAwYTBmN2JiMTViN2U4Zjc5NmRiIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "b3a66ee8c7d200a0f7bb15b7e8f796db",
+              "title": "晴天 (DJ氛围版)",
+              "artists": [
+                "Missy"
+              ],
+              "durationMs": 52000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcyYjJjN2Y5Nzg0NjQ0YmM0YTIwMmEzNGQzNmIzOGJkIiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjcyYjJjN2Y5Nzg0NjQ0YmM0YTIwMmEzNGQzNmIzOGJkIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "72b2c7f9784644bc4a202a34d36b38bd",
+              "title": "晴天",
+              "artists": [
+                "宋亚轩"
+              ],
+              "durationMs": 169000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc2YzE0MzI0YjEwMDJkOTgwZWQ0MTFlYTQ4NmYyZTEzIiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6Ijc2YzE0MzI0YjEwMDJkOTgwZWQ0MTFlYTQ4NmYyZTEzIiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "76c14324b1002d980ed411ea486f2e13",
+              "title": "晴天 (DJ版)",
+              "artists": [
+                "XINGWAMIX",
+                "怒仙"
+              ],
+              "durationMs": 297000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjhiMmM1ZDE1NzllNzEzMDgyY2ViNjQ5YjNhYTc2NzY4Iiwia2luZCI6InNvbmcifQ",
+          "reason": "complete_metadata",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjhiMmM1ZDE1NzllNzEzMDgyY2ViNjQ5YjNhYTc2NzY4Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "8b2c5d1579e713082ceb649b3aa76768",
+              "title": "晴天",
+              "artists": [
+                "阿福Fuzzi"
+              ],
+              "durationMs": 136000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjU0MGQ2MGZlOGUwNzA1MWEzMTRlMzA0MTBhNDFmYjI4Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6IjU0MGQ2MGZlOGUwNzA1MWEzMTRlMzA0MTBhNDFmYjI4Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "540d60fe8e07051a314e30410a41fb28",
+              "title": "晴天 (吉他版)",
+              "artists": [
+                "董小坛"
+              ],
+              "durationMs": 137000
+            }
+          ]
+        },
+        {
+          "id": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImUxMWE2Y2U3MGJiYmJjZjYwMGZlNjFjYTJmMzRkNmQ1Iiwia2luZCI6InNvbmcifQ",
+          "reason": "version_uncertain",
+          "entries": [
+            {
+              "mediaRef": "eyJ2ZXJzaW9uIjoxLCJzb3VyY2UiOiJtZXRpbmcta3Vnb3UiLCJzb3VyY2VJZCI6ImUxMWE2Y2U3MGJiYmJjZjYwMGZlNjFjYTJmMzRkNmQ1Iiwia2luZCI6InNvbmcifQ",
+              "source": "meting-kugou",
+              "sourceId": "e11a6ce70bbbbcf600fe61ca2f34d6d5",
+              "title": "晴天 (CCTV音乐频道)(Live)",
+              "artists": [
+                "关诗敏"
+              ],
+              "durationMs": 224000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-10-06T07:14:17.757Z",
+      "method": "POST",
+      "path": "/dreammusic/api/v1/auth/stats",
+      "httpStatus": 200,
+      "elapsedMs": 15
+    },
+    {
+      "capturedAt": "2026-10-06T07:14:25.524Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v1/auth/announcements",
+      "httpStatus": 200,
+      "elapsedMs": 11
+    },
+    {
+      "capturedAt": "2026-10-06T07:14:25.526Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v1/auth/me",
+      "httpStatus": 200,
+      "elapsedMs": 14
+    },
+    {
+      "capturedAt": "2026-10-06T07:14:25.527Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v1/auth/profile",
+      "httpStatus": 200,
+      "elapsedMs": 21
+    },
+    {
+      "capturedAt": "2026-10-06T07:14:49.662Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v1/auth/me",
+      "httpStatus": 200,
+      "elapsedMs": 3
+    },
+    {
+      "capturedAt": "2026-10-06T07:15:01.890Z",
+      "method": "POST",
+      "path": "/dreammusic/api/v1/auth/logout",
+      "httpStatus": 200,
+      "elapsedMs": 6
+    },
+    {
+      "capturedAt": "2026-10-06T07:15:02.018Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v1/auth/me",
+      "httpStatus": 401,
+      "elapsedMs": 8
+    },
+    {
+      "capturedAt": "2026-10-06T07:15:02.020Z",
+      "method": "GET",
+      "path": "/dreammusic/api/v1/auth/announcements",
+      "httpStatus": 200,
+      "elapsedMs": 10
+    }
+  ]
+}

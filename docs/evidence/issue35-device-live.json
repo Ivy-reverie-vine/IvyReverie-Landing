@@ -1,0 +1,309 @@
+{
+  "capturedAt": "2026-10-06T07:03:02.971Z",
+  "timezone": "Asia/Shanghai",
+  "boundary": "Live providers; disposable unbound local account; production gateway/player. Range is not completeness.",
+  "configuration": {
+    "sources": [
+      "api-enhanced",
+      "meting-tencent",
+      "meting-kugou",
+      "bilibili"
+    ],
+    "totalBudgetMs": 10000,
+    "bilibiliReserveMs": 3000
+  },
+  "scenarios": [],
+  "http": [
+    {
+      "host": "local-provider",
+      "path": "/login/qr/key",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 291
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/create",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 22
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 801,
+      "elapsedMs": 257
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 801,
+      "elapsedMs": 261
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 801,
+      "elapsedMs": 250
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 801,
+      "elapsedMs": 261
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 801,
+      "elapsedMs": 245
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 801,
+      "elapsedMs": 228
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 801,
+      "elapsedMs": 332
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 801,
+      "elapsedMs": 252
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "error": "AbortError",
+      "elapsedMs": 15006
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 801,
+      "elapsedMs": 267
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "error": "AbortError",
+      "elapsedMs": 15005
+    },
+    {
+      "host": "local-provider",
+      "path": "/login/qr/check",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 803,
+      "elapsedMs": 386
+    },
+    {
+      "host": "local-provider",
+      "path": "/user/playlist",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 139
+    },
+    {
+      "host": "local-provider",
+      "path": "/likelist",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 243
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 297
+    },
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 520
+    },
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 432
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 405
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/url/v1",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 415
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 142
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 171
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 74
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 43
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 200,
+      "elapsedMs": 84
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 163
+    },
+    {
+      "host": "m801.music.126.net",
+      "path": "[media path redacted]",
+      "method": "GET",
+      "httpStatus": 206,
+      "elapsedMs": 60
+    },
+    {
+      "host": "local-provider",
+      "path": "/lyric/new",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 2
+    },
+    {
+      "host": "local-provider",
+      "path": "/song/detail",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 1
+    },
+    {
+      "host": "local-provider",
+      "path": "/search",
+      "method": "GET",
+      "httpStatus": 200,
+      "providerCode": 200,
+      "elapsedMs": 755
+    }
+  ],
+  "business": [
+    {
+      "path": "/song/url/v1",
+      "httpStatus": 200,
+      "recovery": false,
+      "automatic": true,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 562
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 206,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 77
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 206,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 574
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 206,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": true,
+      "elapsedMs": 345
+    },
+    {
+      "path": "/dreammusic/media/stream/[token]",
+      "httpStatus": 200,
+      "recovery": false,
+      "automatic": false,
+      "manual": false,
+      "range": false,
+      "elapsedMs": 1153
+    }
+  ],
+  "browser": [],
+  "media": []
+}

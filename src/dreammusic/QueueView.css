@@ -26,6 +26,12 @@
   color: #ffffff;
 }
 
+.dm-queue-clear.is-confirming {
+  background: rgba(242, 139, 130, 0.2);
+  color: #f28b82;
+  border-color: rgba(242, 139, 130, 0.4);
+}
+
 .dm-queue-list {
   list-style: none;
   margin: 0;
@@ -107,7 +113,7 @@
 .dm-queue-del {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
   width: 28px;
   height: 28px;
   border-radius: 8px;
@@ -125,7 +131,7 @@
 }
 
 .dm-queue-empty {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.55);
   font-size: 13px;
   text-align: center;
   padding: 44px 12px;

@@ -65,12 +65,14 @@
 }
 
 .dm-download-item.status-ready {
-  border-left: 3px solid #7bd88f;
+  border-color: rgba(123, 216, 143, 0.3);
+  background: rgba(123, 216, 143, 0.04);
 }
 
 .dm-download-item.status-failed {
-  border-left: 3px solid #f28b82;
-  opacity: 0.75;
+  border-color: rgba(242, 139, 130, 0.3);
+  background: rgba(242, 139, 130, 0.04);
+  opacity: 0.85;
 }
 
 .dm-download-info {
@@ -114,7 +116,6 @@
   height: 100%;
   background: rgb(var(--dm-theme-rgb));
   border-radius: 999px;
-  transition: width 0.3s ease;
 }
 
 .dm-download-actions {
@@ -141,7 +142,7 @@
 .dm-download-del {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.6);
   width: 28px;
   height: 28px;
   border-radius: 8px;

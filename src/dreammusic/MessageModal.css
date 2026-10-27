@@ -60,7 +60,7 @@
 .dm-message-field small {
   align-self: flex-end;
   margin-top: -2px;
-  color: rgba(255, 255, 255, 0.34);
+  color: rgba(255, 255, 255, 0.55);
   font-size: 11px;
 }
 
@@ -78,11 +78,11 @@
 }
 
 .dm-message-success {
-  color: #7bd88f;
+  color: var(--color-success, #7bd88f);
 }
 
 .dm-message-error {
-  color: #f28b82;
+  color: var(--color-danger, #f28b82);
 }
 
 .dm-message-submit {

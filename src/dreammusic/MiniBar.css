@@ -15,7 +15,14 @@
   border-radius: 22px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.dm-minibar:hover {
+  transform: translate(-50%, -2px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.38);
 }
 
 .dm-minibar-cover {

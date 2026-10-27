@@ -151,7 +151,7 @@
 
 .dm-profile-stat-label {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .dm-profile-checkin {
@@ -246,7 +246,7 @@
 
 .dm-admin-sub {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .dm-admin-actions {

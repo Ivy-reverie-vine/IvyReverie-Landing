@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { usePlayer } from './player/PlayerContext'
 import Cover from './Cover'
 import HeartButton from './HeartButton'
@@ -10,6 +10,17 @@ export default function QueueView() {
   const { state, dispatch } = usePlayer()
   const { queue, currentIndex } = state
   const dragIndex = useRef<number | null>(null)
+  const [confirmingClear, setConfirmingClear] = useState(false)
+
+  const handleClear = () => {
+    if (!confirmingClear) {
+      setConfirmingClear(true)
+      setTimeout(() => setConfirmingClear(false), 3000)
+      return
+    }
+    dispatch({ type: 'CLEAR_QUEUE' })
+    setConfirmingClear(false)
+  }
 
   if (queue.length === 0) {
     return (
@@ -25,10 +36,11 @@ export default function QueueView() {
         <span>播放队列（{queue.length}）</span>
         <button
           type="button"
-          className="dm-queue-clear"
-          onClick={() => dispatch({ type: 'CLEAR_QUEUE' })}
+          className={`dm-queue-clear ${confirmingClear ? 'is-confirming' : ''}`}
+          onClick={handleClear}
+          aria-label={confirmingClear ? '再次点击确认清空' : '清空队列'}
         >
-          清空
+          {confirmingClear ? '确认清空？' : '清空'}
         </button>
       </div>
       <ul className="dm-queue-list">

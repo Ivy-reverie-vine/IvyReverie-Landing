@@ -53,13 +53,13 @@
 .dm-redeem-msg {
   margin: 0;
   font-size: 13px;
-  color: #7bd88f;
+  color: var(--color-success, #7bd88f);
 }
 
 .dm-redeem-error {
   margin: 0;
   font-size: 13px;
-  color: #f28b82;
+  color: var(--color-danger, #f28b82);
 }
 
 .dm-redeem-admin {
@@ -105,7 +105,7 @@
 }
 
 .dm-redeem-code {
-  font-family: 'Cascadia Mono', Consolas, monospace;
+  font-family: var(--font-mono, 'Cascadia Mono', Consolas, monospace);
   font-size: 12px;
   background: rgba(255, 255, 255, 0.07);
   border-radius: 8px;

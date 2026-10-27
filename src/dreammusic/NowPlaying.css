@@ -63,10 +63,24 @@
 
 .dm-np-hint {
   text-align: center;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
   margin: 0;
-  padding-top: 20px;
+  padding: 8px 0;
+}
+
+.dm-np-content > .dm-np-hint,
+.dm-np-lyrics > .dm-np-hint:not(:only-child) {
+  display: inline-flex;
+  align-self: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  padding: 2px 10px;
+  margin: 2px auto;
+  letter-spacing: 0.04em;
 }
 
 .dm-np-lyrics .dm-np-hint,
@@ -89,12 +103,12 @@
   display: none;
 }
 
-/* 非当前行：低透明度；当前行：近白 + 轻微主题色（无光晕，靠字重/字号/透明度分层） */
+/* 非当前行：提升对比度符合 WCAG AA；当前行：纯白 + 氛围主题色光影微泛 */
 .dm-lyric-line {
   font-size: 19px;
   font-weight: 400;
   line-height: 2.1;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
   transition:
     color 0.25s ease,
     opacity 0.25s ease;

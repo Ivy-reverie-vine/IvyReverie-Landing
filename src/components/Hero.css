@@ -12,8 +12,8 @@
 }
 
 .hero-subtitle {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: rgba(255, 230, 245, 0.8);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  color: rgba(255, 230, 245, 0.85);
   font-size: 22px;
   font-weight: 400;
   letter-spacing: 0.08em;

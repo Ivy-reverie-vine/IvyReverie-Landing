@@ -141,11 +141,22 @@ export default function ParticleBackground({ active }: { active: boolean }) {
 
     rafId = requestAnimationFrame(frame)
 
+    function onVisibilityChange() {
+      if (document.hidden) {
+        cancelAnimationFrame(rafId)
+      } else {
+        last = performance.now()
+        rafId = requestAnimationFrame(frame)
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibilityChange)
+
     return () => {
       running = false
       cancelAnimationFrame(rafId)
       window.removeEventListener('pointermove', onPointerMove)
       window.removeEventListener('resize', setupCanvas)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
     }
   }, [active])
 

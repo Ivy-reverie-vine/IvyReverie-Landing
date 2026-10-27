@@ -42,18 +42,22 @@
   color: #ffffff;
   padding: 10px 12px;
   font-size: 13px;
-  font-family: 'Cascadia Mono', Consolas, 'Courier New', monospace;
-  outline: none;
+  font-family: var(--font-mono, 'Cascadia Mono', Consolas, 'Courier New', monospace);
+}
+
+.dm-apikey-value:focus-visible {
+  border-color: rgba(var(--dm-theme-rgb), 0.7);
+  box-shadow: 0 0 0 2px rgba(var(--dm-theme-rgb), 0.2);
 }
 
 .dm-apikey-error {
-  color: #f28b82;
+  color: var(--color-danger, #f28b82);
   font-size: 13px;
   margin: 0;
 }
 
 .dm-apikey-ok {
-  color: #7bd88f;
+  color: var(--color-success, #7bd88f);
   font-size: 13px;
   margin: 0;
 }

@@ -187,13 +187,23 @@
 /* 音质下拉选择（一次选择只触发一次换链，避免循环切换卡顿） */
 .dm-level-select {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.85);
-  font-size: 13px;
-  padding: 6px 10px;
-  outline: none;
+  font-size: 12.5px;
+  padding: 6px 26px 6px 10px;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.dm-level-select:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .dm-level-select option {
@@ -201,8 +211,9 @@
   color: #ffffff;
 }
 
-.dm-level-select:focus {
-  border-color: rgba(var(--dm-theme-rgb), 0.5);
+.dm-level-select:focus-visible {
+  border-color: rgba(var(--dm-theme-rgb), 0.7);
+  box-shadow: 0 0 0 2px rgba(var(--dm-theme-rgb), 0.2);
 }
 
 .dm-download-msg {

@@ -1,7 +1,57 @@
+:root {
+  /* Brand & dynamic ambient light fallback */
+  --dm-theme-rgb: 232, 139, 167;
+  --color-primary: #ea8ba7;
+  --color-success: #7bd88f;
+  --color-danger: #f28b82;
+  --color-warning: #f2c47d;
+
+  /* Surfaces & neutrals */
+  --bg-night: #05070f;
+  --bg-surface: #101014;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --border-subtle: rgba(255, 255, 255, 0.07);
+
+  /* Typography & contrast */
+  --text-primary: rgba(255, 255, 255, 0.95);
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --font-mono: 'Cascadia Mono', Consolas, 'Courier New', monospace;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(var(--dm-theme-rgb), 0.35);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(var(--dm-theme-rgb), 0.65);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbars across all scrollable regions */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
 }
 
 html,
@@ -22,9 +72,12 @@ body {
     'Segoe UI', sans-serif;
   color: #ffffff;
   background: linear-gradient(160deg, #101014 0%, #141419 55%, #17171c 100%);
+  caret-color: rgb(var(--dm-theme-rgb));
 }
 
 button,
-input {
+input,
+select,
+textarea {
   font-family: inherit;
 }

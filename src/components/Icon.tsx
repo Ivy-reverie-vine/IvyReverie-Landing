@@ -22,6 +22,8 @@ export type IconName =
   | 'download'
   | 'gift'
   | 'send'
+  | 'chevron-left'
+  | 'chevron-right'
 
 const PATHS: Record<IconName, ReactNode> = {
   search: (
@@ -143,6 +145,8 @@ const PATHS: Record<IconName, ReactNode> = {
       <path d="M7.5 12H20" />
     </>
   ),
+  'chevron-left': <polyline points="15 6 9 12 15 18" />,
+  'chevron-right': <polyline points="9 6 15 12 9 18" />,
 }
 
 /**

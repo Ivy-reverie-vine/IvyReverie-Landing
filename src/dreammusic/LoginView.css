@@ -70,7 +70,7 @@
 
 .dm-login-error {
   font-size: 13px;
-  color: #f28b82;
+  color: var(--color-danger, #f28b82);
   margin: 0;
 }
 

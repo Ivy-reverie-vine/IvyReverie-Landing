@@ -13,7 +13,7 @@ import DownloadManagerModal from '../dreammusic/DownloadManagerModal'
 import UserAvatar from '../dreammusic/UserAvatar'
 import { me, logout, getAnnouncements, type UserInfo } from '../dreammusic/api'
 import { CurrentUserProvider } from '../dreammusic/CurrentUserContext'
-import { PlayerProvider } from '../dreammusic/player/PlayerContext'
+import { PlayerProvider, usePlayer } from '../dreammusic/player/PlayerContext'
 import SearchOverlay from '../dreammusic/SearchOverlay'
 import NowPlaying from '../dreammusic/NowPlaying'
 import QueueView from '../dreammusic/QueueView'
@@ -60,43 +60,54 @@ function TopActions({
   const [moreOpen, setMoreOpen] = useState(false)
   return (
     <div className="dm-topbar-actions">
-      {!user.bound && <button type="button" className="dm-user-chip" onClick={() => window.dispatchEvent(new Event('dm-rebind'))}>绑定网易云</button>}
-      <button
-        type="button"
-        className="dm-icon-btn dm-announce-btn"
-        onClick={onAnnounce}
-        aria-label={announceUnread ? '平台公告（有新公告）' : '平台公告'}
-      >
-        <Icon name="bell" size={16} />
-        {announceUnread && <span className="dm-announce-dot" aria-hidden="true" />}
-      </button>
-      <button
-        type="button"
-        className="dm-icon-btn"
-        onClick={onMessage}
-        aria-label="发送消息"
-        title="发送消息"
-      >
-        <Icon name="send" size={16} />
-      </button>
-      <button
-        type="button"
-        className="dm-icon-btn"
-        onClick={onDownloads}
-        aria-label="下载管理"
-        title="下载管理"
-      >
-        <Icon name="download" size={16} />
-      </button>
-      <button
-        type="button"
-        className="dm-icon-btn"
-        onClick={onRedeem}
-        aria-label="兑换码"
-        title="兑换码"
-      >
-        <Icon name="gift" size={16} />
-      </button>
+      {!user.bound && (
+        <button
+          type="button"
+          className="dm-user-chip dm-bind-chip"
+          onClick={() => window.dispatchEvent(new Event('dm-rebind'))}
+        >
+          绑定网易云
+        </button>
+      )}
+      <div className="dm-tool-cluster" role="toolbar" aria-label="快捷工具">
+        <button
+          type="button"
+          className="dm-icon-btn dm-announce-btn"
+          onClick={onAnnounce}
+          aria-label={announceUnread ? '平台公告（有新公告）' : '平台公告'}
+          title="平台公告"
+        >
+          <Icon name="bell" size={16} />
+          {announceUnread && <span className="dm-announce-dot" aria-hidden="true" />}
+        </button>
+        <button
+          type="button"
+          className="dm-icon-btn"
+          onClick={onMessage}
+          aria-label="发送消息"
+          title="发送消息"
+        >
+          <Icon name="send" size={16} />
+        </button>
+        <button
+          type="button"
+          className="dm-icon-btn"
+          onClick={onDownloads}
+          aria-label="下载管理"
+          title="下载管理"
+        >
+          <Icon name="download" size={16} />
+        </button>
+        <button
+          type="button"
+          className="dm-icon-btn"
+          onClick={onRedeem}
+          aria-label="兑换码"
+          title="兑换码"
+        >
+          <Icon name="gift" size={16} />
+        </button>
+      </div>
       <button type="button" className="dm-user-chip" onClick={onUser} aria-label="个人中心">
         <UserAvatar user={user} size={30} className="dm-user-avatar" />
         <span className="dm-user-chip-name">{user.username}</span>
@@ -166,7 +177,7 @@ function LeftPane({
         aria-label="收起左侧列表"
         title="收起列表"
       >
-        «
+        <Icon name="chevron-left" size={16} />
       </button>
       <div className="dm-left-tabs">
         <button
@@ -234,6 +245,49 @@ function LeftPane({
       </div>
     </div>
   )
+}
+
+/** 全局键盘人体工学快捷键：Space 播放/暂停，方向键快进/快退，/ 呼出全局搜索 */
+function GlobalShortcuts({ onOpenSearch }: { onOpenSearch: () => void }) {
+  const { state, dispatch, audioRef } = usePlayer()
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      const activeEl = document.activeElement
+      const isInput =
+        activeEl instanceof HTMLInputElement ||
+        activeEl instanceof HTMLTextAreaElement ||
+        activeEl instanceof HTMLSelectElement ||
+        (activeEl && activeEl.getAttribute('contenteditable') === 'true')
+
+      if (e.key === '/' && !isInput) {
+        e.preventDefault()
+        onOpenSearch()
+        return
+      }
+
+      if (e.code === 'Space' && !isInput && !(activeEl instanceof HTMLButtonElement)) {
+        e.preventDefault()
+        dispatch({ type: 'TOGGLE' })
+        return
+      }
+
+      if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && !isInput) {
+        if (state.queue[state.currentIndex] && audioRef.current) {
+          e.preventDefault()
+          const delta = e.key === 'ArrowLeft' ? -5 : 5
+          const newTime = Math.max(0, Math.min(state.duration || 0, state.currentTime + delta))
+          audioRef.current.currentTime = newTime
+          dispatch({ type: 'SEEK', time: newTime })
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [dispatch, state.queue, state.currentIndex, state.currentTime, state.duration, audioRef, onOpenSearch])
+
+  return null
 }
 
 /**
@@ -335,6 +389,24 @@ export default function DreamMusic() {
     setDownloadsOpen(false)
   }
 
+  // 全局 Escape 快捷键退出最顶层弹窗/抽屉
+  useEffect(() => {
+    function handleGlobalEscape(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        if (searchOpen) setSearchOpen(false)
+        else if (apiKeyOpen) setApiKeyOpen(false)
+        else if (announceOpen) setAnnounceOpen(false)
+        else if (messageOpen) setMessageOpen(false)
+        else if (redeemOpen) setRedeemOpen(false)
+        else if (downloadsOpen) setDownloadsOpen(false)
+        else if (userPane) setUserPane(false)
+        else if (leftOpen) setLeftOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleGlobalEscape)
+    return () => window.removeEventListener('keydown', handleGlobalEscape)
+  }, [searchOpen, apiKeyOpen, announceOpen, messageOpen, redeemOpen, downloadsOpen, userPane, leftOpen])
+
   async function handleLogout() {
     try {
       await logout()
@@ -392,6 +464,7 @@ export default function DreamMusic() {
       <div className="dm-bg" aria-hidden="true" />
       <CurrentUserProvider user={auth.user}>
       <PlayerProvider storageKey={auth.username}>
+        <GlobalShortcuts onOpenSearch={() => setSearchOpen(true)} />
         <div className="dm-shell">
           <header className="dm-topbar" data-testid="dm-topbar">
             <div className="dm-topbar-left">
@@ -449,7 +522,7 @@ export default function DreamMusic() {
                   aria-label="展开左侧列表"
                   title="展开列表"
                 >
-                  »
+                  <Icon name="chevron-right" size={16} />
                 </button>
               ) : (
                 <LeftPane
